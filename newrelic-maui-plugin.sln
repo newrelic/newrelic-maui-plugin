@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1705.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewRelic.MAUI.Plugin", "NewRelic.MAUI.Plugin\NewRelic.MAUI.Plugin.csproj", "{5FB97847-9CBB-41AB-B0FA-BBFB01AE3CF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewRelic.MAUI.Android.Binding", "NewRelic.MAUI.Android.Binding\NewRelic.MAUI.Android.Binding.csproj", "{C208666D-5218-447A-BC1D-356FE1967D57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewRelic.MAUI.iOS.Binding", "NewRelic.MAUI.iOS.Binding\NewRelic.MAUI.iOS.Binding.csproj", "{C9974FDF-099E-4FC5-B702-EB29C98EFE84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FB97847-9CBB-41AB-B0FA-BBFB01AE3CF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FB97847-9CBB-41AB-B0FA-BBFB01AE3CF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FB97847-9CBB-41AB-B0FA-BBFB01AE3CF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FB97847-9CBB-41AB-B0FA-BBFB01AE3CF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C208666D-5218-447A-BC1D-356FE1967D57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C208666D-5218-447A-BC1D-356FE1967D57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C208666D-5218-447A-BC1D-356FE1967D57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C208666D-5218-447A-BC1D-356FE1967D57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9974FDF-099E-4FC5-B702-EB29C98EFE84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9974FDF-099E-4FC5-B702-EB29C98EFE84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9974FDF-099E-4FC5-B702-EB29C98EFE84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9974FDF-099E-4FC5-B702-EB29C98EFE84}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C3172F0-6751-464A-B893-9469BBDEF9B5}
+	EndGlobalSection
+EndGlobal

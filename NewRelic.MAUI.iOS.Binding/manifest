@@ -1,0 +1,12 @@
+﻿<BindingAssembly>
+	<NativeReference Name="NewRelic.xcframework">
+		<ForceLoad>True</ForceLoad>
+		<Frameworks>UIKit SystemConfiguration, CoreTelephony</Frameworks>
+		<IsCxx>True</IsCxx>
+		<Kind>Framework</Kind>
+		<LinkerFlags>-ObjC -lc++ -lz</LinkerFlags>
+		<NeedsGccExceptionHandling></NeedsGccExceptionHandling>
+		<SmartLink>True</SmartLink>
+		<WeakFrameworks></WeakFrameworks>
+	</NativeReference>
+</BindingAssembly>
