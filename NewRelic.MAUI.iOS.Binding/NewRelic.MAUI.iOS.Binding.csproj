@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net7.0-ios</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>true</ImplicitUsings>
+		<PackageId>iOS.TestNR</PackageId>
+		<Version>1.0.2</Version>
+		<IsBindingProject>true</IsBindingProject>
+	</PropertyGroup>
+	<ItemGroup>
+		<ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+		<ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<NativeReference Include="NewRelic.xcframework">
+			<ForceLoad>True</ForceLoad>
+			<Frameworks>UIKit SystemConfiguration, CoreTelephony</Frameworks>
+			<IsCxx>True</IsCxx>
+			<Kind>Framework</Kind>
+			<LinkerFlags>-ObjC -lc++ -lz</LinkerFlags>
+			<NeedsGccExceptionHandling>
+			</NeedsGccExceptionHandling>
+			<SmartLink>True</SmartLink>
+			<WeakFrameworks>
+			</WeakFrameworks>
+		</NativeReference>
+	</ItemGroup>
+</Project>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net7.0-android</TargetFramework>
+		<SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<PackageId>android.TestNR</PackageId>
+		<Version>0.0.1</Version>
+	</PropertyGroup>
+	<ItemGroup>
+		<TransformFile Include="Transforms\Metadata.xml" />
+		<TransformFile Include="Transforms\EnumFields.xml" />
+		<TransformFile Include="Transforms\EnumMethods.xml" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedJar Include="Jars\android-agent-6.10.1.jar" />
+	</ItemGroup>
+</Project>
