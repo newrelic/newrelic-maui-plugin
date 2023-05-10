@@ -9,12 +9,19 @@ using NRAndroidAgent = Com.Newrelic.Agent.Android.NewRelic;
 namespace Plugin.NRTest;
 
 // All the code in this file is only included on Android.
-public sealed class NewRelicMethodsImplementation:INewRelicMethods
+public sealed class NewRelicMethodsImplementation : INewRelicMethods
 {
     private bool isStarted;
     private EventHandler<RaiseThrowableEventArgs>? _handler;
     private bool _isUncaughtExceptionHandled;
-
+    private Dictionary<LogLevel, int> logLevelDict = new Dictionary<LogLevel, int>()
+    {
+        { LogLevel.ERROR, 1},
+        { LogLevel.WARNING, 2 },
+        { LogLevel.INFO, 3 },
+        { LogLevel.VERBOSE, 4 },
+        { LogLevel.AUDIT, 6 }
+    };
 
     private bool IsNumeric(Object obj)
     {
@@ -36,14 +43,35 @@ public sealed class NewRelicMethodsImplementation:INewRelicMethods
     }
 
 
-    public void Start(string applicationToken)
+    public void Start(string applicationToken, AgentStartConfiguration agentConfig = null)
     {
+        if (agentConfig == null)
+        {
+            agentConfig = new AgentStartConfiguration();
+        }
 
+        if (!agentConfig.crashReportingEnabled)
+        {
+            NRAndroidAgent.DisableFeature(Com.Newrelic.Agent.Android.FeatureFlag.CrashReporting);
+        }
 
-        NRAndroidAgent.WithApplicationToken(applicationToken)
+        var newRelic = NRAndroidAgent.WithApplicationToken(applicationToken)
             .WithApplicationFramework(Com.Newrelic.Agent.Android.ApplicationFramework.Xamarin, "1.0.0")
-            .WithCrashReportingEnabled(false)
-            .Start(Android.App.Application.Context);
+            .WithLoggingEnabled(agentConfig.loggingEnabled)
+            .WithLogLevel(logLevelDict[agentConfig.logLevel]);
+
+        if (!agentConfig.collectorAddress.Equals("DEFAULT"))
+        {
+            newRelic.UsingCollectorAddress(agentConfig.collectorAddress);
+        }
+
+        if(!agentConfig.crashCollectorAddress.Equals("DEFAULT"))
+        {
+            newRelic.UsingCrashCollectorAddress(agentConfig.crashCollectorAddress);
+        }
+
+        newRelic.Start(Android.App.Application.Context);
+
         isStarted = true;
     }
 
@@ -253,8 +281,6 @@ public sealed class NewRelicMethodsImplementation:INewRelicMethods
     public void RecordException(Exception exception)
     {
         var ex = NewRelicMauiException.Create(exception);
-        Console.WriteLine("from maui plugin"+ex);
-        Console.WriteLine("from maui plugin"+ex.StackTrace);
         NRAndroidAgent.RecordHandledException(NewRelicMauiException.Create(exception));
     }
 
@@ -264,15 +290,11 @@ public sealed class NewRelicMethodsImplementation:INewRelicMethods
         if (!_isUncaughtExceptionHandled)
         {
             _isUncaughtExceptionHandled = true;
-            Console.WriteLine(_isUncaughtExceptionHandled);
             MauiExceptions.UnhandledException += (s, e) =>
             {
-                Console.WriteLine("from maui plugin in android Error");
 
                 if (e.ExceptionObject is Exception exception)
                 {
-                    Console.WriteLine("from maui plugin Record Exception in android Error");
-
                     RecordException(exception);
                 }
             };

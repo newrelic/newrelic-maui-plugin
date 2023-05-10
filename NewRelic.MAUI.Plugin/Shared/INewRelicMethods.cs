@@ -7,7 +7,7 @@ namespace Plugin.NRTest
 {
 	public interface INewRelicMethods : IDisposable
     {
-        void Start(string applicationToken);
+        void Start(string applicationToken, AgentStartConfiguration agentConfig = null);
 
         void CrashNow(string message = "");
 
