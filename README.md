@@ -39,12 +39,19 @@ using Plugin.NRTest;
       MainPage = new AppShell();
       
       CrossNewRelic.Current.HandleUncaughtException();
+      // Set optional agent configuration
+      AgentStartConfiguration agentConfig = new AgentStartConfiguration(true, true, LogLevel.INFO, "mobile-collector.newrelic.com", "mobile-crash.newrelic.com");
+
       if (DeviceInfo.Current.Platform == DevicePlatform.Android) 
       {
-        CrossNewRelic.Current.Start("");
+        CrossNewRelic.Current.Start("<APP-TOKEN-HERE>");
+        // Start with optional agent configuration 
+        // CrossNewRelic.Current.Start("<APP-TOKEN-HERE", agentConfig);
       } else if (DeviceInfo.Current.Platform == DevicePlatform.iOS)
       {
-        CrossNewRelic.Current.Start("");
+        CrossNewRelic.Current.Start("<APP-TOKEN-HERE>");
+        // Start with optional agent configuration 
+        // CrossNewRelic.Current.Start("<APP-TOKEN-HERE", agentConfig);
       }
     }
 
@@ -292,10 +299,10 @@ This plugin provides a handler to record unhandled exceptions to New Relic. It i
 
 ``` C#
     CrossNewRelic.Current.HandleUncaughtException();
-    if (Device.RuntimePlatform == Device.iOS)
+    if (DeviceInfo.Current.Platform == DevicePlatform.Android) 
     {
         CrossNewRelic.Current.Start("<APP-TOKEN-HERE>");
-    } else if (Device.RuntimePlatform == Device.Android)
+    } else if (DeviceInfo.Current.Platform == DevicePlatform.iOS)
     {
         CrossNewRelic.Current.Start("<APP-TOKEN-HERE>");
     }
@@ -316,7 +323,7 @@ This plugin also provides a method to manually record any handled exceptions as 
 ## Troubleshooting
 
 - ### No Http data appears:
-  - To instrument http data, make sure to use the HttpMessageHandler in HttpClient
+  - To instrument http data, make sure to use the HttpMessageHandler in HttpClient.
 
 ## Support
 

@@ -101,8 +101,6 @@ namespace plugin.NRTest
         public static IEnumerable<NativeStackFrame> Parse(string stackTrace)
         {
             if (string.IsNullOrEmpty(stackTrace)) yield break;
-            Console.WriteLine("Maui Plugin" + stackTrace);
-            Console.WriteLine("Maui Plugin" + _regex.ToString());
 
             foreach (Match match in _regex.Matches(stackTrace))
             {
