@@ -4,11 +4,10 @@
  */
 
 using Foundation;
-using plugin.NRTest;
 using System.Diagnostics;
 using NRIosAgent = iOS.NewRelic.NewRelic;
 
-namespace Plugin.NRTest;
+namespace NewRelic.MAUI.Plugin;
 
 // All the code in this file is only included on iOS.
 public class NewRelicMethodsImplementation : INewRelicMethods

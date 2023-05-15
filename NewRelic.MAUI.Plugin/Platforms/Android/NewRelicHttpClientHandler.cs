@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using Com.Newrelic.Agent.Android.Distributedtracing;
 using NRAndroidAgent = Com.Newrelic.Agent.Android.NewRelic;
 
-namespace Plugin.NRTest
+namespace NewRelic.MAUI.Plugin
 {
     public class NewRelicHttpClientHandler : HttpClientHandler
     {
@@ -24,7 +24,7 @@ namespace Plugin.NRTest
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            var starTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+            var startTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
             HttpResponseMessage httpResponseMessage;
             TraceContext traceContext = NRAndroidAgent.NoticeDistributedTrace(null);
             request.Headers.Add(traceContext.TracePayload.HeaderName, traceContext.TracePayload.HeaderValue);
@@ -32,7 +32,7 @@ namespace Plugin.NRTest
             request.Headers.Add(TRACE_STATE, traceContext.Vendor + "=0-2-" + traceContext.AccountId + "-" + traceContext.ApplicationId + "-" + traceContext.ParentId + "----" + DateTimeOffset.Now.ToUnixTimeMilliseconds());
             httpResponseMessage = await base.SendAsync(request, cancellationToken);
             var endTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
-            NRAndroidAgent.NoticeHttpTransaction(request.RequestUri.ToString(), request.Method.ToString(), ((int)httpResponseMessage.StatusCode), starTime, endTime, 0, httpResponseMessage.ToString().Length, "", null, null, traceContext.AsTraceAttributes());
+            NRAndroidAgent.NoticeHttpTransaction(request.RequestUri.ToString(), request.Method.ToString(), ((int)httpResponseMessage.StatusCode), startTime, endTime, 0, httpResponseMessage.ToString().Length, "", null, null, traceContext.AsTraceAttributes());
             return httpResponseMessage;
         }
 

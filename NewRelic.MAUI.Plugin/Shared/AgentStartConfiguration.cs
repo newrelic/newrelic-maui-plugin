@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Plugin.NRTest
+namespace NewRelic.MAUI.Plugin
 {
 	public enum LogLevel
 	{

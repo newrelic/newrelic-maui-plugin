@@ -4,7 +4,7 @@
  */
 
 using System;
-namespace Plugin.NRTest
+namespace NewRelic.MAUI.Plugin
 {
     public static class MauiExceptions
     {

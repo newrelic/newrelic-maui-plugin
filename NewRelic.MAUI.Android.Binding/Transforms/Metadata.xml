@@ -30,4 +30,11 @@ SPDX-License-Identifier: Apache-2.0 -->
 
   <remove-node path="/api/package[@name='com.newrelic.agent.android.analytics']/interface[@name='AnalyticsAttributeStore']/method[@name='fetchAll' and count(parameter)=0]" />
   <remove-node path="/api/package[@name='com.newrelic.com.google.gson.internal.bind']/class[@name='NumberTypeAdapter']" />
+  <remove-node path="/api/package[@name='com.newrelic.com.google.gson.internal.bind']/class[@name='DefaultDateTypeAdapter']" />
+  <remove-node path="/api/package[@name='com.newrelic.com.google.gson.internal']/class[@name='LinkedHashTreeMap']" />
+  <remove-node path="/api/package[@name='com.newrelic.com.google.gson']/class[@name='JsonArray']" />
+  <remove-node path="/api/package[@name='com.newrelic.com.google.gson']/class[@name='JsonPrimitive']" />
+  <remove-node path="/api/package[@name='com.newrelic.com.google.gson']/class[@name='JsonObject']" />
+  <remove-node path="/api/package[@name='com.newrelic.com.google.gson']/class[@name='JsonNull']" />
+
 </metadata>

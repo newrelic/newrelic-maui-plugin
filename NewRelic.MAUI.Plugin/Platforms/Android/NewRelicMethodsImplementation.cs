@@ -6,7 +6,7 @@
 using Android.Runtime;
 using NRAndroidAgent = Com.Newrelic.Agent.Android.NewRelic;
 
-namespace Plugin.NRTest;
+namespace NewRelic.MAUI.Plugin;
 
 // All the code in this file is only included on Android.
 public sealed class NewRelicMethodsImplementation : INewRelicMethods

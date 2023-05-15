@@ -5,9 +5,8 @@
 
 using System;
 using Java.Lang;
-using plugin.NRTest;
 
-namespace Plugin.NRTest
+namespace NewRelic.MAUI.Plugin
 {
 	internal class NewRelicMauiException : Java.Lang.Exception
     {
