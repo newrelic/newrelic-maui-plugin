@@ -10,10 +10,13 @@
 		<PackageId>NewRelic.MAUI.Plugin</PackageId>
 		<Version>0.0.1</Version>
 		<Summary>New Relic Plugin for .NET MAUI mobile apps</Summary>
-		<Description>With our .NET MAUI mobile plugin, your team can monitor the performance of .NET MAUI apps and identify code errors. Our plugin collects crash data, network traffic, and other information for your apps using native components.</Description>
+		<Description>With the New Relic .NET MAUI mobile plugin, your team can monitor the performance of .NET MAUI apps and identify code errors. The plugin collects crash data, network traffic, and other information for your apps using native components.</Description>
 		<Authors>New Relic</Authors>
 		<Copyright>Copyright 2023</Copyright>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageTags>newrelic;new relic;MAUI;mobile;monitoring;instrumentation;android;iOS</PackageTags>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<SynchReleaseVersion>false</SynchReleaseVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
@@ -34,7 +37,7 @@
 		<Compile Include="Platforms\iOS\**\*.cs" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
-		<PackageReference Include="NewRelic.MAUI.Android.Binding" Version="6.11.0" />
+		<PackageReference Include="NewRelic.MAUI.Android.Binding" Version="6.11.1" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
 		<PackageReference Include="NewRelic.MAUI.iOS.Binding" Version="7.4.4" />
