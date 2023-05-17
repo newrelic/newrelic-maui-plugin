@@ -5,8 +5,16 @@
 		<SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<PackageId>android.TestNR</PackageId>
-		<Version>0.0.1</Version>
+		<PackageId>NewRelic.MAUI.Android.Binding</PackageId>
+		<summary>New Relic Android SDK binding for .NET MAUI</summary>
+		<description>A .NET Android library that binds the native New Relic Android SDK. With New Relic, you can collect crashes, network traffic, and other information for .NET MAUI Android apps using native components.</description>
+		<copyright>Copyright 2023</copyright>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<Authors>New Relic</Authors>
+		<PackageTags>newrelic;MAUI;android;new relic;observability;monitoring;telemetry</PackageTags>
+		<Version>6.11.1</Version>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
 	<ItemGroup>
 		<TransformFile Include="Transforms\Metadata.xml" />
@@ -14,6 +22,9 @@
 		<TransformFile Include="Transforms\EnumMethods.xml" />
 	</ItemGroup>
 	<ItemGroup>
-		<EmbeddedJar Include="Jars\android-agent-6.10.1.jar" />
+	  <None Remove="Jars\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Jars\" />
 	</ItemGroup>
 </Project>

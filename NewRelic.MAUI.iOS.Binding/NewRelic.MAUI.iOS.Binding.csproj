@@ -1,12 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>net7.0-ios</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>true</ImplicitUsings>
-		<PackageId>iOS.TestNR</PackageId>
-		<Version>1.0.2</Version>
+		<PackageId>NewRelic.MAUI.iOS.Binding</PackageId>
+		<Authors>New Relic</Authors>
+		<Version>7.4.4</Version>
 		<IsBindingProject>true</IsBindingProject>
+		<summary>NewRelic iOS SDK binding for .NET MAUI</summary>
+		<description>A .NET iOS library that binds the native New Relic iOS SDK. With NewRelic, you can collect crashes, network traffic, and other information for .NET MAUI iOS apps using native components.</description>
+		<copyright>Copyright 2023</copyright>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<PackageTags>newrelic;MAUI;iOS;new relic;observability;monitoring;telemetry</PackageTags>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
 	<ItemGroup>
 		<ObjcBindingApiDefinition Include="ApiDefinition.cs" />

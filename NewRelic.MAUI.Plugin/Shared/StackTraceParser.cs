@@ -7,9 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
-using Plugin.NRTest;
+using NewRelic.MAUI.Plugin;
 
-namespace plugin.NRTest
+namespace NewRelic.MAUI.Plugin
 {
     internal static class StackTraceParser
     {

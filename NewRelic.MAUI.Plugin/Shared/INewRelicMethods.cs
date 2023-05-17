@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0 
  */
 
-namespace Plugin.NRTest
+namespace NewRelic.MAUI.Plugin
 {
 	public interface INewRelicMethods : IDisposable
     {

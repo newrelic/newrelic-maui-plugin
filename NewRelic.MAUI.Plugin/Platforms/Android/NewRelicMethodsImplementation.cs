@@ -6,7 +6,7 @@
 using Android.Runtime;
 using NRAndroidAgent = Com.Newrelic.Agent.Android.NewRelic;
 
-namespace Plugin.NRTest;
+namespace NewRelic.MAUI.Plugin;
 
 // All the code in this file is only included on Android.
 public sealed class NewRelicMethodsImplementation : INewRelicMethods
@@ -56,7 +56,7 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
         }
 
         var newRelic = NRAndroidAgent.WithApplicationToken(applicationToken)
-            .WithApplicationFramework(Com.Newrelic.Agent.Android.ApplicationFramework.Xamarin, "1.0.0")
+            .WithApplicationFramework(Com.Newrelic.Agent.Android.ApplicationFramework.Maui, "0.0.1")
             .WithLoggingEnabled(agentConfig.loggingEnabled)
             .WithLogLevel(logLevelDict[agentConfig.logLevel]);
 

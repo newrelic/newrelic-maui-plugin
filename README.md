@@ -21,7 +21,7 @@ This project targets .NET MAUI mobile apps and supports .NET MAUI [minimum suppo
 
 ## Installation
 
-Install NewRelic plugin into your MAUI project by adding as NuGet Package `Plugin.NRTest`.
+Install NewRelic plugin into your MAUI project by adding the NuGet Package `NewRelic.MAUI.Plugin`.
 
 Open your solution, select the project you want to add NewRelic package to and open its context menu. Unfold "Add" and click "Add NuGet packages...".
 
@@ -30,7 +30,7 @@ Open your solution, select the project you want to add NewRelic package to and o
 1. Open your `App.xaml.cs` and add the following code to launch NewRelic Plugin (don't forget to put proper application tokens):
 
 ```C#
-using Plugin.NRTest;
+using NewRelic.MAUI.Plugin;
 ...
     public App ()
     {
