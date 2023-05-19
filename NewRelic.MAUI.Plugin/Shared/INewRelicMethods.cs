@@ -64,6 +64,8 @@ namespace NewRelic.MAUI.Plugin
 
         void HandleUncaughtException(bool shouldThrowFormattedException = true);
 
+        void TrackShellNavigatedEvents();
+
     }
 }
 

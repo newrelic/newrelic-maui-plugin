@@ -31,7 +31,7 @@ public class NewRelicMethodsImplementation : INewRelicMethods
 
         NRIosAgent.EnableCrashReporting(agentConfig.crashReportingEnabled);
         NRIosAgent.SetPlatform(iOS.NewRelic.NRMAApplicationPlatform.Xamarin);
-        iOS.NewRelic.NewRelic.SetPlatformVersion("dev");
+        iOS.NewRelic.NewRelic.SetPlatformVersion("0.0.1");
 
         iOS.NewRelic.NRLogger.SetLogLevels((uint)logLevelDict[agentConfig.logLevel]);
         if (!agentConfig.loggingEnabled)
@@ -264,6 +264,21 @@ public class NewRelicMethodsImplementation : INewRelicMethods
             };
         }
 
+    }
+
+    public void TrackShellNavigatedEvents()
+    {
+        Shell.Current.Navigated += (sender, e) =>
+        {
+            Dictionary<string, object> attr = new Dictionary<string, object>();
+            if (e.Previous != null)
+            {
+                attr.Add("Previous", e.Previous.Location.ToString());
+            }
+            attr.Add("Current", e.Current.Location.ToString());
+            attr.Add("Source", e.Source.ToString());
+            this.RecordBreadcrumb("ShellNavigated", attr);
+        };
     }
 
     public void Dispose()
