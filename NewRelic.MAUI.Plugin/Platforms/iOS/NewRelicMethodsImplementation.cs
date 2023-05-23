@@ -13,6 +13,7 @@ namespace NewRelic.MAUI.Plugin;
 public class NewRelicMethodsImplementation : INewRelicMethods
 {
     private bool _isUncaughtExceptionHandled;
+
     private Dictionary<LogLevel, iOS.NewRelic.NRLogLevels> logLevelDict = new Dictionary<LogLevel, iOS.NewRelic.NRLogLevels>()
     {
         { LogLevel.ERROR, iOS.NewRelic.NRLogLevels.Error },
@@ -20,6 +21,26 @@ public class NewRelicMethodsImplementation : INewRelicMethods
         { LogLevel.INFO, iOS.NewRelic.NRLogLevels.Info },
         { LogLevel.VERBOSE, iOS.NewRelic.NRLogLevels.Verbose },
         { LogLevel.AUDIT, iOS.NewRelic.NRLogLevels.Audit }
+    };
+
+    private Dictionary<NetworkFailure, nint> networkFailureDict = new Dictionary<NetworkFailure, nint>()
+    {
+        { NetworkFailure.Unknown, (nint) iOS.NewRelic.NRNetworkFailureCode.Unknown },
+        { NetworkFailure.BadURL, (nint) iOS.NewRelic.NRNetworkFailureCode.BadURL },
+        { NetworkFailure.TimedOut, (nint) iOS.NewRelic.NRNetworkFailureCode.TimedOut },
+        { NetworkFailure.CannotConnectToHost, (nint) iOS.NewRelic.NRNetworkFailureCode.CannotConnectToHost },
+        { NetworkFailure.DNSLookupFailed, (nint) iOS.NewRelic.NRNetworkFailureCode.DNSLookupFailed },
+        { NetworkFailure.BadServerResponse, (nint) iOS.NewRelic.NRNetworkFailureCode.BadServerResponse },
+        { NetworkFailure.SecureConnectionFailed, (nint) iOS.NewRelic.NRNetworkFailureCode.SecureConnectionFailed }
+    };
+
+    private Dictionary<MetricUnit, string> metricUnitDict = new Dictionary<MetricUnit, string>()
+    {
+        { MetricUnit.PERCENT, "%" },
+        { MetricUnit.BYTES, "bytes" },
+        { MetricUnit.SECONDS, "sec" },
+        { MetricUnit.BYTES_PER_SECOND, "bytes/second" },
+        { MetricUnit.OPERATIONS, "op" }
     };
 
     public void Start(string applicationToken, AgentStartConfiguration agentConfig = null)
@@ -108,6 +129,12 @@ public class NewRelicMethodsImplementation : INewRelicMethods
         return;
     }
 
+    public void NoticeNetworkFailure(string url, string httpMethod, long startTime, long endTime, NetworkFailure failure)
+    {
+        NRIosAgent.NoticeNetworkFailureForURL(NSUrl.FromString(url), httpMethod, (double) startTime, (double) endTime, networkFailureDict[failure]);
+        return;
+    }
+
     public bool RecordCustomEvent(string eventType, string eventName, Dictionary<string, object> attributes)
     {
         Foundation.NSMutableDictionary NSDict = new Foundation.NSMutableDictionary();
@@ -130,11 +157,11 @@ public class NewRelicMethodsImplementation : INewRelicMethods
         return;
     }
 
-    //public void RecordMetric(string name, string category, double value, NewRelicXamarin.MetricUnit countUnit, NewRelicXamarin.MetricUnit valueUnit)
-    //{
-    //    //NRIosAgent.RecordMetricWithName(name, category, value, metricUnitsDict[valueUnit], metricUnitsDict[countUnit]);
-    //    //return;
-    //}
+    public void RecordMetric(string name, string category, double value, MetricUnit countUnit, MetricUnit valueUnit)
+    {
+        NRIosAgent.RecordMetricWithName(name, category, Foundation.NSNumber.FromDouble(value), metricUnitDict[valueUnit], metricUnitDict[countUnit]);
+        return;
+    }
 
     public bool RemoveAllAttributes()
     {
@@ -249,6 +276,11 @@ public class NewRelicMethodsImplementation : INewRelicMethods
         NRIosAgent.RecordHandledExceptionWithStackTrace(NSDict);
     }
 
+    public HttpMessageHandler GetHttpMessageHandler()
+    {
+        return new HttpClientHandler();
+    }
+
     public void HandleUncaughtException(bool shouldThrowFormattedException = true)
     {
         if (!_isUncaughtExceptionHandled)
@@ -281,14 +313,15 @@ public class NewRelicMethodsImplementation : INewRelicMethods
         };
     }
 
+    public void Shutdown()
+    {
+        NRIosAgent.Shutdown();
+        return;
+    }
+
     public void Dispose()
     {
         throw new NotImplementedException();
-    }
-
-    public HttpMessageHandler GetHttpMessageHandler()
-    {
-        return new HttpClientHandler();
     }
 }
 

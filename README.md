@@ -158,9 +158,23 @@ or [Android SDK](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobi
     );
 ```
 
+### [NoticeNetworkFailure](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api/notice-network-failure/)(string url, string httpMethod, int statusCode, long startTime,long endTime, long bytesSent, long bytesReceived, string responseBody): void;
+
+> Records network failures. If a network request fails, use this method to record details about the failure.
+
+``` C#
+    CrossNewRelic.Current.NoticeNetworkFailure(
+      "https://fakewebsite.com",
+      "GET",
+      DateTimeOffset.Now.ToUnixTimeMilliseconds(),
+      DateTimeOffset.Now.ToUnixTimeMilliseconds() + 100,
+      NetworkFailure.Unknown
+    );
+```
+
 ### [RecordBreadcrumb](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api/recordbreadcrumb)(string name, Dictionary<string, object> attributes): bool;
 
-> Track app activity/screen that may be helpful for troubleshooting crashes.
+> This call creates and records a MobileBreadcrumb event, which can be queried with NRQL and in the crash event trail.
 
 ``` C#
     CrossNewRelic.Current.RecordBreadcrumb("MAUIExampleBreadcrumb", new Dictionary<string, object>()
@@ -277,7 +291,7 @@ or [Android SDK](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobi
 
 ### AnalyticsEventEnabled(bool enabled) : void
 
-> FOR ANDROID ONLY. Enabled or disable collection of event data
+> FOR ANDROID ONLY. Enable or disable collection of event data.
 
 ``` C#
     CrossNewRelic.Current.AnalyticsEventEnabled(true);
@@ -301,12 +315,18 @@ or [Android SDK](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobi
 
 ### HttpResponseBodyCaptureEnabled(bool enabled) : void
 
-> Enable or disable capture of HTTP response bodies for HTTP error traces, and MobileRequestError events
+> Enable or disable capture of HTTP response bodies for HTTP error traces, and MobileRequestError events.
 
 ``` C#
     CrossNewRelic.Current.HttpResponseBodyCaptureEnabled(true);
 ```
 
+### Shutdown() : void
+
+> Shut down the agent within the current application lifecycle during runtime.
+``` C#
+    CrossNewRelic.Current.Shutdown());
+```
 
 ## Error reporting
 
