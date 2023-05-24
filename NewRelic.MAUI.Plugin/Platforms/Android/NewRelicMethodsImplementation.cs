@@ -5,6 +5,8 @@
 
 using Android.Runtime;
 using NRAndroidAgent = Com.Newrelic.Agent.Android.NewRelic;
+using NRNetworkFailure = Com.Newrelic.Agent.Android.Util.NetworkFailure;
+using NRMetricUnit = Com.Newrelic.Agent.Android.Metric.MetricUnit;
 
 namespace NewRelic.MAUI.Plugin;
 
@@ -12,8 +14,8 @@ namespace NewRelic.MAUI.Plugin;
 public sealed class NewRelicMethodsImplementation : INewRelicMethods
 {
     private bool isStarted;
-    private EventHandler<RaiseThrowableEventArgs>? _handler;
     private bool _isUncaughtExceptionHandled;
+
     private Dictionary<LogLevel, int> logLevelDict = new Dictionary<LogLevel, int>()
     {
         { LogLevel.ERROR, 1},
@@ -21,6 +23,26 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
         { LogLevel.INFO, 3 },
         { LogLevel.VERBOSE, 4 },
         { LogLevel.AUDIT, 6 }
+    };
+
+    private Dictionary<NetworkFailure, NRNetworkFailure> networkFailureDict = new Dictionary<NetworkFailure, NRNetworkFailure>()
+    {
+        { NetworkFailure.Unknown, NRNetworkFailure.Unknown },
+        { NetworkFailure.BadURL, NRNetworkFailure.BadURL },
+        { NetworkFailure.TimedOut, NRNetworkFailure.TimedOut },
+        { NetworkFailure.CannotConnectToHost, NRNetworkFailure.CannotConnectToHost },
+        { NetworkFailure.DNSLookupFailed, NRNetworkFailure.DNSLookupFailed },
+        { NetworkFailure.BadServerResponse, NRNetworkFailure.BadServerResponse },
+        { NetworkFailure.SecureConnectionFailed, NRNetworkFailure.SecureConnectionFailed }
+    };
+
+    private Dictionary<MetricUnit, NRMetricUnit> metricUnitDict = new Dictionary<MetricUnit, NRMetricUnit>()
+    {
+        { MetricUnit.PERCENT, NRMetricUnit.Percent },
+        { MetricUnit.BYTES, NRMetricUnit.Bytes },
+        { MetricUnit.SECONDS, NRMetricUnit.Seconds },
+        { MetricUnit.BYTES_PER_SECOND, NRMetricUnit.BytesPerSecond },
+        { MetricUnit.OPERATIONS, NRMetricUnit.Operations }
     };
 
     private bool IsNumeric(Object obj)
@@ -130,12 +152,17 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
         return;
     }
 
+    public void NoticeNetworkFailure(string url, string httpMethod, long startTime, long endTime, NetworkFailure failure)
+    {
+        NRAndroidAgent.NoticeNetworkFailure(url, httpMethod, startTime, endTime, networkFailureDict[failure]);
+        return;
+    }
+
     public bool RecordCustomEvent(string eventType, string eventName, Dictionary<string, object> attributes)
     {
         Dictionary<string, Java.Lang.Object> strToJavaObject = new Dictionary<string, Java.Lang.Object>();
         foreach (KeyValuePair<string, object> entry in attributes)
         {
-            //strToJavaObject.Add(entry.Key, ObjectConverter.ToJavaObject<object>(entry.Value));
             if (entry.Value is bool)
             {
                 strToJavaObject.Add(entry.Key, (bool)entry.Value);
@@ -161,6 +188,12 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
     public void RecordMetric(string name, string category, double value)
     {
         NRAndroidAgent.RecordMetric(name, category, value);
+        return;
+    }
+
+    public void RecordMetric(string name, string category, double value, MetricUnit countUnit, MetricUnit valueUnit)
+    {
+        NRAndroidAgent.RecordMetric(name, category, 0, value, 0, metricUnitDict[countUnit], metricUnitDict[valueUnit]);
         return;
     }
 
@@ -280,7 +313,6 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
 
     public void RecordException(Exception exception)
     {
-        var ex = NewRelicMauiException.Create(exception);
         NRAndroidAgent.RecordHandledException(NewRelicMauiException.Create(exception));
     }
 
@@ -316,6 +348,11 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
         };
     }
 
+    public void Shutdown()
+    {
+        NRAndroidAgent.Shutdown();
+        return;
+    }
 
     public void Dispose()
     {

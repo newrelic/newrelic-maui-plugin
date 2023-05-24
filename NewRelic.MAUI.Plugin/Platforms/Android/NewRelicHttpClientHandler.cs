@@ -13,7 +13,7 @@ using NRAndroidAgent = Com.Newrelic.Agent.Android.NewRelic;
 
 namespace NewRelic.MAUI.Plugin
 {
-    public class NewRelicHttpClientHandler : HttpClientHandler
+    internal class NewRelicHttpClientHandler : HttpClientHandler
     {
         private string TRACE_PARENT = "traceparent";
         private string TRACE_STATE = "tracestate";
