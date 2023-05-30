@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewRelic.MAUI.Android.Bindi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewRelic.MAUI.iOS.Binding", "NewRelic.MAUI.iOS.Binding\NewRelic.MAUI.iOS.Binding.csproj", "{C9974FDF-099E-4FC5-B702-EB29C98EFE84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewRelic.MAUI.Plugin.Tests", "NewRelic.MAUI.Plugin.Tests\NewRelic.MAUI.Plugin.Tests.csproj", "{91C585A7-F7FA-42BA-979F-3E52EA06FF0C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C9974FDF-099E-4FC5-B702-EB29C98EFE84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9974FDF-099E-4FC5-B702-EB29C98EFE84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9974FDF-099E-4FC5-B702-EB29C98EFE84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91C585A7-F7FA-42BA-979F-3E52EA06FF0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91C585A7-F7FA-42BA-979F-3E52EA06FF0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91C585A7-F7FA-42BA-979F-3E52EA06FF0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91C585A7-F7FA-42BA-979F-3E52EA06FF0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
