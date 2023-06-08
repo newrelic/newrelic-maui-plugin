@@ -40,6 +40,6 @@
 		<PackageReference Include="NewRelic.MAUI.Android.Binding" Version="6.11.1" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
-		<PackageReference Include="NewRelic.MAUI.iOS.Binding" Version="7.4.4" />
+		<PackageReference Include="NewRelic.MAUI.iOS.Binding" Version="7.4.5" />
 	</ItemGroup>
 </Project>

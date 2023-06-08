@@ -51,7 +51,7 @@ public class NewRelicMethodsImplementation : INewRelicMethods
         }
 
         NRIosAgent.EnableCrashReporting(agentConfig.crashReportingEnabled);
-        NRIosAgent.SetPlatform(iOS.NewRelic.NRMAApplicationPlatform.Xamarin);
+        NRIosAgent.SetPlatform(iOS.NewRelic.NRMAApplicationPlatform.MAUI);
         iOS.NewRelic.NewRelic.SetPlatformVersion("0.0.1");
 
         iOS.NewRelic.NRLogger.SetLogLevels((uint)logLevelDict[agentConfig.logLevel]);
@@ -119,11 +119,11 @@ public class NewRelicMethodsImplementation : INewRelicMethods
             httpMethod,
             startTime,
             endTime,
-            null,
+            new NSDictionary(),
             statusCode,
             (nuint)bytesSent,
             (nuint)bytesReceived,
-            null,
+            new NSData(),
             null,
             null);
         return;
