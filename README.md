@@ -1,4 +1,7 @@
 [![Community Plus header](https://github.com/newrelic/opensource-website/raw/main/src/images/categories/Community_Plus.png)](https://opensource.newrelic.com/oss-category/#community-plus)
+
+[![nuget](https://img.shields.io/nuget/v/NewRelic.MAUI.Plugin)](https://www.nuget.org/packages/NewRelic.MAUI.Plugin)
+
 # New Relic MAUI Plugin
 
 This plugin allows you to instrument .NET MAUI mobile apps with help of native New Relic Android and iOS Bindings. The New Relic SDKs collect crashes, network traffic, and other information for hybrid apps using native components.
