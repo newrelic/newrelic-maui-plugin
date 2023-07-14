@@ -52,7 +52,7 @@ public class NewRelicMethodsImplementation : INewRelicMethods
 
         NRIosAgent.EnableCrashReporting(agentConfig.crashReportingEnabled);
         NRIosAgent.SetPlatform(iOS.NewRelic.NRMAApplicationPlatform.MAUI);
-        iOS.NewRelic.NewRelic.SetPlatformVersion("0.0.1");
+        iOS.NewRelic.NewRelic.SetPlatformVersion("0.0.2");
 
         iOS.NewRelic.NRLogger.SetLogLevels((uint)logLevelDict[agentConfig.logLevel]);
         if (!agentConfig.loggingEnabled)
