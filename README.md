@@ -388,4 +388,10 @@ If you would like to contribute to this project, review [these guidelines](./CON
 To all contributors, we thank you!  Without your contribution, this project would not be what it is today.
 
 ## License
-`newrelic-maui-plugin` is licensed under the [Apache 2.0](http://apache.org/licenses/LICENSE-2.0.txt) License.
+Except as described below, the `newrelic-maui-plugin` is licensed under the [Apache 2.0](http://apache.org/licenses/LICENSE-2.0.txt) License.
+
+The [New Relic XCFramework agent] (/docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-ios/get-started/introduction-new-relic-mobile-ios/) is licensed under the [New Relic Agent Software Notice] (/docs.newrelic.com/docs/licenses/license-information/distributed-licenses/new-relic-agent-software-notice/).
+
+The [New Relic Android agent] (github.com/newrelic/newrelic-android-agent) is licensed under the [Apache 2.0](http://apache.org/licenses/LICENSE-2.0.txt).
+
+The `newrelic-maui-plugin` may use source code from third-party libraries. When used, these libraries will be outlined in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
