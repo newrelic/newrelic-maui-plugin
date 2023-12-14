@@ -6,11 +6,11 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		29SrXQAqZjhEMoBMV2nawWirPW0=
+		cZA8FgamOEsCtzhTnUeLfa/qK1w=
 		</data>
 		<key>Resources/PrivacyInfo.xcprivacy</key>
 		<data>
-		6M7Mu+yL6nMSf5p9x2QSZVW3+6M=
+		pqHC5KSLnBNg5Hk9usF5y1/9bk8=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -26,7 +26,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cLXdpfH3Zkg8KrqflptS8Po+BAgvmT3KdATRrLVinaA=
+			7lHKdd1UkzZwM4APhrhqUss2RgoiqDWJzxQRjFHWPR4=
 			</data>
 		</dict>
 		<key>Headers/NRCustomMetrics.h</key>
@@ -47,7 +47,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TAS4Isjvlv2YvSmlmMqCosIOnnh68O3/KJeV87VLSHQ=
+			4vxK5kp/+eEFzpuyQQSWSRV6ZHq6KXfN9dyJcEyN194=
 			</data>
 		</dict>
 		<key>Headers/NRTimer.h</key>
@@ -82,7 +82,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+oiDSw7IZrbt2zhJtBsi7DlRitaGQyZiSi3jxMo21Ko=
+			o0Vso8HyJMapqR78j1fDy4rbEDnEHnitotmkFmEhz0Y=
 			</data>
 		</dict>
 		<key>Headers/NewRelicCustomInteractionInterface.h</key>
@@ -96,7 +96,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6G2lMD1sW9sFGh4i84W2juSqPRBnX5KOhfhFivRGIdI=
+			Cbddrhy/osCrMMX/eUg5Xn57XtgnYmPzP20VRJnLoLw=
 			</data>
 		</dict>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios-macabi.abi.json</key>
@@ -180,14 +180,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FxMBNTd9aE1JB0TChdBPrWmP1jtHGNbxvUMUNqwGR7Y=
+			UTz05UFMC9PhqJj8SAkAD3UpfxVH7xydnzxF7xdAXqQ=
 			</data>
 		</dict>
 		<key>Resources/PrivacyInfo.xcprivacy</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			unt9aMMHN/J92AEq3bRMOF/LbDOmtA8awQeWUlwYKmQ=
+			/3CJtqx2AwDuMUV9sZ/9olcPTWkxGYQZU1sf0NWT3bs=
 			</data>
 		</dict>
 	</dict>

@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/NRConstants.h</key>
 		<data>
-		3BzMLwEmvo0ACmQBnECKuRicn+4=
+		/AQqyRrBebxcNzcpHZ1wPyBS26Q=
 		</data>
 		<key>Headers/NRCustomMetrics.h</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Headers/NRLogger.h</key>
 		<data>
-		H4CnG51VqIvnJXvfTeyTQUXUfKE=
+		FLREDjIopvxoVJ5QV3SYj9gHJvg=
 		</data>
 		<key>Headers/NRTimer.h</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Headers/NewRelic.h</key>
 		<data>
-		jum64YYatvZbecsQfvW30LNrSYs=
+		HvCp6C+5iDy7SCcIShcZJbhotvU=
 		</data>
 		<key>Headers/NewRelicCustomInteractionInterface.h</key>
 		<data>
@@ -50,11 +50,11 @@
 		</data>
 		<key>Headers/NewRelicFeatureFlags.h</key>
 		<data>
-		lZOHZJ2jm2OweCUf5g2XJEcjHYo=
+		1y+9teA5OTtDDFpm4j0Jbzam3Z0=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Q+CEumywjMcfvgj5SxL0r6ZmQn4=
+		gpcSPWfFB0KzDki94JAi9OSZlJg=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-tvos.abi.json</key>
 		<data>
@@ -98,11 +98,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3BzMLwEmvo0ACmQBnECKuRicn+4=
+			/AQqyRrBebxcNzcpHZ1wPyBS26Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			cLXdpfH3Zkg8KrqflptS8Po+BAgvmT3KdATRrLVinaA=
+			7lHKdd1UkzZwM4APhrhqUss2RgoiqDWJzxQRjFHWPR4=
 			</data>
 		</dict>
 		<key>Headers/NRCustomMetrics.h</key>
@@ -131,11 +131,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			H4CnG51VqIvnJXvfTeyTQUXUfKE=
+			FLREDjIopvxoVJ5QV3SYj9gHJvg=
 			</data>
 			<key>hash2</key>
 			<data>
-			TAS4Isjvlv2YvSmlmMqCosIOnnh68O3/KJeV87VLSHQ=
+			4vxK5kp/+eEFzpuyQQSWSRV6ZHq6KXfN9dyJcEyN194=
 			</data>
 		</dict>
 		<key>Headers/NRTimer.h</key>
@@ -186,11 +186,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			jum64YYatvZbecsQfvW30LNrSYs=
+			HvCp6C+5iDy7SCcIShcZJbhotvU=
 			</data>
 			<key>hash2</key>
 			<data>
-			+oiDSw7IZrbt2zhJtBsi7DlRitaGQyZiSi3jxMo21Ko=
+			o0Vso8HyJMapqR78j1fDy4rbEDnEHnitotmkFmEhz0Y=
 			</data>
 		</dict>
 		<key>Headers/NewRelicCustomInteractionInterface.h</key>
@@ -208,11 +208,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lZOHZJ2jm2OweCUf5g2XJEcjHYo=
+			1y+9teA5OTtDDFpm4j0Jbzam3Z0=
 			</data>
 			<key>hash2</key>
 			<data>
-			6G2lMD1sW9sFGh4i84W2juSqPRBnX5KOhfhFivRGIdI=
+			Cbddrhy/osCrMMX/eUg5Xn57XtgnYmPzP20VRJnLoLw=
 			</data>
 		</dict>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-tvos.abi.json</key>
