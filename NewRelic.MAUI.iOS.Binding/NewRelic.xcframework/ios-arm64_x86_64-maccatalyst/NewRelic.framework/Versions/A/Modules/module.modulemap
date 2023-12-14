@@ -6,3 +6,7 @@ framework module NewRelic {
     module * { export * }
 }
 
+module NewRelic.Swift {
+  header "NewRelic-Swift.h"
+  requires objc
+}

@@ -14,7 +14,7 @@
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<Authors>New Relic</Authors>
 		<PackageTags>newrelic;MAUI;android;new relic;observability;monitoring;telemetry</PackageTags>
-		<Version>7.1.0</Version>
+		<Version>7.2.0</Version>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
 	<ItemGroup>

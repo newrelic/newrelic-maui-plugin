@@ -10,6 +10,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using Com.Newrelic.Agent.Android.Distributedtracing;
 using NRAndroidAgent = Com.Newrelic.Agent.Android.NewRelic;
+using HeaderList = Com.Newrelic.Agent.Android.HttpHeaders;
+
 
 namespace NewRelic.MAUI.Plugin
 {
@@ -24,6 +26,23 @@ namespace NewRelic.MAUI.Plugin
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
+            Dictionary<string, string> Headers_Params =
+                            new Dictionary<string, string>();
+
+            List<string> headersList = HeaderList.Instance.GetHttpHeaders().ToList();
+
+            foreach (string h in headersList)
+            {
+                if (request.Headers.Contains(h))
+                {
+                    if (request.Headers.TryGetValues(h, out IEnumerable<string> values))
+                    {
+                        Headers_Params.Add(h, values.First());
+                    }
+
+                }
+            }
+
             var startTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
             HttpResponseMessage httpResponseMessage;
             TraceContext traceContext = NRAndroidAgent.NoticeDistributedTrace(null);
@@ -32,7 +51,7 @@ namespace NewRelic.MAUI.Plugin
             request.Headers.Add(TRACE_STATE, traceContext.Vendor + "=0-2-" + traceContext.AccountId + "-" + traceContext.ApplicationId + "-" + traceContext.ParentId + "----" + DateTimeOffset.Now.ToUnixTimeMilliseconds());
             httpResponseMessage = await base.SendAsync(request, cancellationToken);
             var endTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
-            NRAndroidAgent.NoticeHttpTransaction(request.RequestUri.ToString(), request.Method.ToString(), ((int)httpResponseMessage.StatusCode), startTime, endTime, 0, httpResponseMessage.ToString().Length, "", null, null, traceContext.AsTraceAttributes());
+            NRAndroidAgent.NoticeHttpTransaction(request.RequestUri.ToString(), request.Method.ToString(), ((int)httpResponseMessage.StatusCode), startTime, endTime, 0, httpResponseMessage.ToString().Length, "", Headers_Params, null, traceContext.AsTraceAttributes());
             return httpResponseMessage;
         }
 
