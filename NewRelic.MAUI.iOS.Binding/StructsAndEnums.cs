@@ -27,7 +27,9 @@ namespace iOS.NewRelic
         DistributedTracing = 1uL << 14,
         GestureInstrumentation = 1uL << 15,
         AppStartMetrics = 1uL << 16,
-        FedRampEnabled = 1uL << 17
+        FedRampEnabled = 1uL << 17,
+        SwiftAsyncURLSessionSupport = 1uL << 18,
+        NewEventSystem = 1uL << 20
     }
 
     [Native]

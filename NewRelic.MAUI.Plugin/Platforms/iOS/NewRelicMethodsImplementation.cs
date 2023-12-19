@@ -52,7 +52,7 @@ public class NewRelicMethodsImplementation : INewRelicMethods
 
         NRIosAgent.EnableCrashReporting(agentConfig.crashReportingEnabled);
         NRIosAgent.SetPlatform(iOS.NewRelic.NRMAApplicationPlatform.MAUI);
-        iOS.NewRelic.NewRelic.SetPlatformVersion("0.0.2");
+        iOS.NewRelic.NewRelic.SetPlatformVersion("0.0.4");
 
         iOS.NewRelic.NRLogger.SetLogLevels((uint)logLevelDict[agentConfig.logLevel]);
         if (!agentConfig.loggingEnabled)
@@ -317,6 +317,16 @@ public class NewRelicMethodsImplementation : INewRelicMethods
     {
         NRIosAgent.Shutdown();
         return;
+    }
+
+    public void AddHTTPHeadersTrackingFor(List<string> headers)
+    {
+        NRIosAgent.AddHTTPHeaderTrackingFor(headers.ToArray());
+    }
+
+    public List<string> GetHTTPHeadersTrackingFor()
+    {
+        throw new NotImplementedException();
     }
 
     public void Dispose()

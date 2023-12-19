@@ -257,6 +257,10 @@ namespace NewRelic.MAUI.Plugin
         /// </summary>
         void Shutdown();
 
+        void AddHTTPHeadersTrackingFor(List<String> headers);
+
+        List<String> GetHTTPHeadersTrackingFor();
+
     }
 }
 

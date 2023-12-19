@@ -78,7 +78,7 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
         }
 
         var newRelic = NRAndroidAgent.WithApplicationToken(applicationToken)
-            .WithApplicationFramework(Com.Newrelic.Agent.Android.ApplicationFramework.Maui, "0.0.2")
+            .WithApplicationFramework(Com.Newrelic.Agent.Android.ApplicationFramework.Maui, "0.0.4")
             .WithLoggingEnabled(agentConfig.loggingEnabled)
             .WithLogLevel(logLevelDict[agentConfig.logLevel]);
 
@@ -355,9 +355,21 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
         return;
     }
 
+    
+
     public void Dispose()
     {
         throw new NotImplementedException();
+    }
+
+    public void AddHTTPHeadersTrackingFor(List<string> headers)
+    {
+        NRAndroidAgent.AddHTTPHeadersTrackingFor(headers);
+    }
+
+    public List<string> GetHTTPHeadersTrackingFor()
+    {
+        return Com.Newrelic.Agent.Android.HttpHeaders.Instance.GetHttpHeaders().ToList();
     }
 }
 

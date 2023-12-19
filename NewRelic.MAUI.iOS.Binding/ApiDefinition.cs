@@ -420,6 +420,51 @@ namespace iOS.NewRelic
         [Static]
         [Export("shutdown")]
         void Shutdown();
+
+        // +(void)setLogIngestKey:(NSString *)key;
+        [Static]
+        [Export("setLogIngestKey:")]
+        void SetLogIngestKey(string key);
+
+        // +(void)setLogURL:(NSString *)url;
+        [Static]
+        [Export("setLogURL:")]
+        void SetLogURL(string url);
+
+        // +(void)upload;
+        [Static]
+        [Export("upload")]
+        void Upload();
+
+        // +(void)logInfo:(NSString * _Nonnull)message;
+        [Static]
+        [Export("logInfo:")]
+        void LogInfo(string message);
+
+        // +(void)logError:(NSString * _Nonnull)message;
+        [Static]
+        [Export("logError:")]
+        void LogError(string message);
+
+        // +(void)logVerbose:(NSString * _Nonnull)message;
+        [Static]
+        [Export("logVerbose:")]
+        void LogVerbose(string message);
+
+        // +(void)logWarning:(NSString * _Nonnull)message;
+        [Static]
+        [Export("logWarning:")]
+        void LogWarning(string message);
+
+        // +(void)logAudit:(NSString * _Nonnull)message;
+        [Static]
+        [Export("logAudit:")]
+        void LogAudit(string message);
+
+        // +(void)addHTTPHeaderTrackingFor:(NSArray<NSString *> * _Nonnull)headers;
+        [Static]
+        [Export("addHTTPHeaderTrackingFor:")]
+        void AddHTTPHeaderTrackingFor(string[] headers);
     }
 
     // @interface NewRelicAgent : NewRelic
