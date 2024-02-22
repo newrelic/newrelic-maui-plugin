@@ -52,13 +52,39 @@ public class NewRelicMethodsImplementation : INewRelicMethods
 
         NRIosAgent.EnableCrashReporting(agentConfig.crashReportingEnabled);
         NRIosAgent.SetPlatform(iOS.NewRelic.NRMAApplicationPlatform.MAUI);
-        iOS.NewRelic.NewRelic.SetPlatformVersion("0.0.4");
+        iOS.NewRelic.NewRelic.SetPlatformVersion("0.0.5");
 
         iOS.NewRelic.NRLogger.SetLogLevels((uint)logLevelDict[agentConfig.logLevel]);
         if (!agentConfig.loggingEnabled)
         {
             iOS.NewRelic.NRLogger.SetLogLevels((uint)iOS.NewRelic.NRLogLevels.None);
         }
+
+        if (!agentConfig.networkErrorRequestEnabled)
+        {
+            NRIosAgent.DisableFeatures(iOS.NewRelic.NRMAFeatureFlags.RequestErrorEvents);
+        }
+
+        if (!agentConfig.networkRequestEnabled)
+        {
+            NRIosAgent.DisableFeatures(iOS.NewRelic.NRMAFeatureFlags.NetworkRequestEvents);
+        }
+
+        if (!agentConfig.interactionTracingEnabled)
+        {
+            NRIosAgent.DisableFeatures(iOS.NewRelic.NRMAFeatureFlags.InteractionTracing);
+        }
+
+        if (!agentConfig.webViewInstrumentation)
+        {
+            NRIosAgent.DisableFeatures(iOS.NewRelic.NRMAFeatureFlags.WebViewInstrumentation);
+        }
+
+        if (agentConfig.fedRampEnabled)
+        {
+            NRIosAgent.EnableFeatures(iOS.NewRelic.NRMAFeatureFlags.FedRampEnabled);
+        }
+
 
         if (agentConfig.collectorAddress.Equals("DEFAULT") && agentConfig.crashCollectorAddress.Equals("DEFAULT"))
         {

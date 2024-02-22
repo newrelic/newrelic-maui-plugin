@@ -45,8 +45,9 @@ using NewRelic.MAUI.Plugin;
       CrossNewRelic.Current.TrackShellNavigatedEvents();
 
       // Set optional agent configuration
-      // Options are: crashReportingEnabled, loggingEnabled, logLevel, collectorAddress, crashCollectorAddress
-      // AgentStartConfiguration agentConfig = new AgentStartConfiguration(true, true, LogLevel.INFO, "mobile-collector.newrelic.com", "mobile-crash.newrelic.com");
+      // Options are: crashReportingEnabled, loggingEnabled, logLevel, collectorAddress, crashCollectorAddress,analyticsEventEnabled, networkErrorRequestEnabled, networkRequestEnabled, interactionTracingEnabled,webViewInstrumentation, fedRampEnabled
+      // AgentStartConfiguration agentConfig = new AgentStartConfiguration(crashReportingEnabled:false);
+
 
       if (DeviceInfo.Current.Platform == DevicePlatform.Android) 
       {

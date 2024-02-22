@@ -1,0 +1,33 @@
+{
+    "configurations": [
+        {
+            "name": "armv7",
+            "includePath": [
+                "/Users/ndesai/kepler/kepler-sdk/0.2.6557.0/kndk/platforms/0.2/armv7/usr/include/**",
+                "/Users/ndesai/kepler/kepler-sdk/0.2.6557.0/component-sdks/VegaUIReact/armv7/include/**",
+                "/Users/ndesai/Maui/newrelic-maui-plugin/**"
+            ],
+            "configurationProvider": "ms-vscode.cmake-tools",
+            "macFrameworkPath": [
+                "/System/Library/Frameworks",
+                "/Library/Frameworks"
+            ],
+            "intelliSenseMode": "macos-clang-x64"
+        },
+        {
+            "name": "x86_64",
+            "includePath": [
+                "/Users/ndesai/kepler/kepler-sdk/0.2.6557.0/kndk/platforms/0.2/x86_64/usr/include/**",
+                "/Users/ndesai/kepler/kepler-sdk/0.2.6557.0/component-sdks/VegaUIReact/x86_64/include/**",
+                "/Users/ndesai/Maui/newrelic-maui-plugin/**"
+            ],
+            "configurationProvider": "ms-vscode.cmake-tools",
+            "macFrameworkPath": [
+                "/System/Library/Frameworks",
+                "/Library/Frameworks"
+            ],
+            "intelliSenseMode": "macos-clang-x64"
+        }
+    ],
+    "version": 4
+}
