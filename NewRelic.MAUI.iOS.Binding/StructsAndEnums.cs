@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2023-present New Relic Corporation. All rights reserved.
- * SPDX-License-Identifier: Apache-2.0 
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 using System;
@@ -29,9 +29,9 @@ namespace iOS.NewRelic
         AppStartMetrics = 1uL << 16,
         FedRampEnabled = 1uL << 17,
         SwiftAsyncURLSessionSupport = 1uL << 18,
-        NewEventSystem = 1uL << 20
+        NewEventSystem = 1uL << 20,
+        OfflineStorage = 1uL << 21
     }
-
     [Native]
     public enum NRMAApplicationPlatform : ulong
     {
@@ -44,7 +44,8 @@ namespace iOS.NewRelic
         ReactNative,
         Flutter,
         Capacitor,
-        MAUI
+        Maui,
+        Unreal
     }
 
     public enum NRTraceType : uint

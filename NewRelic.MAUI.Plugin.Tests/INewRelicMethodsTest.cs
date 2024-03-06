@@ -23,6 +23,9 @@ public class INewRelicMethodsTest
         CrossNewRelic.Current.Start("<app-token>");
         AgentStartConfiguration asc = new AgentStartConfiguration();
         CrossNewRelic.Current.Start("<app-token-2>", asc);
+        Assert.That(asc.offlineStorageEnabled.Equals(true));
+        Assert.That(asc.fedRampEnabled.Equals(false));
+        Assert.That(asc.interactionTracingEnabled.Equals(false));
         newRelicMethodsMock.Verify(methods => methods.Start("<app-token>", null), Times.Once);
         newRelicMethodsMock.Verify(methods => methods.Start("<app-token-2>", asc), Times.Once);
     }
@@ -177,6 +180,13 @@ public class INewRelicMethodsTest
     {
         CrossNewRelic.Current.SetMaxEventBufferTime(120);
         newRelicMethodsMock.Verify(methods => methods.SetMaxEventBufferTime(120), Times.Once);
+    }
+    
+    [Test]
+    public void TestSetMaxOfflineStorageSize()
+    {
+        CrossNewRelic.Current.SetMaxOfflineStorageSize(120);
+        newRelicMethodsMock.Verify(methods => methods.SetMaxOfflineStorageSize(120), Times.Once);
     }
 
     [Test]

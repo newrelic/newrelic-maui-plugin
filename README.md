@@ -14,6 +14,7 @@ This plugin allows you to instrument .NET MAUI mobile apps with help of native N
 * Distributed Tracing
 * Pass user information to New Relic to track user sessions
 * Screen Tracking
+* Capture Offline Events and Exception
 
 ## Current Support:
 
@@ -329,7 +330,15 @@ or [Android SDK](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobi
 
 > Shut down the agent within the current application lifecycle during runtime.
 ``` C#
-    CrossNewRelic.Current.Shutdown());
+    CrossNewRelic.Current.Shutdown();
+```
+### SetMaxOfflineStorageSize(int megabytes) : void
+
+> Sets the maximum size of total data that can be stored for offline storage.By default, mobile monitoring can collect a maximum of 100 megaBytes of offline storage. 
+> When a data payload fails to send because the device doesn't have an internet connection, it can be stored in the file system until an internet connection has been made. 
+> After a typical harvest payload has been successfully sent, all offline data is sent to New Relic and cleared from storage.
+``` C#
+    CrossNewRelic.Current.SetMaxOfflineStorageSize(200);
 ```
 
 ## Error reporting

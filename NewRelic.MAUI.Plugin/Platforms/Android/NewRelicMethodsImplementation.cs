@@ -101,9 +101,18 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
         {
             NRAndroidAgent.EnableFeature(Com.Newrelic.Agent.Android.FeatureFlag.FedRampEnabled);
         }
+        
+        if (agentConfig.offlineStorageEnabled)
+        {
+            NRAndroidAgent.EnableFeature(Com.Newrelic.Agent.Android.FeatureFlag.OfflineStorage);
+        }
+        else
+        {
+            NRAndroidAgent.DisableFeature(Com.Newrelic.Agent.Android.FeatureFlag.OfflineStorage);
+        }
 
         var newRelic = NRAndroidAgent.WithApplicationToken(applicationToken)
-            .WithApplicationFramework(Com.Newrelic.Agent.Android.ApplicationFramework.Maui, "0.0.5")
+            .WithApplicationFramework(Com.Newrelic.Agent.Android.ApplicationFramework.Maui, "0.0.6")
             .WithLoggingEnabled(agentConfig.loggingEnabled)
             .WithLogLevel(logLevelDict[agentConfig.logLevel]);
 
@@ -259,6 +268,12 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
         NRAndroidAgent.SetMaxEventPoolSize(maxPoolSize);
         return;
     }
+    
+    public void SetMaxOfflineStorageSize(int megabytes)
+    {
+        NRAndroidAgent.SetMaxOfflineStorageSize(megabytes);
+        return;
+    }
 
     public bool SetUserId(string userId)
     {
@@ -396,5 +411,7 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
     {
         return Com.Newrelic.Agent.Android.HttpHeaders.Instance.GetHttpHeaders().ToList();
     }
+    
+    
 }
 

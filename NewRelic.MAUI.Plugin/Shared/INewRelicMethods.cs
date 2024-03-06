@@ -260,7 +260,12 @@ namespace NewRelic.MAUI.Plugin
         void AddHTTPHeadersTrackingFor(List<String> headers);
 
         List<String> GetHTTPHeadersTrackingFor();
-
+        
+        /// <summary>
+        /// Sets the maximum size of total data that can be stored for offline storage.
+        /// </summary>
+        /// <param name="megabytes"> Maximum size of total data that can be stored for offline storage.</param>
+        void SetMaxOfflineStorageSize(int megabytes);
     }
 }
 

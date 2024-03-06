@@ -51,8 +51,8 @@ public class NewRelicMethodsImplementation : INewRelicMethods
         }
 
         NRIosAgent.EnableCrashReporting(agentConfig.crashReportingEnabled);
-        NRIosAgent.SetPlatform(iOS.NewRelic.NRMAApplicationPlatform.MAUI);
-        iOS.NewRelic.NewRelic.SetPlatformVersion("0.0.5");
+        NRIosAgent.SetPlatform(iOS.NewRelic.NRMAApplicationPlatform.Maui);
+        iOS.NewRelic.NewRelic.SetPlatformVersion("0.0.6");
 
         iOS.NewRelic.NRLogger.SetLogLevels((uint)logLevelDict[agentConfig.logLevel]);
         if (!agentConfig.loggingEnabled)
@@ -84,6 +84,16 @@ public class NewRelicMethodsImplementation : INewRelicMethods
         {
             NRIosAgent.EnableFeatures(iOS.NewRelic.NRMAFeatureFlags.FedRampEnabled);
         }
+        
+        if (agentConfig.offlineStorageEnabled)
+        {
+            NRIosAgent.EnableFeatures(iOS.NewRelic.NRMAFeatureFlags.OfflineStorage);
+        }
+        else
+        {
+            NRIosAgent.DisableFeatures(iOS.NewRelic.NRMAFeatureFlags.OfflineStorage);
+        }
+
 
 
         if (agentConfig.collectorAddress.Equals("DEFAULT") && agentConfig.crashCollectorAddress.Equals("DEFAULT"))
@@ -223,6 +233,12 @@ public class NewRelicMethodsImplementation : INewRelicMethods
     public void SetMaxEventPoolSize(int maxPoolSize)
     {
         NRIosAgent.SetMaxEventPoolSize((uint)maxPoolSize);
+        return;
+    }
+    
+    public void SetMaxOfflineStorageSize(int megabytes)
+    {
+        NRIosAgent.SetMaxOfflineStorageSize((uint)megabytes);
         return;
     }
 
