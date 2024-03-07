@@ -66,6 +66,10 @@ namespace NewRelic.MAUI.Plugin
 		/// Enable or disable interaction tracing. Trace instrumentation still occurs, but no traces are harvested. This will disable default and custom interactions
 		/// </summary>
         public bool interactionTracingEnabled = false;
+        /// <summary>
+        /// Enable or disable offline data storage when no internet connection is available.
+        /// </summary>
+        public bool offlineStorageEnabled = true;
 
 
         /// <summary>
@@ -89,13 +93,12 @@ namespace NewRelic.MAUI.Plugin
         /// <param name="interactionTracingEnabled">Enable or disable interaction tracing. Trace instrumentation still occurs, but no traces are harvested. This will disable default and custom interactions.</param>
         /// <param name="webViewInstrumentation">Enable/Disable automatic instrumentation of WebViews.</param>
         /// <param name="fedRampEnabled">Enable or disable reporting data using different endpoints for US government clients</param>
+        /// <param name="offlineStorageEnabled">Enable or disable offline data storage when no internet connection is available.</param>
 
-
-
-
+        
         public AgentStartConfiguration(bool crashReportingEnabled = true, bool loggingEnabled = true, LogLevel logLevel = LogLevel.INFO, string collectorAddress = "DEFAULT",
             string crashCollectorAddress = "DEFAULT", bool analyticsEventEnabled = true, bool networkErrorRequestEnabled = true, bool networkRequestEnabled = true,
-            bool interactionTracingEnabled = false, bool webViewInstrumentation = true, bool fedRampEnabled = false)
+            bool interactionTracingEnabled = false, bool webViewInstrumentation = true, bool fedRampEnabled = false, bool offlineStorageEnabled = true)
         {
             this.crashReportingEnabled = crashReportingEnabled;
             this.loggingEnabled = loggingEnabled;
@@ -108,6 +111,7 @@ namespace NewRelic.MAUI.Plugin
             this.interactionTracingEnabled = interactionTracingEnabled;
             this.webViewInstrumentation = webViewInstrumentation;
             this.fedRampEnabled = fedRampEnabled;
+            this.offlineStorageEnabled = offlineStorageEnabled;
         }
     }
 }
