@@ -42,7 +42,7 @@
 		</data>
 		<key>Headers/NewRelic.h</key>
 		<data>
-		WMBfxqH7HlW12UDGdRtzxgEkAYE=
+		mKEI8gbLRtQ22AqALyo5tRAiIXY=
 		</data>
 		<key>Headers/NewRelicCustomInteractionInterface.h</key>
 		<data>
@@ -50,19 +50,19 @@
 		</data>
 		<key>Headers/NewRelicFeatureFlags.h</key>
 		<data>
-		NfbhZKvEQP1J0cMhYWRAUkPRDOY=
+		P44f8fmszlXXaK6nw1+nm/8pxfI=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		NkqCK7414G/PTZm9OLY/GQLjrdc=
+		fk1auyEbE22xZJgDgsutDhHKNdw=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		ILrC436wyO30quGJ9+D2GFA2oLA=
+		AJQLYlw7A5ejPfgYnGI1Ietl2L8=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		n9lq3p2iyVhB6XTREn7+8m4O8cE=
+		NeU2GTS6O101+7TphL83zZxbL9o=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -218,11 +218,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WMBfxqH7HlW12UDGdRtzxgEkAYE=
+			mKEI8gbLRtQ22AqALyo5tRAiIXY=
 			</data>
 			<key>hash2</key>
 			<data>
-			HQR53S25phFrrBVyr+9vuTEciy6f3mzZ2ESA/1gIwDo=
+			6MCmbDdifqhfSjIQpg9jX/NJcqEpnQMadL63Hxm7Ack=
 			</data>
 		</dict>
 		<key>Headers/NewRelicCustomInteractionInterface.h</key>
@@ -240,33 +240,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NfbhZKvEQP1J0cMhYWRAUkPRDOY=
+			P44f8fmszlXXaK6nw1+nm/8pxfI=
 			</data>
 			<key>hash2</key>
 			<data>
-			hf9JD8dpa+1mhrO6qxiGJ5S1A8j0HmldTt8tyF+kb2A=
+			TpHfMrrQEYt8psOEvUIa1vhoEgeLrMKJ55+i81bRTVk=
 			</data>
 		</dict>
 		<key>Modules/NewRelic.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ILrC436wyO30quGJ9+D2GFA2oLA=
+			AJQLYlw7A5ejPfgYnGI1Ietl2L8=
 			</data>
 			<key>hash2</key>
 			<data>
-			k8zcEeQAQL/J5RNuNr2zTGMYE471VzZ4ctebaMjCSJM=
+			PVaQl2Gy1MigWQyKsACyeh++iuOpuDpqYPnovFUBIz8=
 			</data>
 		</dict>
 		<key>Modules/NewRelic.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			n9lq3p2iyVhB6XTREn7+8m4O8cE=
+			NeU2GTS6O101+7TphL83zZxbL9o=
 			</data>
 			<key>hash2</key>
 			<data>
-			iVj+na3UVdyhRiGQglPFUA7qgrlIWt8ku0fVsPAaogg=
+			+q/ZXJDVhM9yukNSw8Nzki2bG9CQUUs7FKf/R0+qa84=
 			</data>
 		</dict>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
