@@ -42,7 +42,7 @@
 		</data>
 		<key>Headers/NewRelic.h</key>
 		<data>
-		WMBfxqH7HlW12UDGdRtzxgEkAYE=
+		mKEI8gbLRtQ22AqALyo5tRAiIXY=
 		</data>
 		<key>Headers/NewRelicCustomInteractionInterface.h</key>
 		<data>
@@ -50,11 +50,11 @@
 		</data>
 		<key>Headers/NewRelicFeatureFlags.h</key>
 		<data>
-		NfbhZKvEQP1J0cMhYWRAUkPRDOY=
+		P44f8fmszlXXaK6nw1+nm/8pxfI=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		mFrKL4bk/vC1mJzyWewf7DW+VFQ=
+		k4Z/7gpuI+Y9sdZ5VvX9Q+k5m1g=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -190,11 +190,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WMBfxqH7HlW12UDGdRtzxgEkAYE=
+			mKEI8gbLRtQ22AqALyo5tRAiIXY=
 			</data>
 			<key>hash2</key>
 			<data>
-			HQR53S25phFrrBVyr+9vuTEciy6f3mzZ2ESA/1gIwDo=
+			6MCmbDdifqhfSjIQpg9jX/NJcqEpnQMadL63Hxm7Ack=
 			</data>
 		</dict>
 		<key>Headers/NewRelicCustomInteractionInterface.h</key>
@@ -212,11 +212,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NfbhZKvEQP1J0cMhYWRAUkPRDOY=
+			P44f8fmszlXXaK6nw1+nm/8pxfI=
 			</data>
 			<key>hash2</key>
 			<data>
-			hf9JD8dpa+1mhrO6qxiGJ5S1A8j0HmldTt8tyF+kb2A=
+			TpHfMrrQEYt8psOEvUIa1vhoEgeLrMKJ55+i81bRTVk=
 			</data>
 		</dict>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.abi.json</key>
