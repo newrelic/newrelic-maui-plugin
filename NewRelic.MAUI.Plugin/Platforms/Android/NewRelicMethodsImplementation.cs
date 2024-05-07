@@ -127,8 +127,6 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
         }
 
         newRelic.Start(global::Android.App.Application.Context);
-        // Temporary workaround, will be fixed in next Android agent release.
-        Com.Newrelic.Agent.Android.Background.ApplicationStateMonitor.Instance.ActivityStarted();
         isStarted = true;
     }
 
