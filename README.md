@@ -15,6 +15,7 @@ This plugin allows you to instrument .NET MAUI mobile apps with help of native N
 * Pass user information to New Relic to track user sessions
 * Screen Tracking
 * Capture Offline Events and Exception
+* Capture Background Events when app is in background
 
 ## Current Support:
 
@@ -70,7 +71,7 @@ using NewRelic.MAUI.Plugin;
       CrossNewRelic.Current.HandleUncaughtException();
 
       // Set optional agent configuration
-      // Options are: crashReportingEnabled, loggingEnabled, logLevel, collectorAddress, crashCollectorAddress,analyticsEventEnabled, networkErrorRequestEnabled, networkRequestEnabled, interactionTracingEnabled,webViewInstrumentation, fedRampEnabled
+      // Options are: crashReportingEnabled, loggingEnabled, logLevel, collectorAddress, crashCollectorAddress,analyticsEventEnabled, networkErrorRequestEnabled, networkRequestEnabled, interactionTracingEnabled,webViewInstrumentation, fedRampEnabled,offlineStorageEnabled,newEventSystemEnabled,backgroundReportingEnabled
       // AgentStartConfiguration agentConfig = new AgentStartConfiguration(crashReportingEnabled:false);
 
 

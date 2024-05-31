@@ -1,5 +1,23 @@
 # Changelog
 
+# 1.0.0
+
+* Improvements
+
+The native iOS Agent has been updated to version 7.4.11, bringing performance enhancements and bug fixes.
+
+* New Features
+
+A new backgroundReportingEnabled feature flag has been introduced to enable background reporting functionality.
+A new newEventSystemEnabled feature flag has been added to enable the new event system.
+
+
+
+# 0.0.9
+
+- Addressed a problem where the MAUI agent failed to start when the application transitioned from the foreground to the background state, ensuring that the agent now initializes correctly in such scenarios.
+
+
 # 0.0.7
 
 - Updated native iOS Agent: We've upgraded the native iOS agent to version 7.4.10, which includes performance improvements and bug fixes.
