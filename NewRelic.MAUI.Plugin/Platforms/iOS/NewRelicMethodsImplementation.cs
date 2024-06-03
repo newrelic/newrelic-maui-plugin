@@ -93,6 +93,26 @@ public class NewRelicMethodsImplementation : INewRelicMethods
         {
             NRIosAgent.DisableFeatures(iOS.NewRelic.NRMAFeatureFlags.OfflineStorage);
         }
+        
+        if (agentConfig.newEventSystemEnabled)
+        {
+            NRIosAgent.EnableFeatures(iOS.NewRelic.NRMAFeatureFlags.NewEventSystem);
+        }
+        else
+        {
+            NRIosAgent.DisableFeatures(iOS.NewRelic.NRMAFeatureFlags.NewEventSystem);
+        }
+
+        
+        if (agentConfig.backgroundReportingEnabled)
+        {
+            NRIosAgent.EnableFeatures(iOS.NewRelic.NRMAFeatureFlags.BackgroundReporting);
+        }
+        else
+        {
+            NRIosAgent.DisableFeatures(iOS.NewRelic.NRMAFeatureFlags.BackgroundReporting);
+        }
+
 
 
 

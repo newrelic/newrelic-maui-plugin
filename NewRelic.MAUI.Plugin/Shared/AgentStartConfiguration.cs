@@ -71,6 +71,16 @@ namespace NewRelic.MAUI.Plugin
         /// </summary>
         public bool offlineStorageEnabled = true;
 
+        /// <summary> Enable or disable to use our new, more stable, event system for iOS agent.
+        /// iOS Specific
+        ///  <c>true</c>
+        /// </summary>
+        public Boolean newEventSystemEnabled = true;
+        
+        /// <summary> Enable or disable Background Events Reporting When app is in background.
+        ///  <c>true</c>
+        /// </summary>
+        public Boolean backgroundReportingEnabled = false;
 
         /// <summary>
         /// Initialize the AgentStartConfiguration with default settings.
@@ -94,11 +104,13 @@ namespace NewRelic.MAUI.Plugin
         /// <param name="webViewInstrumentation">Enable/Disable automatic instrumentation of WebViews.</param>
         /// <param name="fedRampEnabled">Enable or disable reporting data using different endpoints for US government clients</param>
         /// <param name="offlineStorageEnabled">Enable or disable offline data storage when no internet connection is available.</param>
+        /// <param name="newEventSystemEnabled">Enable or disable to use our new, more stable, event system for iOS agent.</param>
+        /// <param name="backgroundReportingEnabled">Enable or disable Background Events Reporting When app is in background.</param>
 
         
         public AgentStartConfiguration(bool crashReportingEnabled = true, bool loggingEnabled = true, LogLevel logLevel = LogLevel.INFO, string collectorAddress = "DEFAULT",
             string crashCollectorAddress = "DEFAULT", bool analyticsEventEnabled = true, bool networkErrorRequestEnabled = true, bool networkRequestEnabled = true,
-            bool interactionTracingEnabled = false, bool webViewInstrumentation = true, bool fedRampEnabled = false, bool offlineStorageEnabled = true)
+            bool interactionTracingEnabled = false, bool webViewInstrumentation = true, bool fedRampEnabled = false, bool offlineStorageEnabled = true, bool backgroundReportingEnabled = false,bool newEventSystemEnabled = true)
         {
             this.crashReportingEnabled = crashReportingEnabled;
             this.loggingEnabled = loggingEnabled;
@@ -112,6 +124,8 @@ namespace NewRelic.MAUI.Plugin
             this.webViewInstrumentation = webViewInstrumentation;
             this.fedRampEnabled = fedRampEnabled;
             this.offlineStorageEnabled = offlineStorageEnabled;
+            this.newEventSystemEnabled = newEventSystemEnabled;
+            this.backgroundReportingEnabled = backgroundReportingEnabled;
         }
     }
 }

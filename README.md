@@ -15,6 +15,7 @@ This plugin allows you to instrument .NET MAUI mobile apps with help of native N
 * Pass user information to New Relic to track user sessions
 * Screen Tracking
 * Capture Offline Events and Exception
+* Capture Background Events when app is in background
 
 ## Current Support:
 
@@ -31,22 +32,46 @@ Open your solution, select the project you want to add NewRelic package to and o
 
 ## MAUI Setup
 
-1. Open your `App.xaml.cs` and add the following code to launch NewRelic Plugin (don't forget to put proper application tokens):
+1. Open your `MauiProgram.cs` and add the following code to launch NewRelic Plugin (don't forget to put proper application tokens):
 
 ```C#
 using NewRelic.MAUI.Plugin;
 ...
-    public App ()
-    {
-      InitializeComponent();
 
-      MainPage = new AppShell();
-      
+    public static MauiApp CreateMauiApp()
+	{
+		var builder = MauiApp.CreateBuilder();
+		builder
+			.UseMauiApp<App>()
+			.ConfigureFonts(fonts =>
+			{
+				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+			});
+
+        builder.ConfigureLifecycleEvents(AppLifecycle => {
+        #if ANDROID
+            AppLifecycle.AddAndroid(android => android
+               .OnCreate((activity, savedInstanceState) => StartNewRelic()));
+        #endif
+        #if IOS
+
+             AppLifecycle.AddiOS(iOS => iOS.WillFinishLaunching((_,__) => {
+                StartNewRelic();
+                return false;
+            }));
+        #endif
+        });
+		return builder.Build();
+	}
+
+    private static void StartNewRelic()
+    {
+       
       CrossNewRelic.Current.HandleUncaughtException();
-      CrossNewRelic.Current.TrackShellNavigatedEvents();
 
       // Set optional agent configuration
-      // Options are: crashReportingEnabled, loggingEnabled, logLevel, collectorAddress, crashCollectorAddress,analyticsEventEnabled, networkErrorRequestEnabled, networkRequestEnabled, interactionTracingEnabled,webViewInstrumentation, fedRampEnabled
+      // Options are: crashReportingEnabled, loggingEnabled, logLevel, collectorAddress, crashCollectorAddress,analyticsEventEnabled, networkErrorRequestEnabled, networkRequestEnabled, interactionTracingEnabled,webViewInstrumentation, fedRampEnabled,offlineStorageEnabled,newEventSystemEnabled,backgroundReportingEnabled
       // AgentStartConfiguration agentConfig = new AgentStartConfiguration(crashReportingEnabled:false);
 
 
@@ -80,7 +105,14 @@ using NewRelic.MAUI.Plugin;
 The .NET MAUI mobile plugin allows you to track navigation events within the [.NET MAUI Shell](https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/shell/navigation). In order to do so, you only need to call:
 
 ```C#
-    CrossNewRelic.Current.TrackShellNavigatedEvents();
+    public App()
+	{
+		InitializeComponent();
+
+		MainPage = new AppShell();
+		CrossNewRelic.Current.TrackShellNavigatedEvents();
+
+    }
 ```
 
 It is recommended to call this method along when starting the agent. These events will only be recorded after navigation is complete. You can find this data through the data explorer in `MobileBreadcrumb` under the name `ShellNavigated` or by query:
