@@ -52,7 +52,7 @@ public class NewRelicMethodsImplementation : INewRelicMethods
 
         NRIosAgent.EnableCrashReporting(agentConfig.crashReportingEnabled);
         NRIosAgent.SetPlatform(iOS.NewRelic.NRMAApplicationPlatform.Maui);
-        iOS.NewRelic.NewRelic.SetPlatformVersion("0.0.6");
+        iOS.NewRelic.NewRelic.SetPlatformVersion("1.1.0");
 
         iOS.NewRelic.NRLogger.SetLogLevels((uint)logLevelDict[agentConfig.logLevel]);
         if (!agentConfig.loggingEnabled)
@@ -148,15 +148,7 @@ public class NewRelicMethodsImplementation : INewRelicMethods
 
     public bool RecordBreadcrumb(string name, Dictionary<string, object> attributes)
     {
-
-        Foundation.NSMutableDictionary NSDict = new Foundation.NSMutableDictionary();
-        foreach (KeyValuePair<string, object> entry in attributes)
-        {
-            NSDict.Add(Foundation.NSObject.FromObject(entry.Key), Foundation.NSObject.FromObject(entry.Value));
-        }
-
-        return NRIosAgent.RecordBreadcrumb(name, NSDict);
-
+        return NRIosAgent.RecordBreadcrumb(name, ConvertAttributesToNSDictionary(attributes));
     }
 
     public void EndInteraction(string interactionId)
@@ -193,12 +185,7 @@ public class NewRelicMethodsImplementation : INewRelicMethods
 
     public bool RecordCustomEvent(string eventType, string eventName, Dictionary<string, object> attributes)
     {
-        Foundation.NSMutableDictionary NSDict = new Foundation.NSMutableDictionary();
-        foreach (KeyValuePair<string, object> entry in attributes)
-        {
-            NSDict.Add(Foundation.NSObject.FromObject(entry.Key), Foundation.NSObject.FromObject(entry.Value));
-        }
-        return NRIosAgent.RecordCustomEvent(eventType, eventName, NSDict);
+        return NRIosAgent.RecordCustomEvent(eventType, eventName, ConvertAttributesToNSDictionary(attributes));
     }
 
     public void RecordMetric(string name, string category)
@@ -338,9 +325,9 @@ public class NewRelicMethodsImplementation : INewRelicMethods
         NRIosAgent.RecordHandledExceptionWithStackTrace(NSDict);
     }
 
-    public HttpMessageHandler GetHttpMessageHandler()
+    public HttpClientHandler GetHttpMessageHandler()
     {
-        return new HttpClientHandler();
+        return new HttpClientHandler(){};
     }
 
     public void HandleUncaughtException(bool shouldThrowFormattedException = true)
@@ -388,8 +375,110 @@ public class NewRelicMethodsImplementation : INewRelicMethods
 
     public List<string> GetHTTPHeadersTrackingFor()
     {
-        throw new NotImplementedException();
+        // return NRIosAgent.HttpHeadersAddedForTracking().ToList();
+        return null;
     }
+    
+        public void LogInfo(String message)
+    {
+        if (!string.IsNullOrEmpty(message))
+        {
+            NRIosAgent.LogInfo(message);
+        }
+        else 
+        {
+            Console.WriteLine("Info: Message is empty or null.");
+        }
+    }
+  
+    public void LogWarning(String message)
+    {
+        if (!string.IsNullOrEmpty(message))
+        {
+            NRIosAgent.LogWarning(message);
+        }
+        else
+        {
+            Console.WriteLine("Warning: Message is empty or null.");
+        }
+    }
+
+    public void LogDebug(String message)
+    {
+        if (!string.IsNullOrEmpty(message))
+        {
+            NRIosAgent.LogDebug(message);
+        }
+        else
+        {
+            Console.WriteLine("Debug: Message is empty or null.");
+        }
+    }
+
+    public void LogVerbose(String message)
+    {
+        if (!string.IsNullOrEmpty(message))
+        {
+            NRIosAgent.LogVerbose(message);
+        }
+        else
+        {
+            Console.WriteLine("Verbose: Message is empty or null.");
+        }
+    }
+    
+    public void LogError(String message)
+    {
+        if (!string.IsNullOrEmpty(message))
+        {
+            NRIosAgent.LogError(message);
+        }
+        else
+        {
+            Console.WriteLine("Error: Message is empty or null.");
+        }
+    }
+
+    public void Log(LogLevel level, String message)
+    {
+        if (!string.IsNullOrEmpty(message))
+        {
+            Dictionary<string,object> attributes = new Dictionary<string,object>();
+            attributes.Add("Message", message);
+            attributes.Add("logLevel", level.ToString());
+            
+            NRIosAgent.LogAll(ConvertAttributesToNSDictionary(attributes));
+        }
+        else
+        {
+            Console.WriteLine($"Log Level {level}: Message is empty or null.");
+        }
+    }
+    
+   
+    
+    public void LogAttributes(Dictionary<string, object> attributes)
+    {
+        if(attributes != null && attributes.Count > 0) 
+        {
+            NRIosAgent.LogAttributes(ConvertAttributesToNSDictionary(attributes));
+        }
+        else
+        {
+            Console.WriteLine("Attributes are empty or null.");
+        }
+    }
+    
+    public Foundation.NSMutableDictionary ConvertAttributesToNSDictionary(Dictionary<string, object> attributes)
+    {
+        Foundation.NSMutableDictionary NSDict = new Foundation.NSMutableDictionary();
+        foreach (KeyValuePair<string, object> entry in attributes)
+        {
+            NSDict.Add(Foundation.NSObject.FromObject(entry.Key), Foundation.NSObject.FromObject(entry.Value));
+        }
+        return NSDict;
+    }
+    
 
     public void Dispose()
     {

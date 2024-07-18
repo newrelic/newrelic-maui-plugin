@@ -3,11 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0 
  */
 
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
+
 using Com.Newrelic.Agent.Android.Distributedtracing;
 using NRAndroidAgent = Com.Newrelic.Agent.Android.NewRelic;
 using HeaderList = Com.Newrelic.Agent.Android.HttpHeaders;

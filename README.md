@@ -16,6 +16,7 @@ This plugin allows you to instrument .NET MAUI mobile apps with help of native N
 * Screen Tracking
 * Capture Offline Events and Exception
 * Capture Background Events when app is in background
+* Log Forwarding 
 
 ## Current Support:
 
@@ -373,6 +374,54 @@ or [Android SDK](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobi
     CrossNewRelic.Current.SetMaxOfflineStorageSize(200);
 ```
 
+### LogInfo(String message) : void
+
+> Logs an informational message to the New Relic log.
+``` C#
+    CrossNewRelic.Current.LogInfo("This is an informational message");
+```
+
+### LogError(String message) : void 
+> Logs an error message to the New Relic log.
+``` C#
+    CrossNewRelic.Current.LogError("This is an error message");
+```
+### LogVerbose(String message) : void
+> Logs a verbose message to the New Relic log.
+``` C#
+    CrossNewRelic.Current.LogVerbose("This is a verbose message");
+```
+
+### LogWarning(String message) : void
+> Logs a warning message to the New Relic log.
+``` C#
+    CrossNewRelic.Current.LogWarning("This is a warning message");
+```
+
+### LogDebug(String message) : void
+> Logs a debug message to the New Relic log.
+``` C#
+    CrossNewRelic.Current.LogDebug("This is a debug message");
+```
+
+### Log(LogLevel level, String message) : void
+> Logs a message to the New Relic log with a specified log level.
+``` C#
+    CrossNewRelic.Current.Log(LogLevel.Info, "This is an informational message");
+``` 
+
+### LogAttributes(Dictionary<string, object> attributes) : void
+> Logs a message with attributes to the New Relic log.
+``` C#
+    CrossNewRelic.Current.LogAttributes(new Dictionary<string, object>()
+        {
+            {"BreadNumValue", 12.3 },
+            {"BreadStrValue", "MAUIBread" },
+            {"BreadBoolValue", true },
+            {"message", "This is a message with attributes" }
+        }
+    );
+```
 ## Error reporting
 
 This plugin provides a handler to record unhandled exceptions to New Relic. It is recommended to initialize the handler prior to starting the agent.

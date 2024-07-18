@@ -22,7 +22,7 @@
 		</data>
 		<key>Headers/NRLogger.h</key>
 		<data>
-		Uaj41afwRqxwTQ96fWLFgPQZFt4=
+		UhD7QKAO4Ay1pjFuLqdSl+Xtj9Q=
 		</data>
 		<key>Headers/NRTimer.h</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Headers/NewRelic.h</key>
 		<data>
-		2xCZH1JiwwUvD1LyGn7HUMQpGJI=
+		l4oUlhoHt2WmXa1kJTXgKoJKSFc=
 		</data>
 		<key>Headers/NewRelicCustomInteractionInterface.h</key>
 		<data>
@@ -50,11 +50,11 @@
 		</data>
 		<key>Headers/NewRelicFeatureFlags.h</key>
 		<data>
-		85ShAwQQEzV5f8B41jj+uKQR/ks=
+		C8+CNG9YvvI0QxYDys4XPH6Wr/M=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		MVhCtAcrOEw2M+f5DV9lpsPVTCQ=
+		L+1vsikp1U0gcFFqa1+cNHweXmc=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -62,19 +62,19 @@
 		</data>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		f8UMsMGVRnoOYBLgCas9BiqTZgY=
+		EF3lKK0svv67Iwz8fJiIUlPs7+w=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		H4g6y0XzfrNS2Myy489TRiI0seA=
+		HS7N21ru2KQ4LMSmjnbNzmWy4v0=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		f8UMsMGVRnoOYBLgCas9BiqTZgY=
+		EF3lKK0svv67Iwz8fJiIUlPs7+w=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		aGEFPAYCEhKQ+jbTfe/tarPFDI8=
+		oRdHaRzugNbxEgEI0Ho7Cl2dMAg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -89,10 +89,6 @@
 	<dict>
 		<key>Headers/Agent.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			HUhfZuHn3p+SBMlJFzM3Pvx7Zpk=
-			</data>
 			<key>hash2</key>
 			<data>
 			XVWVEK8EV/s2DKWmRVlPxQUFxOlj0CJmZkbKf7UzDEU=
@@ -100,10 +96,6 @@
 		</dict>
 		<key>Headers/NRConstants.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			lJmU3wIB6sWc8YZYN8ovooKd/b8=
-			</data>
 			<key>hash2</key>
 			<data>
 			4LvCXvTxxkrtZS75teoUwWnziAMiIpAMxFKm4MfEY3E=
@@ -111,10 +103,6 @@
 		</dict>
 		<key>Headers/NRCustomMetrics.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			7eIvvlmytx2phXwHloi7y7524gA=
-			</data>
 			<key>hash2</key>
 			<data>
 			CUyP3nHBJBUn6XzBIbrLQDAxfkdvxQOlki1u7cyEC+Y=
@@ -122,10 +110,6 @@
 		</dict>
 		<key>Headers/NRGCDOverride.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			aKuktqGK5bEMP3/471MEPIrS79I=
-			</data>
 			<key>hash2</key>
 			<data>
 			xnyWWT4vFa9EQ/mpfu6fsKmYSl6ETxVwkCwc7lYC4ww=
@@ -133,21 +117,13 @@
 		</dict>
 		<key>Headers/NRLogger.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Uaj41afwRqxwTQ96fWLFgPQZFt4=
-			</data>
 			<key>hash2</key>
 			<data>
-			pbWBlIvnzr2y1LBvOKCbyt2/GEPE0l/Js6Wi2R6NaLI=
+			mdZoAOwvbkY5NEB9A7kS42NTAr+DTx40KC/1QvTtNfM=
 			</data>
 		</dict>
 		<key>Headers/NRTimer.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			uHOizNPJnx9B+BvXoJFqR1M/j64=
-			</data>
 			<key>hash2</key>
 			<data>
 			e9nVu1zZP0jc/TizD1yBs4dYn1nCALnrtdTf0RNRnlY=
@@ -155,10 +131,6 @@
 		</dict>
 		<key>Headers/NRURLSessionTaskDelegateBase.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			JeQgGzhiQuO8T9NxvEjyWpXqqz0=
-			</data>
 			<key>hash2</key>
 			<data>
 			z4C9zUpHSqbErSnsDPqnkk1y+yeXCEzYqzgnVQ3Lpsg=
@@ -166,10 +138,6 @@
 		</dict>
 		<key>Headers/NRWKNavigationDelegateBase.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			EMRtAjk2tFyfixtA/XNArq+uK7Y=
-			</data>
 			<key>hash2</key>
 			<data>
 			9rSCe/F5UhcAZ6C7JuW3BaXxwqRQ7J8yxt5BHoUo/S4=
@@ -177,10 +145,6 @@
 		</dict>
 		<key>Headers/NewRelic-Swift.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			hvo3IMtM/ebjfMK0QP9r/BZMgIw=
-			</data>
 			<key>hash2</key>
 			<data>
 			Bt6HrpVUINiJv/7a/PuhCv6ftG9kxP0zoiZZvjYURkE=
@@ -188,21 +152,13 @@
 		</dict>
 		<key>Headers/NewRelic.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			2xCZH1JiwwUvD1LyGn7HUMQpGJI=
-			</data>
 			<key>hash2</key>
 			<data>
-			qxJJGRRcfqgsEWQJLNCXNSHWz61RE55o53OI3heXEZc=
+			ZfYTm03AUsj1xDP5/99kshhn9OeH+pNMZ0ZHV2h7acw=
 			</data>
 		</dict>
 		<key>Headers/NewRelicCustomInteractionInterface.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			oOHG7a4MFCGZFBqwkeqjSq3PV9k=
-			</data>
 			<key>hash2</key>
 			<data>
 			P3fhqKiGFglFXbkEbVyUjoD9Vehd9P9mbYR2aBe44iU=
@@ -210,21 +166,13 @@
 		</dict>
 		<key>Headers/NewRelicFeatureFlags.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			85ShAwQQEzV5f8B41jj+uKQR/ks=
-			</data>
 			<key>hash2</key>
 			<data>
-			aoDSWnbRWoHsl1MH7228a4QxjeYiAFOJjqDVhdMgAkQ=
+			4qBXlincnMy1ADSfF/8nHh13h3MwTbxy+NhKWtQtwpI=
 			</data>
 		</dict>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			SzRZiA3qiTlbzegA+/V6nuRENl0=
-			</data>
 			<key>hash2</key>
 			<data>
 			1cSm3IFcuY16Ki8f7j2b4Nu/tiD5bZVEVjZvUqO+rlM=
@@ -232,54 +180,34 @@
 		</dict>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			f8UMsMGVRnoOYBLgCas9BiqTZgY=
-			</data>
 			<key>hash2</key>
 			<data>
-			BlToD0w2+Ze1d465wbLyyMryXmZ1WAVdUR8q83EIz8Y=
+			vYu/m6Swr6RCAqgMRfFF4YYXfUYByPxqDzXGcQgEadI=
 			</data>
 		</dict>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			H4g6y0XzfrNS2Myy489TRiI0seA=
-			</data>
 			<key>hash2</key>
 			<data>
-			hvXRAr4E6/kFxjE+VVIzmHeSD07zb1NTA6J7vK4IdXc=
+			G41GsqGpv62zLBjUqFmHVGa5vAs2n5pH4BRVwrI0hag=
 			</data>
 		</dict>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			f8UMsMGVRnoOYBLgCas9BiqTZgY=
-			</data>
 			<key>hash2</key>
 			<data>
-			BlToD0w2+Ze1d465wbLyyMryXmZ1WAVdUR8q83EIz8Y=
+			vYu/m6Swr6RCAqgMRfFF4YYXfUYByPxqDzXGcQgEadI=
 			</data>
 		</dict>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			aGEFPAYCEhKQ+jbTfe/tarPFDI8=
-			</data>
 			<key>hash2</key>
 			<data>
-			+APOXbEvljhu5eBXHkbPQ0HEWotX6wxOEsAEOr+3ers=
+			68sJVgLfcCrqGuTsALnW9qIl6e74VkHqVVC+CRqPc5U=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Cv498qGIzfFVYEPEFYoqnuOJBsc=
-			</data>
 			<key>hash2</key>
 			<data>
 			Mihx9RsiNZjHN+K+aoBRxCamnvdqpTXOjcmgdgjIPbM=
@@ -287,10 +215,6 @@
 		</dict>
 		<key>PrivacyInfo.xcprivacy</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			pqHC5KSLnBNg5Hk9usF5y1/9bk8=
-			</data>
 			<key>hash2</key>
 			<data>
 			/3CJtqx2AwDuMUV9sZ/9olcPTWkxGYQZU1sf0NWT3bs=

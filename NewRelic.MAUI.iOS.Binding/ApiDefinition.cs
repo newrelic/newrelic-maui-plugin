@@ -135,10 +135,20 @@ namespace iOS.NewRelic
     [Protocol]
     interface NRLogger
     {
-        // +(void)log:(unsigned int)level inFile:(NSString *)file atLine:(unsigned int)line inMethod:(NSString *)method withMessage:(NSString *)message;
         [Static]
         [Export("log:inFile:atLine:inMethod:withMessage:")]
         void Log(uint level, string file, uint line, string method, string message);
+
+        		// +(void)log:(unsigned int)level inFile:(NSString *)file atLine:(unsigned int)line inMethod:(NSString *)method withMessage:(NSString *)message withAttributes:(NSDictionary *)attributes;
+        		[Static]
+        		[Export ("log:inFile:atLine:inMethod:withMessage:withAttributes:")]
+        		void Log (uint level, string file, uint line, string method, string message, NSDictionary attributes);
+
+        		// +(void)log:(unsigned int)level inFile:(NSString *)file atLine:(unsigned int)line inMethod:(NSString *)method withMessage:(NSString *)message withAgentLogsOn:(BOOL)agentLogsOn;
+        		[Static]
+        		[Export ("log:inFile:atLine:inMethod:withMessage:withAgentLogsOn:")]
+        		void Log (uint level, string file, uint line, string method, string message, bool agentLogsOn);
+
 
         // +(void)setLogLevels:(unsigned int)levels;
         [Static]
@@ -170,15 +180,28 @@ namespace iOS.NewRelic
         [Export ("setLogIngestKey:")]
         void SetLogIngestKey (string key);
 
+        		// +(void)setLogEntityGuid:(NSString *)key;
+        		[Static]
+        		[Export ("setLogEntityGuid:")]
+        		void SetLogEntityGuid (string key);
+
         // +(void)setLogURL:(NSString *)url;
         [Static]
         [Export ("setLogURL:")]
         void SetLogURL (string url);
         
-        // +(void)upload;
-        [Static]
-        [Export ("upload")]
-        void Upload ();
+
+        
+        		// +(void)enqueueLogUpload;
+        		[Static]
+        		[Export ("enqueueLogUpload")]
+        		void EnqueueLogUpload ();
+
+        		// +(NRLogLevels)stringToLevel:(NSString *)string;
+        		[Static]
+        		[Export ("stringToLevel:")]
+        		NRLogLevels StringToLevel (string @string);
+		        
     }
 
     // @protocol NewRelicCustomInteractionInterface
@@ -480,11 +503,41 @@ namespace iOS.NewRelic
         [Static]
         [Export("logAudit:")]
         void LogAudit(string message);
+        
+        // +(void)logDebug:(NSString * _Nonnull)message;
+        [Static]
+        [Export ("logDebug:")]
+        void LogDebug (string message);
+
+        // +(void)log:(NSString * _Nonnull)message level:(NRLogLevels)level;
+        [Static]
+        [Export ("log:level:")]
+        void Log (string message, NRLogLevels level);
+
+        // +(void)logAll:(NSDictionary * _Nonnull)dict;
+        [Static]
+        [Export ("logAll:")]
+        void LogAll (NSDictionary dict);
+
+        // +(void)logAttributes:(NSDictionary * _Nonnull)dict;
+        [Static]
+        [Export ("logAttributes:")]
+        void LogAttributes (NSDictionary dict);
+
+        // +(void)logErrorObject:(NSError * _Nonnull)error;
+        [Static]
+        [Export ("logErrorObject:")]
+        void LogErrorObject (NSError error);
 
         // +(void)addHTTPHeaderTrackingFor:(NSArray<NSString *> * _Nonnull)headers;
         [Static]
         [Export("addHTTPHeaderTrackingFor:")]
         void AddHTTPHeaderTrackingFor(string[] headers);
+        
+        // +(NSArray<NSString *> * _Nonnull)httpHeadersAddedForTracking;
+        [Static]
+        [Export ("httpHeadersAddedForTracking")]
+        string[] HttpHeadersAddedForTracking { get; }
     }
 
     // @interface NewRelicAgent : NewRelic
