@@ -1,10 +1,31 @@
 # Changelog
 
+
+# 1.1.0
+
+
+# Release Notes
+
+## New Features
+
+1. Application Exit Information
+    - Added ApplicationExitInfo to data reporting
+    - Enabled by default
+
+2. Log Forwarding to New Relic
+    - Implement static API for sending logs to New Relic
+    - Can be enabled/disabled in your mobile application's entity settings page
+
+## Improvements
+
+- Native Android agent updated to version 7.5.0
+- Native iOS agent updated to version 7.5.0
+
 # 1.0.0
 
 * Improvements
 
-The native iOS Agent has been updated to version 7.4.12, bringing performance enhancements and bug fixes.
+The native iOS Agent has been updated to version 7.4.11, bringing performance enhancements and bug fixes.
 
 * New Features
 
