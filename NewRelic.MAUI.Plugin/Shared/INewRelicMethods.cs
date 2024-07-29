@@ -236,6 +236,13 @@ namespace NewRelic.MAUI.Plugin
         void RecordException(System.Exception exception);
 
         /// <summary>
+        /// Records a handled exception with Attributes.
+        /// </summary>
+        /// <param name="exception">The exception object that was thrown.</param>
+        /// <param name="attributes">A dictionary that includes a list of attributes that further designate subcategories to the Exception.</param>
+        void RecordException(System.Exception exception, Dictionary<string, object> attributes);
+
+        /// <summary>
         /// Provides a HttpMessageHandler to instrument http requests through HttpClient.
         /// </summary>
         /// <returns>The HttpMessageHandler object to be used in HttpClient.</returns>

@@ -499,6 +499,10 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
         }
         return strToJavaObject;
     }
-    
+
+    public void RecordException(Exception exception, Dictionary<string, object> attributes)
+    {
+        NRAndroidAgent.RecordHandledException(NewRelicMauiException.Create(exception), ConvertAttributesToJavaObjects(attributes));
+    }
 }
 

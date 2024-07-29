@@ -306,23 +306,8 @@ public class NewRelicMethodsImplementation : INewRelicMethods
 
     public void RecordException(Exception exception)
     {
+        RecordException(exception, new Dictionary<string, object>());
 
-        List<NativeStackFrame> stackFrames = StackTraceParser.Parse(exception.StackTrace).ToList();
-        var _stackFramesArray = new NSMutableArray();
-        foreach (NativeStackFrame length in stackFrames)
-        {
-            var stackFrameKeys = new object[] { "file", "line", "method", "class" };
-            var stackFrameObjects = new object[] { length.FileName, length.LineNumber, length.MethodName, length.ClassName };
-            NSDictionary dictionary = NSDictionary.FromObjectsAndKeys(stackFrameObjects, stackFrameKeys);
-            _stackFramesArray.Add(dictionary);
-        }
-
-        var errorKeys = new object[] { "name", "reason", "cause", "fatal", "stackTraceElements" };
-        var errorObjects = new object[] { exception.Message, exception.Message, exception.Message, false, _stackFramesArray };
-        NSDictionary NSDict = NSDictionary.FromObjectsAndKeys(errorObjects, errorKeys);
-
-
-        NRIosAgent.RecordHandledExceptionWithStackTrace(NSDict);
     }
 
     public HttpClientHandler GetHttpMessageHandler()
@@ -483,6 +468,26 @@ public class NewRelicMethodsImplementation : INewRelicMethods
     public void Dispose()
     {
         throw new NotImplementedException();
+    }
+
+    public void RecordException(Exception exception, Dictionary<string, object> attributes)
+    {
+        List<NativeStackFrame> stackFrames = StackTraceParser.Parse(exception.StackTrace).ToList();
+        var _stackFramesArray = new NSMutableArray();
+        foreach (NativeStackFrame length in stackFrames)
+        {
+            var stackFrameKeys = new object[] { "file", "line", "method", "class" };
+            var stackFrameObjects = new object[] { length.FileName, length.LineNumber, length.MethodName, length.ClassName };
+            NSDictionary dictionary = NSDictionary.FromObjectsAndKeys(stackFrameObjects, stackFrameKeys);
+            _stackFramesArray.Add(dictionary);
+        }
+
+        var errorKeys = new object[] { "name", "reason", "cause", "fatal", "stackTraceElements", "attributes" };
+        var errorObjects = new object[] { exception.Message, exception.Message, exception.Message, false, _stackFramesArray,ConvertAttributesToNSDictionary(attributes)};
+        NSDictionary NSDict = NSDictionary.FromObjectsAndKeys(errorObjects, errorKeys);
+
+
+        NRIosAgent.RecordHandledExceptionWithStackTrace(NSDict);
     }
 }
 
