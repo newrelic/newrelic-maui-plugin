@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net7.0-android</TargetFramework>
-		<SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+		<TargetFramework>net8.0-android</TargetFramework>
+		<SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
+		<!-- BG8605 and BG8606 happen because there's a missing androidx.lifecycle dependency, but we don't need it here. -->
+		<NoWarn>$(NoWarn);BG8605;BG8606</NoWarn>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<PackageId>NewRelic.MAUI.Android.Binding</PackageId>
@@ -14,7 +16,7 @@
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<Authors>New Relic</Authors>
 		<PackageTags>newrelic;MAUI;android;new relic;observability;monitoring;telemetry</PackageTags>
-		<Version>7.5.0</Version>
+		<Version>7.5.1</Version>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
 	<ItemGroup>
@@ -24,8 +26,5 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <None Remove="Jars\" />
-	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Jars\" />
 	</ItemGroup>
 </Project>

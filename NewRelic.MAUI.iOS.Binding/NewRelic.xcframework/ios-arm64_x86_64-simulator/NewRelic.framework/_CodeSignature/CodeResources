@@ -22,7 +22,7 @@
 		</data>
 		<key>Headers/NRLogger.h</key>
 		<data>
-		UhD7QKAO4Ay1pjFuLqdSl+Xtj9Q=
+		Z4t8k7XCHx4cAsEhXrm5Sm+wynE=
 		</data>
 		<key>Headers/NRTimer.h</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		lSAdr1/K03IQjlbuqQyEbwrFthw=
+		+k1In0zUK00et3o9OUb4jN53nXo=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		R3XeahBtBNbNZDqTBcgkIVf9pgw=
+		Gyf3AWUlAHq1x0rg77XWnmZanNY=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		u4PfPezlOfo1/+rfJZ/1z5S23Qs=
+		TwovCbliBiLQPtpHO8hfO6/NVEE=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -147,7 +147,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mdZoAOwvbkY5NEB9A7kS42NTAr+DTx40KC/1QvTtNfM=
+			hncj5QvbgUX365TxXyMH+nS6FIzCpkTBak3ZYfGewt4=
 			</data>
 		</dict>
 		<key>Headers/NRTimer.h</key>
@@ -203,14 +203,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			s58BLB0B9LlZfQxgqnQ1U80NdgAqNpXo9KxcqfvAxQE=
+			2DzidlYzeQtZ92xKE7vSNTqU1I5VIlqihOtv9Am5lHc=
 			</data>
 		</dict>
 		<key>Modules/NewRelic.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			O6LdF5/t2bVCQB+GneOtgOv4/hvQUr1X6/ltH93pQko=
+			tlRT7Fsovs1K0Knydw5pfwtJ8TIlTN0qF8WR3wb22jY=
 			</data>
 		</dict>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
