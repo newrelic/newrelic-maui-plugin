@@ -1,6 +1,25 @@
 # Changelog
 
 
+# 1.1.1
+
+## New Features
+
+1. **Support for .Net 8.0**
+   - The plugin now includes compatibility and support for .Net 8.0.
+
+2. **Added Record Handle Exception API with Attributes**
+   - Introduced an API to record and handle exceptions along with their respective attributes.
+
+## Improvements
+
+- **Native Android Agent Updated to Version 7.5.1**
+   - The native Android agent has been upgraded to version 7.5.1, incorporating the latest enhancements and optimizations.
+
+- **Native iOS Agent Updated to Version 7.5.1**
+   - The native iOS agent has been upgraded to version 7.5.1, providing improved functionality and performance optimizations.
+
+
 # 1.1.0
 
 
