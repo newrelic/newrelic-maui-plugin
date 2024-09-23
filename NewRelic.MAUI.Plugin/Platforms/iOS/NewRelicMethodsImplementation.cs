@@ -4,6 +4,7 @@
  */
 
 using Foundation;
+using System.Diagnostics;
 using NRIosAgent = MauiiOS.NewRelic.NewRelic;
 
 namespace NewRelic.MAUI.Plugin;
@@ -51,8 +52,7 @@ public class NewRelicMethodsImplementation : INewRelicMethods
 
         NRIosAgent.EnableCrashReporting(agentConfig.crashReportingEnabled);
         NRIosAgent.SetPlatform(MauiiOS.NewRelic.NRMAApplicationPlatform.Maui);
-        MauiiOS.NewRelic.NewRelic.SetPlatformVersion("1.1.4");
-
+        MauiiOS.NewRelic.NewRelic.SetPlatformVersion("1.1.2");
 
         MauiiOS.NewRelic.NRLogger.SetLogLevels((uint)logLevelDict[agentConfig.logLevel]);
         if (!agentConfig.loggingEnabled)
@@ -163,15 +163,12 @@ public class NewRelicMethodsImplementation : INewRelicMethods
 
     public void NoticeHttpTransaction(string url, string httpMethod, int statusCode, long startTime, long endTime, long bytesSent, long bytesReceived, string responseBody)
     {
-        IntPtr statusCodePtr = new IntPtr(statusCode);
-
         NRIosAgent.NoticeNetworkRequestForURL(Foundation.NSUrl.FromString(url),
-            
             httpMethod,
             startTime,
             endTime,
             new NSDictionary(),
-            statusCodePtr,
+            statusCode,
             (nuint)bytesSent,
             (nuint)bytesReceived,
             new NSData(),

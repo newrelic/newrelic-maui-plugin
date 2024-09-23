@@ -1,17 +1,5 @@
 # Changelog
 
-# 1.1.4
-
-## Improvements
-
-- Added Support to Record iOS Crash as Handled Exception 
-- Native Android agent updated to version 7.6.1
-- Native iOS agent updated to version 7.5.2
-
-# 1.1.3
-
-- Fixed info Plist issue for iOS Binding
-
 # 1.1.2
 
 - Resolved the iOS bindings namespace issue which was causing conflicts for customers due to the namespace clash with the newrelic package.
