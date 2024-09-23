@@ -5,7 +5,7 @@
 
 using Foundation;
 using System.Diagnostics;
-using NRIosAgent = iOS.NewRelic.NewRelic;
+using NRIosAgent = MauiiOS.NewRelic.NewRelic;
 
 namespace NewRelic.MAUI.Plugin;
 
@@ -14,24 +14,24 @@ public class NewRelicMethodsImplementation : INewRelicMethods
 {
     private bool _isUncaughtExceptionHandled;
 
-    private Dictionary<LogLevel, iOS.NewRelic.NRLogLevels> logLevelDict = new Dictionary<LogLevel, iOS.NewRelic.NRLogLevels>()
+    private Dictionary<LogLevel, MauiiOS.NewRelic.NRLogLevels> logLevelDict = new Dictionary<LogLevel, MauiiOS.NewRelic.NRLogLevels>()
     {
-        { LogLevel.ERROR, iOS.NewRelic.NRLogLevels.Error },
-        { LogLevel.WARNING, iOS.NewRelic.NRLogLevels.Warning },
-        { LogLevel.INFO, iOS.NewRelic.NRLogLevels.Info },
-        { LogLevel.VERBOSE, iOS.NewRelic.NRLogLevels.Verbose },
-        { LogLevel.AUDIT, iOS.NewRelic.NRLogLevels.Audit }
+        { LogLevel.ERROR, MauiiOS.NewRelic.NRLogLevels.Error },
+        { LogLevel.WARNING, MauiiOS.NewRelic.NRLogLevels.Warning },
+        { LogLevel.INFO, MauiiOS.NewRelic.NRLogLevels.Info },
+        { LogLevel.VERBOSE, MauiiOS.NewRelic.NRLogLevels.Verbose },
+        { LogLevel.AUDIT, MauiiOS.NewRelic.NRLogLevels.Audit }
     };
 
     private Dictionary<NetworkFailure, nint> networkFailureDict = new Dictionary<NetworkFailure, nint>()
     {
-        { NetworkFailure.Unknown, (nint) iOS.NewRelic.NRNetworkFailureCode.Unknown },
-        { NetworkFailure.BadURL, (nint) iOS.NewRelic.NRNetworkFailureCode.BadURL },
-        { NetworkFailure.TimedOut, (nint) iOS.NewRelic.NRNetworkFailureCode.TimedOut },
-        { NetworkFailure.CannotConnectToHost, (nint) iOS.NewRelic.NRNetworkFailureCode.CannotConnectToHost },
-        { NetworkFailure.DNSLookupFailed, (nint) iOS.NewRelic.NRNetworkFailureCode.DNSLookupFailed },
-        { NetworkFailure.BadServerResponse, (nint) iOS.NewRelic.NRNetworkFailureCode.BadServerResponse },
-        { NetworkFailure.SecureConnectionFailed, (nint) iOS.NewRelic.NRNetworkFailureCode.SecureConnectionFailed }
+        { NetworkFailure.Unknown, (nint) MauiiOS.NewRelic.NRNetworkFailureCode.Unknown },
+        { NetworkFailure.BadURL, (nint) MauiiOS.NewRelic.NRNetworkFailureCode.BadURL },
+        { NetworkFailure.TimedOut, (nint) MauiiOS.NewRelic.NRNetworkFailureCode.TimedOut },
+        { NetworkFailure.CannotConnectToHost, (nint) MauiiOS.NewRelic.NRNetworkFailureCode.CannotConnectToHost },
+        { NetworkFailure.DNSLookupFailed, (nint) MauiiOS.NewRelic.NRNetworkFailureCode.DNSLookupFailed },
+        { NetworkFailure.BadServerResponse, (nint) MauiiOS.NewRelic.NRNetworkFailureCode.BadServerResponse },
+        { NetworkFailure.SecureConnectionFailed, (nint) MauiiOS.NewRelic.NRNetworkFailureCode.SecureConnectionFailed }
     };
 
     private Dictionary<MetricUnit, string> metricUnitDict = new Dictionary<MetricUnit, string>()
@@ -51,66 +51,66 @@ public class NewRelicMethodsImplementation : INewRelicMethods
         }
 
         NRIosAgent.EnableCrashReporting(agentConfig.crashReportingEnabled);
-        NRIosAgent.SetPlatform(iOS.NewRelic.NRMAApplicationPlatform.Maui);
-        iOS.NewRelic.NewRelic.SetPlatformVersion("1.1.1");
+        NRIosAgent.SetPlatform(MauiiOS.NewRelic.NRMAApplicationPlatform.Maui);
+        MauiiOS.NewRelic.NewRelic.SetPlatformVersion("1.1.2");
 
-        iOS.NewRelic.NRLogger.SetLogLevels((uint)logLevelDict[agentConfig.logLevel]);
+        MauiiOS.NewRelic.NRLogger.SetLogLevels((uint)logLevelDict[agentConfig.logLevel]);
         if (!agentConfig.loggingEnabled)
         {
-            iOS.NewRelic.NRLogger.SetLogLevels((uint)iOS.NewRelic.NRLogLevels.None);
+            MauiiOS.NewRelic.NRLogger.SetLogLevels((uint)MauiiOS.NewRelic.NRLogLevels.None);
         }
 
         if (!agentConfig.networkErrorRequestEnabled)
         {
-            NRIosAgent.DisableFeatures(iOS.NewRelic.NRMAFeatureFlags.RequestErrorEvents);
+            NRIosAgent.DisableFeatures(MauiiOS.NewRelic.NRMAFeatureFlags.RequestErrorEvents);
         }
 
         if (!agentConfig.networkRequestEnabled)
         {
-            NRIosAgent.DisableFeatures(iOS.NewRelic.NRMAFeatureFlags.NetworkRequestEvents);
+            NRIosAgent.DisableFeatures(MauiiOS.NewRelic.NRMAFeatureFlags.NetworkRequestEvents);
         }
 
         if (!agentConfig.interactionTracingEnabled)
         {
-            NRIosAgent.DisableFeatures(iOS.NewRelic.NRMAFeatureFlags.InteractionTracing);
+            NRIosAgent.DisableFeatures(MauiiOS.NewRelic.NRMAFeatureFlags.InteractionTracing);
         }
 
         if (!agentConfig.webViewInstrumentation)
         {
-            NRIosAgent.DisableFeatures(iOS.NewRelic.NRMAFeatureFlags.WebViewInstrumentation);
+            NRIosAgent.DisableFeatures(MauiiOS.NewRelic.NRMAFeatureFlags.WebViewInstrumentation);
         }
 
         if (agentConfig.fedRampEnabled)
         {
-            NRIosAgent.EnableFeatures(iOS.NewRelic.NRMAFeatureFlags.FedRampEnabled);
+            NRIosAgent.EnableFeatures(MauiiOS.NewRelic.NRMAFeatureFlags.FedRampEnabled);
         }
         
         if (agentConfig.offlineStorageEnabled)
         {
-            NRIosAgent.EnableFeatures(iOS.NewRelic.NRMAFeatureFlags.OfflineStorage);
+            NRIosAgent.EnableFeatures(MauiiOS.NewRelic.NRMAFeatureFlags.OfflineStorage);
         }
         else
         {
-            NRIosAgent.DisableFeatures(iOS.NewRelic.NRMAFeatureFlags.OfflineStorage);
+            NRIosAgent.DisableFeatures(MauiiOS.NewRelic.NRMAFeatureFlags.OfflineStorage);
         }
         
         if (agentConfig.newEventSystemEnabled)
         {
-            NRIosAgent.EnableFeatures(iOS.NewRelic.NRMAFeatureFlags.NewEventSystem);
+            NRIosAgent.EnableFeatures(MauiiOS.NewRelic.NRMAFeatureFlags.NewEventSystem);
         }
         else
         {
-            NRIosAgent.DisableFeatures(iOS.NewRelic.NRMAFeatureFlags.NewEventSystem);
+            NRIosAgent.DisableFeatures(MauiiOS.NewRelic.NRMAFeatureFlags.NewEventSystem);
         }
 
         
         if (agentConfig.backgroundReportingEnabled)
         {
-            NRIosAgent.EnableFeatures(iOS.NewRelic.NRMAFeatureFlags.BackgroundReporting);
+            NRIosAgent.EnableFeatures(MauiiOS.NewRelic.NRMAFeatureFlags.BackgroundReporting);
         }
         else
         {
-            NRIosAgent.DisableFeatures(iOS.NewRelic.NRMAFeatureFlags.BackgroundReporting);
+            NRIosAgent.DisableFeatures(MauiiOS.NewRelic.NRMAFeatureFlags.BackgroundReporting);
         }
 
 
@@ -269,11 +269,11 @@ public class NewRelicMethodsImplementation : INewRelicMethods
     {
         if (enabled)
         {
-            NRIosAgent.EnableFeatures(iOS.NewRelic.NRMAFeatureFlags.NetworkRequestEvents);
+            NRIosAgent.EnableFeatures(MauiiOS.NewRelic.NRMAFeatureFlags.NetworkRequestEvents);
         }
         else
         {
-            NRIosAgent.DisableFeatures(iOS.NewRelic.NRMAFeatureFlags.NetworkRequestEvents);
+            NRIosAgent.DisableFeatures(MauiiOS.NewRelic.NRMAFeatureFlags.NetworkRequestEvents);
         }
         return;
     }
@@ -282,11 +282,11 @@ public class NewRelicMethodsImplementation : INewRelicMethods
     {
         if (enabled)
         {
-            NRIosAgent.EnableFeatures(iOS.NewRelic.NRMAFeatureFlags.RequestErrorEvents);
+            NRIosAgent.EnableFeatures(MauiiOS.NewRelic.NRMAFeatureFlags.RequestErrorEvents);
         }
         else
         {
-            NRIosAgent.DisableFeatures(iOS.NewRelic.NRMAFeatureFlags.RequestErrorEvents);
+            NRIosAgent.DisableFeatures(MauiiOS.NewRelic.NRMAFeatureFlags.RequestErrorEvents);
         }
         return;
     }
@@ -295,11 +295,11 @@ public class NewRelicMethodsImplementation : INewRelicMethods
     {
         if (enabled)
         {
-            NRIosAgent.EnableFeatures(iOS.NewRelic.NRMAFeatureFlags.HttpResponseBodyCapture);
+            NRIosAgent.EnableFeatures(MauiiOS.NewRelic.NRMAFeatureFlags.HttpResponseBodyCapture);
         }
         else
         {
-            NRIosAgent.DisableFeatures(iOS.NewRelic.NRMAFeatureFlags.HttpResponseBodyCapture);
+            NRIosAgent.DisableFeatures(MauiiOS.NewRelic.NRMAFeatureFlags.HttpResponseBodyCapture);
         }
         return;
     }

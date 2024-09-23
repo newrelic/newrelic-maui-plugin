@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 using CoreFoundation;
 using ObjCRuntime;
 
-namespace iOS.NewRelic
+namespace MauiiOS.NewRelic
 {
 	[Flags]
 	public enum NRMAFeatureFlags : ulong

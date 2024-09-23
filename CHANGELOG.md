@@ -1,5 +1,8 @@
 # Changelog
 
+# 1.1.2
+
+- Resolved the iOS bindings namespace issue which was causing conflicts for customers due to the namespace clash with the newrelic package.
 
 # 1.1.1
 
