@@ -52,7 +52,8 @@ public class NewRelicMethodsImplementation : INewRelicMethods
 
         NRIosAgent.EnableCrashReporting(agentConfig.crashReportingEnabled);
         NRIosAgent.SetPlatform(MauiiOS.NewRelic.NRMAApplicationPlatform.Maui);
-        MauiiOS.NewRelic.NewRelic.SetPlatformVersion("1.1.2");
+        MauiiOS.NewRelic.NewRelic.SetPlatformVersion("1.1.3");
+
 
         MauiiOS.NewRelic.NRLogger.SetLogLevels((uint)logLevelDict[agentConfig.logLevel]);
         if (!agentConfig.loggingEnabled)
