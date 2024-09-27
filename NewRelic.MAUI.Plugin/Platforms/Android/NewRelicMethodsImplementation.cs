@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0 
  */
 
+using System.Reflection;
 using Android.Runtime;
 using Com.Newrelic.Agent.Android.Logging;
 using NRAndroidAgent = Com.Newrelic.Agent.Android.NewRelic;
@@ -69,6 +70,7 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
 
     public void Start(string applicationToken, AgentStartConfiguration agentConfig = null)
     {
+        
         if (agentConfig == null)
         {
             agentConfig = new AgentStartConfiguration();
@@ -126,7 +128,7 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
 
 
         var newRelic = NRAndroidAgent.WithApplicationToken(applicationToken)
-            .WithApplicationFramework(Com.Newrelic.Agent.Android.ApplicationFramework.Maui, "1.1.2")
+            .WithApplicationFramework(Com.Newrelic.Agent.Android.ApplicationFramework.Maui, "1.1.3")
             .WithLoggingEnabled(agentConfig.loggingEnabled)
             .WithLogLevel(logLevelDict[agentConfig.logLevel]);
 
