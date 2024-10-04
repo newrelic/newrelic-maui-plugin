@@ -456,6 +456,10 @@ This plugin also provides a method to manually record any handled exceptions as 
 - ### No Http data appears:
   - To instrument http data, make sure to use the HttpMessageHandler in HttpClient.
 
+
+- ### Crash reports may not be sent when ProGuard rules are not properly configured for New Relic in hybrid Android applications
+  - Ensure proper ProGuard rules are added to your ProGuard configuration file. See ["Configuring ProGuard Rules"](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/install-configure/configure-proguard-or-dexguard-android-apps/) in setup documentation.
+
 ## Support
 
 New Relic hosts and moderates an online forum where customers, users, maintainers, contributors, and New Relic employees can discuss and collaborate:
