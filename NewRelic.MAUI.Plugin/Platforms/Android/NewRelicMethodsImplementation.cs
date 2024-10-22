@@ -3,9 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0 
  */
 
-using System.Reflection;
-using Android.Runtime;
-using Com.Newrelic.Agent.Android.Logging;
+
 using NRAndroidAgent = Com.Newrelic.Agent.Android.NewRelic;
 using NRNetworkFailure = Com.Newrelic.Agent.Android.Util.NetworkFailure;
 using NRMetricUnit = Com.Newrelic.Agent.Android.Metric.MetricUnit;
@@ -128,7 +126,7 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
 
 
         var newRelic = NRAndroidAgent.WithApplicationToken(applicationToken)
-            .WithApplicationFramework(Com.Newrelic.Agent.Android.ApplicationFramework.Maui, "1.1.3")
+            .WithApplicationFramework(Com.Newrelic.Agent.Android.ApplicationFramework.Maui, "1.1.4")
             .WithLoggingEnabled(agentConfig.loggingEnabled)
             .WithLogLevel(logLevelDict[agentConfig.logLevel]);
 
