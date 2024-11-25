@@ -415,6 +415,7 @@ or [Android SDK](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobi
 ``` C#
     CrossNewRelic.Current.LogAttributes(new Dictionary<string, object>()
         {
+            {"level", "info"},
             {"BreadNumValue", 12.3 },
             {"BreadStrValue", "MAUIBread" },
             {"BreadBoolValue", true },
