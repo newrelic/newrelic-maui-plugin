@@ -461,6 +461,9 @@ This plugin also provides a method to manually record any handled exceptions as 
 - ### Crash reports may not be sent when ProGuard rules are not properly configured for New Relic in hybrid Android applications
   - Ensure proper ProGuard rules are added to your ProGuard configuration file. See ["Configuring ProGuard Rules"](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/install-configure/configure-proguard-or-dexguard-android-apps/) in setup documentation.
 
+-  ### App Crashes When Adding `TrackNavigation` Method in `MauiProgram` or `AppShell` File
+  - If you experience a crash in this scenario, ensure that the `TrackShellNavigatedEvents` method is called after setting the `MainPage` in the `App` constructor.
+
 ## Support
 
 New Relic hosts and moderates an online forum where customers, users, maintainers, contributors, and New Relic employees can discuss and collaborate:
