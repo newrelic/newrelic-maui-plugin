@@ -14,7 +14,9 @@ SPDX-License-Identifier: Apache-2.0 -->
   <attr path="/api/package[@name='com.newrelic.agent.android.agentdata']/class[@name='AgentDataReporter']/method[@name='stop' and count(parameter)=0]" name="visibility">protected</attr>
   <attr path="/api/package[@name='com.newrelic.agent.android.crash']/class[@name='CrashReporter']/method[@name='start' and count(parameter)=0]" name="visibility">protected</attr>
   <attr path="/api/package[@name='com.newrelic.agent.android.sample']/class[@name='Sampler']/field[@name='sampler']" name="managedName">samplerField</attr>
-
+  <attr path="/api/package[@name='com.newrelic.agent.android.aei']/class[@name='AEITraceReporter']/method[@name='start' and count(parameter)=0]" name="visibility">protected</attr>
+  <attr path="/api/package[@name='com.newrelic.agent.android.payload']/class[@name='Payload']/field[@name='payload']" name="managedName">payloadField</attr>
+  
   <remove-node path="/api/package[@name='com.newrelic.agent.android.distributedtracing']/class[@name='DistributedTracing']" />
   <remove-node path="/api/package[@name='com.newrelic.com.google.gson.internal.bind']/class[@name='DateTypeAdapter']" />
   <remove-node path="/api/package[@name='com.newrelic.agent.android.crash']/interface[@name='CrashStore']" />
