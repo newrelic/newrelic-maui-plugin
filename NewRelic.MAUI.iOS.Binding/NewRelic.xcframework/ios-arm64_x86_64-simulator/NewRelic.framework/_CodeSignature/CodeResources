@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/NRConstants.h</key>
 		<data>
-		lJmU3wIB6sWc8YZYN8ovooKd/b8=
+		EAI6s23Hz+5S7Urj5uK3unw9mh4=
 		</data>
 		<key>Headers/NRCustomMetrics.h</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		qN/btpbpus9ASSxgmPK6+BmfH+k=
+		dxztyb2bWypqRjThv78o0qikU/U=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		puiOByXyHDYxaYcu5zXlbTcTBck=
+		S849AiFbx6ePGt430+yUL85VtFI=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		+IIkAX38S1I7DX/2fG64KyZO6Yw=
+		4W7rRm633nHu0gBNl2c0yzMMfJw=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -126,7 +126,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4LvCXvTxxkrtZS75teoUwWnziAMiIpAMxFKm4MfEY3E=
+			hsXlVKxWVykweHkSwCUAyhVIsOTVTFafhTEyOjsdcxg=
 			</data>
 		</dict>
 		<key>Headers/NRCustomMetrics.h</key>
@@ -203,14 +203,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2vEkLMT7BdDMqg+o8/mw/6FnwlfBRP00vKzNhP5Jvu8=
+			H/owT0YlGro7fY2K/i+cwSh+5hSGc9+n24/bpY0nSzM=
 			</data>
 		</dict>
 		<key>Modules/NewRelic.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VgGNJSCUU9dbp43gj7Kw6nQjq49pqrhUKGUKZ2aybgE=
+			Kfj3wcfUsPOsF5yAeeGzi5AkgquPRN/1Rnibt/N2J/o=
 			</data>
 		</dict>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios-simulator.abi.json</key>

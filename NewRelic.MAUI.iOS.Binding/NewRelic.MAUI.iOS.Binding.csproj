@@ -6,11 +6,11 @@
 		<ImplicitUsings>true</ImplicitUsings>
 		<PackageId>NewRelic.MAUI.iOS.Binding</PackageId>
 		<Authors>New Relic</Authors>
-		<Version>7.5.3.2</Version>
+		<Version>7.5.4.1</Version>
 		<IsBindingProject>true</IsBindingProject>
 		<summary>NewRelic iOS SDK binding for .NET MAUI</summary>
 		<description>A .NET iOS library that binds the native New Relic iOS SDK. With NewRelic, you can collect crashes, network traffic, and other information for .NET MAUI iOS apps using native components.</description>
-		<copyright>Copyright 2023</copyright>
+		<copyright>Copyright 2025</copyright>
 		<PackageProjectUrl>https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-ios/get-started/introduction-new-relic-mobile-ios/</PackageProjectUrl>
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
