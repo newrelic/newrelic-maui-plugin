@@ -8,7 +8,7 @@
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<PackageId>NewRelic.MAUI.Plugin</PackageId>
-		<Version>1.1.8</Version>
+		<Version>1.1.9</Version>
 		<Summary>New Relic Plugin for .NET MAUI mobile apps</Summary>
 		<Description>With the New Relic .NET MAUI mobile plugin, your team can monitor the performance of .NET MAUI apps and identify code errors. The plugin collects crash data, network traffic, and other information for your apps using native components.</Description>
 		<Authors>New Relic</Authors>
