@@ -1,5 +1,29 @@
 # Changelog
 
+# 1.1.9
+
+## Improvements
+
+- Native Android agent updated to version 7.6.5
+
+# 1.1.8
+
+## Improvements
+
+- Native iOS agent updated to version 7.5.4
+
+# 1.1.7
+
+## Improvements
+
+- Native Android agent updated to version 7.6.4
+
+# 1.1.6
+
+## Improvements
+
+- Added Support for .net9.0
+
 # 1.1.5
 
 ## Improvements
