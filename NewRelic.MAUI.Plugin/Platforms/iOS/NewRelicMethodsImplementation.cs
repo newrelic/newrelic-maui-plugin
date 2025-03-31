@@ -54,6 +54,7 @@ public class NewRelicMethodsImplementation : INewRelicMethods
         MauiiOS.NewRelic.NewRelic.SetPlatformVersion("1.1.9");
 
 
+
         MauiiOS.NewRelic.NRLogger.SetLogLevels((uint)logLevelDict[agentConfig.logLevel]);
         if (!agentConfig.loggingEnabled)
         {
