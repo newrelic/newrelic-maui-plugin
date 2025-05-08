@@ -126,7 +126,7 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
 
 
         var newRelic = NRAndroidAgent.WithApplicationToken(applicationToken)
-            .WithApplicationFramework(Com.Newrelic.Agent.Android.ApplicationFramework.Maui, "1.1.9")
+            .WithApplicationFramework(Com.Newrelic.Agent.Android.ApplicationFramework.Maui, "1.1.10")
             .WithLoggingEnabled(agentConfig.loggingEnabled)
             .WithLogLevel(logLevelDict[agentConfig.logLevel]);
 
