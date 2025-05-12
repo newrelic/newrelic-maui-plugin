@@ -1,8 +1,8 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "TopLevel",
-    "printedName": "TopLevel",
+    "name": "NewRelic",
+    "printedName": "NewRelic",
     "children": [
       {
         "kind": "Import",
@@ -56,6 +56,10 @@
             "moduleName": "NewRelic",
             "genericSig": "<τ_0_0 where τ_0_0 : SwiftUI.View>",
             "sugared_genericSig": "<Self where Self : SwiftUI.View>",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom"
+            ],
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
           }
@@ -63,7 +67,7 @@
         "declKind": "Protocol",
         "usr": "s:7SwiftUI4ViewP",
         "mangledName": "$s7SwiftUI4ViewP",
-        "moduleName": "SwiftUI",
+        "moduleName": "SwiftUICore",
         "genericSig": "<τ_0_0.Body : SwiftUI.View>",
         "sugared_genericSig": "<Self.Body : SwiftUI.View>",
         "intro_Macosx": "10.15",
@@ -71,13 +75,35 @@
         "intro_tvOS": "13.0",
         "intro_watchOS": "6.0",
         "declAttributes": [
+          "Preconcurrency",
           "TypeEraser",
+          "OriginallyDefinedIn",
+          "OriginallyDefinedIn",
+          "OriginallyDefinedIn",
+          "OriginallyDefinedIn",
           "Available",
           "Available",
           "Available",
-          "Available"
+          "Available",
+          "Custom"
         ],
-        "isExternal": true
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
       }
     ],
     "json_format_version": 8
