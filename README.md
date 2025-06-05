@@ -91,15 +91,6 @@ using NewRelic.MAUI.Plugin;
 
 ```
 
-## Android Setup
-
-1. Open `Platforms/Android/AndroidManifest.xml` for your Android App and add the following permissions:
-
-```xml
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-	<uses-permission android:name="android.permission.INTERNET" />
-```
-
 
 ## Screen Tracking Events
 
