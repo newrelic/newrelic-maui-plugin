@@ -10,13 +10,13 @@
 		<PackageId>NewRelic.MAUI.Android.Binding</PackageId>
 		<summary>New Relic Android SDK binding for .NET MAUI</summary>
 		<description>A .NET Android library that binds the native New Relic Android SDK. With New Relic, you can collect crashes, network traffic, and other information for .NET MAUI Android apps using native components.</description>
-		<copyright>Copyright 2023</copyright>
+		<copyright>Copyright 2025</copyright>
 		<PackageProjectUrl>https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/get-started/introduction-new-relic-mobile-android/</PackageProjectUrl>
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<Authors>New Relic</Authors>
 		<PackageTags>newrelic;MAUI;android;new relic;observability;monitoring;telemetry</PackageTags>
-		<Version>7.6.6</Version>
+		<Version>7.6.8</Version>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
 	<ItemGroup>

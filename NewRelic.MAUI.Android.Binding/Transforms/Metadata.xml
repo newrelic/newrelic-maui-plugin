@@ -15,8 +15,12 @@ SPDX-License-Identifier: Apache-2.0 -->
   <attr path="/api/package[@name='com.newrelic.agent.android.crash']/class[@name='CrashReporter']/method[@name='start' and count(parameter)=0]" name="visibility">protected</attr>
   <attr path="/api/package[@name='com.newrelic.agent.android.sample']/class[@name='Sampler']/field[@name='sampler']" name="managedName">samplerField</attr>
   <attr path="/api/package[@name='com.newrelic.agent.android.aei']/class[@name='AEITraceReporter']/method[@name='start' and count(parameter)=0]" name="visibility">protected</attr>
+  <attr path="/api/package[@name='com.newrelic.agent.android.sessionReplay']/class[@name='SessionReplayReporter']/method[@name='start' and count(parameter)=0]" name="visibility">protected</attr>
+  <attr path="/api/package[@name='com.newrelic.agent.android.sessionReplay']/class[@name='SessionReplayReporter']/method[@name='stop' and count(parameter)=0]" name="visibility">protected</attr>
+
   <attr path="/api/package[@name='com.newrelic.agent.android.payload']/class[@name='Payload']/field[@name='payload']" name="managedName">payloadField</attr>
-  
+
+
   <remove-node path="/api/package[@name='com.newrelic.agent.android.distributedtracing']/class[@name='DistributedTracing']" />
   <remove-node path="/api/package[@name='com.newrelic.com.google.gson.internal.bind']/class[@name='DateTypeAdapter']" />
   <remove-node path="/api/package[@name='com.newrelic.agent.android.crash']/interface[@name='CrashStore']" />
@@ -26,11 +30,26 @@ SPDX-License-Identifier: Apache-2.0 -->
   <remove-node path="/api/package[@name='com.newrelic.com.google.gson.internal']/class[@name='LinkedTreeMap']" />
   <remove-node path="/api/package[@name='com.newrelic.com.google.gson']/class[@name='JsonStreamParser']" />
   <remove-node path="/api/package[@name='com.newrelic.agent.android.stores']/class[@name='SharedPrefsPayloadStore']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.stores']/class[@name='SharedPrefsSessionReplayStore']" />
   <remove-node path="/api/package[@name='com.newrelic.agent.android.analytics']/interface[@name='AnalyticsAttributeStore']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.internal']/interface[@name='OnRootViewRemovedListener']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.internal']/interface[@name='OnKeyEventListener']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.internal']/interface[@name='OnRootViewAddedListener']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.internal']/interface[@name='OnRootViewAddedListener']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.internal']/interface[@name='OnTouchEventListener']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.internal']/interface[@name='OnWindowFocusGainedListener']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.internal']/interface[@name='OnWindowFocusLostListener']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.internal']/interface[@name='OnWindowFocusLostListener']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.internal']/class[@name='WindowCallbackWrapper']" />
+
+
+
   <remove-node path="/api/package[@name='com.newrelic.agent.android.harvest.type']/class[@name='BaseHarvestable']" />
 
 
   <remove-node path="/api/package[@name='com.newrelic.agent.android.analytics']/interface[@name='AnalyticsAttributeStore']/method[@name='fetchAll' and count(parameter)=0]" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.stores']/interface[@name='SharedPrefsSessionReplayStore']/method[@name='fetchAll' and count(parameter)=0]" />
+
   <remove-node path="/api/package[@name='com.newrelic.com.google.gson.internal.bind']/class[@name='NumberTypeAdapter']" />
   <remove-node path="/api/package[@name='com.newrelic.com.google.gson.internal.bind']/class[@name='DefaultDateTypeAdapter']" />
   <remove-node path="/api/package[@name='com.newrelic.com.google.gson.internal']/class[@name='LinkedHashTreeMap']" />
