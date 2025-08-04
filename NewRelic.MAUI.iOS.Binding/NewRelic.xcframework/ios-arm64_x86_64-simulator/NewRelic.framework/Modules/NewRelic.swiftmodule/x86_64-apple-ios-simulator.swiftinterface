@@ -1,15 +1,56 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
-// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name NewRelic
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
-@_exported import NewRelic
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name NewRelic -module-alias Module___NewRelic=NewRelic -module-alias Module____StringProcessing=_StringProcessing -module-alias Module____SwiftConcurrencyShims=_SwiftConcurrencyShims -module-alias Module____Concurrency=_Concurrency -module-alias Module___UIKit=UIKit -module-alias Module___OSLog=OSLog -module-alias Module___SwiftUI=SwiftUI -module-alias Module___Compression=Compression -module-alias Module___zlib=zlib
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import Module___Compression
+import Foundation
+@_exported import Module___NewRelic
+import Module___OSLog
 import Swift
-import SwiftUI
-import _Concurrency
-import _StringProcessing
-import _SwiftConcurrencyShims
+import Module___SwiftUI
+import Module___UIKit
+import Module____Concurrency
+import Module____StringProcessing
+import Module____SwiftConcurrencyShims
+import Module___zlib
+@objc @available(iOS 13.0, *)
+@objcMembers public class NRMASessionReplay : ObjectiveC.NSObject {
+  weak public var delegate: (any Module___NewRelic.NRMASessionReplayDelegate)?
+  @objc public var isFirstChunk: Swift.Bool
+  public init(url: Foundation.NSString, delegate: (any Module___NewRelic.NRMASessionReplayDelegate)? = nil)
+  @objc public func start()
+  @objc public func stop()
+  @objc public func clearAllData()
+  @objc deinit
+}
+@available(iOS 13.0, *)
+public protocol NRMASessionReplayDelegate : AnyObject {
+  func generateUploadURL(uncompressedDataSize: Swift.Int, firstTimestamp: Foundation.TimeInterval, lastTimestamp: Foundation.TimeInterval, isFirstChunk: Swift.Bool, isGZipped: Swift.Bool) -> Foundation.URL?
+}
 @available(iOS 13, tvOS 13, *)
 extension SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public func NRTrackView(name: Swift.String? = nil) -> some SwiftUICore.View
+  @Module____Concurrency.MainActor @preconcurrency public func NRTrackView(name: Swift.String? = nil) -> some SwiftUICore.View
   
+}
+@objc @available(iOS 13.0, *)
+@objcMembers public class SessionReplayManager : ObjectiveC.NSObject {
+  @objc public var harvestPeriod: Swift.Int64
+  @objc public var sessionReplayTimer: Foundation.Timer?
+  @objc public init(reporter: Module___NewRelic.SessionReplayReporter, url: Foundation.NSString)
+  @objc public func start()
+  @objc public func stop()
+  @objc public func isRunning() -> Swift.Bool
+  @objc public func newSession()
+  @objc public func clearAllData()
+  @objc public func harvest()
+  @objc public func checkForPreviousSessionFiles()
+  @objc deinit
+}
+@available(iOS 13.0, *)
+extension Module___NewRelic.SessionReplayManager : Module___NewRelic.NRMASessionReplayDelegate {
+  @objc dynamic public func generateUploadURL(uncompressedDataSize: Swift.Int, firstTimestamp: Foundation.TimeInterval, lastTimestamp: Foundation.TimeInterval, isFirstChunk: Swift.Bool, isGZipped: Swift.Bool) -> Foundation.URL?
+}
+@objc @objcMembers public class SessionReplayReporter : ObjectiveC.NSObject {
+  @objc public init(applicationToken: Swift.String, url: Foundation.NSString)
+  @objc deinit
 }
