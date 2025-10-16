@@ -32,15 +32,7 @@ SPDX-License-Identifier: Apache-2.0 -->
   <remove-node path="/api/package[@name='com.newrelic.agent.android.stores']/class[@name='SharedPrefsPayloadStore']" />
   <remove-node path="/api/package[@name='com.newrelic.agent.android.stores']/class[@name='SharedPrefsSessionReplayStore']" />
   <remove-node path="/api/package[@name='com.newrelic.agent.android.analytics']/interface[@name='AnalyticsAttributeStore']" />
-  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.internal']/interface[@name='OnRootViewRemovedListener']" />
-  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.internal']/interface[@name='OnKeyEventListener']" />
-  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.internal']/interface[@name='OnRootViewAddedListener']" />
-  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.internal']/interface[@name='OnRootViewAddedListener']" />
-  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.internal']/interface[@name='OnTouchEventListener']" />
-  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.internal']/interface[@name='OnWindowFocusGainedListener']" />
-  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.internal']/interface[@name='OnWindowFocusLostListener']" />
-  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.internal']/interface[@name='OnWindowFocusLostListener']" />
-  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.internal']/class[@name='WindowCallbackWrapper']" />
+
 
 
 
