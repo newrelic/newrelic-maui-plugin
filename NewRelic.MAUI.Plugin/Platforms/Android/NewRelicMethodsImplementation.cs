@@ -8,6 +8,7 @@ using NRAndroidAgent = Com.Newrelic.Agent.Android.NewRelic;
 using NRNetworkFailure = Com.Newrelic.Agent.Android.Util.NetworkFailure;
 using NRMetricUnit = Com.Newrelic.Agent.Android.Metric.MetricUnit;
 using NRLogLevel = Com.Newrelic.Agent.Android.Logging.LogLevel;
+using System.Reflection;
 
 namespace NewRelic.MAUI.Plugin;
 
@@ -16,6 +17,14 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
 {
     private bool isStarted;
     private bool _isUncaughtExceptionHandled;
+
+    // Add a static property to get the version
+    private static string GetPluginVersion()
+    {
+        var assembly = typeof(NewRelicMethodsImplementation).Assembly;
+        var version = assembly.GetName().Version;
+        return version?.ToString() ?? "1.1.14"; // Fallback to hardcoded version
+    }
 
     private Dictionary<LogLevel, int> logLevelDict = new Dictionary<LogLevel, int>()
     {
@@ -126,7 +135,7 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
 
 
         var newRelic = NRAndroidAgent.WithApplicationToken(applicationToken)
-            .WithApplicationFramework(Com.Newrelic.Agent.Android.ApplicationFramework.Maui, "1.1.13")
+            .WithApplicationFramework(Com.Newrelic.Agent.Android.ApplicationFramework.Maui, GetPluginVersion())
             .WithLoggingEnabled(agentConfig.loggingEnabled)
             .WithLogLevel(logLevelDict[agentConfig.logLevel]);
 
