@@ -32,16 +32,15 @@ SPDX-License-Identifier: Apache-2.0 -->
   <remove-node path="/api/package[@name='com.newrelic.agent.android.stores']/class[@name='SharedPrefsPayloadStore']" />
   <remove-node path="/api/package[@name='com.newrelic.agent.android.stores']/class[@name='SharedPrefsSessionReplayStore']" />
   <remove-node path="/api/package[@name='com.newrelic.agent.android.analytics']/interface[@name='AnalyticsAttributeStore']" />
-
-
-
-
   <remove-node path="/api/package[@name='com.newrelic.agent.android.harvest.type']/class[@name='BaseHarvestable']" />
-
-
+  <!-- Remove ComposeTextViewThingy to avoid interface implementation errors -->
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay']/class[@name='ComposeTextViewThingy']" />
+  <!-- Remove SessionReplay classes with interface implementation errors -->
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay']/class[@name='SessionReplayEditTextThingy']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay']/class[@name='SessionReplayViewThingy']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay']/class[@name='SessionReplayImageViewThingy']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay']/class[@name='SessionReplayTextViewThingy']" />
   <remove-node path="/api/package[@name='com.newrelic.agent.android.analytics']/interface[@name='AnalyticsAttributeStore']/method[@name='fetchAll' and count(parameter)=0]" />
-  <remove-node path="/api/package[@name='com.newrelic.agent.android.stores']/interface[@name='SharedPrefsSessionReplayStore']/method[@name='fetchAll' and count(parameter)=0]" />
-
   <remove-node path="/api/package[@name='com.newrelic.com.google.gson.internal.bind']/class[@name='NumberTypeAdapter']" />
   <remove-node path="/api/package[@name='com.newrelic.com.google.gson.internal.bind']/class[@name='DefaultDateTypeAdapter']" />
   <remove-node path="/api/package[@name='com.newrelic.com.google.gson.internal']/class[@name='LinkedHashTreeMap']" />
@@ -49,5 +48,9 @@ SPDX-License-Identifier: Apache-2.0 -->
   <remove-node path="/api/package[@name='com.newrelic.com.google.gson']/class[@name='JsonPrimitive']" />
   <remove-node path="/api/package[@name='com.newrelic.com.google.gson']/class[@name='JsonObject']" />
   <remove-node path="/api/package[@name='com.newrelic.com.google.gson']/class[@name='JsonNull']" />
-
+  <!-- Remove all Compose SessionReplay classes -->
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.compose']/class[@name='ComposeImageThingy']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.compose']/class[@name='ComposeTextThingy']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.compose']/class[@name='ComposeButtonThingy']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.compose']/class[@name='ComposeTextViewThingy']" />
 </metadata>

@@ -1,9 +1,11 @@
-﻿/*
+﻿
+/*
  * Copyright (c) 2023-present New Relic Corporation. All rights reserved.
  * SPDX-License-Identifier: Apache-2.0 
  */
 
 using Foundation;
+using System.Reflection;
 using NRIosAgent = MauiiOS.NewRelic.NewRelic;
 
 namespace NewRelic.MAUI.Plugin;
@@ -12,6 +14,14 @@ namespace NewRelic.MAUI.Plugin;
 public class NewRelicMethodsImplementation : INewRelicMethods
 {
     private bool _isUncaughtExceptionHandled;
+
+    // Add this method to get the version from assembly
+    private static string GetPluginVersion()
+    {
+        var assembly = typeof(NewRelicMethodsImplementation).Assembly;
+        var version = assembly.GetName().Version;
+        return version?.ToString() ?? "1.1.14"; // Fallback to hardcoded version
+    }
 
     private Dictionary<LogLevel, MauiiOS.NewRelic.NRLogLevels> logLevelDict = new Dictionary<LogLevel, MauiiOS.NewRelic.NRLogLevels>()
     {
@@ -51,7 +61,7 @@ public class NewRelicMethodsImplementation : INewRelicMethods
 
         NRIosAgent.EnableCrashReporting(agentConfig.crashReportingEnabled);
         NRIosAgent.SetPlatform(MauiiOS.NewRelic.NRMAApplicationPlatform.Maui);
-        MauiiOS.NewRelic.NewRelic.SetPlatformVersion("1.1.13");
+        MauiiOS.NewRelic.NewRelic.SetPlatformVersion(GetPluginVersion());
 
 
 
@@ -494,4 +504,3 @@ public class NewRelicMethodsImplementation : INewRelicMethods
         NRIosAgent.RecordHandledExceptionWithStackTrace(NSDict);
     }
 }
-
