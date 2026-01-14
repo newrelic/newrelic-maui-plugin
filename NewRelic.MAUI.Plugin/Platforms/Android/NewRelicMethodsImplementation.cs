@@ -105,7 +105,7 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
 
         if (!agentConfig.interactionTracingEnabled)
         {
-            NRAndroidAgent.DisableFeature(Com.Newrelic.Agent.Android.FeatureFlag.InteractionTracing);
+            NRAndroidAgent.DisableFeature(Com.Newrelic.Agent.Android.FeatureFlag.DefaultInteractions);
         }
 
         if (agentConfig.fedRampEnabled)

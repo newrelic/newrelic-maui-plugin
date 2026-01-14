@@ -83,7 +83,7 @@ public class NewRelicMethodsImplementation : INewRelicMethods
 
         if (!agentConfig.interactionTracingEnabled)
         {
-            NRIosAgent.DisableFeatures(MauiiOS.NewRelic.NRMAFeatureFlags.InteractionTracing);
+            NRIosAgent.DisableFeatures(MauiiOS.NewRelic.NRMAFeatureFlags.DefaultInteractions);
         }
 
         if (!agentConfig.webViewInstrumentation)
