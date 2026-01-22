@@ -305,12 +305,21 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #if defined(__OBJC__)
 
+enum SessionReplayRecordingMode : NSInteger;
 SWIFT_CLASS("_TtC8NewRelic17NRMASessionReplay") SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface NRMASessionReplay : NSObject
+@property (nonatomic) enum SessionReplayRecordingMode recordingMode;
 @property (nonatomic) BOOL isFirstChunk;
 - (void)start;
 - (void)stop;
 - (void)clearAllData;
+/// Sets the recording mode for session replay
+/// \param mode The new recording mode to use
+///
+- (void)transistionToRecordingMode:(enum SessionReplayRecordingMode)mode;
+/// Transitions from error mode to full mode when an error is detected
+/// This flushes the 15-second error buffer to the main frame buffer
+- (void)transitionToFullModeOnError;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -322,11 +331,26 @@ SWIFT_CLASS("_TtC8NewRelic20SessionReplayManager") SWIFT_AVAILABILITY(ios,introd
 @interface SessionReplayManager : NSObject
 @property (nonatomic) int64_t harvestPeriod;
 @property (nonatomic, strong) NSTimer * _Nullable sessionReplayTimer;
+@property (nonatomic) enum SessionReplayRecordingMode sessionReplayMode;
 - (nonnull instancetype)initWithReporter:(SessionReplayReporter * _Nonnull)reporter url:(NSString * _Nonnull)url OBJC_DESIGNATED_INITIALIZER;
-- (void)start;
+/// Sets the recording mode for session replay
+/// \param mode The recording mode to use
+///
+- (void)setRecordingMode:(enum SessionReplayRecordingMode)mode;
+/// Gets the current recording mode
+///
+/// returns:
+/// The current recording mode
+- (enum SessionReplayRecordingMode)getCurrentRecordingMode SWIFT_WARN_UNUSED_RESULT;
+/// Transitions from error mode to full mode, including the 15-second buffer
+- (void)onError:(NSError * _Nullable)error;
+- (void)startFromManual:(BOOL)fromManual with:(enum SessionReplayRecordingMode)newMode;
 - (void)stop;
 - (BOOL)isRunning SWIFT_WARN_UNUSED_RESULT;
-- (void)newSession;
+- (void)endSessionWithHarvest:(BOOL)harvest;
+- (BOOL)manualRecordReplay SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)manualPauseReplay SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)isManuallyActive SWIFT_WARN_UNUSED_RESULT;
 - (void)clearAllData;
 - (void)harvest;
 - (void)checkForPreviousSessionFiles;
@@ -339,6 +363,17 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface SessionReplayManager (SWIFT_EXTENSION(NewRelic))
 - (NSURL * _Nullable)generateUploadURLWithUncompressedDataSize:(NSInteger)uncompressedDataSize firstTimestamp:(NSTimeInterval)firstTimestamp lastTimestamp:(NSTimeInterval)lastTimestamp isFirstChunk:(BOOL)isFirstChunk isGZipped:(BOOL)isGZipped SWIFT_WARN_UNUSED_RESULT;
 @end
+
+/// Defines the recording mode for session replay
+typedef SWIFT_ENUM(NSInteger, SessionReplayRecordingMode, open) {
+/// Error mode: Records frames in a 15-second circular buffer, waiting for an error to occur
+/// Upon error detection, transitions to full mode and includes the buffered frames
+  SessionReplayRecordingModeError = 0,
+/// Full mode: Continuously records and uploads session replay data
+  SessionReplayRecordingModeFull = 1,
+/// Off mode: Session replay is completely disabled
+  SessionReplayRecordingModeOff = 2,
+};
 
 SWIFT_CLASS("_TtC8NewRelic21SessionReplayReporter")
 @interface SessionReplayReporter : NSObject
@@ -662,12 +697,21 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #if defined(__OBJC__)
 
+enum SessionReplayRecordingMode : NSInteger;
 SWIFT_CLASS("_TtC8NewRelic17NRMASessionReplay") SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface NRMASessionReplay : NSObject
+@property (nonatomic) enum SessionReplayRecordingMode recordingMode;
 @property (nonatomic) BOOL isFirstChunk;
 - (void)start;
 - (void)stop;
 - (void)clearAllData;
+/// Sets the recording mode for session replay
+/// \param mode The new recording mode to use
+///
+- (void)transistionToRecordingMode:(enum SessionReplayRecordingMode)mode;
+/// Transitions from error mode to full mode when an error is detected
+/// This flushes the 15-second error buffer to the main frame buffer
+- (void)transitionToFullModeOnError;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -679,11 +723,26 @@ SWIFT_CLASS("_TtC8NewRelic20SessionReplayManager") SWIFT_AVAILABILITY(ios,introd
 @interface SessionReplayManager : NSObject
 @property (nonatomic) int64_t harvestPeriod;
 @property (nonatomic, strong) NSTimer * _Nullable sessionReplayTimer;
+@property (nonatomic) enum SessionReplayRecordingMode sessionReplayMode;
 - (nonnull instancetype)initWithReporter:(SessionReplayReporter * _Nonnull)reporter url:(NSString * _Nonnull)url OBJC_DESIGNATED_INITIALIZER;
-- (void)start;
+/// Sets the recording mode for session replay
+/// \param mode The recording mode to use
+///
+- (void)setRecordingMode:(enum SessionReplayRecordingMode)mode;
+/// Gets the current recording mode
+///
+/// returns:
+/// The current recording mode
+- (enum SessionReplayRecordingMode)getCurrentRecordingMode SWIFT_WARN_UNUSED_RESULT;
+/// Transitions from error mode to full mode, including the 15-second buffer
+- (void)onError:(NSError * _Nullable)error;
+- (void)startFromManual:(BOOL)fromManual with:(enum SessionReplayRecordingMode)newMode;
 - (void)stop;
 - (BOOL)isRunning SWIFT_WARN_UNUSED_RESULT;
-- (void)newSession;
+- (void)endSessionWithHarvest:(BOOL)harvest;
+- (BOOL)manualRecordReplay SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)manualPauseReplay SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)isManuallyActive SWIFT_WARN_UNUSED_RESULT;
 - (void)clearAllData;
 - (void)harvest;
 - (void)checkForPreviousSessionFiles;
@@ -696,6 +755,17 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface SessionReplayManager (SWIFT_EXTENSION(NewRelic))
 - (NSURL * _Nullable)generateUploadURLWithUncompressedDataSize:(NSInteger)uncompressedDataSize firstTimestamp:(NSTimeInterval)firstTimestamp lastTimestamp:(NSTimeInterval)lastTimestamp isFirstChunk:(BOOL)isFirstChunk isGZipped:(BOOL)isGZipped SWIFT_WARN_UNUSED_RESULT;
 @end
+
+/// Defines the recording mode for session replay
+typedef SWIFT_ENUM(NSInteger, SessionReplayRecordingMode, open) {
+/// Error mode: Records frames in a 15-second circular buffer, waiting for an error to occur
+/// Upon error detection, transitions to full mode and includes the buffered frames
+  SessionReplayRecordingModeError = 0,
+/// Full mode: Continuously records and uploads session replay data
+  SessionReplayRecordingModeFull = 1,
+/// Off mode: Session replay is completely disabled
+  SessionReplayRecordingModeOff = 2,
+};
 
 SWIFT_CLASS("_TtC8NewRelic21SessionReplayReporter")
 @interface SessionReplayReporter : NSObject

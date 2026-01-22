@@ -19,11 +19,14 @@ import Module___zlib
 @objc @available(iOS 13.0, *)
 @objcMembers public class NRMASessionReplay : ObjectiveC.NSObject {
   weak public var delegate: (any Module___NewRelic.NRMASessionReplayDelegate)?
+  @objc public var recordingMode: Module___NewRelic.SessionReplayRecordingMode
   @objc public var isFirstChunk: Swift.Bool
   public init(url: Foundation.NSString, delegate: (any Module___NewRelic.NRMASessionReplayDelegate)? = nil)
   @objc public func start()
   @objc public func stop()
   @objc public func clearAllData()
+  @objc public func transistionToRecordingMode(_ mode: Module___NewRelic.SessionReplayRecordingMode)
+  @objc public func transitionToFullModeOnError()
   @objc deinit
 }
 @available(iOS 13.0, *)
@@ -112,6 +115,18 @@ extension Module___UIKit.UIView {
     set
   }
 }
+@available(iOS 13.0, *)
+@objc public enum SessionReplayRecordingMode : Swift.Int {
+  case error = 0
+  case full = 1
+  case off = 2
+  public init?(rawValue: Swift.Int)
+  @available(iOS 13.0, *)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 public struct SwiftUIAlignment : Swift.Hashable {
   public let horizontal: Module___NewRelic.SwiftUIAlignment.Horizontal?
   public let vertical: Module___NewRelic.SwiftUIAlignment.Vertical?
@@ -198,11 +213,21 @@ extension Module___NewRelic.XrayDecoder {
 @objcMembers public class SessionReplayManager : ObjectiveC.NSObject {
   @objc public var harvestPeriod: Swift.Int64
   @objc public var sessionReplayTimer: Foundation.Timer?
+  @objc public var sessionReplayMode: Module___NewRelic.SessionReplayRecordingMode {
+    @objc get
+    @objc set
+  }
   @objc public init(reporter: Module___NewRelic.SessionReplayReporter, url: Foundation.NSString)
-  @objc public func start()
+  @objc public func setRecordingMode(_ mode: Module___NewRelic.SessionReplayRecordingMode)
+  @objc public func getCurrentRecordingMode() -> Module___NewRelic.SessionReplayRecordingMode
+  @objc public func onError(_ error: (any Swift.Error)?)
+  @objc public func start(fromManual: Swift.Bool = false, with newMode: Module___NewRelic.SessionReplayRecordingMode)
   @objc public func stop()
   @objc public func isRunning() -> Swift.Bool
-  @objc public func newSession()
+  @objc public func endSession(harvest: Swift.Bool = true)
+  @objc public func manualRecordReplay() -> Swift.Bool
+  @objc public func manualPauseReplay() -> Swift.Bool
+  @objc public func isManuallyActive() -> Swift.Bool
   @objc public func clearAllData()
   @objc public func harvest()
   @objc public func checkForPreviousSessionFiles()
@@ -233,6 +258,12 @@ public struct XrayDecoder {
 }
 @available(iOS 16, *)
 extension Module___NewRelic.NRConditionalMaskView : Swift.Sendable {}
+@available(iOS 13.0, *)
+extension Module___NewRelic.SessionReplayRecordingMode : Swift.Equatable {}
+@available(iOS 13.0, *)
+extension Module___NewRelic.SessionReplayRecordingMode : Swift.Hashable {}
+@available(iOS 13.0, *)
+extension Module___NewRelic.SessionReplayRecordingMode : Swift.RawRepresentable {}
 extension Module___NewRelic.SwiftUIAlignment.Horizontal : Swift.Equatable {}
 extension Module___NewRelic.SwiftUIAlignment.Horizontal : Swift.Hashable {}
 extension Module___NewRelic.SwiftUIAlignment.Horizontal : Swift.RawRepresentable {}

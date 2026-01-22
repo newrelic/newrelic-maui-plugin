@@ -199,6 +199,104 @@
           },
           {
             "kind": "Var",
+            "name": "recordingMode",
+            "printedName": "recordingMode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SessionReplayRecordingMode",
+                "printedName": "NewRelic.SessionReplayRecordingMode",
+                "usr": "c:@M@NewRelic@E@SessionReplayRecordingMode"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NewRelic@objc(cs)NRMASessionReplay(py)recordingMode",
+            "mangledName": "$s8NewRelic17NRMASessionReplayC13recordingModeAA07Sessiond9RecordingF0Ovp",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SessionReplayRecordingMode",
+                    "printedName": "NewRelic.SessionReplayRecordingMode",
+                    "usr": "c:@M@NewRelic@E@SessionReplayRecordingMode"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NewRelic@objc(cs)NRMASessionReplay(im)recordingMode",
+                "mangledName": "$s8NewRelic17NRMASessionReplayC13recordingModeAA07Sessiond9RecordingF0Ovg",
+                "moduleName": "NewRelic",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SessionReplayRecordingMode",
+                    "printedName": "NewRelic.SessionReplayRecordingMode",
+                    "usr": "c:@M@NewRelic@E@SessionReplayRecordingMode"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NewRelic@objc(cs)NRMASessionReplay(im)setRecordingMode:",
+                "mangledName": "$s8NewRelic17NRMASessionReplayC13recordingModeAA07Sessiond9RecordingF0Ovs",
+                "moduleName": "NewRelic",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8NewRelic17NRMASessionReplayC13recordingModeAA07Sessiond9RecordingF0OvM",
+                "mangledName": "$s8NewRelic17NRMASessionReplayC13recordingModeAA07Sessiond9RecordingF0OvM",
+                "moduleName": "NewRelic",
+                "implicit": true,
+                "intro_iOS": "13.0",
+                "declAttributes": [
+                  "Available"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "isFirstChunk",
             "printedName": "isFirstChunk",
             "children": [
@@ -395,6 +493,56 @@
             "moduleName": "NewRelic",
             "declAttributes": [
               "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "transistionToRecordingMode",
+            "printedName": "transistionToRecordingMode(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SessionReplayRecordingMode",
+                "printedName": "NewRelic.SessionReplayRecordingMode",
+                "usr": "c:@M@NewRelic@E@SessionReplayRecordingMode"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NewRelic@objc(cs)NRMASessionReplay(im)transistionToRecordingMode:",
+            "mangledName": "$s8NewRelic17NRMASessionReplayC26transistionToRecordingModeyyAA07SessiondgH0OF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "transitionToFullModeOnError",
+            "printedName": "transitionToFullModeOnError()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NewRelic@objc(cs)NRMASessionReplay(im)transitionToFullModeOnError",
+            "mangledName": "$s8NewRelic17NRMASessionReplayC27transitionToFullModeOnErroryyF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment",
               "ObjC"
             ],
             "funcSelfKind": "NonMutating"
@@ -1170,7 +1318,10 @@
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
-        "moduleName": "NewRelic"
+        "moduleName": "NewRelic",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -2025,6 +2176,16 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "NewRelic",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -2212,6 +2373,275 @@
         "moduleName": "NewRelic",
         "declAttributes": [
           "ImplementationOnly"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SessionReplayRecordingMode",
+        "printedName": "SessionReplayRecordingMode",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "error",
+            "printedName": "error",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(NewRelic.SessionReplayRecordingMode.Type) -> NewRelic.SessionReplayRecordingMode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SessionReplayRecordingMode",
+                    "printedName": "NewRelic.SessionReplayRecordingMode",
+                    "usr": "c:@M@NewRelic@E@SessionReplayRecordingMode"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "NewRelic.SessionReplayRecordingMode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SessionReplayRecordingMode",
+                        "printedName": "NewRelic.SessionReplayRecordingMode",
+                        "usr": "c:@M@NewRelic@E@SessionReplayRecordingMode"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@NewRelic@E@SessionReplayRecordingMode@SessionReplayRecordingModeError",
+            "mangledName": "$s8NewRelic26SessionReplayRecordingModeO5erroryA2CmF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "full",
+            "printedName": "full",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(NewRelic.SessionReplayRecordingMode.Type) -> NewRelic.SessionReplayRecordingMode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SessionReplayRecordingMode",
+                    "printedName": "NewRelic.SessionReplayRecordingMode",
+                    "usr": "c:@M@NewRelic@E@SessionReplayRecordingMode"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "NewRelic.SessionReplayRecordingMode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SessionReplayRecordingMode",
+                        "printedName": "NewRelic.SessionReplayRecordingMode",
+                        "usr": "c:@M@NewRelic@E@SessionReplayRecordingMode"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@NewRelic@E@SessionReplayRecordingMode@SessionReplayRecordingModeFull",
+            "mangledName": "$s8NewRelic26SessionReplayRecordingModeO4fullyA2CmF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Var",
+            "name": "off",
+            "printedName": "off",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(NewRelic.SessionReplayRecordingMode.Type) -> NewRelic.SessionReplayRecordingMode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SessionReplayRecordingMode",
+                    "printedName": "NewRelic.SessionReplayRecordingMode",
+                    "usr": "c:@M@NewRelic@E@SessionReplayRecordingMode"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "NewRelic.SessionReplayRecordingMode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SessionReplayRecordingMode",
+                        "printedName": "NewRelic.SessionReplayRecordingMode",
+                        "usr": "c:@M@NewRelic@E@SessionReplayRecordingMode"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@NewRelic@E@SessionReplayRecordingMode@SessionReplayRecordingModeOff",
+            "mangledName": "$s8NewRelic26SessionReplayRecordingModeO3offyA2CmF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 2
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "NewRelic.SessionReplayRecordingMode?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SessionReplayRecordingMode",
+                    "printedName": "NewRelic.SessionReplayRecordingMode",
+                    "usr": "c:@M@NewRelic@E@SessionReplayRecordingMode"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:8NewRelic26SessionReplayRecordingModeO8rawValueACSgSi_tcfc",
+            "mangledName": "$s8NewRelic26SessionReplayRecordingModeO8rawValueACSgSi_tcfc",
+            "moduleName": "NewRelic",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8NewRelic26SessionReplayRecordingModeO8rawValueSivp",
+            "mangledName": "$s8NewRelic26SessionReplayRecordingModeO8rawValueSivp",
+            "moduleName": "NewRelic",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8NewRelic26SessionReplayRecordingModeO8rawValueSivg",
+                "mangledName": "$s8NewRelic26SessionReplayRecordingModeO8rawValueSivg",
+                "moduleName": "NewRelic",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "c:@M@NewRelic@E@SessionReplayRecordingMode",
+        "mangledName": "$s8NewRelic26SessionReplayRecordingModeO",
+        "moduleName": "NewRelic",
+        "intro_iOS": "13.0",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "Available",
+          "RawDocComment"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
         ]
       },
       {
@@ -4563,6 +4993,104 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "sessionReplayMode",
+            "printedName": "sessionReplayMode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SessionReplayRecordingMode",
+                "printedName": "NewRelic.SessionReplayRecordingMode",
+                "usr": "c:@M@NewRelic@E@SessionReplayRecordingMode"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NewRelic@objc(cs)SessionReplayManager(py)sessionReplayMode",
+            "mangledName": "$s8NewRelic20SessionReplayManagerC07sessionD4ModeAA0cd9RecordingG0Ovp",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SessionReplayRecordingMode",
+                    "printedName": "NewRelic.SessionReplayRecordingMode",
+                    "usr": "c:@M@NewRelic@E@SessionReplayRecordingMode"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NewRelic@objc(cs)SessionReplayManager(im)sessionReplayMode",
+                "mangledName": "$s8NewRelic20SessionReplayManagerC07sessionD4ModeAA0cd9RecordingG0Ovg",
+                "moduleName": "NewRelic",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SessionReplayRecordingMode",
+                    "printedName": "NewRelic.SessionReplayRecordingMode",
+                    "usr": "c:@M@NewRelic@E@SessionReplayRecordingMode"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NewRelic@objc(cs)SessionReplayManager(im)setSessionReplayMode:",
+                "mangledName": "$s8NewRelic20SessionReplayManagerC07sessionD4ModeAA0cd9RecordingG0Ovs",
+                "moduleName": "NewRelic",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8NewRelic20SessionReplayManagerC07sessionD4ModeAA0cd9RecordingG0OvM",
+                "mangledName": "$s8NewRelic20SessionReplayManagerC07sessionD4ModeAA0cd9RecordingG0OvM",
+                "moduleName": "NewRelic",
+                "implicit": true,
+                "intro_iOS": "13.0",
+                "declAttributes": [
+                  "Available"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(reporter:url:)",
@@ -4599,21 +5127,122 @@
           },
           {
             "kind": "Function",
-            "name": "start",
-            "printedName": "start()",
+            "name": "setRecordingMode",
+            "printedName": "setRecordingMode(_:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SessionReplayRecordingMode",
+                "printedName": "NewRelic.SessionReplayRecordingMode",
+                "usr": "c:@M@NewRelic@E@SessionReplayRecordingMode"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@NewRelic@objc(cs)SessionReplayManager(im)start",
-            "mangledName": "$s8NewRelic20SessionReplayManagerC5startyyF",
+            "usr": "c:@M@NewRelic@objc(cs)SessionReplayManager(im)setRecordingMode:",
+            "mangledName": "$s8NewRelic20SessionReplayManagerC16setRecordingModeyyAA0cdgH0OF",
             "moduleName": "NewRelic",
             "declAttributes": [
               "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getCurrentRecordingMode",
+            "printedName": "getCurrentRecordingMode()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SessionReplayRecordingMode",
+                "printedName": "NewRelic.SessionReplayRecordingMode",
+                "usr": "c:@M@NewRelic@E@SessionReplayRecordingMode"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NewRelic@objc(cs)SessionReplayManager(im)getCurrentRecordingMode",
+            "mangledName": "$s8NewRelic20SessionReplayManagerC23getCurrentRecordingModeAA0cdhI0OyF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onError",
+            "printedName": "onError(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any Swift.Error)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Error",
+                    "printedName": "any Swift.Error",
+                    "usr": "s:s5ErrorP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NewRelic@objc(cs)SessionReplayManager(im)onError:",
+            "mangledName": "$s8NewRelic20SessionReplayManagerC7onErroryys0G0_pSgF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "start",
+            "printedName": "start(fromManual:with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SessionReplayRecordingMode",
+                "printedName": "NewRelic.SessionReplayRecordingMode",
+                "usr": "c:@M@NewRelic@E@SessionReplayRecordingMode"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NewRelic@objc(cs)SessionReplayManager(im)startFromManual:with:",
+            "mangledName": "$s8NewRelic20SessionReplayManagerC5start10fromManual4withySb_AA0cD13RecordingModeOtF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment",
               "ObjC"
             ],
             "funcSelfKind": "NonMutating"
@@ -4663,23 +5292,97 @@
           },
           {
             "kind": "Function",
-            "name": "newSession",
-            "printedName": "newSession()",
+            "name": "endSession",
+            "printedName": "endSession(harvest:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@NewRelic@objc(cs)SessionReplayManager(im)newSession",
-            "mangledName": "$s8NewRelic20SessionReplayManagerC03newC0yyF",
+            "usr": "c:@M@NewRelic@objc(cs)SessionReplayManager(im)endSessionWithHarvest:",
+            "mangledName": "$s8NewRelic20SessionReplayManagerC03endC07harvestySb_tF",
             "moduleName": "NewRelic",
+            "objc_name": "endSessionWithHarvest:",
             "declAttributes": [
               "AccessControl",
               "ObjC",
               "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "manualRecordReplay",
+            "printedName": "manualRecordReplay()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NewRelic@objc(cs)SessionReplayManager(im)manualRecordReplay",
+            "mangledName": "$s8NewRelic20SessionReplayManagerC012manualRecordD0SbyF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "manualPauseReplay",
+            "printedName": "manualPauseReplay()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NewRelic@objc(cs)SessionReplayManager(im)manualPauseReplay",
+            "mangledName": "$s8NewRelic20SessionReplayManagerC011manualPauseD0SbyF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isManuallyActive",
+            "printedName": "isManuallyActive()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NewRelic@objc(cs)SessionReplayManager(im)isManuallyActive",
+            "mangledName": "$s8NewRelic20SessionReplayManagerC16isManuallyActiveSbyF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -6961,66 +7664,318 @@
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "FloatLiteral",
+      "offset": 940,
+      "length": 4,
+      "value": "15.0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "FloatLiteral",
+      "offset": 1145,
+      "length": 4,
+      "value": "15.0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "FloatLiteral",
+      "offset": 1253,
+      "length": 4,
+      "value": "30.0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1732,
+      "length": 2,
+      "value": "32"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "Array",
+      "offset": 1858,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "BooleanLiteral",
-      "offset": 733,
+      "offset": 1901,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 774,
+      "offset": 1942,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 817,
+      "offset": 1985,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "StringLiteral",
-      "offset": 3124,
+      "offset": 6509,
       "length": 31,
       "value": "\"com.newrelic.swizzleSendEvent\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "StringLiteral",
-      "offset": 3203,
+      "offset": 6588,
       "length": 15,
       "value": "\"UIApplication\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "StringLiteral",
-      "offset": 3255,
+      "offset": 6640,
       "length": 64,
       "value": "\"ERROR: Unable to swizzle send event. Not able to track touches\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "BooleanLiteral",
-      "offset": 5303,
+      "offset": 10318,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "BooleanLiteral",
-      "offset": 6607,
+      "offset": 12876,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "BooleanLiteral",
-      "offset": 7592,
+      "offset": 13889,
       "length": 4,
       "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "Array",
+      "offset": 28319,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "StringLiteral",
+      "offset": 28573,
+      "length": 3,
+      "value": "\"_\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "StringLiteral",
+      "offset": 28608,
+      "length": 3,
+      "value": "\".\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "IntegerLiteral",
+      "offset": 29065,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "IntegerLiteral",
+      "offset": 29714,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "IntegerLiteral",
+      "offset": 29749,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "Array",
+      "offset": 29807,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "Array",
+      "offset": 29854,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "StringLiteral",
+      "offset": 30044,
+      "length": 74,
+      "value": "\"🗑️ [pruneBufferedFiles] Only \""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "StringLiteral",
+      "offset": 30097,
+      "length": 5,
+      "value": "\" files - keeping all\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "IntegerLiteral",
+      "offset": 30283,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "IntegerLiteral",
+      "offset": 30539,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "IntegerLiteral",
+      "offset": 30573,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "IntegerLiteral",
+      "offset": 30952,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "IntegerLiteral",
+      "offset": 30964,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "IntegerLiteral",
+      "offset": 30971,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "IntegerLiteral",
+      "offset": 31440,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "StringLiteral",
+      "offset": 31492,
+      "length": 130,
+      "value": "\"🗑️ [pruneBufferedFiles] Full snapshot at frame_\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "StringLiteral",
+      "offset": 31583,
+      "length": 1,
+      "value": "\" - keeping \""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "StringLiteral",
+      "offset": 31614,
+      "length": 6,
+      "value": "\" frames\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "IntegerLiteral",
+      "offset": 31785,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "IntegerLiteral",
+      "offset": 31943,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "StringLiteral",
+      "offset": 31997,
+      "length": 104,
+      "value": "\"🗑️ [pruneBufferedFiles] ⚠️ No full snapshot - keeping \""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "StringLiteral",
+      "offset": 32081,
+      "length": 4,
+      "value": "\" most recent frames\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "IntegerLiteral",
+      "offset": 32236,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "IntegerLiteral",
+      "offset": 32267,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "IntegerLiteral",
+      "offset": 32516,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "StringLiteral",
+      "offset": 32590,
+      "length": 73,
+      "value": "\"🗑️ [pruneBufferedFiles]   ❌ Removed frame_\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "StringLiteral",
+      "offset": 32662,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "StringLiteral",
+      "offset": 32729,
+      "length": 75,
+      "value": "\"🗑️ [pruneBufferedFiles] ❌ Failed to prune buffered files: \""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
+      "kind": "StringLiteral",
+      "offset": 32803,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayCapture.swift",
@@ -7093,13 +8048,6 @@
       "value": "1"
     },
     {
-      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SwiftUI\/UIHostingViewRecordOrchestrator.swift",
-      "kind": "StringLiteral",
-      "offset": 14882,
-      "length": 25,
-      "value": "\"SessionReplayIdentifier\""
-    },
-    {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "BooleanLiteral",
       "offset": 290,
@@ -7116,84 +8064,84 @@
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 2443,
+      "offset": 2482,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "BooleanLiteral",
-      "offset": 3420,
+      "offset": 3459,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "Array",
-      "offset": 3540,
+      "offset": 3579,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "Dictionary",
-      "offset": 3749,
+      "offset": 3788,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "Dictionary",
-      "offset": 4040,
+      "offset": 4079,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "Dictionary",
-      "offset": 4338,
+      "offset": 4377,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "Dictionary",
-      "offset": 4635,
+      "offset": 4674,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 4870,
+      "offset": 4909,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 4884,
+      "offset": 4923,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "IntegerLiteral",
-      "offset": 5285,
+      "offset": 5324,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "IntegerLiteral",
-      "offset": 5294,
+      "offset": 5333,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "IntegerLiteral",
-      "offset": 5380,
+      "offset": 5419,
       "length": 4,
       "value": "1000"
     },
@@ -7228,7 +8176,7 @@
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SwiftUI\/XRAY\/SwiftUIDisplayList+XRAY.swift",
       "kind": "IntegerLiteral",
-      "offset": 1482,
+      "offset": 1484,
       "length": 1,
       "value": "0"
     },
@@ -7252,13 +8200,6 @@
       "offset": 9518,
       "length": 33,
       "value": "\"SessionReplayOptimizedImageData\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIImageViewThingy.swift",
-      "kind": "IntegerLiteral",
-      "offset": 10092,
-      "length": 2,
-      "value": "25"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayTouchCapture.swift",
@@ -7541,6 +8482,20 @@
       "value": "\"_TtGC7SwiftUI29PresentationHostingController\""
     },
     {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SwiftUI\/Helpers\/UIImage+PngData.swift",
+      "kind": "StringLiteral",
+      "offset": 211,
+      "length": 33,
+      "value": "\"SessionReplayOptimizedImageData\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SwiftUI\/Helpers\/UIImage+PngData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 785,
+      "length": 2,
+      "value": "25"
+    },
+    {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/ViewDetails.swift",
       "kind": "StringLiteral",
       "offset": 12652,
@@ -7567,6 +8522,13 @@
       "offset": 316,
       "length": 2,
       "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/TouchEvent.swift",
+      "kind": "BooleanLiteral",
+      "offset": 401,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SwiftUI\/UIVIewAssociations.swift",
@@ -7609,6 +8571,27 @@
       "offset": 8750,
       "length": 27,
       "value": "\"SessionReplayCustomTextID\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayRecordingMode.swift",
+      "kind": "IntegerLiteral",
+      "offset": 480,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayRecordingMode.swift",
+      "kind": "IntegerLiteral",
+      "offset": 571,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayRecordingMode.swift",
+      "kind": "IntegerLiteral",
+      "offset": 645,
+      "length": 1,
+      "value": "2"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SwiftUI\/SwiftUIGraphicsFilter.swift",
@@ -7816,23 +8799,44 @@
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 456,
+      "offset": 493,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 492,
+      "offset": 529,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayManager.swift",
       "kind": "StringLiteral",
-      "offset": 630,
+      "offset": 671,
       "length": 33,
       "value": "\"com.newrelic.sessionReplayQueue\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 844,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3203,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5343,
+      "length": 4,
+      "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayReporter.swift",
@@ -7868,6 +8872,13 @@
       "offset": 569,
       "length": 1,
       "value": "3"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayReporter.swift",
+      "kind": "IntegerLiteral",
+      "offset": 747,
+      "length": 1,
+      "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
