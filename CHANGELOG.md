@@ -1,5 +1,21 @@
 # Changelog
 
+# 1.1.15
+
+## New Features
+
+- Added support for .NET 10.0
+- Updated target frameworks to support latest .NET versions
+
+## Bug Fixes
+
+- Fixed interaction tracing bug where all interactions were being disabled instead of only default interactions
+
+## Improvements
+
+- Native Android agent updated to version 7.6.15
+- Native iOS agent updated to version 7.6.1
+
 # 1.1.14
 
 ## Improvements
