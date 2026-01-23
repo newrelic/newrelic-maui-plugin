@@ -23,7 +23,7 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
     {
         var assembly = typeof(NewRelicMethodsImplementation).Assembly;
         var version = assembly.GetName().Version;
-        return version?.ToString() ?? "1.1.14"; // Fallback to hardcoded version
+        return version?.ToString() ?? "1.1.15"; // Fallback to hardcoded version
     }
 
     private Dictionary<LogLevel, int> logLevelDict = new Dictionary<LogLevel, int>()
@@ -105,7 +105,7 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
 
         if (!agentConfig.interactionTracingEnabled)
         {
-            NRAndroidAgent.DisableFeature(Com.Newrelic.Agent.Android.FeatureFlag.InteractionTracing);
+            NRAndroidAgent.DisableFeature(Com.Newrelic.Agent.Android.FeatureFlag.DefaultInteractions);
         }
 
         if (agentConfig.fedRampEnabled)

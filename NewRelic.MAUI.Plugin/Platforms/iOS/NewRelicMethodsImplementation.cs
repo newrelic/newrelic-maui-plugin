@@ -20,7 +20,7 @@ public class NewRelicMethodsImplementation : INewRelicMethods
     {
         var assembly = typeof(NewRelicMethodsImplementation).Assembly;
         var version = assembly.GetName().Version;
-        return version?.ToString() ?? "1.1.14"; // Fallback to hardcoded version
+        return version?.ToString() ?? "1.1.15"; // Fallback to hardcoded version
     }
 
     private Dictionary<LogLevel, MauiiOS.NewRelic.NRLogLevels> logLevelDict = new Dictionary<LogLevel, MauiiOS.NewRelic.NRLogLevels>()
@@ -83,7 +83,7 @@ public class NewRelicMethodsImplementation : INewRelicMethods
 
         if (!agentConfig.interactionTracingEnabled)
         {
-            NRIosAgent.DisableFeatures(MauiiOS.NewRelic.NRMAFeatureFlags.InteractionTracing);
+            NRIosAgent.DisableFeatures(MauiiOS.NewRelic.NRMAFeatureFlags.DefaultInteractions);
         }
 
         if (!agentConfig.webViewInstrumentation)
