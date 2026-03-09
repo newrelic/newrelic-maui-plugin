@@ -54,27 +54,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		jgt54yNqkKGTG6zrsyg7VnWV5d8=
+		EF6sp90fqypFRREibQIvfWTPfxg=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		f5Np1YLkDpERNXPpdjh3YUUDD3I=
+		cS7LpRxoilJodMjhhdlSAIwuw7U=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		Ziivcpvn4NRxy/jr6CAE0A7thKw=
+		f8ssBRbbRc1eJJHMq7+wc4gZArg=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		I81Wg5s/8RBIV1yyQg3Y/NkGKuA=
+		y5EWGlN2rtDlfXQb5T8t3kUaU0w=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		Ziivcpvn4NRxy/jr6CAE0A7thKw=
+		f8ssBRbbRc1eJJHMq7+wc4gZArg=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		t3y+HzbXXQJNgdCRDgr+SHi0XLM=
+		YhcS6F6/eWCiTfdnU6P+mA26Ttc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -175,35 +175,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Mbpi/7dQ0sfSM5rz8l/NDZaAQFW9oGWJ8/RtFNEu2d0=
+			lcnghF09HUgAR93aMZl/KDS+h/1oKaII1vWtd5rWRg4=
 			</data>
 		</dict>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UD7YPMou722MWW2ybQGKiNvp4AnB7m6qd8SfWVCwZc4=
+			PbuOuxkDUeHv1BxAHXBc82yG0Y0udW2JuqIIwbxQFoE=
 			</data>
 		</dict>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wN6zgxb1JeFy0rfyI+bCvHHrvwsGLAvHLs5udKnefD0=
+			gXVxpqvFZW/HwZlbkJELUfcsO+krhfutGBUYdJXDu6w=
 			</data>
 		</dict>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UD7YPMou722MWW2ybQGKiNvp4AnB7m6qd8SfWVCwZc4=
+			PbuOuxkDUeHv1BxAHXBc82yG0Y0udW2JuqIIwbxQFoE=
 			</data>
 		</dict>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lzFXtzAfQJ+l3S+Uqs6cDKHxnoEOGBn1S3m/ZgY0Cv4=
+			3IgA1kZAMhjmN/sgG+mGLkDzRn8D0TN+CBFrWIbzOvw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

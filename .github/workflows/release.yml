@@ -1,0 +1,358 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      android_version:
+        description: 'Android agent version (e.g., 7.6.16)'
+        required: false
+        type: string
+      ios_version:
+        description: 'iOS agent version (e.g., 7.6.3)'
+        required: false
+        type: string
+      plugin_version:
+        description: 'Plugin version (e.g., 1.1.16)'
+        required: false
+        type: string
+      dry_run:
+        description: 'Dry run (no publishing)'
+        required: false
+        type: boolean
+        default: false
+  push:
+    tags:
+      - 'v*'
+
+env:
+  DOTNET_VERSION: '9.0.x'
+
+jobs:
+  parse-tag:
+    runs-on: ubuntu-latest
+    outputs:
+      android_version: ${{ steps.parse.outputs.android_version }}
+      ios_version: ${{ steps.parse.outputs.ios_version }}
+      plugin_version: ${{ steps.parse.outputs.plugin_version }}
+    steps:
+      - name: Parse tag or use inputs
+        id: parse
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            # Extract version from tag (e.g., v1.1.16-android7.6.16-ios7.6.3)
+            TAG="${GITHUB_REF#refs/tags/v}"
+            echo "Parsing tag: $TAG"
+
+            # Extract plugin version (first part before any dash or end)
+            PLUGIN_VERSION=$(echo "$TAG" | grep -oE '^[0-9]+\.[0-9]+\.[0-9]+')
+            echo "plugin_version=$PLUGIN_VERSION" >> $GITHUB_OUTPUT
+
+            # Extract android version if present
+            ANDROID_VERSION=$(echo "$TAG" | grep -oE 'android[0-9]+\.[0-9]+\.[0-9]+' | sed 's/android//' || true)
+            echo "android_version=$ANDROID_VERSION" >> $GITHUB_OUTPUT
+
+            # Extract ios version if present
+            IOS_VERSION=$(echo "$TAG" | grep -oE 'ios[0-9]+\.[0-9]+\.[0-9]+' | sed 's/ios//' || true)
+            echo "ios_version=$IOS_VERSION" >> $GITHUB_OUTPUT
+          else
+            # Use workflow inputs
+            echo "android_version=${{ inputs.android_version }}" >> $GITHUB_OUTPUT
+            echo "ios_version=${{ inputs.ios_version }}" >> $GITHUB_OUTPUT
+            echo "plugin_version=${{ inputs.plugin_version }}" >> $GITHUB_OUTPUT
+          fi
+
+  release-android:
+    needs: parse-tag
+    if: needs.parse-tag.outputs.android_version != ''
+    runs-on: ubuntu-latest
+    outputs:
+      binding_version: ${{ steps.version.outputs.binding_version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Install Android workload
+        run: dotnet workload install android
+
+      - name: Calculate binding version
+        id: version
+        run: |
+          BINDING_VERSION="${{ needs.parse-tag.outputs.android_version }}.1"
+          echo "binding_version=$BINDING_VERSION" >> $GITHUB_OUTPUT
+          echo "Android binding version: $BINDING_VERSION"
+
+      - name: Download Android AAR
+        run: |
+          VERSION="${{ needs.parse-tag.outputs.android_version }}"
+          URL="https://repo1.maven.org/maven2/com/newrelic/agent/android/android-agent-static/${VERSION}/android-agent-static-${VERSION}.aar"
+          echo "Downloading from: $URL"
+
+          # Remove existing AAR files
+          rm -f NewRelic.MAUI.Android.Binding/Jars/*.aar
+
+          # Download new AAR
+          curl -fSL -o "NewRelic.MAUI.Android.Binding/Jars/android-agent-static-${VERSION}.aar" "$URL"
+
+          echo "Downloaded AAR successfully"
+          ls -la NewRelic.MAUI.Android.Binding/Jars/
+
+      - name: Update version in csproj
+        run: |
+          BINDING_VERSION="${{ steps.version.outputs.binding_version }}"
+          sed -i "s|<Version>[^<]*</Version>|<Version>$BINDING_VERSION</Version>|" NewRelic.MAUI.Android.Binding/NewRelic.MAUI.Android.Binding.csproj
+          echo "Updated version to $BINDING_VERSION"
+          cat NewRelic.MAUI.Android.Binding/NewRelic.MAUI.Android.Binding.csproj | grep -A1 -B1 Version
+
+      - name: Build Android binding
+        run: dotnet build NewRelic.MAUI.Android.Binding/NewRelic.MAUI.Android.Binding.csproj -c Release
+
+      - name: Publish to NuGet
+        if: ${{ !inputs.dry_run }}
+        run: |
+          BINDING_VERSION="${{ steps.version.outputs.binding_version }}"
+          NUPKG=$(find NewRelic.MAUI.Android.Binding/bin/Release -name "*.nupkg" | head -1)
+          echo "Publishing: $NUPKG"
+          dotnet nuget push "$NUPKG" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-binding-nupkg
+          path: NewRelic.MAUI.Android.Binding/bin/Release/*.nupkg
+
+  release-ios:
+    needs: parse-tag
+    if: needs.parse-tag.outputs.ios_version != ''
+    runs-on: macos-latest
+    outputs:
+      binding_version: ${{ needs.parse-tag.outputs.ios_version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Install iOS workload
+        run: dotnet workload install ios
+
+      - name: Download and process iOS XCFramework
+        run: |
+          VERSION="${{ needs.parse-tag.outputs.ios_version }}"
+          URL="https://download.newrelic.com/ios_agent/NewRelic_XCFramework_Agent_${VERSION}.zip"
+          echo "Downloading from: $URL"
+
+          # Create temp directory
+          TEMP_DIR=$(mktemp -d)
+
+          # Download ZIP
+          curl -fSL -o "$TEMP_DIR/xcframework.zip" "$URL"
+
+          # Extract
+          unzip -q "$TEMP_DIR/xcframework.zip" -d "$TEMP_DIR"
+
+          # Find xcframework
+          XCFRAMEWORK_PATH=$(find "$TEMP_DIR" -name "NewRelic.xcframework" -type d | head -1)
+          echo "Found XCFramework at: $XCFRAMEWORK_PATH"
+
+          # Remove watchOS, tvOS, and maccatalyst folders
+          find "$XCFRAMEWORK_PATH" -type d -name "*watchos*" -exec rm -rf {} + 2>/dev/null || true
+          find "$XCFRAMEWORK_PATH" -type d -name "*tvos*" -exec rm -rf {} + 2>/dev/null || true
+          find "$XCFRAMEWORK_PATH" -type d -name "*maccatalyst*" -exec rm -rf {} + 2>/dev/null || true
+
+          # Update Info.plist using Python
+          python3 << EOF
+          import plistlib
+
+          plist_path = "$XCFRAMEWORK_PATH/Info.plist"
+
+          with open(plist_path, 'rb') as f:
+              plist = plistlib.load(f)
+
+          if 'AvailableLibraries' in plist:
+              original_count = len(plist['AvailableLibraries'])
+              plist['AvailableLibraries'] = [
+                  lib for lib in plist['AvailableLibraries']
+                  if lib.get('SupportedPlatform', '').lower() == 'ios'
+                  and lib.get('SupportedPlatformVariant', '').lower() != 'maccatalyst'
+              ]
+              print(f"Filtered libraries: {original_count} -> {len(plist['AvailableLibraries'])}")
+
+          with open(plist_path, 'wb') as f:
+              plistlib.dump(plist, f)
+          EOF
+
+          # Remove existing xcframework and copy new one
+          rm -rf NewRelic.MAUI.iOS.Binding/NewRelic.xcframework
+          cp -R "$XCFRAMEWORK_PATH" NewRelic.MAUI.iOS.Binding/NewRelic.xcframework
+
+          # Cleanup
+          rm -rf "$TEMP_DIR"
+
+          echo "XCFramework installed successfully"
+          ls -la NewRelic.MAUI.iOS.Binding/NewRelic.xcframework/
+
+      - name: Update version in csproj
+        run: |
+          VERSION="${{ needs.parse-tag.outputs.ios_version }}"
+          sed -i '' "s|<Version>[^<]*</Version>|<Version>$VERSION</Version>|" NewRelic.MAUI.iOS.Binding/NewRelic.MAUI.iOS.Binding.csproj
+          echo "Updated version to $VERSION"
+          cat NewRelic.MAUI.iOS.Binding/NewRelic.MAUI.iOS.Binding.csproj | grep -A1 -B1 Version
+
+      - name: Build iOS binding
+        run: dotnet build NewRelic.MAUI.iOS.Binding/NewRelic.MAUI.iOS.Binding.csproj -c Release
+
+      - name: Publish to NuGet
+        if: ${{ !inputs.dry_run }}
+        run: |
+          VERSION="${{ needs.parse-tag.outputs.ios_version }}"
+          NUPKG=$(find NewRelic.MAUI.iOS.Binding/bin/Release -name "*.nupkg" | head -1)
+          echo "Publishing: $NUPKG"
+          dotnet nuget push "$NUPKG" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-binding-nupkg
+          path: NewRelic.MAUI.iOS.Binding/bin/Release/*.nupkg
+
+  release-plugin:
+    needs: [parse-tag, release-android, release-ios]
+    if: |
+      always() &&
+      needs.parse-tag.outputs.plugin_version != '' &&
+      (needs.release-android.result == 'success' || needs.release-android.result == 'skipped') &&
+      (needs.release-ios.result == 'success' || needs.release-ios.result == 'skipped')
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Install workloads
+        run: |
+          dotnet workload install maui
+          dotnet workload install ios
+          dotnet workload install android
+
+      - name: Wait for NuGet packages
+        if: ${{ !inputs.dry_run }}
+        run: |
+          wait_for_package() {
+            local package_id=$1
+            local version=$2
+            local timeout=600
+            local interval=30
+            local elapsed=0
+            local url="https://api.nuget.org/v3-flatcontainer/${package_id,,}/index.json"
+
+            echo "Waiting for $package_id version $version..."
+
+            while [ $elapsed -lt $timeout ]; do
+              if curl -s "$url" | grep -q "\"$version\""; then
+                echo "✓ $package_id version $version is available"
+                return 0
+              fi
+
+              echo "Package not yet available, waiting ${interval}s... (${elapsed}s/${timeout}s)"
+              sleep $interval
+              elapsed=$((elapsed + interval))
+            done
+
+            echo "✗ Timeout waiting for $package_id"
+            return 1
+          }
+
+          # Wait for Android binding if it was released
+          if [ -n "${{ needs.release-android.outputs.binding_version }}" ]; then
+            wait_for_package "NewRelic.MAUI.Android.Binding" "${{ needs.release-android.outputs.binding_version }}"
+          fi
+
+          # Wait for iOS binding if it was released
+          if [ -n "${{ needs.release-ios.outputs.binding_version }}" ]; then
+            wait_for_package "NewRelic.MAUI.iOS.Binding" "${{ needs.release-ios.outputs.binding_version }}"
+          fi
+
+      - name: Update versions in csproj
+        run: |
+          PLUGIN_VERSION="${{ needs.parse-tag.outputs.plugin_version }}"
+          ANDROID_BINDING_VERSION="${{ needs.release-android.outputs.binding_version }}"
+          IOS_BINDING_VERSION="${{ needs.release-ios.outputs.binding_version }}"
+
+          CSPROJ="NewRelic.MAUI.Plugin/NewRelic.MAUI.Plugin.csproj"
+
+          # Update plugin version
+          sed -i '' "s|<Version>[^<]*</Version>|<Version>$PLUGIN_VERSION</Version>|" "$CSPROJ"
+          echo "Updated plugin version to $PLUGIN_VERSION"
+
+          # Update Android binding reference if version provided
+          if [ -n "$ANDROID_BINDING_VERSION" ]; then
+            sed -i '' "s|<PackageReference Include=\"NewRelic.MAUI.Android.Binding\" Version=\"[^\"]*\"|<PackageReference Include=\"NewRelic.MAUI.Android.Binding\" Version=\"$ANDROID_BINDING_VERSION\"|g" "$CSPROJ"
+            echo "Updated Android binding reference to $ANDROID_BINDING_VERSION"
+          fi
+
+          # Update iOS binding reference if version provided
+          if [ -n "$IOS_BINDING_VERSION" ]; then
+            sed -i '' "s|<PackageReference Include=\"NewRelic.MAUI.iOS.Binding\" Version=\"[^\"]*\"|<PackageReference Include=\"NewRelic.MAUI.iOS.Binding\" Version=\"$IOS_BINDING_VERSION\"|g" "$CSPROJ"
+            echo "Updated iOS binding reference to $IOS_BINDING_VERSION"
+          fi
+
+          echo "Final csproj:"
+          cat "$CSPROJ"
+
+      - name: Build plugin
+        run: dotnet build NewRelic.MAUI.Plugin/NewRelic.MAUI.Plugin.csproj -c Release
+
+      - name: Publish to NuGet
+        if: ${{ !inputs.dry_run }}
+        run: |
+          PLUGIN_VERSION="${{ needs.parse-tag.outputs.plugin_version }}"
+          NUPKG=$(find NewRelic.MAUI.Plugin/bin/Release -name "*.nupkg" | head -1)
+          echo "Publishing: $NUPKG"
+          dotnet nuget push "$NUPKG" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: plugin-nupkg
+          path: NewRelic.MAUI.Plugin/bin/Release/*.nupkg
+
+  create-release:
+    needs: [parse-tag, release-android, release-ios, release-plugin]
+    if: |
+      always() &&
+      github.event_name == 'push' &&
+      (needs.release-plugin.result == 'success' || needs.release-plugin.result == 'skipped')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: artifacts/**/*.nupkg
+          generate_release_notes: true
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
