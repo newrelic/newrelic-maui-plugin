@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
-// swift-module-flags: -target arm64-apple-ios16.6 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name NewRelic -module-alias Module___NewRelic=NewRelic -module-alias Module____StringProcessing=_StringProcessing -module-alias Module____SwiftConcurrencyShims=_SwiftConcurrencyShims -module-alias Module____Concurrency=_Concurrency -module-alias Module___SwiftUI=SwiftUI -module-alias Module___UIKit=UIKit -module-alias Module___OSLog=OSLog -module-alias Module___CoreGraphics=CoreGraphics -module-alias Module___CommonCrypto=CommonCrypto -module-alias Module___SwiftShims=SwiftShims -module-alias Module___Compression=Compression -module-alias Module___zlib=zlib
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name NewRelic -module-alias Module___NewRelic=NewRelic -module-alias Module____StringProcessing=_StringProcessing -module-alias Module____SwiftConcurrencyShims=_SwiftConcurrencyShims -module-alias Module____Concurrency=_Concurrency -module-alias Module___SwiftUI=SwiftUI -module-alias Module___UIKit=UIKit -module-alias Module___OSLog=OSLog -module-alias Module___CoreGraphics=CoreGraphics -module-alias Module___CommonCrypto=CommonCrypto -module-alias Module___SwiftShims=SwiftShims -module-alias Module___Compression=Compression -module-alias Module___zlib=zlib
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
 import Module___CommonCrypto
 import Module___Compression
@@ -71,13 +71,11 @@ public enum XRayDecoderError : Swift.Error {
   case notFound(Module___NewRelic.XRayDecoderError.XrayDecoderContext)
   case typeMismatch(Module___NewRelic.XRayDecoderError.XrayDecoderContext, expectedType: any Any.Type, gotType: any Any.Type)
 }
-@available(iOS 16, *)
 @Module____Concurrency.MainActor @preconcurrency public struct NRConditionalMaskView<Content> : SwiftUICore.View where Content : SwiftUICore.View {
   @Module____Concurrency.MainActor @preconcurrency public init(maskApplicationText: Swift.Bool? = nil, maskUserInputText: Swift.Bool? = nil, maskAllImages: Swift.Bool? = nil, maskAllUserTouches: Swift.Bool? = nil, sessionReplayIdentifier: Swift.String? = nil, activated: Swift.Bool = true, @SwiftUICore.ViewBuilder content: @escaping () -> Content)
   @Module____Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
-  @available(iOS 16, *)
   public typealias Body = @_opaqueReturnTypeOf("$s8NewRelic21NRConditionalMaskViewV4bodyQrvp", 0) __<Content>
 }
 public protocol SwiftUIThingyData {
@@ -256,7 +254,6 @@ public struct XrayDecoder {
   @objc public init(applicationToken: Swift.String, url: Foundation.NSString)
   @objc deinit
 }
-@available(iOS 16, *)
 extension Module___NewRelic.NRConditionalMaskView : Swift.Sendable {}
 @available(iOS 13.0, *)
 extension Module___NewRelic.SessionReplayRecordingMode : Swift.Equatable {}

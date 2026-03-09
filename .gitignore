@@ -403,3 +403,12 @@ ASALocalRun/
 
 # Local History for Visual Studio
 .localhistory/
+
+# Release script temp files
+scripts/temp/
+*.aar.backup
+*.xcframework.backup
+
+# Downloaded artifacts (should be committed when releasing)
+# NewRelic.MAUI.Android.Binding/Jars/*.aar
+# NewRelic.MAUI.iOS.Binding/NewRelic.xcframework/
