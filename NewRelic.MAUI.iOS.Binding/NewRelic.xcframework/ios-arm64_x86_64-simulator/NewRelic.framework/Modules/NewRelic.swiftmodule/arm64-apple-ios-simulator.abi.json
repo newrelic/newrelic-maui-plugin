@@ -1774,6 +1774,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
           }
         ]
       },
@@ -1795,7 +1802,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(maskApplicationText:maskUserInputText:maskAllImages:maskAllUserTouches:sessionReplayIdentifier:activated:content:)",
+            "printedName": "init(maskApplicationText:maskUserInputText:maskAllImages:maskAllUserTouches:blockView:sessionReplayIdentifier:activated:content:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1809,6 +1816,21 @@
                   }
                 ],
                 "usr": "s:8NewRelic21NRConditionalMaskViewV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -1911,8 +1933,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:8NewRelic21NRConditionalMaskViewV19maskApplicationText0f9UserInputH00F9AllImages0fkI7Touches23sessionReplayIdentifier9activated7contentACyxGSbSg_A3LSSSgSbxyctcfc",
-            "mangledName": "$s8NewRelic21NRConditionalMaskViewV19maskApplicationText0f9UserInputH00F9AllImages0fkI7Touches23sessionReplayIdentifier9activated7contentACyxGSbSg_A3LSSSgSbxyctcfc",
+            "usr": "s:8NewRelic21NRConditionalMaskViewV19maskApplicationText0f9UserInputH00F9AllImages0fkI7Touches05blockE023sessionReplayIdentifier9activated7contentACyxGSbSg_A4MSSSgSbxyctcfc",
+            "mangledName": "$s8NewRelic21NRConditionalMaskViewV19maskApplicationText0f9UserInputH00F9AllImages0fkI7Touches05blockE023sessionReplayIdentifier9activated7contentACyxGSbSg_A4MSSSgSbxyctcfc",
             "moduleName": "NewRelic",
             "genericSig": "<τ_0_0 where τ_0_0 : SwiftUI.View>",
             "sugared_genericSig": "<Content where Content : SwiftUI.View>",
@@ -2379,6 +2401,575 @@
         "printedName": "UIKit",
         "declKind": "Import",
         "moduleName": "NewRelic"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "NewRelic",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "NewRelicPrivate",
+        "printedName": "NewRelicPrivate",
+        "declKind": "Import",
+        "moduleName": "NewRelic",
+        "declAttributes": [
+          "ImplementationOnly"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "NewRelic",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "NewRelicPrivate",
+        "printedName": "NewRelicPrivate",
+        "declKind": "Import",
+        "moduleName": "NewRelic",
+        "declAttributes": [
+          "ImplementationOnly"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "JSErrorController",
+        "printedName": "JSErrorController",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(analyticsController:sessionStartTime:agentConfiguration:platform:sessionId:attributeValidator:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "NewRelic.JSErrorController?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "JSErrorController",
+                    "printedName": "NewRelic.JSErrorController",
+                    "usr": "c:@M@NewRelic@objc(cs)JSErrorController"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "AnyObject"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "AnyObject"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "AnyObject"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@NewRelic@objc(cs)JSErrorController(im)initWithAnalyticsController:sessionStartTime:agentConfiguration:platform:sessionId:attributeValidator:",
+            "mangledName": "$s8NewRelic17JSErrorControllerC09analyticsD016sessionStartTime18agentConfiguration8platform0F2Id18attributeValidatorACSgyXl_10Foundation4DateVyXlS2SyXltcfc",
+            "moduleName": "NewRelic",
+            "objc_name": "initWithAnalyticsController:sessionStartTime:agentConfiguration:platform:sessionId:attributeValidator:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "recordJSError",
+            "printedName": "recordJSError(_:message:stackTrace:isFatal:additionalAttributes:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NewRelic@objc(cs)JSErrorController(im)recordJSError:message:stackTrace:isFatal:additionalAttributes:",
+            "mangledName": "$s8NewRelic17JSErrorControllerC06recordC0_7message10stackTrace7isFatal20additionalAttributesySS_S2SSbSDySSypGSgtF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onHarvestStart",
+            "printedName": "onHarvestStart()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NewRelic@objc(cs)JSErrorController(im)onHarvestStart",
+            "mangledName": "$s8NewRelic17JSErrorControllerC14onHarvestStartyyF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onHarvestBefore",
+            "printedName": "onHarvestBefore()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NewRelic@objc(cs)JSErrorController(im)onHarvestBefore",
+            "mangledName": "$s8NewRelic17JSErrorControllerC15onHarvestBeforeyyF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onHarvest",
+            "printedName": "onHarvest()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NewRelic@objc(cs)JSErrorController(im)onHarvest",
+            "mangledName": "$s8NewRelic17JSErrorControllerC9onHarvestyyF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onHarvestComplete",
+            "printedName": "onHarvestComplete()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NewRelic@objc(cs)JSErrorController(im)onHarvestComplete",
+            "mangledName": "$s8NewRelic17JSErrorControllerC17onHarvestCompleteyyF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onHarvestError",
+            "printedName": "onHarvestError()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NewRelic@objc(cs)JSErrorController(im)onHarvestError",
+            "mangledName": "$s8NewRelic17JSErrorControllerC14onHarvestErroryyF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onHarvestStop",
+            "printedName": "onHarvestStop()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NewRelic@objc(cs)JSErrorController(im)onHarvestStop",
+            "mangledName": "$s8NewRelic17JSErrorControllerC13onHarvestStopyyF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onHarvestConnected",
+            "printedName": "onHarvestConnected()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NewRelic@objc(cs)JSErrorController(im)onHarvestConnected",
+            "mangledName": "$s8NewRelic17JSErrorControllerC18onHarvestConnectedyyF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onHarvestDisconnected",
+            "printedName": "onHarvestDisconnected()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NewRelic@objc(cs)JSErrorController(im)onHarvestDisconnected",
+            "mangledName": "$s8NewRelic17JSErrorControllerC21onHarvestDisconnectedyyF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getErrorQueueForTesting",
+            "printedName": "getErrorQueueForTesting()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[[Swift.String : Any]]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NewRelic@objc(cs)JSErrorController(im)getErrorQueueForTesting",
+            "mangledName": "$s8NewRelic17JSErrorControllerC23getErrorQueueForTestingSaySDySSypGGyF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "clearErrorQueueForTesting",
+            "printedName": "clearErrorQueueForTesting()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NewRelic@objc(cs)JSErrorController(im)clearErrorQueueForTesting",
+            "mangledName": "$s8NewRelic17JSErrorControllerC25clearErrorQueueForTestingyyF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "errorQueueSizeForTesting",
+            "printedName": "errorQueueSizeForTesting()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NewRelic@objc(cs)JSErrorController(im)errorQueueSizeForTesting",
+            "mangledName": "$s8NewRelic17JSErrorControllerC24errorQueueSizeForTestingSiyF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "clearPersistedErrorsForTesting",
+            "printedName": "clearPersistedErrorsForTesting()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NewRelic@objc(cs)JSErrorController(im)clearPersistedErrorsForTesting",
+            "mangledName": "$s8NewRelic17JSErrorControllerC30clearPersistedErrorsForTestingyyF",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "JSErrorController",
+                "printedName": "NewRelic.JSErrorController",
+                "usr": "c:@M@NewRelic@objc(cs)JSErrorController"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@NewRelic@objc(cs)JSErrorController(im)init",
+            "mangledName": "$s8NewRelic17JSErrorControllerCACycfc",
+            "moduleName": "NewRelic",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@NewRelic@objc(cs)JSErrorController",
+        "mangledName": "$s8NewRelic17JSErrorControllerC",
+        "moduleName": "NewRelic",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
       },
       {
         "kind": "Import",
@@ -3547,6 +4138,33 @@
         "moduleName": "NewRelic",
         "declAttributes": [
           "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "NewRelic",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "NewRelic"
+      },
+      {
+        "kind": "Import",
+        "name": "NewRelicPrivate",
+        "printedName": "NewRelicPrivate",
+        "declKind": "Import",
+        "moduleName": "NewRelic",
+        "declAttributes": [
+          "ImplementationOnly"
         ]
       },
       {
@@ -6928,6 +7546,33 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "NewRelic",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "NewRelic"
+      },
+      {
+        "kind": "Import",
+        "name": "NewRelicPrivate",
+        "printedName": "NewRelicPrivate",
+        "declKind": "Import",
+        "moduleName": "NewRelic",
+        "declAttributes": [
+          "ImplementationOnly"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "SwiftUI",
         "printedName": "SwiftUI",
         "declKind": "Import",
@@ -7038,6 +7683,7 @@
         "intro_watchOS": "6.0",
         "declAttributes": [
           "Preconcurrency",
+          "TypeEraser",
           "TypeEraser",
           "OriginallyDefinedIn",
           "OriginallyDefinedIn",
@@ -7531,6 +8177,236 @@
                 "accessorKind": "_modify"
               }
             ]
+          },
+          {
+            "kind": "Var",
+            "name": "blockView",
+            "printedName": "blockView",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:So6UIViewC8NewRelicE9blockViewSbSgvp",
+            "mangledName": "$sSo6UIViewC8NewRelicE9blockViewSbSgvp",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:So6UIViewC8NewRelicE9blockViewSbSgvg",
+                "mangledName": "$sSo6UIViewC8NewRelicE9blockViewSbSgvg",
+                "moduleName": "NewRelic",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:So6UIViewC8NewRelicE9blockViewSbSgvs",
+                "mangledName": "$sSo6UIViewC8NewRelicE9blockViewSbSgvs",
+                "moduleName": "NewRelic",
+                "isFromExtension": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:So6UIViewC8NewRelicE9blockViewSbSgvM",
+                "mangledName": "$sSo6UIViewC8NewRelicE9blockViewSbSgvM",
+                "moduleName": "NewRelic",
+                "implicit": true,
+                "intro_iOS": "2.0",
+                "declAttributes": [
+                  "Available"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "skipAggressiveClipping",
+            "printedName": "skipAggressiveClipping",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:So6UIViewC8NewRelicE22skipAggressiveClippingSbSgvp",
+            "mangledName": "$sSo6UIViewC8NewRelicE22skipAggressiveClippingSbSgvp",
+            "moduleName": "NewRelic",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:So6UIViewC8NewRelicE22skipAggressiveClippingSbSgvg",
+                "mangledName": "$sSo6UIViewC8NewRelicE22skipAggressiveClippingSbSgvg",
+                "moduleName": "NewRelic",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:So6UIViewC8NewRelicE22skipAggressiveClippingSbSgvs",
+                "mangledName": "$sSo6UIViewC8NewRelicE22skipAggressiveClippingSbSgvs",
+                "moduleName": "NewRelic",
+                "isFromExtension": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:So6UIViewC8NewRelicE22skipAggressiveClippingSbSgvM",
+                "mangledName": "$sSo6UIViewC8NewRelicE22skipAggressiveClippingSbSgvM",
+                "moduleName": "NewRelic",
+                "implicit": true,
+                "intro_iOS": "2.0",
+                "declAttributes": [
+                  "Available"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "_modify"
+              }
+            ]
           }
         ],
         "declKind": "Class",
@@ -7802,161 +8678,161 @@
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "BooleanLiteral",
-      "offset": 14147,
+      "offset": 14815,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "Array",
-      "offset": 29255,
+      "offset": 29923,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "StringLiteral",
-      "offset": 29509,
+      "offset": 30177,
       "length": 3,
       "value": "\"_\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "StringLiteral",
-      "offset": 29544,
+      "offset": 30212,
       "length": 3,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 30001,
+      "offset": 30669,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 30650,
+      "offset": 31318,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 30685,
+      "offset": 31353,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "Array",
-      "offset": 30743,
+      "offset": 31411,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "Array",
-      "offset": 30790,
+      "offset": 31458,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 31227,
+      "offset": 31895,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 31483,
+      "offset": 32151,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 31517,
+      "offset": 32185,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 31896,
+      "offset": 32564,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 31908,
+      "offset": 32576,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 31915,
+      "offset": 32583,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 32384,
+      "offset": 33052,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 32737,
+      "offset": 33405,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 32895,
+      "offset": 33563,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 33196,
+      "offset": 33864,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 33227,
+      "offset": 33895,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 33476,
+      "offset": 34144,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "StringLiteral",
-      "offset": 33703,
+      "offset": 34371,
       "length": 75,
       "value": "\"🗑️ [pruneBufferedFiles] ❌ Failed to prune buffered files: \""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "StringLiteral",
-      "offset": 33777,
+      "offset": 34445,
       "length": 2,
       "value": "\"\""
     },
@@ -8047,84 +8923,91 @@
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 2486,
+      "offset": 445,
+      "length": 44,
+      "value": "\"com.newrelic.sessionreplay.tree.processing\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
+      "kind": "StringLiteral",
+      "offset": 2666,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "BooleanLiteral",
-      "offset": 3463,
+      "offset": 3643,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "Array",
-      "offset": 3583,
+      "offset": 3763,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "Dictionary",
-      "offset": 3792,
+      "offset": 3972,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "Dictionary",
-      "offset": 4083,
+      "offset": 4263,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "Dictionary",
-      "offset": 4381,
+      "offset": 4561,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "Dictionary",
-      "offset": 4678,
+      "offset": 4858,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 4913,
+      "offset": 5093,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "StringLiteral",
-      "offset": 4927,
+      "offset": 5107,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "IntegerLiteral",
-      "offset": 5328,
+      "offset": 5508,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "IntegerLiteral",
-      "offset": 5337,
+      "offset": 5517,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayFrameProcessor.swift",
       "kind": "IntegerLiteral",
-      "offset": 5423,
+      "offset": 5603,
       "length": 4,
       "value": "1000"
     },
@@ -8166,21 +9049,28 @@
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIImageViewThingy.swift",
       "kind": "StringLiteral",
-      "offset": 359,
-      "length": 104,
-      "value": "\"background: rgb(2,0,36);background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 100%);\""
+      "offset": 379,
+      "length": 22,
+      "value": "\"background: #CCCCCC;\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIImageViewThingy.swift",
+      "kind": "BooleanLiteral",
+      "offset": 489,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIImageViewThingy.swift",
       "kind": "Array",
-      "offset": 642,
+      "offset": 639,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIImageViewThingy.swift",
       "kind": "StringLiteral",
-      "offset": 9518,
+      "offset": 12179,
       "length": 33,
       "value": "\"SessionReplayOptimizedImageData\""
     },
@@ -8194,7 +9084,7 @@
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayTouchCapture.swift",
       "kind": "StringLiteral",
-      "offset": 3080,
+      "offset": 4309,
       "length": 14,
       "value": "\"TouchTracker\""
     },
@@ -8439,7 +9329,7 @@
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SwiftUI\/NRConditionalMaskView.swift",
       "kind": "BooleanLiteral",
-      "offset": 811,
+      "offset": 864,
       "length": 4,
       "value": "true"
     },
@@ -8481,21 +9371,21 @@
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/ViewDetails.swift",
       "kind": "StringLiteral",
-      "offset": 13845,
+      "offset": 15613,
       "length": 17,
       "value": "\"SessionReplayID\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/ViewDetails.swift",
       "kind": "StringLiteral",
-      "offset": 13925,
+      "offset": 15693,
       "length": 21,
       "value": "\"SessionReplayMasked\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/ViewDetails.swift",
       "kind": "StringLiteral",
-      "offset": 14017,
+      "offset": 15785,
       "length": 25,
       "value": "\"SessionReplayIdentifier\""
     },
@@ -8542,6 +9432,20 @@
       "value": "6"
     },
     {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SwiftUI\/UIVIewAssociations.swift",
+      "kind": "IntegerLiteral",
+      "offset": 391,
+      "length": 1,
+      "value": "7"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SwiftUI\/UIVIewAssociations.swift",
+      "kind": "IntegerLiteral",
+      "offset": 451,
+      "length": 1,
+      "value": "8"
+    },
+    {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UILabelThingy.swift",
       "kind": "StringLiteral",
       "offset": 249,
@@ -8550,22 +9454,57 @@
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UILabelThingy.swift",
+      "kind": "FloatLiteral",
+      "offset": 860,
+      "length": 3,
+      "value": "1.0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UILabelThingy.swift",
       "kind": "BooleanLiteral",
-      "offset": 6287,
+      "offset": 6447,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/SwiftUIShapeThingy.swift",
       "kind": "Array",
-      "offset": 518,
+      "offset": 577,
       "length": 2,
       "value": "[]"
     },
     {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/JSError\/MobileErrorsUploader.swift",
+      "kind": "IntegerLiteral",
+      "offset": 295,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/JSError\/MobileErrorsUploader.swift",
+      "kind": "IntegerLiteral",
+      "offset": 347,
+      "length": 7,
+      "value": "1048576"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/JSError\/JSErrorController.swift",
+      "kind": "StringLiteral",
+      "offset": 248,
+      "length": 19,
+      "value": "\"nr_js_error_store\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/JSError\/JSErrorController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 771,
+      "length": 5,
+      "value": "false"
+    },
+    {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/CustomTextThingy.swift",
       "kind": "StringLiteral",
-      "offset": 10389,
+      "offset": 10457,
       "length": 27,
       "value": "\"SessionReplayCustomTextID\""
     },
@@ -8880,511 +9819,518 @@
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "BooleanLiteral",
-      "offset": 608,
+      "offset": 628,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
+      "kind": "BooleanLiteral",
+      "offset": 684,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 722,
+      "offset": 798,
       "length": 4,
       "value": "10.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "StringLiteral",
-      "offset": 1052,
+      "offset": 1128,
       "length": 6,
       "value": "\"Dark\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1090,
+      "offset": 1166,
       "length": 4,
       "value": "15.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1142,
+      "offset": 1218,
       "length": 3,
       "value": "8.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1146,
+      "offset": 1222,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1160,
+      "offset": 1236,
       "length": 3,
       "value": "8.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1164,
+      "offset": 1240,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1177,
+      "offset": 1253,
       "length": 3,
       "value": "8.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1181,
+      "offset": 1257,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1195,
+      "offset": 1271,
       "length": 4,
       "value": "0.85"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "StringLiteral",
-      "offset": 1272,
+      "offset": 1348,
       "length": 7,
       "value": "\"Light\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1311,
+      "offset": 1387,
       "length": 4,
       "value": "10.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1363,
+      "offset": 1439,
       "length": 5,
       "value": "248.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1369,
+      "offset": 1445,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1383,
+      "offset": 1459,
       "length": 5,
       "value": "248.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1389,
+      "offset": 1465,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1402,
+      "offset": 1478,
       "length": 5,
       "value": "248.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1408,
+      "offset": 1484,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1422,
+      "offset": 1498,
       "length": 4,
       "value": "0.85"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "StringLiteral",
-      "offset": 1499,
+      "offset": 1575,
       "length": 12,
       "value": "\"ExtraLight\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1543,
+      "offset": 1619,
       "length": 3,
       "value": "5.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1594,
+      "offset": 1670,
       "length": 5,
       "value": "252.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1600,
+      "offset": 1676,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1614,
+      "offset": 1690,
       "length": 5,
       "value": "252.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1620,
+      "offset": 1696,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1633,
+      "offset": 1709,
       "length": 5,
       "value": "252.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1639,
+      "offset": 1715,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1653,
+      "offset": 1729,
       "length": 3,
       "value": "0.6"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "StringLiteral",
-      "offset": 1729,
+      "offset": 1805,
       "length": 11,
       "value": "\"Prominent\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1772,
+      "offset": 1848,
       "length": 4,
       "value": "20.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1824,
+      "offset": 1900,
       "length": 5,
       "value": "240.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1830,
+      "offset": 1906,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1844,
+      "offset": 1920,
       "length": 5,
       "value": "240.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1850,
+      "offset": 1926,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1863,
+      "offset": 1939,
       "length": 5,
       "value": "240.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1869,
+      "offset": 1945,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 1883,
+      "offset": 1959,
       "length": 3,
       "value": "0.9"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "StringLiteral",
-      "offset": 1959,
+      "offset": 2035,
       "length": 9,
       "value": "\"Regular\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2000,
+      "offset": 2076,
       "length": 4,
       "value": "10.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2052,
+      "offset": 2128,
       "length": 5,
       "value": "245.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2058,
+      "offset": 2134,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2072,
+      "offset": 2148,
       "length": 5,
       "value": "245.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2078,
+      "offset": 2154,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2091,
+      "offset": 2167,
       "length": 5,
       "value": "245.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2097,
+      "offset": 2173,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2111,
+      "offset": 2187,
       "length": 3,
       "value": "0.8"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "StringLiteral",
-      "offset": 2187,
+      "offset": 2263,
       "length": 8,
       "value": "\"System\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2227,
+      "offset": 2303,
       "length": 4,
       "value": "12.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2279,
+      "offset": 2355,
       "length": 5,
       "value": "245.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2285,
+      "offset": 2361,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2299,
+      "offset": 2375,
       "length": 5,
       "value": "245.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2305,
+      "offset": 2381,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2318,
+      "offset": 2394,
       "length": 5,
       "value": "245.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2324,
+      "offset": 2400,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2338,
+      "offset": 2414,
       "length": 3,
       "value": "0.8"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2471,
+      "offset": 2547,
       "length": 3,
       "value": "8.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2520,
+      "offset": 2596,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2532,
+      "offset": 2608,
       "length": 3,
       "value": "0.3"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2879,
+      "offset": 2955,
       "length": 3,
       "value": "8.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2883,
+      "offset": 2959,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2897,
+      "offset": 2973,
       "length": 3,
       "value": "8.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2901,
+      "offset": 2977,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2914,
+      "offset": 2990,
       "length": 3,
       "value": "8.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2918,
+      "offset": 2994,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 2932,
+      "offset": 3008,
       "length": 4,
       "value": "0.85"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 3047,
+      "offset": 3123,
       "length": 5,
       "value": "248.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 3053,
+      "offset": 3129,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 3067,
+      "offset": 3143,
       "length": 5,
       "value": "248.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 3073,
+      "offset": 3149,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 3086,
+      "offset": 3162,
       "length": 5,
       "value": "248.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 3092,
+      "offset": 3168,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 3106,
+      "offset": 3182,
       "length": 4,
       "value": "0.85"
     },
@@ -9454,56 +10400,70 @@
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/RRWebModels\/SerializedNode.swift",
       "kind": "StringLiteral",
-      "offset": 4482,
+      "offset": 4483,
+      "length": 7,
+      "value": "\"label\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/RRWebModels\/SerializedNode.swift",
+      "kind": "StringLiteral",
+      "offset": 4508,
+      "length": 7,
+      "value": "\"input\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/RRWebModels\/SerializedNode.swift",
+      "kind": "StringLiteral",
+      "offset": 4532,
       "length": 6,
       "value": "\"head\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/RRWebModels\/SerializedNode.swift",
       "kind": "StringLiteral",
-      "offset": 4505,
+      "offset": 4555,
       "length": 6,
       "value": "\"body\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/RRWebModels\/SerializedNode.swift",
       "kind": "StringLiteral",
-      "offset": 4528,
+      "offset": 4578,
       "length": 6,
       "value": "\"html\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/RRWebModels\/SerializedNode.swift",
       "kind": "StringLiteral",
-      "offset": 4552,
+      "offset": 4602,
       "length": 5,
       "value": "\"img\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/RRWebModels\/SerializedNode.swift",
       "kind": "StringLiteral",
-      "offset": 4573,
+      "offset": 4623,
       "length": 5,
       "value": "\"svg\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/RRWebModels\/SerializedNode.swift",
       "kind": "StringLiteral",
-      "offset": 4595,
+      "offset": 4645,
       "length": 6,
       "value": "\"path\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/RRWebModels\/SerializedNode.swift",
       "kind": "Array",
-      "offset": 4809,
+      "offset": 4859,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/RRWebModels\/SerializedNode.swift",
       "kind": "Array",
-      "offset": 6434,
+      "offset": 6484,
       "length": 2,
       "value": "[]"
     }

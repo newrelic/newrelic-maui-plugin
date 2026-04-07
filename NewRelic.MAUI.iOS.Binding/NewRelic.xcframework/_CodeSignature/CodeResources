@@ -10,7 +10,7 @@
 		</data>
 		<key>ios-arm64/NewRelic.framework/Headers/NRConstants.h</key>
 		<data>
-		w4yJYbc4nPeaaz/LZZ79AjoCFes=
+		FdU5yMIrAuug2HOGeFkfv5Z/bmY=
 		</data>
 		<key>ios-arm64/NewRelic.framework/Headers/NRCustomMetrics.h</key>
 		<data>
@@ -38,11 +38,11 @@
 		</data>
 		<key>ios-arm64/NewRelic.framework/Headers/NewRelic-Swift.h</key>
 		<data>
-		3E8GoGBdYWjjmZ4EdGyTDNhwr1g=
+		aDGj9fIVtnliWe9VvHiyKJvlATY=
 		</data>
 		<key>ios-arm64/NewRelic.framework/Headers/NewRelic.h</key>
 		<data>
-		78QWaoY7yYclyegpZ6p3Hcv++IE=
+		+EfU7/dEc0klKcXD9A1MNySxvMk=
 		</data>
 		<key>ios-arm64/NewRelic.framework/Headers/NewRelicCustomInteractionInterface.h</key>
 		<data>
@@ -54,23 +54,23 @@
 		</data>
 		<key>ios-arm64/NewRelic.framework/Info.plist</key>
 		<data>
-		EF6sp90fqypFRREibQIvfWTPfxg=
+		Gjo1LPqZFIVglVIrDnQyJbXHOE8=
 		</data>
 		<key>ios-arm64/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		cS7LpRxoilJodMjhhdlSAIwuw7U=
+		/P+LgOFDguGFWL+UZKddNc8peMY=
 		</data>
 		<key>ios-arm64/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		f8ssBRbbRc1eJJHMq7+wc4gZArg=
+		30QzTqfTP8PwktV6btFU+x1VsGo=
 		</data>
 		<key>ios-arm64/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		y5EWGlN2rtDlfXQb5T8t3kUaU0w=
+		YwaAVl7Ug0YJL1NBK2ZftaZwgoY=
 		</data>
 		<key>ios-arm64/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		f8ssBRbbRc1eJJHMq7+wc4gZArg=
+		30QzTqfTP8PwktV6btFU+x1VsGo=
 		</data>
 		<key>ios-arm64/NewRelic.framework/Modules/module.modulemap</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>ios-arm64/NewRelic.framework/NewRelic</key>
 		<data>
-		b+IHN6uyE9KKMvQSd5k0/qXjRKg=
+		TDOoxz6zcXbNrYMtgQTBqPwF42Y=
 		</data>
 		<key>ios-arm64/NewRelic.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -86,19 +86,19 @@
 		</data>
 		<key>ios-arm64/NewRelic.framework/_CodeSignature/CodeResources</key>
 		<data>
-		y5SY7M9rGCDiSr/HtKFydx+Wjcc=
+		aWuWWRFnk6lPvHNZVZA4bHCVCHc=
 		</data>
 		<key>ios-arm64/dSYMs/NewRelic.framework.dSYM/Contents/Info.plist</key>
 		<data>
-		OO4IBHLs2LC12h9YSDDqzds12M0=
+		0Zop4o7YHjxPzjm0P9pEHK9soN8=
 		</data>
 		<key>ios-arm64/dSYMs/NewRelic.framework.dSYM/Contents/Resources/DWARF/NewRelic</key>
 		<data>
-		ppsHZBKejYUnSoE00dDmSeCB0Rc=
+		qGNYdJ8P3XjSFDHi4Oirvxs9B5M=
 		</data>
 		<key>ios-arm64/dSYMs/NewRelic.framework.dSYM/Contents/Resources/Relocations/aarch64/NewRelic.yml</key>
 		<data>
-		+1x9qtfctXKjHw91SbUJ7XbXfQ8=
+		loDhT2l1ML/aZVZ5gb4j59BfEpw=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Headers/Agent.h</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Headers/NRConstants.h</key>
 		<data>
-		w4yJYbc4nPeaaz/LZZ79AjoCFes=
+		FdU5yMIrAuug2HOGeFkfv5Z/bmY=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Headers/NRCustomMetrics.h</key>
 		<data>
@@ -134,11 +134,11 @@
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Headers/NewRelic-Swift.h</key>
 		<data>
-		GA36Dx8oAV+oZqhI6iXe27VHKAc=
+		Ktssr4t2GaoZZP9l02EbnSzk+Lc=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Headers/NewRelic.h</key>
 		<data>
-		78QWaoY7yYclyegpZ6p3Hcv++IE=
+		+EfU7/dEc0klKcXD9A1MNySxvMk=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Headers/NewRelicCustomInteractionInterface.h</key>
 		<data>
@@ -150,35 +150,35 @@
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Modules/NewRelic.swiftmodule/arm64-apple-ios-macabi.abi.json</key>
 		<data>
-		WTQmmM9cgRWesfOHkHg2rsyUPso=
+		ZmQSk+HTlSTjpA8u8yUGHBR09M0=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Modules/NewRelic.swiftmodule/arm64-apple-ios-macabi.private.swiftinterface</key>
 		<data>
-		eV7INHKntr7gpK03rawCGa63GvA=
+		m7En5tJwKMIkno+Z5jmSte/tG/k=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Modules/NewRelic.swiftmodule/arm64-apple-ios-macabi.swiftdoc</key>
 		<data>
-		konNR+qEwc6ZBXTIrQ9VpgwP1Ks=
+		GWu2Uk/C0/JFdX4NBphIFcHjXr4=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Modules/NewRelic.swiftmodule/arm64-apple-ios-macabi.swiftinterface</key>
 		<data>
-		eV7INHKntr7gpK03rawCGa63GvA=
+		m7En5tJwKMIkno+Z5jmSte/tG/k=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Modules/NewRelic.swiftmodule/x86_64-apple-ios-macabi.abi.json</key>
 		<data>
-		WTQmmM9cgRWesfOHkHg2rsyUPso=
+		ZmQSk+HTlSTjpA8u8yUGHBR09M0=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Modules/NewRelic.swiftmodule/x86_64-apple-ios-macabi.private.swiftinterface</key>
 		<data>
-		qsr2JL4inbexCM1fA/f7hhWAYPY=
+		t2eKfcWe/O0xjMKRRYEXg7+H6V4=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Modules/NewRelic.swiftmodule/x86_64-apple-ios-macabi.swiftdoc</key>
 		<data>
-		AU+aGCeE5MGUG70eW597iAh8Ro0=
+		x6JgWcGQaIHhDSd6Wo6Fssn1DHE=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Modules/NewRelic.swiftmodule/x86_64-apple-ios-macabi.swiftinterface</key>
 		<data>
-		qsr2JL4inbexCM1fA/f7hhWAYPY=
+		t2eKfcWe/O0xjMKRRYEXg7+H6V4=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Modules/module.modulemap</key>
 		<data>
@@ -186,11 +186,11 @@
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/NewRelic</key>
 		<data>
-		uzebE5gRzi869ZKdmX60PzOkZ30=
+		BKID1bjlqILPOpz9wiH+HuwERw0=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Resources/Info.plist</key>
 		<data>
-		nPT7Exa97VBHMrjduy3wOzhFugg=
+		3zBZnxvESv2/6kETdc1vugOto7Q=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Resources/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -198,23 +198,23 @@
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/_CodeSignature/CodeResources</key>
 		<data>
-		ywcATslNlCHNGkTEw+pFoLEl7Vc=
+		FkyseEOdV0KupOWDCYlc5RFrJUc=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/dSYMs/NewRelic.framework.dSYM/Contents/Info.plist</key>
 		<data>
-		OO4IBHLs2LC12h9YSDDqzds12M0=
+		0Zop4o7YHjxPzjm0P9pEHK9soN8=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/dSYMs/NewRelic.framework.dSYM/Contents/Resources/DWARF/NewRelic</key>
 		<data>
-		7JiGnluORzAjxvFA8sM7L93KbuY=
+		BS89V05BnSgE9LCmGk1N/H7Hpbw=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/dSYMs/NewRelic.framework.dSYM/Contents/Resources/Relocations/aarch64/NewRelic.yml</key>
 		<data>
-		3BhgJUEplHTieuu2Fznbnjp+BF0=
+		y+Ofmbpq9hu0x9riPf7LIut5UE8=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/dSYMs/NewRelic.framework.dSYM/Contents/Resources/Relocations/x86_64/NewRelic.yml</key>
 		<data>
-		gxmzn61sFkDg6Mcu1SCkWSyweMY=
+		gE014lAmBaZtIUPB4//c7tKqtW0=
 		</data>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Headers/Agent.h</key>
 		<data>
@@ -222,7 +222,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Headers/NRConstants.h</key>
 		<data>
-		w4yJYbc4nPeaaz/LZZ79AjoCFes=
+		FdU5yMIrAuug2HOGeFkfv5Z/bmY=
 		</data>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Headers/NRCustomMetrics.h</key>
 		<data>
@@ -250,11 +250,11 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Headers/NewRelic-Swift.h</key>
 		<data>
-		GA36Dx8oAV+oZqhI6iXe27VHKAc=
+		Ktssr4t2GaoZZP9l02EbnSzk+Lc=
 		</data>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Headers/NewRelic.h</key>
 		<data>
-		78QWaoY7yYclyegpZ6p3Hcv++IE=
+		+EfU7/dEc0klKcXD9A1MNySxvMk=
 		</data>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Headers/NewRelicCustomInteractionInterface.h</key>
 		<data>
@@ -266,47 +266,47 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Info.plist</key>
 		<data>
-		wWyIVqjVQ3kp1TGt6J7TUt/UBzc=
+		6HQnBiLuhb0kWrsjreRWcNFpZrc=
 		</data>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		iKEbk/Oq2uUiaLB597q9XZ6LIPM=
+		58ARssBQ0J0XDx88amWRHEvOUEA=
 		</data>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		TPqRFnEDCoW2VU8ogkOTHkSSYQc=
+		9Sqv3AlnF85L1+lBRfhRvtUIKBg=
 		</data>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		cS7LpRxoilJodMjhhdlSAIwuw7U=
+		/P+LgOFDguGFWL+UZKddNc8peMY=
 		</data>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		Yf9g/nzij4I1QhQjrddnKX3sBRs=
+		XhJystDHq0+NgTrhyv9X+y/b7FM=
 		</data>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		OkyuZpvFAb7oFkP08/qBR8VW4Jw=
+		NPi3ijU/Rr+gnQbl5+pjLz5e4EE=
 		</data>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Yf9g/nzij4I1QhQjrddnKX3sBRs=
+		XhJystDHq0+NgTrhyv9X+y/b7FM=
 		</data>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		cS7LpRxoilJodMjhhdlSAIwuw7U=
+		/P+LgOFDguGFWL+UZKddNc8peMY=
 		</data>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		R9siWL9Bna6yuNG2b4YOFQw+N4w=
+		eynBPr+HuJM9tsO9dyX1Wg81KdY=
 		</data>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		s+HvuZf/dphsIvhCTF49FqEfE6M=
+		OQcYhfo/ntwlQ8lPiSLn5/3Mayc=
 		</data>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		R9siWL9Bna6yuNG2b4YOFQw+N4w=
+		eynBPr+HuJM9tsO9dyX1Wg81KdY=
 		</data>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/module.modulemap</key>
 		<data>
@@ -314,7 +314,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/NewRelic</key>
 		<data>
-		CWd2ZYDDVNOSgOnTBJoCtvjAhwE=
+		fEwU6nYDYUy5QIpxYpJv36JPCYw=
 		</data>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -322,7 +322,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/_CodeSignature/CodeResources</key>
 		<data>
-		102WZGusKx9ZRvEDVldPi3rYFf4=
+		1RDoXwfj2Y+Dq+SkaGaj42X5yjI=
 		</data>
 		<key>tvos-arm64/NewRelic.framework/Headers/Agent.h</key>
 		<data>
@@ -330,7 +330,7 @@
 		</data>
 		<key>tvos-arm64/NewRelic.framework/Headers/NRConstants.h</key>
 		<data>
-		w4yJYbc4nPeaaz/LZZ79AjoCFes=
+		FdU5yMIrAuug2HOGeFkfv5Z/bmY=
 		</data>
 		<key>tvos-arm64/NewRelic.framework/Headers/NRCustomMetrics.h</key>
 		<data>
@@ -358,11 +358,11 @@
 		</data>
 		<key>tvos-arm64/NewRelic.framework/Headers/NewRelic-Swift.h</key>
 		<data>
-		3E8GoGBdYWjjmZ4EdGyTDNhwr1g=
+		YpLxBOVp9OxBhprtRpo6bKdHpaA=
 		</data>
 		<key>tvos-arm64/NewRelic.framework/Headers/NewRelic.h</key>
 		<data>
-		78QWaoY7yYclyegpZ6p3Hcv++IE=
+		+EfU7/dEc0klKcXD9A1MNySxvMk=
 		</data>
 		<key>tvos-arm64/NewRelic.framework/Headers/NewRelicCustomInteractionInterface.h</key>
 		<data>
@@ -374,23 +374,23 @@
 		</data>
 		<key>tvos-arm64/NewRelic.framework/Info.plist</key>
 		<data>
-		HJjohbVeagHAOqdT7JLg4shz+Ko=
+		FJDKmAOdxCRCTx8VYrZVGutFCE8=
 		</data>
 		<key>tvos-arm64/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-tvos.abi.json</key>
 		<data>
-		YjpDJEHWi219LtspXgsXClqD+DM=
+		E8AmkwdvOz+qqSrHZqXN2l65CGU=
 		</data>
 		<key>tvos-arm64/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-tvos.private.swiftinterface</key>
 		<data>
-		7o5rDzgCWeyeuvA/Emd9971HX9g=
+		6O3jn9TDjYfw//zzcoXmhVdwlBI=
 		</data>
 		<key>tvos-arm64/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-tvos.swiftdoc</key>
 		<data>
-		S+VHUd/IDgEVEtyGRqkIHT6JncU=
+		gjrYYajlOQcSP9Xcr2K4QgC42zw=
 		</data>
 		<key>tvos-arm64/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-tvos.swiftinterface</key>
 		<data>
-		7o5rDzgCWeyeuvA/Emd9971HX9g=
+		6O3jn9TDjYfw//zzcoXmhVdwlBI=
 		</data>
 		<key>tvos-arm64/NewRelic.framework/Modules/module.modulemap</key>
 		<data>
@@ -398,7 +398,7 @@
 		</data>
 		<key>tvos-arm64/NewRelic.framework/NewRelic</key>
 		<data>
-		gjeOz38hvd6DA4yMdQb4LOD3es0=
+		8MJJqbdXKaxIw2DqyyEBeMp6hSw=
 		</data>
 		<key>tvos-arm64/NewRelic.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -406,19 +406,19 @@
 		</data>
 		<key>tvos-arm64/NewRelic.framework/_CodeSignature/CodeResources</key>
 		<data>
-		NDNDtcR7o/mL2xvbGoUnmiHb+1Q=
+		n/SkO/7DpksI0vFhdVG0bw12W9w=
 		</data>
 		<key>tvos-arm64/dSYMs/NewRelic.framework.dSYM/Contents/Info.plist</key>
 		<data>
-		OO4IBHLs2LC12h9YSDDqzds12M0=
+		0Zop4o7YHjxPzjm0P9pEHK9soN8=
 		</data>
 		<key>tvos-arm64/dSYMs/NewRelic.framework.dSYM/Contents/Resources/DWARF/NewRelic</key>
 		<data>
-		xauKPmvV9Pu8pEuVT6kZHxwCOlA=
+		RN+HeSDJlH+C6xOo1IhQ1ijieUo=
 		</data>
 		<key>tvos-arm64/dSYMs/NewRelic.framework.dSYM/Contents/Resources/Relocations/aarch64/NewRelic.yml</key>
 		<data>
-		Q/4qFVQCKZZfbYfoY6q/N1q/RHE=
+		P06s5w2Mp0Cwk8H/KpJ6a7DnJhU=
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Headers/Agent.h</key>
 		<data>
@@ -426,7 +426,7 @@
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Headers/NRConstants.h</key>
 		<data>
-		w4yJYbc4nPeaaz/LZZ79AjoCFes=
+		FdU5yMIrAuug2HOGeFkfv5Z/bmY=
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Headers/NRCustomMetrics.h</key>
 		<data>
@@ -454,11 +454,11 @@
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Headers/NewRelic-Swift.h</key>
 		<data>
-		GA36Dx8oAV+oZqhI6iXe27VHKAc=
+		T+Hxq1QbxiOfa9TKhZD3To0T0lE=
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Headers/NewRelic.h</key>
 		<data>
-		78QWaoY7yYclyegpZ6p3Hcv++IE=
+		+EfU7/dEc0klKcXD9A1MNySxvMk=
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Headers/NewRelicCustomInteractionInterface.h</key>
 		<data>
@@ -470,47 +470,47 @@
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Info.plist</key>
 		<data>
-		oNhl3BVnWL5pgU11rQgSJKtHf0k=
+		hBtZjCkykrtRA2kxbu8UTwmGvNI=
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/Project/arm64-apple-tvos-simulator.swiftsourceinfo</key>
 		<data>
-		u1e7K9Gi0FZLEG2d7kRXrvke8Us=
+		6BvVLmM5v8FaEvEIpKo039UVAdM=
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/Project/x86_64-apple-tvos-simulator.swiftsourceinfo</key>
 		<data>
-		iOBwNdzcR7iKJekN27ok+1vCMZo=
+		HjXek+/fFJFev+gMvAj7fOpyhyA=
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-tvos-simulator.abi.json</key>
 		<data>
-		YjpDJEHWi219LtspXgsXClqD+DM=
+		E8AmkwdvOz+qqSrHZqXN2l65CGU=
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-tvos-simulator.private.swiftinterface</key>
 		<data>
-		lbkVKo+hGEvC/wplwsRe0Vm7uqk=
+		S/EGjBF1gt/d47mrFJ2KwTi3CqU=
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-tvos-simulator.swiftdoc</key>
 		<data>
-		x6BIW6FbELGpgepujnnAH1TPzN8=
+		Us5JImS+S8uJkQGT68D+uLV7ICQ=
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-tvos-simulator.swiftinterface</key>
 		<data>
-		lbkVKo+hGEvC/wplwsRe0Vm7uqk=
+		S/EGjBF1gt/d47mrFJ2KwTi3CqU=
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-tvos-simulator.abi.json</key>
 		<data>
-		YjpDJEHWi219LtspXgsXClqD+DM=
+		E8AmkwdvOz+qqSrHZqXN2l65CGU=
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-tvos-simulator.private.swiftinterface</key>
 		<data>
-		6+b+k3dlVexLOcRYbn9qGmZUqqc=
+		PToO8yC4qg9rAb3xiEcJtqgGh68=
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<data>
-		ZytP4ATJP+8tjmUMPF/9dv+f5/4=
+		dvZxXFCYiWROAI0Q3USbSczoZuY=
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-tvos-simulator.swiftinterface</key>
 		<data>
-		6+b+k3dlVexLOcRYbn9qGmZUqqc=
+		PToO8yC4qg9rAb3xiEcJtqgGh68=
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/module.modulemap</key>
 		<data>
@@ -518,7 +518,7 @@
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/NewRelic</key>
 		<data>
-		S9rxvN6KxxXAoaQ/0gINlf6kxcc=
+		2Q+Fmjbow+oNS/9XGK1y/tURuh4=
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -526,7 +526,7 @@
 		</data>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/_CodeSignature/CodeResources</key>
 		<data>
-		vJtDO3rFYg3YAlF/lAltboIsgeE=
+		Er3odrCilzIEcFjqY7rwX3QB8JE=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Headers/Agent.h</key>
 		<data>
@@ -534,7 +534,7 @@
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Headers/NRConstants.h</key>
 		<data>
-		w4yJYbc4nPeaaz/LZZ79AjoCFes=
+		FdU5yMIrAuug2HOGeFkfv5Z/bmY=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Headers/NRCustomMetrics.h</key>
 		<data>
@@ -562,11 +562,11 @@
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Headers/NewRelic-Swift.h</key>
 		<data>
-		2s3yeXxmX+9Prx5JFwdgdjLkugA=
+		J08T38YQoJsBuExDIs0NeXpt2g8=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Headers/NewRelic.h</key>
 		<data>
-		78QWaoY7yYclyegpZ6p3Hcv++IE=
+		+EfU7/dEc0klKcXD9A1MNySxvMk=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Headers/NewRelicCustomInteractionInterface.h</key>
 		<data>
@@ -578,55 +578,55 @@
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Info.plist</key>
 		<data>
-		M4vUW443hT4RAggMIUwXNRHbWfI=
+		8oS180Os2D9VId2glfg3k+EQPcI=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-watchos.abi.json</key>
 		<data>
-		LwjhF2RrNHex59j8pA4jW/hbqp0=
+		3Q7GmmOiveDtSA55npd56/U/5Q0=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-watchos.private.swiftinterface</key>
 		<data>
-		Y/u4SEXhyg9xIb6hEkuuknTlWLE=
+		B1O4NdAVFpk+5NMxDuWV9BUBtP8=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-watchos.swiftdoc</key>
 		<data>
-		DgCTXmCALSdhZD5I4aO//iV9kUU=
+		M/OjUi9BUnarL6VkPn2MsHbdlYo=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-watchos.swiftinterface</key>
 		<data>
-		Y/u4SEXhyg9xIb6hEkuuknTlWLE=
+		B1O4NdAVFpk+5NMxDuWV9BUBtP8=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64_32-apple-watchos.abi.json</key>
 		<data>
-		LwjhF2RrNHex59j8pA4jW/hbqp0=
+		3Q7GmmOiveDtSA55npd56/U/5Q0=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64_32-apple-watchos.private.swiftinterface</key>
 		<data>
-		ernNcUGypO2Qo+ZlZzklGd1wnhs=
+		9I0NJ5L79vj56pEfJo7n0q6xJ1g=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64_32-apple-watchos.swiftdoc</key>
 		<data>
-		Lc9DCtRc1RxbRo0NiaBA5kAIJCc=
+		zLU3k29lZ3BxHdTyxJoWXFyvVDc=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64_32-apple-watchos.swiftinterface</key>
 		<data>
-		ernNcUGypO2Qo+ZlZzklGd1wnhs=
+		9I0NJ5L79vj56pEfJo7n0q6xJ1g=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/armv7k-apple-watchos.abi.json</key>
 		<data>
-		LwjhF2RrNHex59j8pA4jW/hbqp0=
+		3Q7GmmOiveDtSA55npd56/U/5Q0=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/armv7k-apple-watchos.private.swiftinterface</key>
 		<data>
-		nPrZCfO6G3dm93d942EU+ZiXK0c=
+		gPdamyWJlKHeMJvM2hYUDlhiZqo=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/armv7k-apple-watchos.swiftdoc</key>
 		<data>
-		FPjAwisAUe4MtwhcWYB2d70NaHk=
+		tkpn3JuE7z0pFlYS5M/NfDBuPAE=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/armv7k-apple-watchos.swiftinterface</key>
 		<data>
-		nPrZCfO6G3dm93d942EU+ZiXK0c=
+		gPdamyWJlKHeMJvM2hYUDlhiZqo=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/module.modulemap</key>
 		<data>
@@ -634,7 +634,7 @@
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/NewRelic</key>
 		<data>
-		mrAhmaKgJNbKgBiJ3H52SVRra/Q=
+		z7T2ARg6KMnwF1nhP1jq08uH1tc=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -642,27 +642,27 @@
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/_CodeSignature/CodeResources</key>
 		<data>
-		FMPbEHA5grmBEhMevpgbYESjR0E=
+		wf+wei01ddWcAc6RA3HpCX9GQEo=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/dSYMs/NewRelic.framework.dSYM/Contents/Info.plist</key>
 		<data>
-		OO4IBHLs2LC12h9YSDDqzds12M0=
+		0Zop4o7YHjxPzjm0P9pEHK9soN8=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/dSYMs/NewRelic.framework.dSYM/Contents/Resources/DWARF/NewRelic</key>
 		<data>
-		CFDzZgwDQPRpJcuveLdZdd+2H/s=
+		mfaJ+Vec01vJl6esXhXRUSU7kGM=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/dSYMs/NewRelic.framework.dSYM/Contents/Resources/Relocations/aarch64/NewRelic.yml</key>
 		<data>
-		/DsQ1bfFMU8Rw0/ckMYjd5aMijo=
+		R1MxqDrlGfL5J4h8R5WRexJNMDk=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/dSYMs/NewRelic.framework.dSYM/Contents/Resources/Relocations/aarch64_32/NewRelic.yml</key>
 		<data>
-		XcSe9Q0EinTp8j/Mipvrj6OYm8Q=
+		yhLfEYRMgSNsqWH/gBmZQ5x9pzg=
 		</data>
 		<key>watchos-arm64_arm64_32_armv7k/dSYMs/NewRelic.framework.dSYM/Contents/Resources/Relocations/arm/NewRelic.yml</key>
 		<data>
-		Wd+6MAqwdSoPttUeRvv543VlSFw=
+		R0eao3gUN5Oq2eWT6h5dFMg+DDU=
 		</data>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Headers/Agent.h</key>
 		<data>
@@ -670,7 +670,7 @@
 		</data>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Headers/NRConstants.h</key>
 		<data>
-		w4yJYbc4nPeaaz/LZZ79AjoCFes=
+		FdU5yMIrAuug2HOGeFkfv5Z/bmY=
 		</data>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Headers/NRCustomMetrics.h</key>
 		<data>
@@ -698,11 +698,11 @@
 		</data>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Headers/NewRelic-Swift.h</key>
 		<data>
-		3j4gaz2EvQetQrWTsaD102B+rhA=
+		A6d0lYP9hS+SIw3X/h4ceuC8XUU=
 		</data>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Headers/NewRelic.h</key>
 		<data>
-		78QWaoY7yYclyegpZ6p3Hcv++IE=
+		+EfU7/dEc0klKcXD9A1MNySxvMk=
 		</data>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Headers/NewRelicCustomInteractionInterface.h</key>
 		<data>
@@ -714,47 +714,47 @@
 		</data>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Info.plist</key>
 		<data>
-		HUEux3BziP8rDCcLxEgC1mTXTj0=
+		CHXV/PN8qCqKTjHcjY+HOJ86Mus=
 		</data>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/Project/arm64-apple-watchos-simulator.swiftsourceinfo</key>
 		<data>
-		JhDpzGwNcU3SMPNTYITzwN+9toI=
+		M9eWqlsKE3EQKUzWx0KyUi3aTyA=
 		</data>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/Project/x86_64-apple-watchos-simulator.swiftsourceinfo</key>
 		<data>
-		EoM8nAxDdiIO3/IA4Hmk6ZOphDU=
+		G7ZgM80l6iQ8MJKuvSaJ9JR3Gtc=
 		</data>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-watchos-simulator.abi.json</key>
 		<data>
-		LwjhF2RrNHex59j8pA4jW/hbqp0=
+		3Q7GmmOiveDtSA55npd56/U/5Q0=
 		</data>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-watchos-simulator.private.swiftinterface</key>
 		<data>
-		PDKDIwHsCRB2+6dtWJWNIgQyb7E=
+		7lbjwg19EcGf6PCHERwATNO6Cew=
 		</data>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-watchos-simulator.swiftdoc</key>
 		<data>
-		o8qeb9kFHV1k21OHpkk6e35L+HE=
+		V2na31sLO8t1mz26EwKOHNYaqNA=
 		</data>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-watchos-simulator.swiftinterface</key>
 		<data>
-		PDKDIwHsCRB2+6dtWJWNIgQyb7E=
+		7lbjwg19EcGf6PCHERwATNO6Cew=
 		</data>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-watchos-simulator.abi.json</key>
 		<data>
-		LwjhF2RrNHex59j8pA4jW/hbqp0=
+		3Q7GmmOiveDtSA55npd56/U/5Q0=
 		</data>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-watchos-simulator.private.swiftinterface</key>
 		<data>
-		IELuukd388WWNhkjYEOGUBAEfMw=
+		I9d55ftrCoS+jbkBVWOtAO37dNk=
 		</data>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-watchos-simulator.swiftdoc</key>
 		<data>
-		/U+0IRDBLOBrgxLJwMerfCWfgOc=
+		ZAapfoODOv0fCMqZQOTaOzVtf8M=
 		</data>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-watchos-simulator.swiftinterface</key>
 		<data>
-		IELuukd388WWNhkjYEOGUBAEfMw=
+		I9d55ftrCoS+jbkBVWOtAO37dNk=
 		</data>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/module.modulemap</key>
 		<data>
@@ -762,7 +762,7 @@
 		</data>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/NewRelic</key>
 		<data>
-		4n17teDiU1N21NXAlULWuydSKK4=
+		iLtTf1J7aA5A584qxN1+Mot086s=
 		</data>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -770,7 +770,7 @@
 		</data>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/_CodeSignature/CodeResources</key>
 		<data>
-		34hnqm+CvutDz+GPmdN1Rvj5EzQ=
+		eCnP2Xlv3Bta3O1tKThhHIsE7eY=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -790,11 +790,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			w4yJYbc4nPeaaz/LZZ79AjoCFes=
+			FdU5yMIrAuug2HOGeFkfv5Z/bmY=
 			</data>
 			<key>hash2</key>
 			<data>
-			aBsCIkbwN5NLEpqKU8cRaEFPnBh2cLZtZ0dtb8G3SM0=
+			ZZBM8+SUnQgNAEFcEGKDtqf+TaJIlo/95nzEdSntXW0=
 			</data>
 		</dict>
 		<key>ios-arm64/NewRelic.framework/Headers/NRCustomMetrics.h</key>
@@ -867,22 +867,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3E8GoGBdYWjjmZ4EdGyTDNhwr1g=
+			aDGj9fIVtnliWe9VvHiyKJvlATY=
 			</data>
 			<key>hash2</key>
 			<data>
-			z6X9CVmU81PHQhoRYE7XojtybSbRh/1oEfT+EfMWXLY=
+			ZWjOXKOYJg8U+JG3XBXAPV0ePyHf3si6EPpPKd2ceW4=
 			</data>
 		</dict>
 		<key>ios-arm64/NewRelic.framework/Headers/NewRelic.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			78QWaoY7yYclyegpZ6p3Hcv++IE=
+			+EfU7/dEc0klKcXD9A1MNySxvMk=
 			</data>
 			<key>hash2</key>
 			<data>
-			XBxOB8WEF58XBLhOq/1LWSi4+GkjBPhQzFlXhLJb0ks=
+			fz/q3OBnU8/684MgkmPZwTC5zoFrDoVjM/zEuyM5WRw=
 			</data>
 		</dict>
 		<key>ios-arm64/NewRelic.framework/Headers/NewRelicCustomInteractionInterface.h</key>
@@ -911,55 +911,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			EF6sp90fqypFRREibQIvfWTPfxg=
+			Gjo1LPqZFIVglVIrDnQyJbXHOE8=
 			</data>
 			<key>hash2</key>
 			<data>
-			rbin+I96xkUXxy1mYkxf6+GKfPVQmhX77as9VjBl230=
+			issQvoI8WPCQoxuPnLhHaz84LBRi4HuQAR0brETaEB0=
 			</data>
 		</dict>
 		<key>ios-arm64/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cS7LpRxoilJodMjhhdlSAIwuw7U=
+			/P+LgOFDguGFWL+UZKddNc8peMY=
 			</data>
 			<key>hash2</key>
 			<data>
-			lcnghF09HUgAR93aMZl/KDS+h/1oKaII1vWtd5rWRg4=
+			BBvFwBOd5Aq3JGQKx71K+0GQ0+zktoXJdcOCxNAx0XA=
 			</data>
 		</dict>
 		<key>ios-arm64/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			f8ssBRbbRc1eJJHMq7+wc4gZArg=
+			30QzTqfTP8PwktV6btFU+x1VsGo=
 			</data>
 			<key>hash2</key>
 			<data>
-			PbuOuxkDUeHv1BxAHXBc82yG0Y0udW2JuqIIwbxQFoE=
+			QFcFyTVtzVJxdLtD7rOhyguRy5GsP8OhbcUOvg9Zehw=
 			</data>
 		</dict>
 		<key>ios-arm64/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			y5EWGlN2rtDlfXQb5T8t3kUaU0w=
+			YwaAVl7Ug0YJL1NBK2ZftaZwgoY=
 			</data>
 			<key>hash2</key>
 			<data>
-			gXVxpqvFZW/HwZlbkJELUfcsO+krhfutGBUYdJXDu6w=
+			K7ePJSa4HuuwRbQ/bHYyAGDtCfAL3EFNNrYDOHRfHGE=
 			</data>
 		</dict>
 		<key>ios-arm64/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			f8ssBRbbRc1eJJHMq7+wc4gZArg=
+			30QzTqfTP8PwktV6btFU+x1VsGo=
 			</data>
 			<key>hash2</key>
 			<data>
-			PbuOuxkDUeHv1BxAHXBc82yG0Y0udW2JuqIIwbxQFoE=
+			QFcFyTVtzVJxdLtD7rOhyguRy5GsP8OhbcUOvg9Zehw=
 			</data>
 		</dict>
 		<key>ios-arm64/NewRelic.framework/Modules/module.modulemap</key>
@@ -977,11 +977,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			b+IHN6uyE9KKMvQSd5k0/qXjRKg=
+			TDOoxz6zcXbNrYMtgQTBqPwF42Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			yPUAX5CmnaIYPgErKxkPtOmQ4/STCTmTWKrusFxzCg0=
+			f9k8QEqoRQ8huo/o6tHh+V+rNTUAYVvxgSfpnLOxMDs=
 			</data>
 		</dict>
 		<key>ios-arm64/NewRelic.framework/PrivacyInfo.xcprivacy</key>
@@ -999,44 +999,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			y5SY7M9rGCDiSr/HtKFydx+Wjcc=
+			aWuWWRFnk6lPvHNZVZA4bHCVCHc=
 			</data>
 			<key>hash2</key>
 			<data>
-			X0QavUHFis4LPQhm9pPnZbRIkxlMfLK20+RmfMOkvbo=
+			djJMNOnbPv36SnhVmHXIgJBVo6Ch+Fv7TlKZcWRIQoQ=
 			</data>
 		</dict>
 		<key>ios-arm64/dSYMs/NewRelic.framework.dSYM/Contents/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			OO4IBHLs2LC12h9YSDDqzds12M0=
+			0Zop4o7YHjxPzjm0P9pEHK9soN8=
 			</data>
 			<key>hash2</key>
 			<data>
-			yZJmvs7KMU4aCFSvWjaDdKnZXJ2d8ijko8NvFnCD4h0=
+			6V+5tzKUMAKNE2q0AlZzyG0bzonVgYf/iFETvtScll8=
 			</data>
 		</dict>
 		<key>ios-arm64/dSYMs/NewRelic.framework.dSYM/Contents/Resources/DWARF/NewRelic</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ppsHZBKejYUnSoE00dDmSeCB0Rc=
+			qGNYdJ8P3XjSFDHi4Oirvxs9B5M=
 			</data>
 			<key>hash2</key>
 			<data>
-			esyuXbhO6mlBq2VL6tNkD4RVDxvnmchX1Ddb55FqmQc=
+			+q18Oe+4cj6K88v9+bj/B58Xkowl4nByTyDnW7SvClo=
 			</data>
 		</dict>
 		<key>ios-arm64/dSYMs/NewRelic.framework.dSYM/Contents/Resources/Relocations/aarch64/NewRelic.yml</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+1x9qtfctXKjHw91SbUJ7XbXfQ8=
+			loDhT2l1ML/aZVZ5gb4j59BfEpw=
 			</data>
 			<key>hash2</key>
 			<data>
-			IPJ/PQnGi8PONMQXn0ltD6P1mvaTTyd2VFKUx6D98UU=
+			W9RBG9DOBMcsPsBpHt43bifRya3Sf5Axay+kUj2AeFU=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Headers</key>
@@ -1074,11 +1074,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			w4yJYbc4nPeaaz/LZZ79AjoCFes=
+			FdU5yMIrAuug2HOGeFkfv5Z/bmY=
 			</data>
 			<key>hash2</key>
 			<data>
-			aBsCIkbwN5NLEpqKU8cRaEFPnBh2cLZtZ0dtb8G3SM0=
+			ZZBM8+SUnQgNAEFcEGKDtqf+TaJIlo/95nzEdSntXW0=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Headers/NRCustomMetrics.h</key>
@@ -1151,22 +1151,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GA36Dx8oAV+oZqhI6iXe27VHKAc=
+			Ktssr4t2GaoZZP9l02EbnSzk+Lc=
 			</data>
 			<key>hash2</key>
 			<data>
-			bRulavR5qCU+cgWbjHQS014TulYYVJTu5CIYv6e5gP0=
+			6XZvE1cHoWma7cExQnziEHiazbqyZOmmii0qPviDqmE=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Headers/NewRelic.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			78QWaoY7yYclyegpZ6p3Hcv++IE=
+			+EfU7/dEc0klKcXD9A1MNySxvMk=
 			</data>
 			<key>hash2</key>
 			<data>
-			XBxOB8WEF58XBLhOq/1LWSi4+GkjBPhQzFlXhLJb0ks=
+			fz/q3OBnU8/684MgkmPZwTC5zoFrDoVjM/zEuyM5WRw=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Headers/NewRelicCustomInteractionInterface.h</key>
@@ -1195,88 +1195,88 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WTQmmM9cgRWesfOHkHg2rsyUPso=
+			ZmQSk+HTlSTjpA8u8yUGHBR09M0=
 			</data>
 			<key>hash2</key>
 			<data>
-			ASbTSn6fz8a9LbHykdILFtaufgxiBu62UKW3jipq4a4=
+			/2IxmXooDViaBDalxZj1MIm+pSs9yepBH9DAxLzD9Lw=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Modules/NewRelic.swiftmodule/arm64-apple-ios-macabi.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			eV7INHKntr7gpK03rawCGa63GvA=
+			m7En5tJwKMIkno+Z5jmSte/tG/k=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZDKvO2+1Si45xHC5I4NiJaL1S79QN6Yiw7yWMrwM8rI=
+			tZuJt87E6kZsIoVUvGXRiz4CH9Fv2zZBAybJWw1xOBE=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Modules/NewRelic.swiftmodule/arm64-apple-ios-macabi.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			konNR+qEwc6ZBXTIrQ9VpgwP1Ks=
+			GWu2Uk/C0/JFdX4NBphIFcHjXr4=
 			</data>
 			<key>hash2</key>
 			<data>
-			W9T8PSuZPaDDyKG3X/RPUazTJsh4L5P+hawDZcnf3+8=
+			5K/o7fhJOXkG3FmutWxEgZ2GLW3fUcnjHtHpd2YXiJU=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Modules/NewRelic.swiftmodule/arm64-apple-ios-macabi.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			eV7INHKntr7gpK03rawCGa63GvA=
+			m7En5tJwKMIkno+Z5jmSte/tG/k=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZDKvO2+1Si45xHC5I4NiJaL1S79QN6Yiw7yWMrwM8rI=
+			tZuJt87E6kZsIoVUvGXRiz4CH9Fv2zZBAybJWw1xOBE=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Modules/NewRelic.swiftmodule/x86_64-apple-ios-macabi.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WTQmmM9cgRWesfOHkHg2rsyUPso=
+			ZmQSk+HTlSTjpA8u8yUGHBR09M0=
 			</data>
 			<key>hash2</key>
 			<data>
-			ASbTSn6fz8a9LbHykdILFtaufgxiBu62UKW3jipq4a4=
+			/2IxmXooDViaBDalxZj1MIm+pSs9yepBH9DAxLzD9Lw=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Modules/NewRelic.swiftmodule/x86_64-apple-ios-macabi.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qsr2JL4inbexCM1fA/f7hhWAYPY=
+			t2eKfcWe/O0xjMKRRYEXg7+H6V4=
 			</data>
 			<key>hash2</key>
 			<data>
-			YUYloNCQTdK+FQN01V82SEp8BMhwaPMrvMYSwLeeI3A=
+			7rlzvgvqIui3ydQdFCq8nXQaM2/dCi/OZ+PoWHv9BWc=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Modules/NewRelic.swiftmodule/x86_64-apple-ios-macabi.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			AU+aGCeE5MGUG70eW597iAh8Ro0=
+			x6JgWcGQaIHhDSd6Wo6Fssn1DHE=
 			</data>
 			<key>hash2</key>
 			<data>
-			zoHtqfO1k7riUPXU80Uby5ghiH0T0z/cGGM5Kh5VyWA=
+			UxsUjZc4EnI7taLX+ozozGpqQVULMgy31k1A449SS4I=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Modules/NewRelic.swiftmodule/x86_64-apple-ios-macabi.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qsr2JL4inbexCM1fA/f7hhWAYPY=
+			t2eKfcWe/O0xjMKRRYEXg7+H6V4=
 			</data>
 			<key>hash2</key>
 			<data>
-			YUYloNCQTdK+FQN01V82SEp8BMhwaPMrvMYSwLeeI3A=
+			7rlzvgvqIui3ydQdFCq8nXQaM2/dCi/OZ+PoWHv9BWc=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Modules/module.modulemap</key>
@@ -1294,22 +1294,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uzebE5gRzi869ZKdmX60PzOkZ30=
+			BKID1bjlqILPOpz9wiH+HuwERw0=
 			</data>
 			<key>hash2</key>
 			<data>
-			N9LUaAJtO6bd7UYt6B7t1e3f0DD00Xt2/CoiidW7YS0=
+			mItUQUx6eH0PNu4RwaCJMw4g4SRXqt5ltJWelJ8PRnU=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Resources/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nPT7Exa97VBHMrjduy3wOzhFugg=
+			3zBZnxvESv2/6kETdc1vugOto7Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			C9pPc1k64YN2ahX5XIwLcXcUrL2tlTxxZQcAGt6gzak=
+			/rQj0jka7hXWCmnaxji6zOCg03NZNwsKrFfARUlCdd4=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/A/Resources/PrivacyInfo.xcprivacy</key>
@@ -1327,11 +1327,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ywcATslNlCHNGkTEw+pFoLEl7Vc=
+			FkyseEOdV0KupOWDCYlc5RFrJUc=
 			</data>
 			<key>hash2</key>
 			<data>
-			Da4WXD3nZzHFxT+nnSEXdXhaHTXCBRIxl83UWazerds=
+			JF6xJ749BNsZ5hw6j2U8N9+pEMU9q2DvsxVf/Ava1rM=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/NewRelic.framework/Versions/Current</key>
@@ -1348,44 +1348,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			OO4IBHLs2LC12h9YSDDqzds12M0=
+			0Zop4o7YHjxPzjm0P9pEHK9soN8=
 			</data>
 			<key>hash2</key>
 			<data>
-			yZJmvs7KMU4aCFSvWjaDdKnZXJ2d8ijko8NvFnCD4h0=
+			6V+5tzKUMAKNE2q0AlZzyG0bzonVgYf/iFETvtScll8=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/dSYMs/NewRelic.framework.dSYM/Contents/Resources/DWARF/NewRelic</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7JiGnluORzAjxvFA8sM7L93KbuY=
+			BS89V05BnSgE9LCmGk1N/H7Hpbw=
 			</data>
 			<key>hash2</key>
 			<data>
-			4xSW55fmJ6u5jbPILbLTK93QkP0986ZUwEPgZQTpSxo=
+			3xXRpaD8iZQDxCKgQwGlVHK2I4DFTae2FXXYOV/hDMo=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/dSYMs/NewRelic.framework.dSYM/Contents/Resources/Relocations/aarch64/NewRelic.yml</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			3BhgJUEplHTieuu2Fznbnjp+BF0=
+			y+Ofmbpq9hu0x9riPf7LIut5UE8=
 			</data>
 			<key>hash2</key>
 			<data>
-			xse9QGeOL7CShU5eSdcIol8nnvrbUpD9N113bPl8GdU=
+			AXz6AjXDzMktWDXE6GndGYuB6gJBGuumwXX0BS0fI58=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/dSYMs/NewRelic.framework.dSYM/Contents/Resources/Relocations/x86_64/NewRelic.yml</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			gxmzn61sFkDg6Mcu1SCkWSyweMY=
+			gE014lAmBaZtIUPB4//c7tKqtW0=
 			</data>
 			<key>hash2</key>
 			<data>
-			Z7xRX5EauGTHHriI/QHa8/DAfbzW/E+eEBn1yWLGNhQ=
+			EYGY8yO2t6kYJtihPpFyrMxNH0n4DFsbJ63/1PT8syA=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Headers/Agent.h</key>
@@ -1403,11 +1403,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			w4yJYbc4nPeaaz/LZZ79AjoCFes=
+			FdU5yMIrAuug2HOGeFkfv5Z/bmY=
 			</data>
 			<key>hash2</key>
 			<data>
-			aBsCIkbwN5NLEpqKU8cRaEFPnBh2cLZtZ0dtb8G3SM0=
+			ZZBM8+SUnQgNAEFcEGKDtqf+TaJIlo/95nzEdSntXW0=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Headers/NRCustomMetrics.h</key>
@@ -1480,22 +1480,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GA36Dx8oAV+oZqhI6iXe27VHKAc=
+			Ktssr4t2GaoZZP9l02EbnSzk+Lc=
 			</data>
 			<key>hash2</key>
 			<data>
-			bRulavR5qCU+cgWbjHQS014TulYYVJTu5CIYv6e5gP0=
+			6XZvE1cHoWma7cExQnziEHiazbqyZOmmii0qPviDqmE=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Headers/NewRelic.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			78QWaoY7yYclyegpZ6p3Hcv++IE=
+			+EfU7/dEc0klKcXD9A1MNySxvMk=
 			</data>
 			<key>hash2</key>
 			<data>
-			XBxOB8WEF58XBLhOq/1LWSi4+GkjBPhQzFlXhLJb0ks=
+			fz/q3OBnU8/684MgkmPZwTC5zoFrDoVjM/zEuyM5WRw=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Headers/NewRelicCustomInteractionInterface.h</key>
@@ -1524,121 +1524,121 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			wWyIVqjVQ3kp1TGt6J7TUt/UBzc=
+			6HQnBiLuhb0kWrsjreRWcNFpZrc=
 			</data>
 			<key>hash2</key>
 			<data>
-			9+n0NJy8MYyKzrwUWapcQ/0JT8zjwPxaLl3wKtt3Aqw=
+			dClltDhz7i9Ge6qab28frTiF1a/AHL8hzpj/SWL2CNQ=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			iKEbk/Oq2uUiaLB597q9XZ6LIPM=
+			58ARssBQ0J0XDx88amWRHEvOUEA=
 			</data>
 			<key>hash2</key>
 			<data>
-			h/Iv+KbZp9cvo3NsDfZkotq/lxOxsnAkOI03fn4MYTY=
+			W01HisFTiGWS2JD+Ni+DJeDWgSdjPHx96EQvYnR+etY=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TPqRFnEDCoW2VU8ogkOTHkSSYQc=
+			9Sqv3AlnF85L1+lBRfhRvtUIKBg=
 			</data>
 			<key>hash2</key>
 			<data>
-			5qbQ523Ao2kWMBXDDErjk9lIgu0nWcC6DZIUG4hgxxo=
+			VADjcRji4MgGDTRUvqyknBoFpa5QB/krBaVkBnFx0LM=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cS7LpRxoilJodMjhhdlSAIwuw7U=
+			/P+LgOFDguGFWL+UZKddNc8peMY=
 			</data>
 			<key>hash2</key>
 			<data>
-			lcnghF09HUgAR93aMZl/KDS+h/1oKaII1vWtd5rWRg4=
+			BBvFwBOd5Aq3JGQKx71K+0GQ0+zktoXJdcOCxNAx0XA=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Yf9g/nzij4I1QhQjrddnKX3sBRs=
+			XhJystDHq0+NgTrhyv9X+y/b7FM=
 			</data>
 			<key>hash2</key>
 			<data>
-			qtTVUFxEFGfsFsyG29v99didcodQs/ChVpi1N14km+E=
+			WFly3Dh3bB8FDBc+Vln9UoBeBbY2Q83EtZrWEBHlrTE=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			OkyuZpvFAb7oFkP08/qBR8VW4Jw=
+			NPi3ijU/Rr+gnQbl5+pjLz5e4EE=
 			</data>
 			<key>hash2</key>
 			<data>
-			GqgybE6AT/OPDk464RTTX48YSSekdb2E2rpzF5FZS+8=
+			euekgrKKDI97N38EoSNDqm4mfF/roS/TQbIRTCngQXs=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Yf9g/nzij4I1QhQjrddnKX3sBRs=
+			XhJystDHq0+NgTrhyv9X+y/b7FM=
 			</data>
 			<key>hash2</key>
 			<data>
-			qtTVUFxEFGfsFsyG29v99didcodQs/ChVpi1N14km+E=
+			WFly3Dh3bB8FDBc+Vln9UoBeBbY2Q83EtZrWEBHlrTE=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cS7LpRxoilJodMjhhdlSAIwuw7U=
+			/P+LgOFDguGFWL+UZKddNc8peMY=
 			</data>
 			<key>hash2</key>
 			<data>
-			lcnghF09HUgAR93aMZl/KDS+h/1oKaII1vWtd5rWRg4=
+			BBvFwBOd5Aq3JGQKx71K+0GQ0+zktoXJdcOCxNAx0XA=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			R9siWL9Bna6yuNG2b4YOFQw+N4w=
+			eynBPr+HuJM9tsO9dyX1Wg81KdY=
 			</data>
 			<key>hash2</key>
 			<data>
-			iP97ZljagZuoFnr+PP4gaulRbWa7yp4YAJhtWGQyG9g=
+			Mg/zfc2herTQz8GaoqQkj0W0TSzohoITAFtc4fHK6yk=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			s+HvuZf/dphsIvhCTF49FqEfE6M=
+			OQcYhfo/ntwlQ8lPiSLn5/3Mayc=
 			</data>
 			<key>hash2</key>
 			<data>
-			Y0o9HCVQ9ZLBFGcfMU3imJkfIpqaZIYI6X2nTcTl+Vg=
+			VF1X7BYOszNDz24V1cYy9/5OmN5s619Vshs31/7xbuM=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			R9siWL9Bna6yuNG2b4YOFQw+N4w=
+			eynBPr+HuJM9tsO9dyX1Wg81KdY=
 			</data>
 			<key>hash2</key>
 			<data>
-			iP97ZljagZuoFnr+PP4gaulRbWa7yp4YAJhtWGQyG9g=
+			Mg/zfc2herTQz8GaoqQkj0W0TSzohoITAFtc4fHK6yk=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/Modules/module.modulemap</key>
@@ -1656,11 +1656,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			CWd2ZYDDVNOSgOnTBJoCtvjAhwE=
+			fEwU6nYDYUy5QIpxYpJv36JPCYw=
 			</data>
 			<key>hash2</key>
 			<data>
-			BYuWBVfBzFZgZ2IscdYB6pjP2g+nPrEHkBxwZE20M2I=
+			fLlYfkXWwObX4okn7YF3mrnAWcP6IM4cp4XHlkaaSZI=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/NewRelic.framework/PrivacyInfo.xcprivacy</key>
@@ -1678,11 +1678,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			102WZGusKx9ZRvEDVldPi3rYFf4=
+			1RDoXwfj2Y+Dq+SkaGaj42X5yjI=
 			</data>
 			<key>hash2</key>
 			<data>
-			0CZy6L1BqjVoyn+PlB5o22uDgm3e48u6QZvn2lGI8m0=
+			Gmr7tLboVENxHZ2/0VB1MDkXBxInhXr9P2GqLpG+n9g=
 			</data>
 		</dict>
 		<key>tvos-arm64/NewRelic.framework/Headers/Agent.h</key>
@@ -1700,11 +1700,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			w4yJYbc4nPeaaz/LZZ79AjoCFes=
+			FdU5yMIrAuug2HOGeFkfv5Z/bmY=
 			</data>
 			<key>hash2</key>
 			<data>
-			aBsCIkbwN5NLEpqKU8cRaEFPnBh2cLZtZ0dtb8G3SM0=
+			ZZBM8+SUnQgNAEFcEGKDtqf+TaJIlo/95nzEdSntXW0=
 			</data>
 		</dict>
 		<key>tvos-arm64/NewRelic.framework/Headers/NRCustomMetrics.h</key>
@@ -1777,22 +1777,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3E8GoGBdYWjjmZ4EdGyTDNhwr1g=
+			YpLxBOVp9OxBhprtRpo6bKdHpaA=
 			</data>
 			<key>hash2</key>
 			<data>
-			z6X9CVmU81PHQhoRYE7XojtybSbRh/1oEfT+EfMWXLY=
+			S9m00BawSxVEGv0dTsz/RMXhwU8+QAaMqlSGkc55jfk=
 			</data>
 		</dict>
 		<key>tvos-arm64/NewRelic.framework/Headers/NewRelic.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			78QWaoY7yYclyegpZ6p3Hcv++IE=
+			+EfU7/dEc0klKcXD9A1MNySxvMk=
 			</data>
 			<key>hash2</key>
 			<data>
-			XBxOB8WEF58XBLhOq/1LWSi4+GkjBPhQzFlXhLJb0ks=
+			fz/q3OBnU8/684MgkmPZwTC5zoFrDoVjM/zEuyM5WRw=
 			</data>
 		</dict>
 		<key>tvos-arm64/NewRelic.framework/Headers/NewRelicCustomInteractionInterface.h</key>
@@ -1821,55 +1821,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			HJjohbVeagHAOqdT7JLg4shz+Ko=
+			FJDKmAOdxCRCTx8VYrZVGutFCE8=
 			</data>
 			<key>hash2</key>
 			<data>
-			xtj6WPmA/wXDiCufBN49Ru8jp7PUzjLcV22xsIkx4uk=
+			FJ5lkUlOPo2WsDHtQVp0EfrB+pxxVxj6aXuWYz+zBWo=
 			</data>
 		</dict>
 		<key>tvos-arm64/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-tvos.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YjpDJEHWi219LtspXgsXClqD+DM=
+			E8AmkwdvOz+qqSrHZqXN2l65CGU=
 			</data>
 			<key>hash2</key>
 			<data>
-			Qx8ZuMxSTGpALEM7kJLqTKG1sqQ1fGj5Xz8+X+q8gNI=
+			8qV9rHcEEfaFHrxB5sDvLxoqhsKrI0kisHCuKpGuSaw=
 			</data>
 		</dict>
 		<key>tvos-arm64/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-tvos.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7o5rDzgCWeyeuvA/Emd9971HX9g=
+			6O3jn9TDjYfw//zzcoXmhVdwlBI=
 			</data>
 			<key>hash2</key>
 			<data>
-			qXA/vJ+u4HeC8JKTRVmmS5yg3hVSjrIE1n3WUzSmz0c=
+			JHbrqQ1YYg89sUtwPXWuMVBTATnBCNXnAFVsMz0Q4+A=
 			</data>
 		</dict>
 		<key>tvos-arm64/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-tvos.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			S+VHUd/IDgEVEtyGRqkIHT6JncU=
+			gjrYYajlOQcSP9Xcr2K4QgC42zw=
 			</data>
 			<key>hash2</key>
 			<data>
-			cEileItsRYUmaJevqk3n7O2NsBbdoHmBeOd2+IFsDLM=
+			rB3MtjjuFvrVMWUYQWsS13gwK3rDdR9Q6b8v46GqW3U=
 			</data>
 		</dict>
 		<key>tvos-arm64/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-tvos.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7o5rDzgCWeyeuvA/Emd9971HX9g=
+			6O3jn9TDjYfw//zzcoXmhVdwlBI=
 			</data>
 			<key>hash2</key>
 			<data>
-			qXA/vJ+u4HeC8JKTRVmmS5yg3hVSjrIE1n3WUzSmz0c=
+			JHbrqQ1YYg89sUtwPXWuMVBTATnBCNXnAFVsMz0Q4+A=
 			</data>
 		</dict>
 		<key>tvos-arm64/NewRelic.framework/Modules/module.modulemap</key>
@@ -1887,11 +1887,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			gjeOz38hvd6DA4yMdQb4LOD3es0=
+			8MJJqbdXKaxIw2DqyyEBeMp6hSw=
 			</data>
 			<key>hash2</key>
 			<data>
-			zWfKj37o965nm/stz+oy58CLQ70O6lw6RpDxiRpfHX8=
+			lpAkk7StcEGBaWitWMWBWtuLevjnnCWDAdz5zbMvaSI=
 			</data>
 		</dict>
 		<key>tvos-arm64/NewRelic.framework/PrivacyInfo.xcprivacy</key>
@@ -1909,44 +1909,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NDNDtcR7o/mL2xvbGoUnmiHb+1Q=
+			n/SkO/7DpksI0vFhdVG0bw12W9w=
 			</data>
 			<key>hash2</key>
 			<data>
-			UZsQB00FWZqqmzPw55nzSdSNCfEIm6BmF0IebyvrEkw=
+			v+R/1rW+ul+h/9aZCGOmbh2YjUaGWVw0daT0uqCDir4=
 			</data>
 		</dict>
 		<key>tvos-arm64/dSYMs/NewRelic.framework.dSYM/Contents/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			OO4IBHLs2LC12h9YSDDqzds12M0=
+			0Zop4o7YHjxPzjm0P9pEHK9soN8=
 			</data>
 			<key>hash2</key>
 			<data>
-			yZJmvs7KMU4aCFSvWjaDdKnZXJ2d8ijko8NvFnCD4h0=
+			6V+5tzKUMAKNE2q0AlZzyG0bzonVgYf/iFETvtScll8=
 			</data>
 		</dict>
 		<key>tvos-arm64/dSYMs/NewRelic.framework.dSYM/Contents/Resources/DWARF/NewRelic</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			xauKPmvV9Pu8pEuVT6kZHxwCOlA=
+			RN+HeSDJlH+C6xOo1IhQ1ijieUo=
 			</data>
 			<key>hash2</key>
 			<data>
-			6YROJAIRxkiZL2+rg0Vz3h96O8y0nDi2MrH7uyZQwV4=
+			pkEKSWoy2MFjPQXSHTm1Z8rtvCRdCmIlyuAkwk6z9V0=
 			</data>
 		</dict>
 		<key>tvos-arm64/dSYMs/NewRelic.framework.dSYM/Contents/Resources/Relocations/aarch64/NewRelic.yml</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Q/4qFVQCKZZfbYfoY6q/N1q/RHE=
+			P06s5w2Mp0Cwk8H/KpJ6a7DnJhU=
 			</data>
 			<key>hash2</key>
 			<data>
-			WNZMGFY+5H6TabtxetJ8G/7C8nljDBBS04gnUry1Vqw=
+			MubVSKy2412otaRukcl85MSZNPHccxW15AkxlRmeE/A=
 			</data>
 		</dict>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Headers/Agent.h</key>
@@ -1964,11 +1964,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			w4yJYbc4nPeaaz/LZZ79AjoCFes=
+			FdU5yMIrAuug2HOGeFkfv5Z/bmY=
 			</data>
 			<key>hash2</key>
 			<data>
-			aBsCIkbwN5NLEpqKU8cRaEFPnBh2cLZtZ0dtb8G3SM0=
+			ZZBM8+SUnQgNAEFcEGKDtqf+TaJIlo/95nzEdSntXW0=
 			</data>
 		</dict>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Headers/NRCustomMetrics.h</key>
@@ -2041,22 +2041,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GA36Dx8oAV+oZqhI6iXe27VHKAc=
+			T+Hxq1QbxiOfa9TKhZD3To0T0lE=
 			</data>
 			<key>hash2</key>
 			<data>
-			bRulavR5qCU+cgWbjHQS014TulYYVJTu5CIYv6e5gP0=
+			eml6ncZQhdjYgf+/pc01E+vtO2/PT4dlGOJFG2Q7Dfc=
 			</data>
 		</dict>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Headers/NewRelic.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			78QWaoY7yYclyegpZ6p3Hcv++IE=
+			+EfU7/dEc0klKcXD9A1MNySxvMk=
 			</data>
 			<key>hash2</key>
 			<data>
-			XBxOB8WEF58XBLhOq/1LWSi4+GkjBPhQzFlXhLJb0ks=
+			fz/q3OBnU8/684MgkmPZwTC5zoFrDoVjM/zEuyM5WRw=
 			</data>
 		</dict>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Headers/NewRelicCustomInteractionInterface.h</key>
@@ -2085,121 +2085,121 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			oNhl3BVnWL5pgU11rQgSJKtHf0k=
+			hBtZjCkykrtRA2kxbu8UTwmGvNI=
 			</data>
 			<key>hash2</key>
 			<data>
-			fHX5GGojIsv/NltuWtXaAEcYHszRLlDANzbDr2o4lI0=
+			mm8jNhMVA+vdf2xB5yOFdoVtbgEDbaL+4n4dsYdfIYA=
 			</data>
 		</dict>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/Project/arm64-apple-tvos-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			u1e7K9Gi0FZLEG2d7kRXrvke8Us=
+			6BvVLmM5v8FaEvEIpKo039UVAdM=
 			</data>
 			<key>hash2</key>
 			<data>
-			Zu62y714p3PoyugyJCFnZmXuuW1NiV4G0lvVGtWC9l4=
+			Ntlnk/xF4QBe5dovXoEaMmlpvppwYZK/9tFRSBv0H+o=
 			</data>
 		</dict>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/Project/x86_64-apple-tvos-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			iOBwNdzcR7iKJekN27ok+1vCMZo=
+			HjXek+/fFJFev+gMvAj7fOpyhyA=
 			</data>
 			<key>hash2</key>
 			<data>
-			0sK/uoNot/dAuZVyLdBvXtDZSkvR40/pVHM2DfIVFtM=
+			wXlHtZkXMHuleF5VkW6mN1oP80fos/MoWen3tdwP/lE=
 			</data>
 		</dict>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-tvos-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YjpDJEHWi219LtspXgsXClqD+DM=
+			E8AmkwdvOz+qqSrHZqXN2l65CGU=
 			</data>
 			<key>hash2</key>
 			<data>
-			Qx8ZuMxSTGpALEM7kJLqTKG1sqQ1fGj5Xz8+X+q8gNI=
+			8qV9rHcEEfaFHrxB5sDvLxoqhsKrI0kisHCuKpGuSaw=
 			</data>
 		</dict>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-tvos-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lbkVKo+hGEvC/wplwsRe0Vm7uqk=
+			S/EGjBF1gt/d47mrFJ2KwTi3CqU=
 			</data>
 			<key>hash2</key>
 			<data>
-			kL/WC6fED75ba4PBnGRmGzPmR7HGNDB4Ds3th/TDUB8=
+			y3fVZKJ1fEDU5YS3AGYoatIfCsbuWgkjKCgHA4LvWmQ=
 			</data>
 		</dict>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-tvos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			x6BIW6FbELGpgepujnnAH1TPzN8=
+			Us5JImS+S8uJkQGT68D+uLV7ICQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			oa6mdYgbeR/bBRQf0U2EejJgJ4QTqge02hmE9Xr48ls=
+			nNzGqht75FoblOj7SvIHPyyEbD0OQEDN36/Di13MaZw=
 			</data>
 		</dict>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-tvos-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lbkVKo+hGEvC/wplwsRe0Vm7uqk=
+			S/EGjBF1gt/d47mrFJ2KwTi3CqU=
 			</data>
 			<key>hash2</key>
 			<data>
-			kL/WC6fED75ba4PBnGRmGzPmR7HGNDB4Ds3th/TDUB8=
+			y3fVZKJ1fEDU5YS3AGYoatIfCsbuWgkjKCgHA4LvWmQ=
 			</data>
 		</dict>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-tvos-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YjpDJEHWi219LtspXgsXClqD+DM=
+			E8AmkwdvOz+qqSrHZqXN2l65CGU=
 			</data>
 			<key>hash2</key>
 			<data>
-			Qx8ZuMxSTGpALEM7kJLqTKG1sqQ1fGj5Xz8+X+q8gNI=
+			8qV9rHcEEfaFHrxB5sDvLxoqhsKrI0kisHCuKpGuSaw=
 			</data>
 		</dict>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-tvos-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6+b+k3dlVexLOcRYbn9qGmZUqqc=
+			PToO8yC4qg9rAb3xiEcJtqgGh68=
 			</data>
 			<key>hash2</key>
 			<data>
-			kI3Iv0GNdJ3Dx9NtkAjsv1oMhIg1PUrEPUZelt9CJJI=
+			/ihENm7kpTunHbGnTG77QKmGfNW0Frv8Rz+hth/lNS0=
 			</data>
 		</dict>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-tvos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZytP4ATJP+8tjmUMPF/9dv+f5/4=
+			dvZxXFCYiWROAI0Q3USbSczoZuY=
 			</data>
 			<key>hash2</key>
 			<data>
-			+4+DJoIaFMFvoGVMgr1pNz7fs2tUmHNdMwAMeNjmREA=
+			6le7TP1LqmSu6FF+0WvBUNkBC1PiqhiL8rHfCySyCyY=
 			</data>
 		</dict>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-tvos-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6+b+k3dlVexLOcRYbn9qGmZUqqc=
+			PToO8yC4qg9rAb3xiEcJtqgGh68=
 			</data>
 			<key>hash2</key>
 			<data>
-			kI3Iv0GNdJ3Dx9NtkAjsv1oMhIg1PUrEPUZelt9CJJI=
+			/ihENm7kpTunHbGnTG77QKmGfNW0Frv8Rz+hth/lNS0=
 			</data>
 		</dict>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/Modules/module.modulemap</key>
@@ -2217,11 +2217,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			S9rxvN6KxxXAoaQ/0gINlf6kxcc=
+			2Q+Fmjbow+oNS/9XGK1y/tURuh4=
 			</data>
 			<key>hash2</key>
 			<data>
-			6p0aiF1iH9l+zchAuuIF3cefMHKIv/x6PkK3UjnJVps=
+			jlqHeXfjR/UXgxfG0U8Zm+pxOBk53AL2832CduDv6ys=
 			</data>
 		</dict>
 		<key>tvos-arm64_x86_64-simulator/NewRelic.framework/PrivacyInfo.xcprivacy</key>
@@ -2239,11 +2239,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			vJtDO3rFYg3YAlF/lAltboIsgeE=
+			Er3odrCilzIEcFjqY7rwX3QB8JE=
 			</data>
 			<key>hash2</key>
 			<data>
-			NNoxRtwXnzSFNPfVY6emPZCOjw81pP/gcNWyWG3XdME=
+			ouoQOq0vxOO3KTDzr+7RQoX6EFGP3lh9eVvs480Yfdo=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Headers/Agent.h</key>
@@ -2261,11 +2261,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			w4yJYbc4nPeaaz/LZZ79AjoCFes=
+			FdU5yMIrAuug2HOGeFkfv5Z/bmY=
 			</data>
 			<key>hash2</key>
 			<data>
-			aBsCIkbwN5NLEpqKU8cRaEFPnBh2cLZtZ0dtb8G3SM0=
+			ZZBM8+SUnQgNAEFcEGKDtqf+TaJIlo/95nzEdSntXW0=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Headers/NRCustomMetrics.h</key>
@@ -2338,22 +2338,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2s3yeXxmX+9Prx5JFwdgdjLkugA=
+			J08T38YQoJsBuExDIs0NeXpt2g8=
 			</data>
 			<key>hash2</key>
 			<data>
-			RtPeaJwoXUnBDK/X+unJpc/vpgVtHP6kvcI7QDySSZk=
+			5DtqvmVgaGEseENZ8zkCcyO9gjGGx+226rpP9tlusj8=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Headers/NewRelic.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			78QWaoY7yYclyegpZ6p3Hcv++IE=
+			+EfU7/dEc0klKcXD9A1MNySxvMk=
 			</data>
 			<key>hash2</key>
 			<data>
-			XBxOB8WEF58XBLhOq/1LWSi4+GkjBPhQzFlXhLJb0ks=
+			fz/q3OBnU8/684MgkmPZwTC5zoFrDoVjM/zEuyM5WRw=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Headers/NewRelicCustomInteractionInterface.h</key>
@@ -2382,143 +2382,143 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			M4vUW443hT4RAggMIUwXNRHbWfI=
+			8oS180Os2D9VId2glfg3k+EQPcI=
 			</data>
 			<key>hash2</key>
 			<data>
-			go5VvY08sz3WcHmv9Z4Unh3pwr+CuJGF+tvOs5lvZBQ=
+			uv7cvDHv/vr+0wLSexmKz1nWFUsM4G9+uGwsCHCYYB8=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-watchos.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LwjhF2RrNHex59j8pA4jW/hbqp0=
+			3Q7GmmOiveDtSA55npd56/U/5Q0=
 			</data>
 			<key>hash2</key>
 			<data>
-			4G6Wty/fCuRcj0T9cZi4749xVz72uTBQ2MOR8/9Il7w=
+			mbOTyfG993phEUATMcKGHoK2s+3y0QbM79kKhvVJoSc=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-watchos.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Y/u4SEXhyg9xIb6hEkuuknTlWLE=
+			B1O4NdAVFpk+5NMxDuWV9BUBtP8=
 			</data>
 			<key>hash2</key>
 			<data>
-			v7UP6LNh+siRH+WtGWPPdnt4HOMegkE4E45sZVB7wSQ=
+			uLXdOk3bWDnLb85FivOt0m2p2OCm33wEH/yfaXpjCpk=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-watchos.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DgCTXmCALSdhZD5I4aO//iV9kUU=
+			M/OjUi9BUnarL6VkPn2MsHbdlYo=
 			</data>
 			<key>hash2</key>
 			<data>
-			Y8zZK7a50Y2n5SPKsXR7/mFA8kxlCRmY2Jvvlkqq6L0=
+			FVNkrkBLdYZAl4c+LRjyr9vuSx8PfKDdu649Gh2QK6c=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-watchos.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Y/u4SEXhyg9xIb6hEkuuknTlWLE=
+			B1O4NdAVFpk+5NMxDuWV9BUBtP8=
 			</data>
 			<key>hash2</key>
 			<data>
-			v7UP6LNh+siRH+WtGWPPdnt4HOMegkE4E45sZVB7wSQ=
+			uLXdOk3bWDnLb85FivOt0m2p2OCm33wEH/yfaXpjCpk=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64_32-apple-watchos.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LwjhF2RrNHex59j8pA4jW/hbqp0=
+			3Q7GmmOiveDtSA55npd56/U/5Q0=
 			</data>
 			<key>hash2</key>
 			<data>
-			4G6Wty/fCuRcj0T9cZi4749xVz72uTBQ2MOR8/9Il7w=
+			mbOTyfG993phEUATMcKGHoK2s+3y0QbM79kKhvVJoSc=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64_32-apple-watchos.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ernNcUGypO2Qo+ZlZzklGd1wnhs=
+			9I0NJ5L79vj56pEfJo7n0q6xJ1g=
 			</data>
 			<key>hash2</key>
 			<data>
-			nJ1VnX580fegDuLNMs/Xvx64VvoupSAaTK2ZlDM7+3s=
+			bK6Az5Sx1kadhcJPaPsCUqu/zP/okaibI2k2ehtfn2Y=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64_32-apple-watchos.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Lc9DCtRc1RxbRo0NiaBA5kAIJCc=
+			zLU3k29lZ3BxHdTyxJoWXFyvVDc=
 			</data>
 			<key>hash2</key>
 			<data>
-			bewWWY05jYYlwma0SlK9zMtHQEOdB9s7jQuk4q62mfw=
+			bPbq9NxgtrMFb/0QLkPqvXOXC881UbAsMP4VgAP44Dc=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64_32-apple-watchos.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ernNcUGypO2Qo+ZlZzklGd1wnhs=
+			9I0NJ5L79vj56pEfJo7n0q6xJ1g=
 			</data>
 			<key>hash2</key>
 			<data>
-			nJ1VnX580fegDuLNMs/Xvx64VvoupSAaTK2ZlDM7+3s=
+			bK6Az5Sx1kadhcJPaPsCUqu/zP/okaibI2k2ehtfn2Y=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/armv7k-apple-watchos.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LwjhF2RrNHex59j8pA4jW/hbqp0=
+			3Q7GmmOiveDtSA55npd56/U/5Q0=
 			</data>
 			<key>hash2</key>
 			<data>
-			4G6Wty/fCuRcj0T9cZi4749xVz72uTBQ2MOR8/9Il7w=
+			mbOTyfG993phEUATMcKGHoK2s+3y0QbM79kKhvVJoSc=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/armv7k-apple-watchos.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nPrZCfO6G3dm93d942EU+ZiXK0c=
+			gPdamyWJlKHeMJvM2hYUDlhiZqo=
 			</data>
 			<key>hash2</key>
 			<data>
-			wP7N8Hi8UJ4oxP0zOfO6rYTNPlVtqyPgKgiiXYHULG0=
+			9NN25G2xTRJTJyQuFShp7MVDxgjejiNPv+uMJUFecUA=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/armv7k-apple-watchos.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			FPjAwisAUe4MtwhcWYB2d70NaHk=
+			tkpn3JuE7z0pFlYS5M/NfDBuPAE=
 			</data>
 			<key>hash2</key>
 			<data>
-			YBYGuiqCSMcTaPo+sucZLn5dgKEJBoMVormtpNu7HoM=
+			zl9fTLld24lABtwXaJgaIyqjBRkACRUVYctISHdFfMk=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/NewRelic.swiftmodule/armv7k-apple-watchos.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nPrZCfO6G3dm93d942EU+ZiXK0c=
+			gPdamyWJlKHeMJvM2hYUDlhiZqo=
 			</data>
 			<key>hash2</key>
 			<data>
-			wP7N8Hi8UJ4oxP0zOfO6rYTNPlVtqyPgKgiiXYHULG0=
+			9NN25G2xTRJTJyQuFShp7MVDxgjejiNPv+uMJUFecUA=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/Modules/module.modulemap</key>
@@ -2536,11 +2536,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			mrAhmaKgJNbKgBiJ3H52SVRra/Q=
+			z7T2ARg6KMnwF1nhP1jq08uH1tc=
 			</data>
 			<key>hash2</key>
 			<data>
-			6uJAAZKxkYjmj0Dk5SjCTGEV8L/9vec/XaW/dZ4CFrY=
+			ZqVPnPM01xJTryzJGViZntUPYgGwwGi7EyIXUdMfIpM=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/NewRelic.framework/PrivacyInfo.xcprivacy</key>
@@ -2558,66 +2558,66 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			FMPbEHA5grmBEhMevpgbYESjR0E=
+			wf+wei01ddWcAc6RA3HpCX9GQEo=
 			</data>
 			<key>hash2</key>
 			<data>
-			VYTDYO8XLbwnYgoWAGUUIZ755iFd1mKEpTRwGpEw1lw=
+			M110/xTkNodoyFQU4Pfb9eiDm7EMtBDxQ6we8ka8kqI=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/dSYMs/NewRelic.framework.dSYM/Contents/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			OO4IBHLs2LC12h9YSDDqzds12M0=
+			0Zop4o7YHjxPzjm0P9pEHK9soN8=
 			</data>
 			<key>hash2</key>
 			<data>
-			yZJmvs7KMU4aCFSvWjaDdKnZXJ2d8ijko8NvFnCD4h0=
+			6V+5tzKUMAKNE2q0AlZzyG0bzonVgYf/iFETvtScll8=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/dSYMs/NewRelic.framework.dSYM/Contents/Resources/DWARF/NewRelic</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			CFDzZgwDQPRpJcuveLdZdd+2H/s=
+			mfaJ+Vec01vJl6esXhXRUSU7kGM=
 			</data>
 			<key>hash2</key>
 			<data>
-			TqxdQSU3ZjKr9NJI/h9qm//7iFdN0+IJNSI4Xn4AXyI=
+			4eCHftsTz3sDRd6Eozs5TDOjAtALR1SowDe9E+IDk4o=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/dSYMs/NewRelic.framework.dSYM/Contents/Resources/Relocations/aarch64/NewRelic.yml</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/DsQ1bfFMU8Rw0/ckMYjd5aMijo=
+			R1MxqDrlGfL5J4h8R5WRexJNMDk=
 			</data>
 			<key>hash2</key>
 			<data>
-			bgjeiNe0+YJPIsMqaPj8PFnxrlWWhH3w/JiP0BRmEiU=
+			HEcg4rZpHBBIcentSk7UX0HMRJ3hrSU/Jogc9D2CcJw=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/dSYMs/NewRelic.framework.dSYM/Contents/Resources/Relocations/aarch64_32/NewRelic.yml</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XcSe9Q0EinTp8j/Mipvrj6OYm8Q=
+			yhLfEYRMgSNsqWH/gBmZQ5x9pzg=
 			</data>
 			<key>hash2</key>
 			<data>
-			iPVnAt3O8hvdVtGpAlQ30Vm2EbF40qYA7ucOz+xxzi4=
+			5OfxEiFjLHG9A6DrqaMjwybp2V+oNh4mEnV6vF5xHNM=
 			</data>
 		</dict>
 		<key>watchos-arm64_arm64_32_armv7k/dSYMs/NewRelic.framework.dSYM/Contents/Resources/Relocations/arm/NewRelic.yml</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Wd+6MAqwdSoPttUeRvv543VlSFw=
+			R0eao3gUN5Oq2eWT6h5dFMg+DDU=
 			</data>
 			<key>hash2</key>
 			<data>
-			+itRcSrcG+zpTqqRkp66WRZlvxTpLyvuuVID30CmUZw=
+			COQ8k61Phg9tXtd5GpzFUZ+G+6+Znip59VuBGFQNeAM=
 			</data>
 		</dict>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Headers/Agent.h</key>
@@ -2635,11 +2635,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			w4yJYbc4nPeaaz/LZZ79AjoCFes=
+			FdU5yMIrAuug2HOGeFkfv5Z/bmY=
 			</data>
 			<key>hash2</key>
 			<data>
-			aBsCIkbwN5NLEpqKU8cRaEFPnBh2cLZtZ0dtb8G3SM0=
+			ZZBM8+SUnQgNAEFcEGKDtqf+TaJIlo/95nzEdSntXW0=
 			</data>
 		</dict>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Headers/NRCustomMetrics.h</key>
@@ -2712,22 +2712,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3j4gaz2EvQetQrWTsaD102B+rhA=
+			A6d0lYP9hS+SIw3X/h4ceuC8XUU=
 			</data>
 			<key>hash2</key>
 			<data>
-			5LuvdCyMeRTR6vhrkVHynAoDA7rU6hBqJrL+C2OLZzw=
+			izwc7W+6ShluTj79g2Fb44sudXYJ/X3QByqrLV/BAqo=
 			</data>
 		</dict>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Headers/NewRelic.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			78QWaoY7yYclyegpZ6p3Hcv++IE=
+			+EfU7/dEc0klKcXD9A1MNySxvMk=
 			</data>
 			<key>hash2</key>
 			<data>
-			XBxOB8WEF58XBLhOq/1LWSi4+GkjBPhQzFlXhLJb0ks=
+			fz/q3OBnU8/684MgkmPZwTC5zoFrDoVjM/zEuyM5WRw=
 			</data>
 		</dict>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Headers/NewRelicCustomInteractionInterface.h</key>
@@ -2756,121 +2756,121 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			HUEux3BziP8rDCcLxEgC1mTXTj0=
+			CHXV/PN8qCqKTjHcjY+HOJ86Mus=
 			</data>
 			<key>hash2</key>
 			<data>
-			an80YCC6zla9jEmXqwGLE/rfKJgkAq2QoL7jtgRAXFI=
+			/xlnD22X1ypHY57bzDaD08K+j0wMgAe/YOYiSPm6dK0=
 			</data>
 		</dict>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/Project/arm64-apple-watchos-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			JhDpzGwNcU3SMPNTYITzwN+9toI=
+			M9eWqlsKE3EQKUzWx0KyUi3aTyA=
 			</data>
 			<key>hash2</key>
 			<data>
-			jmjI8fOUzcxsbbtxI7jn5XxfcqJrl75d4RYYg/ZkQt8=
+			xjWkU/wtB+6v9zLRCgTiPkXn1rLjxkptwfkW4zhpoRI=
 			</data>
 		</dict>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/Project/x86_64-apple-watchos-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			EoM8nAxDdiIO3/IA4Hmk6ZOphDU=
+			G7ZgM80l6iQ8MJKuvSaJ9JR3Gtc=
 			</data>
 			<key>hash2</key>
 			<data>
-			8JQ5Iw6RCBu+R2PzP+OJzlUIWJBn4ufT3MruCodZyqA=
+			E7RnoaqoMb0uhGqBRuGP3naTHRdCsK6iTuz5LQOUQKg=
 			</data>
 		</dict>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-watchos-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LwjhF2RrNHex59j8pA4jW/hbqp0=
+			3Q7GmmOiveDtSA55npd56/U/5Q0=
 			</data>
 			<key>hash2</key>
 			<data>
-			4G6Wty/fCuRcj0T9cZi4749xVz72uTBQ2MOR8/9Il7w=
+			mbOTyfG993phEUATMcKGHoK2s+3y0QbM79kKhvVJoSc=
 			</data>
 		</dict>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-watchos-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PDKDIwHsCRB2+6dtWJWNIgQyb7E=
+			7lbjwg19EcGf6PCHERwATNO6Cew=
 			</data>
 			<key>hash2</key>
 			<data>
-			3koF1j5Ve0KbSpHX+sqdgf8YsW02AhFI2IhSTMfxNII=
+			tP9B0D+YHs8eEwilhGKz9laF9pwF3IPdjaslTj1G8vQ=
 			</data>
 		</dict>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-watchos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			o8qeb9kFHV1k21OHpkk6e35L+HE=
+			V2na31sLO8t1mz26EwKOHNYaqNA=
 			</data>
 			<key>hash2</key>
 			<data>
-			qGsFvjvQrososZmB71h5uIIgnzSNVecC63k9UGpNoiI=
+			o30mL7OxaCk3v+dbhlUJ0jcr8M8hMJlcBgcB7ijqrm4=
 			</data>
 		</dict>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/arm64-apple-watchos-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PDKDIwHsCRB2+6dtWJWNIgQyb7E=
+			7lbjwg19EcGf6PCHERwATNO6Cew=
 			</data>
 			<key>hash2</key>
 			<data>
-			3koF1j5Ve0KbSpHX+sqdgf8YsW02AhFI2IhSTMfxNII=
+			tP9B0D+YHs8eEwilhGKz9laF9pwF3IPdjaslTj1G8vQ=
 			</data>
 		</dict>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-watchos-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LwjhF2RrNHex59j8pA4jW/hbqp0=
+			3Q7GmmOiveDtSA55npd56/U/5Q0=
 			</data>
 			<key>hash2</key>
 			<data>
-			4G6Wty/fCuRcj0T9cZi4749xVz72uTBQ2MOR8/9Il7w=
+			mbOTyfG993phEUATMcKGHoK2s+3y0QbM79kKhvVJoSc=
 			</data>
 		</dict>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-watchos-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			IELuukd388WWNhkjYEOGUBAEfMw=
+			I9d55ftrCoS+jbkBVWOtAO37dNk=
 			</data>
 			<key>hash2</key>
 			<data>
-			3fWe3M/3OlzG5JmpcEBJa6V92dKAzET5A3gXe9nab+I=
+			ISIYVzjn24+QxRfKm4tOoKmxxH5Xw34wLkJ21MAKEYY=
 			</data>
 		</dict>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-watchos-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/U+0IRDBLOBrgxLJwMerfCWfgOc=
+			ZAapfoODOv0fCMqZQOTaOzVtf8M=
 			</data>
 			<key>hash2</key>
 			<data>
-			KXJEizuw/2OpV1JSXGnTXIPDRl3JA3zQyjr074cOo7E=
+			y8E/eMEy63CCYupvRzCih23AbCxnWYpCbrjLaw1avlk=
 			</data>
 		</dict>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/NewRelic.swiftmodule/x86_64-apple-watchos-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			IELuukd388WWNhkjYEOGUBAEfMw=
+			I9d55ftrCoS+jbkBVWOtAO37dNk=
 			</data>
 			<key>hash2</key>
 			<data>
-			3fWe3M/3OlzG5JmpcEBJa6V92dKAzET5A3gXe9nab+I=
+			ISIYVzjn24+QxRfKm4tOoKmxxH5Xw34wLkJ21MAKEYY=
 			</data>
 		</dict>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/Modules/module.modulemap</key>
@@ -2888,11 +2888,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4n17teDiU1N21NXAlULWuydSKK4=
+			iLtTf1J7aA5A584qxN1+Mot086s=
 			</data>
 			<key>hash2</key>
 			<data>
-			Zsu+l9w+6/E3Zv96kW2DwHTwig6n/aQBM6cwWwAX0X4=
+			TsZ0hQlSqVU8JmKnvDsS5L7Qt1Wr8sLDtl/oPh4fMuU=
 			</data>
 		</dict>
 		<key>watchos-arm64_x86_64-simulator/NewRelic.framework/PrivacyInfo.xcprivacy</key>
@@ -2910,11 +2910,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			34hnqm+CvutDz+GPmdN1Rvj5EzQ=
+			eCnP2Xlv3Bta3O1tKThhHIsE7eY=
 			</data>
 			<key>hash2</key>
 			<data>
-			8W8Cqj9S5EQzAUBQbMinOTC864+ZoSyFS33Th3D0enk=
+			xDsipS2YjcSJFRnbNBKOOFFLcn+QfxwbSgJATpwAdgw=
 			</data>
 		</dict>
 	</dict>
