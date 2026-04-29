@@ -33,6 +33,20 @@ import Module___zlib
 public protocol NRMASessionReplayDelegate : AnyObject {
   func generateUploadURL(uncompressedDataSize: Swift.Int, firstTimestamp: Foundation.TimeInterval, lastTimestamp: Foundation.TimeInterval, isFirstChunk: Swift.Bool, isGZipped: Swift.Bool) -> Foundation.URL?
 }
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @objcMembers public class NRMASessionDurationManager : ObjectiveC.NSObject {
+  @objc public static let shared: Module___NewRelic.NRMASessionDurationManager
+  @objc public var maxSessionDuration: Foundation.TimeInterval {
+    @objc get
+    @objc set
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func updateSessionStartTime(_ startTime: Foundation.Date?)
+  #endif
+  @objc public func hasSessionExceeded() -> Swift.Bool
+  @objc public func hasSessionExceededDuration(_ durationInSeconds: Foundation.TimeInterval) -> Swift.Bool
+  @objc public func currentSessionDuration() -> Foundation.TimeInterval
+  @objc deinit
+}
 public struct SwiftUIViewAttributes : Swift.Equatable {
   public var frame: CoreFoundation.CGRect {
     get

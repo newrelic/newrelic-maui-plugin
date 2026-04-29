@@ -697,6 +697,44 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #if defined(__OBJC__)
 
+/// Manages session duration tracking for automatic session termination.
+/// This class is responsible for tracking when a session started and
+/// determining if the session has exceeded the configured maximum duration.
+SWIFT_CLASS("_TtC8NewRelic26NRMASessionDurationManager")
+@interface NRMASessionDurationManager : NSObject
+/// Shared singleton instance
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NRMASessionDurationManager * _Nonnull shared;)
++ (NRMASessionDurationManager * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+/// Maximum session duration in seconds (default: 14400 = 4 hours)
+@property (nonatomic) NSTimeInterval maxSessionDuration;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// Updates the session start time to the provided date.
+/// Call this whenever a new session begins.
+/// \param startTime The Date when the session started
+///
+- (void)updateSessionStartTime:(NSDate * _Nullable)startTime;
+/// Checks if the current session has exceeded the configured maximum duration.
+/// Uses the maxSessionDuration property to determine the limit.
+///
+/// returns:
+/// true if the session has exceeded the configured maximum duration, false otherwise
+- (BOOL)hasSessionExceeded SWIFT_WARN_UNUSED_RESULT;
+/// Checks if the current session has exceeded the specified duration.
+/// This method allows checking against a custom duration value.
+/// \param durationInSeconds The maximum allowed session duration in seconds
+///
+///
+/// returns:
+/// true if the session has exceeded the duration, false otherwise
+- (BOOL)hasSessionExceededDuration:(NSTimeInterval)durationInSeconds SWIFT_WARN_UNUSED_RESULT;
+/// Returns the elapsed time of the current session in seconds.
+///
+/// returns:
+/// The number of seconds elapsed since session start, or 0 if no session is active
+- (NSTimeInterval)currentSessionDuration SWIFT_WARN_UNUSED_RESULT;
+@end
+
 enum SessionReplayRecordingMode : NSInteger;
 SWIFT_CLASS("_TtC8NewRelic17NRMASessionReplay") SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface NRMASessionReplay : NSObject
@@ -772,6 +810,44 @@ SWIFT_CLASS("_TtC8NewRelic21SessionReplayReporter")
 - (nonnull instancetype)initWithApplicationToken:(NSString * _Nonnull)applicationToken url:(NSString * _Nonnull)url OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+/// Manages session duration tracking for automatic session termination.
+/// This class is responsible for tracking when a session started and
+/// determining if the session has exceeded the configured maximum duration.
+SWIFT_CLASS("_TtC8NewRelic26NRMASessionDurationManager")
+@interface NRMASessionDurationManager : NSObject
+/// Shared singleton instance
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NRMASessionDurationManager * _Nonnull shared;)
++ (NRMASessionDurationManager * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+/// Maximum session duration in seconds (default: 14400 = 4 hours)
+@property (nonatomic) NSTimeInterval maxSessionDuration;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// Updates the session start time to the provided date.
+/// Call this whenever a new session begins.
+/// \param startTime The Date when the session started
+///
+- (void)updateSessionStartTime:(NSDate * _Nullable)startTime;
+/// Checks if the current session has exceeded the configured maximum duration.
+/// Uses the maxSessionDuration property to determine the limit.
+///
+/// returns:
+/// true if the session has exceeded the configured maximum duration, false otherwise
+- (BOOL)hasSessionExceeded SWIFT_WARN_UNUSED_RESULT;
+/// Checks if the current session has exceeded the specified duration.
+/// This method allows checking against a custom duration value.
+/// \param durationInSeconds The maximum allowed session duration in seconds
+///
+///
+/// returns:
+/// true if the session has exceeded the duration, false otherwise
+- (BOOL)hasSessionExceededDuration:(NSTimeInterval)durationInSeconds SWIFT_WARN_UNUSED_RESULT;
+/// Returns the elapsed time of the current session in seconds.
+///
+/// returns:
+/// The number of seconds elapsed since session start, or 0 if no session is active
+- (NSTimeInterval)currentSessionDuration SWIFT_WARN_UNUSED_RESULT;
 @end
 
 #endif

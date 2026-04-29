@@ -114,6 +114,7 @@ typedef NSString NRMetricUnit;
 #define kNRMAMetricActivityNetworkPrefix @"Mobile/Activity/Network"
 #define kNRAgentHealthPrefix             @"Supportability/AgentHealth"
 #define kNRMASessionStartMetric          @"Session/Start"
+#define kNRMAMaxDurationSessionRestartMetric   @"Supportability/Mobile/%@/%@/Session/MaxDurationRestart"
 
 // NativePlatform, Platform,
 #define kNRMAStopAgentMetricFormatString @"Supportability/Mobile/%@/%@/API/shutdown"
@@ -178,6 +179,13 @@ typedef NSString NRMetricUnit;
 #define kNRMASessionReplayMetricFailedUpload    kNRMASessionReplay @"/FailedUpload"
 #define kNRMASessionReplayMetricURLTooLarge       kNRMASessionReplay @"/UrlTooLarge"
 #define kNRMASessionReplayMetricSuccessfulSize    kNRMASessionReplay @"/Size/Uncompressed"
+
+// JS Error
+#define kNRMAJSError kNRAgentHealthPrefix @"/JSError"
+#define kNRMAJSErrorMetricUploadTime        kNRMAJSError @"/UploadTime"
+#define kNRMAJSErrorMetricUploadTimeout     kNRMAJSError @"/UploadTimeOut"
+#define kNRMAJSErrorMetricUploadThrottled   kNRMAJSError @"/UploadThrottled"
+#define kNRMAJSErrorMetricFailedUpload      kNRMAJSError @"/FailedUpload"
 
 #define NRMAHandledRequestKey @"NRMAHandledRequest"
 
