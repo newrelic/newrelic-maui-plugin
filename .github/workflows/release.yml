@@ -1,5 +1,8 @@
 name: Release
 
+permissions:
+  contents: read
+
 on:
   workflow_dispatch:
     inputs:
@@ -340,6 +343,8 @@ jobs:
       always() &&
       github.event_name == 'push' &&
       (needs.release-plugin.result == 'success' || needs.release-plugin.result == 'skipped')
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Download all artifacts
