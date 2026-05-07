@@ -24,6 +24,10 @@ on:
     tags:
       - 'v*'
 
+permissions:
+  contents: read
+  packages: read
+
 env:
   DOTNET_VERSION: '9.0.x'
 
