@@ -29,7 +29,8 @@ public class NewRelicMethodsImplementation : INewRelicMethods
         { LogLevel.WARNING, MauiiOS.NewRelic.NRLogLevels.Warning },
         { LogLevel.INFO, MauiiOS.NewRelic.NRLogLevels.Info },
         { LogLevel.VERBOSE, MauiiOS.NewRelic.NRLogLevels.Verbose },
-        { LogLevel.AUDIT, MauiiOS.NewRelic.NRLogLevels.Audit }
+        { LogLevel.AUDIT, MauiiOS.NewRelic.NRLogLevels.Audit },
+        { LogLevel.DEBUG, MauiiOS.NewRelic.NRLogLevels.Debug }
     };
 
     private Dictionary<NetworkFailure, nint> networkFailureDict = new Dictionary<NetworkFailure, nint>()
