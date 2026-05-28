@@ -15,7 +15,8 @@ namespace NewRelic.MAUI.Plugin
 		WARNING,
 		INFO,
 		VERBOSE,
-		AUDIT
+		AUDIT,
+		DEBUG
 	}
 
 	public class AgentStartConfiguration
@@ -31,7 +32,7 @@ namespace NewRelic.MAUI.Plugin
 		/// <summary>
 		/// Specifies the log level.
 		/// </summary>
-		public LogLevel logLevel = LogLevel.INFO;
+		public LogLevel logLevel = LogLevel.WARNING;
 		/// <summary>
 		/// Specifies the URI authority component of the harvest data upload endpoint.
 		/// </summary>
@@ -108,7 +109,7 @@ namespace NewRelic.MAUI.Plugin
         /// <param name="backgroundReportingEnabled">Enable or disable Background Events Reporting When app is in background.</param>
 
         
-        public AgentStartConfiguration(bool crashReportingEnabled = true, bool loggingEnabled = true, LogLevel logLevel = LogLevel.INFO, string collectorAddress = "DEFAULT",
+        public AgentStartConfiguration(bool crashReportingEnabled = true, bool loggingEnabled = true, LogLevel logLevel = LogLevel.WARNING, string collectorAddress = "DEFAULT",
             string crashCollectorAddress = "DEFAULT", bool analyticsEventEnabled = true, bool networkErrorRequestEnabled = true, bool networkRequestEnabled = true,
             bool interactionTracingEnabled = false, bool webViewInstrumentation = true, bool fedRampEnabled = false, bool offlineStorageEnabled = true, bool backgroundReportingEnabled = false,bool newEventSystemEnabled = true)
         {

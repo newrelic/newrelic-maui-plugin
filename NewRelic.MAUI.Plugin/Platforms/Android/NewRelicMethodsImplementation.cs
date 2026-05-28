@@ -32,7 +32,8 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
         { LogLevel.WARNING, 2 },
         { LogLevel.INFO, 3 },
         { LogLevel.VERBOSE, 4 },
-        { LogLevel.AUDIT, 6 }
+        { LogLevel.AUDIT, 5 },
+        { LogLevel.DEBUG, 5 }
     };
 
     private Dictionary<NetworkFailure, NRNetworkFailure> networkFailureDict = new Dictionary<NetworkFailure, NRNetworkFailure>()
@@ -445,10 +446,11 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
             NRLogLevel logLevel = level switch
             {
                 LogLevel.INFO => NRLogLevel.Info,
-                LogLevel.AUDIT => NRLogLevel.Verbose,
+                LogLevel.AUDIT => NRLogLevel.Debug,
                 LogLevel.ERROR => NRLogLevel.Error,
                 LogLevel.VERBOSE => NRLogLevel.Verbose,
                 LogLevel.WARNING => NRLogLevel.Warn,
+                LogLevel.DEBUG => NRLogLevel.Debug,
                 _ => NRLogLevel.Error
             };
             NRAndroidAgent.Log(logLevel, message);
