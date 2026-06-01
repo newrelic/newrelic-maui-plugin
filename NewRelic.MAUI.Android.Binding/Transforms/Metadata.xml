@@ -30,6 +30,7 @@ SPDX-License-Identifier: Apache-2.0 -->
   <remove-node path="/api/package[@name='com.newrelic.com.google.gson.internal']/class[@name='LinkedTreeMap']" />
   <remove-node path="/api/package[@name='com.newrelic.com.google.gson']/class[@name='JsonStreamParser']" />
   <remove-node path="/api/package[@name='com.newrelic.agent.android.stores']/class[@name='SharedPrefsPayloadStore']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.payload']/class[@name='FilePayloadStore']" />
   <remove-node path="/api/package[@name='com.newrelic.agent.android.stores']/class[@name='SharedPrefsSessionReplayStore']" />
   <remove-node path="/api/package[@name='com.newrelic.agent.android.analytics']/interface[@name='AnalyticsAttributeStore']" />
   <remove-node path="/api/package[@name='com.newrelic.agent.android.harvest.type']/class[@name='BaseHarvestable']" />

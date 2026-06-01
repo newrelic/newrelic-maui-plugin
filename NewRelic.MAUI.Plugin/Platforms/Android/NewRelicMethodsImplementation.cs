@@ -23,7 +23,7 @@ public sealed class NewRelicMethodsImplementation : INewRelicMethods
     {
         var assembly = typeof(NewRelicMethodsImplementation).Assembly;
         var version = assembly.GetName().Version;
-        return version?.ToString() ?? "1.2.2"; // Fallback to hardcoded version
+        return version?.ToString() ?? "1.2.3"; // Fallback to hardcoded version
     }
 
     private Dictionary<LogLevel, int> logLevelDict = new Dictionary<LogLevel, int>()
