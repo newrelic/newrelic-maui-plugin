@@ -356,7 +356,8 @@ wait_for_nuget_package() {
     fi
 
     local elapsed=0
-    local url="https://api.nuget.org/v3-flatcontainer/${package_id,,}/index.json"
+    local pkg_lower=$(echo "$package_id" | tr '[:upper:]' '[:lower:]')
+    local url="https://api.nuget.org/v3-flatcontainer/${pkg_lower}/index.json"
 
     while [ $elapsed -lt $timeout ]; do
         local versions=$(curl -s "$url" 2>/dev/null | grep -o "\"$version\"" || true)
@@ -389,8 +390,7 @@ release_android() {
 
     validate_version "$ANDROID_VERSION" "Android"
 
-    # Calculate binding version (append .1 to distinguish from raw agent version)
-    local binding_version="${ANDROID_VERSION}.1"
+    local binding_version="$ANDROID_VERSION"
 
     # Download AAR
     download_android_aar "$ANDROID_VERSION"
@@ -468,15 +468,16 @@ release_plugin() {
 
     validate_version "$PLUGIN_VERSION" "Plugin"
 
-    # Calculate binding versions
-    local android_binding_version="${ANDROID_VERSION}.1"
+    local android_binding_version="$ANDROID_VERSION"
 
-    # Wait for binding packages if publishing
+    # Wait for binding packages if publishing — independent of --skip-android/--skip-ios,
+    # so the plugin can wait on bindings released by an upstream step.
+    # Use --skip-wait to bypass.
     if [ "$PUBLISH" = true ]; then
-        if [ "$SKIP_ANDROID" != true ] && [ -n "$ANDROID_VERSION" ]; then
+        if [ -n "$ANDROID_VERSION" ]; then
             wait_for_nuget_package "NewRelic.MAUI.Android.Binding" "$android_binding_version"
         fi
-        if [ "$SKIP_IOS" != true ] && [ -n "$IOS_VERSION" ]; then
+        if [ -n "$IOS_VERSION" ]; then
             wait_for_nuget_package "NewRelic.MAUI.iOS.Binding" "$IOS_VERSION"
         fi
     fi
