@@ -6,7 +6,6 @@
 
 This plugin allows you to instrument .NET MAUI mobile apps with help of native New Relic Android and iOS Bindings. The New Relic SDKs collect crashes, network traffic, and other information for hybrid apps using native components.
 
-
 ## Features
 
 * Capture Android and iOS Crashes
@@ -56,25 +55,22 @@ using NewRelic.MAUI.Plugin;
                .OnCreate((activity, savedInstanceState) => StartNewRelic()));
         #endif
         #if IOS
-
              AppLifecycle.AddiOS(iOS => iOS.WillFinishLaunching((_,__) => {
                 StartNewRelic();
                 return false;
             }));
         #endif
         });
+
 		return builder.Build();
 	}
 
     private static void StartNewRelic()
     {
-       
       CrossNewRelic.Current.HandleUncaughtException();
-
       // Set optional agent configuration
       // Options are: crashReportingEnabled, loggingEnabled, logLevel, collectorAddress, crashCollectorAddress,analyticsEventEnabled, networkErrorRequestEnabled, networkRequestEnabled, interactionTracingEnabled,webViewInstrumentation, fedRampEnabled,offlineStorageEnabled,newEventSystemEnabled,backgroundReportingEnabled
       // AgentStartConfiguration agentConfig = new AgentStartConfiguration(crashReportingEnabled:false);
-
 
       if (DeviceInfo.Current.Platform == DevicePlatform.Android) 
       {
@@ -88,26 +84,40 @@ using NewRelic.MAUI.Plugin;
         // CrossNewRelic.Current.Start("<APP-TOKEN-HERE", agentConfig);
       }
     }
-
 ```
-
 
 ## Screen Tracking Events
 
-The .NET MAUI mobile plugin allows you to track navigation events within the [.NET MAUI Shell](https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/shell/navigation). In order to do so, you only need to call:
+The .NET MAUI mobile plugin allows you to track navigation events within the [.NET MAUI Shell](https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/shell/navigation). There are two ways to initialize this depending on your app's startup timing.
 
+**Option 1: In the App Constructor**
+You can call the tracking method directly in the constructor immediately after setting the `MainPage`.
 ```C#
     public App()
 	{
 		InitializeComponent();
-
 		MainPage = new AppShell();
 		CrossNewRelic.Current.TrackShellNavigatedEvents();
-
     }
 ```
 
-It is recommended to call this method along when starting the agent. These events will only be recorded after navigation is complete. You can find this data through the data explorer in `MobileBreadcrumb` under the name `ShellNavigated` or by query:
+**Option 2: In the OnStart Method (Recommended for timing/NullReferenceException issues)**
+If your application shell is not fully initialized during the constructor execution, calling the navigation tracker may result in a `System.NullReferenceException`. To avoid this, move the call into the MAUI `OnStart()` lifecycle method:
+```C#
+    public App()
+	{
+		InitializeComponent();
+		MainPage = new AppShell();
+    }
+
+    protected override void OnStart()
+    {
+        base.OnStart();
+        CrossNewRelic.Current.TrackShellNavigatedEvents();
+    }
+```
+
+These events will only be recorded after navigation is complete. You can find this data through the data explorer in `MobileBreadcrumb` under the name `ShellNavigated` or by query:
 
 ```sql
     SELECT * FROM MobileBreadcrumb WHERE name = 'ShellNavigated' SINCE 24 HOURS AGO
@@ -122,41 +132,31 @@ The breadcrumb will contain three attributes:
 
 See the examples below, and for more detail,
 see [New Relic iOS SDK doc](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-ios/ios-sdk-api)
-or [Android SDK](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api)
-.
+or [Android SDK](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api).
 
 ### [CrashNow](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api/crashnow-android-sdk-api/)(string message = "") : void;
-
 > Throws a demo run-time exception on Android/iOS to test New Relic crash reporting.
-
 ``` C#
     CrossNewRelic.Current.CrashNow();
 ```
 
 ### [CurrentSessionId](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api/currentsessionid-android-sdk-api/)() : string;
-
 > Returns ID for the current session.
-
 ``` C#
     string sessionId = CrossNewRelic.Current.CurrentSessionId();
 ```
 
 ### [StartInteraction](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api/start-interaction)(string interactionName): string;
-
 > Track a method as an interaction.
 
-
 ### [EndInteraction](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api/end-interaction)(string interactionId): void;
-
 > End an interaction
 > (Required). This uses the string ID for the interaction you want to end.
 > This string is returned when you use startInteraction().
-
 ``` C#
     HttpClient myClient = new HttpClient(CrossNewRelic.Current.GetHttpMessageHandler());
     
     string interactionId = CrossNewRelic.Current.StartInteraction("Getting data from service");
-
     var response = await myClient.GetAsync(new Uri("https://jsonplaceholder.typicode.com/todos/1"));
     if (response.IsSuccessStatusCode)
     {
@@ -165,15 +165,11 @@ or [Android SDK](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobi
     {
         Console.WriteLine("Unsuccessful response code");
     }
-
     CrossNewRelic.Current.EndInteraction(interactionId);
-
 ```
 
 ### [NoticeHttpTransaction](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api/notice-http-transaction/)(string url, string httpMethod, int statusCode, long startTime,long endTime, long bytesSent, long bytesReceived, string responseBody): void;
-
 > Tracks network requests manually. You can use this method to record HTTP transactions, with an option to also send a response body.
-
 ``` C#
     CrossNewRelic.Current.NoticeHttpTransaction(
       "https://newrelic.com",
@@ -188,9 +184,7 @@ or [Android SDK](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobi
 ```
 
 ### [NoticeNetworkFailure](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api/notice-network-failure/)(string url, string httpMethod, int statusCode, long startTime,long endTime, long bytesSent, long bytesReceived, string responseBody): void;
-
 > Records network failures. If a network request fails, use this method to record details about the failure.
-
 ``` C#
     CrossNewRelic.Current.NoticeNetworkFailure(
       "https://fakewebsite.com",
@@ -202,9 +196,7 @@ or [Android SDK](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobi
 ```
 
 ### [RecordBreadcrumb](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api/recordbreadcrumb)(string name, Dictionary<string, object> attributes): bool;
-
 > This call creates and records a MobileBreadcrumb event, which can be queried with NRQL and in the crash event trail.
-
 ``` C#
     CrossNewRelic.Current.RecordBreadcrumb("MAUIExampleBreadcrumb", new Dictionary<string, object>()
         {
@@ -216,9 +208,7 @@ or [Android SDK](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobi
 ```
 
 ### [RecordCustomEvent](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api/recordcustomevent-android-sdk-api)(string eventType, string eventName, Dictionary<string, object> attributes): bool;
-
 > Creates and records a custom event for use in New Relic Insights.
-
 ``` C#
     CrossNewRelic.Current.RecordCustomEvent("MAUICustomEvent", "MAUICustomEventCategory", new Dictionary<string, object>()
         {
@@ -231,9 +221,7 @@ or [Android SDK](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobi
 
 ### [RecordMetric](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api/recordmetric-android-sdk-api/)(string name, string category) : void;
 ### [RecordMetric](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api/recordmetric-android-sdk-api/)(string name, string category, double value) : void;
-
 > Record custom metrics (arbitrary numerical data).
-
 ``` C#
     CrossNewRelic.Current.RecordMetric("Agent start", "Lifecycle");
     CrossNewRelic.Current.RecordMetric("Login Auth Metric", "Network", 78.9);
@@ -242,9 +230,7 @@ or [Android SDK](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobi
 ### [SetAttribute](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api/set-attribute)(string name, string value) : bool;
 ### [SetAttribute](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api/set-attribute)(string name, double value) : bool;
 ### [SetAttribute](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api/set-attribute)(string name, bool value) : bool;
-
 > Creates a session-level attribute shared by multiple mobile event types. Overwrites its previous value and type each time it is called.
-
 ``` C#
     CrossNewRelic.Current.SetAttribute("MAUIBoolAttr", false);
     CrossNewRelic.Current.SetAttribute("MAUIStrAttr", "Cat");
@@ -252,9 +238,7 @@ or [Android SDK](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobi
 ```
 
 ### [IncrementAttribute](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api/set-attribute)(string name, float value = 1) : bool;
-
 > Increments the count of an attriubte. Overwrites its previous value and type each time it is called.
-
 ``` C#
     // Increment by 1
     CrossNewRelic.Current.IncrementAttribute("MAUINumAttr");
@@ -263,51 +247,39 @@ or [Android SDK](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobi
 ```
 
 ### [RemoveAttribute](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api/remove-attribute)(string name) : bool;
-
 > Removes an attribute.
-
 ``` C#
     CrossNewRelic.Current.RemoveAttribute("MAUINumAttr");
 ```
 
 ### [RemoveAllAttributes](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api/remove-all-attributes)() : bool;
-
 > Removes all attributes from the session.
-
 ``` C#
     CrossNewRelic.Current.RemoveAllAttributes();
 ```
 
 ### [SetMaxEventBufferTime](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api/set-max-event-buffer-time)(int maxBufferTimeInSec) void;
-
 > Sets the event harvest cycle length.
-
   ``` C#
       CrossNewRelic.Current.SetMaxEventBufferTime(200);
   ```
+
 ### [SetMaxEventPoolSize](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api/set-max-event-pool-size)(int maxPoolSize): void;
-
 > Sets the maximum size of the event pool.
-
   ``` C#
       CrossNewRelic.Current.SetMaxEventPoolSize(1500);
   ```
 
 ### [SetUserId](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/android-sdk-api/set-user-id)(string userId): bool;
-
 > Set a custom user identifier value to associate user sessions with analytics events and attributes.
-
 ``` C#
     CrossNewRelic.Current.SetUserId("User123");
 ```
 
 ### GetHttpMessageHandler() : HttpMessageHandler;
-
 > Provides a HttpMessageHandler to instrument http requests through HttpClient.
-
 ``` C#
     HttpClient myClient = new HttpClient(CrossNewRelic.Current.GetHttpMessageHandler());
-
     var response = await myClient.GetAsync(new Uri("https://jsonplaceholder.typicode.com/todos/1"));
     if (response.IsSuccessStatusCode)
     {
@@ -319,45 +291,36 @@ or [Android SDK](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobi
 ```
 
 ### AnalyticsEventEnabled(bool enabled) : void
-
 > FOR ANDROID ONLY. Enable or disable collection of event data.
-
 ``` C#
     CrossNewRelic.Current.AnalyticsEventEnabled(true);
 ```
 
 ### NetworkRequestEnabled(bool enabled) : void
-
 > Enable or disable reporting successful HTTP requests to the MobileRequest event type.
-
 ``` C#
     CrossNewRelic.Current.NetworkRequestEnabled(true);
 ```
 
 ### NetworkErrorRequestEnabled(bool enabled) : void
-
 > Enable or disable reporting network and HTTP request errors to the MobileRequestError event type.
-
 ``` C#
     CrossNewRelic.Current.NetworkErrorRequestEnabled(true);
 ```
 
 ### HttpResponseBodyCaptureEnabled(bool enabled) : void
-
 > Enable or disable capture of HTTP response bodies for HTTP error traces, and MobileRequestError events.
-
 ``` C#
     CrossNewRelic.Current.HttpResponseBodyCaptureEnabled(true);
 ```
 
 ### Shutdown() : void
-
 > Shut down the agent within the current application lifecycle during runtime.
 ``` C#
     CrossNewRelic.Current.Shutdown();
 ```
-### SetMaxOfflineStorageSize(int megabytes) : void
 
+### SetMaxOfflineStorageSize(int megabytes) : void
 > Sets the maximum size of total data that can be stored for offline storage.By default, mobile monitoring can collect a maximum of 100 megaBytes of offline storage. 
 > When a data payload fails to send because the device doesn't have an internet connection, it can be stored in the file system until an internet connection has been made. 
 > After a typical harvest payload has been successfully sent, all offline data is sent to New Relic and cleared from storage.
@@ -366,7 +329,6 @@ or [Android SDK](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobi
 ```
 
 ### LogInfo(String message) : void
-
 > Logs an informational message to the New Relic log.
 ``` C#
     CrossNewRelic.Current.LogInfo("This is an informational message");
@@ -377,6 +339,7 @@ or [Android SDK](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobi
 ``` C#
     CrossNewRelic.Current.LogError("This is an error message");
 ```
+
 ### LogVerbose(String message) : void
 > Logs a verbose message to the New Relic log.
 ``` C#
@@ -414,12 +377,12 @@ or [Android SDK](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobi
         }
     );
 ```
+
 ## Error reporting
 
 This plugin provides a handler to record unhandled exceptions to New Relic. It is recommended to initialize the handler prior to starting the agent.
 
 ### HandleUncaughtException(bool shouldThrowFormattedException = true) : void;
-
 ``` C#
     CrossNewRelic.Current.HandleUncaughtException();
     if (DeviceInfo.Current.Platform == DevicePlatform.Android) 
@@ -432,8 +395,8 @@ This plugin provides a handler to record unhandled exceptions to New Relic. It i
 ```
 
 This plugin also provides a method to manually record any handled exceptions as well:
-### RecordException(System.Exception exception) : void;
 
+### RecordException(System.Exception exception) : void;
 ``` C#
     try {
       some_code_that_throws_error();
@@ -442,42 +405,35 @@ This plugin also provides a method to manually record any handled exceptions as 
     }
 ```
 
-
 ## Troubleshooting
 
 - ### No Http data appears:
   - To instrument http data, make sure to use the HttpMessageHandler in HttpClient.
 
-
 - ### Crash reports may not be sent when ProGuard rules are not properly configured for New Relic in hybrid Android applications
   - Ensure proper ProGuard rules are added to your ProGuard configuration file. See ["Configuring ProGuard Rules"](https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-android/install-configure/configure-proguard-or-dexguard-android-apps/) in setup documentation.
 
--  ### App Crashes When Adding `TrackNavigation` Method in `MauiProgram` or `AppShell` File
-  - If you experience a crash in this scenario, ensure that the `TrackShellNavigatedEvents` method is called after setting the `MainPage` in the `App` constructor.
+- ### App Crashes or Throws NullReferenceException with `TrackShellNavigatedEvents`
+  - If you experience a `System.NullReferenceException` when calling `CrossNewRelic.Current.TrackShellNavigatedEvents()` in the `App()` constructor, it is likely because the application shell is not fully bootstrapped yet. To resolve this, move the call out of the constructor and into the MAUI `OnStart()` lifecycle method within your `App.xaml.cs` file (see the **Screen Tracking Events** section for code examples).
 
 ## Support
 
 New Relic hosts and moderates an online forum where customers, users, maintainers, contributors, and New Relic employees can discuss and collaborate:
-
 [forum.newrelic.com](https://forum.newrelic.com/).
 
 ## Contribute
 
 We encourage your contributions to improve [project name]! Keep in mind that when you submit your pull request, you'll need to sign the CLA via the click-through using CLA-Assistant. You only have to sign the CLA one time per project.
-
 If you have any questions, or to execute our corporate CLA (which is required if your contribution is on behalf of a company), drop us an email at opensource@newrelic.com.
 
 **A note about vulnerabilities**
-
 As noted in our [security policy](../../security/policy), New Relic is committed to the privacy and security of our customers and their data. We believe that providing coordinated disclosure by security researchers and engaging with the security community are important means to achieve our security goals.
-
 If you believe you have found a security vulnerability in this project or any of New Relic's products or websites, we welcome and greatly appreciate you reporting it to New Relic through [HackerOne](https://hackerone.com/newrelic).
-
 If you would like to contribute to this project, review [these guidelines](./CONTRIBUTING.md).
-
 To all contributors, we thank you!  Without your contribution, this project would not be what it is today.
 
 ## License
+
 Except as described below, the `newrelic-maui-plugin` is licensed under the [Apache 2.0](http://apache.org/licenses/LICENSE-2.0.txt) License.
 
 The [New Relic XCFramework agent] (/docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-ios/get-started/introduction-new-relic-mobile-ios/) is licensed under the [New Relic Agent Software Notice] (/docs.newrelic.com/docs/licenses/license-information/distributed-licenses/new-relic-agent-software-notice/).
