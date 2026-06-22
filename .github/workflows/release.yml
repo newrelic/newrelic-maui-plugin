@@ -68,9 +68,17 @@ jobs:
       needs.parse-tag.outputs.ios_version != '' ||
       needs.parse-tag.outputs.plugin_version != ''
     runs-on: macos-latest
+    permissions:
+      contents: write
+      packages: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
@@ -90,6 +98,8 @@ jobs:
           IOS_VERSION: ${{ needs.parse-tag.outputs.ios_version }}
           PLUGIN_VERSION: ${{ needs.parse-tag.outputs.plugin_version }}
           DRY_RUN: ${{ inputs.dry_run }}
+          EVENT_NAME: ${{ github.event_name }}
+          PUSH_BRANCH: ${{ github.ref_name }}
         run: |
           ARGS=()
           if [ -n "$ANDROID_VERSION" ]; then
@@ -111,6 +121,12 @@ jobs:
             ARGS+=(--dry-run)
           else
             ARGS+=(--publish)
+          fi
+          # On a manual dispatch (real run), persist the downloaded agents and
+          # version bumps back to the branch the workflow was started from.
+          # Tag-push releases are skipped (no branch to push to).
+          if [ "$EVENT_NAME" = "workflow_dispatch" ] && [ "$DRY_RUN" != "true" ]; then
+            ARGS+=(--commit --push --branch "$PUSH_BRANCH")
           fi
           echo "Running: scripts/release.sh ${ARGS[*]}"
           bash scripts/release.sh "${ARGS[@]}"
