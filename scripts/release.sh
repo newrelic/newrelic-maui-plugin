@@ -25,6 +25,9 @@ SKIP_IOS=false
 SKIP_PLUGIN=false
 PUBLISH=false
 SKIP_WAIT=false
+COMMIT=false
+PUSH=false
+COMMIT_BRANCH=""
 ANDROID_VERSION=""
 IOS_VERSION=""
 PLUGIN_VERSION=""
@@ -74,6 +77,9 @@ Options:
     --skip-ios                  Skip iOS binding release
     --skip-plugin               Skip main plugin release
     --skip-wait                 Skip waiting for NuGet package indexing
+    --commit                    Commit downloaded agents + version bumps back to the repo
+    --push                      Push the release commit (requires --commit)
+    --branch BRANCH             Branch to push to (defaults to current branch)
     -h, --help                  Show this help message
 
 Environment Variables:
@@ -190,11 +196,12 @@ download_android_aar() {
         return
     fi
 
-    # Create backup of existing AAR files
-    if ls "${output_dir}"/*.aar 1> /dev/null 2>&1; then
-        print_step "Backing up existing AAR files"
+    # Back up only the existing New Relic agent AAR — other jars in this
+    # folder (e.g. curtains-*.aar) are unrelated dependencies and must be kept.
+    if ls "${output_dir}"/android-agent-static-*.aar 1> /dev/null 2>&1; then
+        print_step "Backing up existing New Relic agent AAR"
         mkdir -p "${output_dir}/backup"
-        mv "${output_dir}"/*.aar "${output_dir}/backup/" 2>/dev/null || true
+        mv "${output_dir}"/android-agent-static-*.aar "${output_dir}/backup/" 2>/dev/null || true
     fi
 
     # Download the AAR
@@ -509,6 +516,68 @@ release_plugin() {
     print_success "Plugin release completed"
 }
 
+commit_release() {
+    if [ "$COMMIT" != true ]; then
+        return
+    fi
+
+    print_header "Committing Release Artifacts"
+
+    if [ "$DRY_RUN" = true ]; then
+        print_info "[DRY RUN] Would commit release artifacts and version bumps"
+        return
+    fi
+
+    # Stage only release-relevant paths so build output (bin/obj/*.nupkg) never
+    # gets committed. -A captures deletions too (e.g. the replaced old .aar).
+    local paths=()
+    if [ "$SKIP_ANDROID" != true ] && [ -n "$ANDROID_VERSION" ]; then
+        paths+=("NewRelic.MAUI.Android.Binding/Jars")
+        paths+=("NewRelic.MAUI.Android.Binding/NewRelic.MAUI.Android.Binding.csproj")
+    fi
+    if [ "$SKIP_IOS" != true ] && [ -n "$IOS_VERSION" ]; then
+        paths+=("NewRelic.MAUI.iOS.Binding/NewRelic.xcframework")
+        paths+=("NewRelic.MAUI.iOS.Binding/NewRelic.MAUI.iOS.Binding.csproj")
+    fi
+    if [ "$SKIP_PLUGIN" != true ] && [ -n "$PLUGIN_VERSION" ]; then
+        paths+=("NewRelic.MAUI.Plugin/NewRelic.MAUI.Plugin.csproj")
+    fi
+
+    if [ ${#paths[@]} -eq 0 ]; then
+        print_warning "Nothing to commit (no components released)"
+        return
+    fi
+
+    print_step "Staging: ${paths[*]}"
+    git -C "$PROJECT_ROOT" add -A -- "${paths[@]}"
+
+    if git -C "$PROJECT_ROOT" diff --cached --quiet; then
+        print_warning "No staged changes to commit"
+        return
+    fi
+
+    # Build a commit message listing only the released components.
+    local parts=()
+    [ "$SKIP_ANDROID" != true ] && [ -n "$ANDROID_VERSION" ] && parts+=("android $ANDROID_VERSION")
+    [ "$SKIP_IOS" != true ] && [ -n "$IOS_VERSION" ] && parts+=("ios $IOS_VERSION")
+    [ "$SKIP_PLUGIN" != true ] && [ -n "$PLUGIN_VERSION" ] && parts+=("plugin $PLUGIN_VERSION")
+    local message="chore(release): $(IFS=', '; echo "${parts[*]}")"
+
+    print_step "Committing: $message"
+    git -C "$PROJECT_ROOT" commit -m "$message"
+    print_success "Committed release artifacts"
+
+    if [ "$PUSH" = true ]; then
+        local branch="$COMMIT_BRANCH"
+        if [ -z "$branch" ]; then
+            branch=$(git -C "$PROJECT_ROOT" rev-parse --abbrev-ref HEAD)
+        fi
+        print_step "Pushing to origin/$branch"
+        git -C "$PROJECT_ROOT" push origin "HEAD:$branch"
+        print_success "Pushed release commit to origin/$branch"
+    fi
+}
+
 # Parse arguments
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -548,6 +617,18 @@ while [[ $# -gt 0 ]]; do
             SKIP_WAIT=true
             shift
             ;;
+        --commit)
+            COMMIT=true
+            shift
+            ;;
+        --push)
+            PUSH=true
+            shift
+            ;;
+        --branch)
+            COMMIT_BRANCH="$2"
+            shift 2
+            ;;
         -h|--help)
             usage
             ;;
@@ -574,6 +655,8 @@ echo "  Publish: $PUBLISH"
 echo "  Skip Android: $SKIP_ANDROID"
 echo "  Skip iOS: $SKIP_IOS"
 echo "  Skip Plugin: $SKIP_PLUGIN"
+echo "  Commit: $COMMIT"
+echo "  Push: $PUSH"
 
 check_prerequisites
 
@@ -581,6 +664,9 @@ check_prerequisites
 release_android
 release_ios
 release_plugin
+
+# Persist downloaded agents + version bumps back to the repo
+commit_release
 
 print_header "Release Complete"
 print_success "All release phases completed successfully!"
