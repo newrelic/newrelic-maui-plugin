@@ -71,6 +71,7 @@ jobs:
     permissions:
       contents: write
       packages: read
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -94,12 +95,13 @@ jobs:
       - name: Run release script
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ANDROID_VERSION: ${{ needs.parse-tag.outputs.android_version }}
           IOS_VERSION: ${{ needs.parse-tag.outputs.ios_version }}
           PLUGIN_VERSION: ${{ needs.parse-tag.outputs.plugin_version }}
           DRY_RUN: ${{ inputs.dry_run }}
           EVENT_NAME: ${{ github.event_name }}
-          PUSH_BRANCH: ${{ github.ref_name }}
+          PR_BASE: ${{ github.ref_name }}
         run: |
           ARGS=()
           if [ -n "$ANDROID_VERSION" ]; then
@@ -123,10 +125,11 @@ jobs:
             ARGS+=(--publish)
           fi
           # On a manual dispatch (real run), persist the downloaded agents and
-          # version bumps back to the branch the workflow was started from.
-          # Tag-push releases are skipped (no branch to push to).
+          # version bumps to a release branch (release/<version>) and open a PR
+          # into the branch the workflow was started from — branch protection
+          # forbids pushing straight to main. Tag-push releases are skipped.
           if [ "$EVENT_NAME" = "workflow_dispatch" ] && [ "$DRY_RUN" != "true" ]; then
-            ARGS+=(--commit --push --branch "$PUSH_BRANCH")
+            ARGS+=(--commit --push --pr --pr-base "$PR_BASE")
           fi
           echo "Running: scripts/release.sh ${ARGS[*]}"
           bash scripts/release.sh "${ARGS[@]}"
