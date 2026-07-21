@@ -1,5 +1,11 @@
 # Changelog
 
+# Unreleased
+
+## Bug Fixes
+
+- Fixed iOS unhandled exceptions losing their managed (C#) context under CoreCLR (.NET 10+). `AppDomain.CurrentDomain.UnhandledException` no longer fires for exceptions that unwind through native code, so an unhandled managed exception was reported only as a native crash with no C# stack. The plugin now also captures it at the `ObjCRuntime.Runtime.MarshalManagedException` boundary and reports it as a handled exception with its stack trace (matching Android), with a guard so Mono (net10) does not double-report.
+
 # 1.2.4
 
 ## Improvements
