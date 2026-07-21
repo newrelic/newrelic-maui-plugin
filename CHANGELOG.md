@@ -1,5 +1,11 @@
 # Changelog
 
+# Unreleased
+
+## Changes
+
+- Dropped .NET 9 target frameworks (`net9.0`, `net9.0-android`, `net9.0-ios`). .NET 9 is a Standard Term Support (STS) release reaching end of support on November 10, 2026; the minimum supported framework is now .NET 10 (LTS).
+
 # 1.2.4
 
 ## Improvements

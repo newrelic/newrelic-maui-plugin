@@ -20,6 +20,7 @@ This plugin allows you to instrument .NET MAUI mobile apps with help of native N
 ## Current Support:
 
 This project targets .NET MAUI mobile apps and supports .NET MAUI [minimum supported platforms](https://learn.microsoft.com/en-us/dotnet/maui/supported-platforms):
+- Requires .NET 10 (LTS) or higher — the .NET 9 (STS) targets have been dropped
 - Android 7.0 (API 24) or higher
 - iOS 16 or higher, using the latest release of Xcode
 - Depends on New Relic iOS/XCFramework and Android agents

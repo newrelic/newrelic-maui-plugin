@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net9.0-ios;net10.0-ios</TargetFrameworks>
+		<TargetFrameworks>net10.0-ios;net11.0-ios</TargetFrameworks>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>true</ImplicitUsings>
 		<PackageId>NewRelic.MAUI.iOS.Binding</PackageId>
