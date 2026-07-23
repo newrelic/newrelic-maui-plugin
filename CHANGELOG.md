@@ -1,5 +1,15 @@
 # Changelog
 
+# Unreleased
+
+## Changes
+
+- Dropped .NET 9 target frameworks (`net9.0`, `net9.0-android`, `net9.0-ios`). .NET 9 is a Standard Term Support (STS) release reaching end of support on November 10, 2026; the minimum supported framework is now .NET 10 (LTS).
+
+## Bug Fixes
+
+- Fixed iOS unhandled exceptions losing their managed (C#) context under CoreCLR (.NET 10+). `AppDomain.CurrentDomain.UnhandledException` no longer fires for exceptions that unwind through native code, so an unhandled managed exception was reported only as a native crash with no C# stack. The plugin now also captures it at the `ObjCRuntime.Runtime.MarshalManagedException` boundary and reports it as a handled exception with its stack trace (matching Android), with a guard so Mono (net10) does not double-report.
+
 # 1.2.4
 
 ## Improvements

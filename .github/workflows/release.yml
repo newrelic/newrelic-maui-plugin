@@ -29,7 +29,11 @@ permissions:
   packages: read
 
 env:
-  DOTNET_VERSION: '9.0.x'
+  # net11 mobile targets need the .NET 11 SDK; the plugin/bindings also still target
+  # net10, so install both. net11 is pinned to the validated preview for now — bump to
+  # the GA SDK when net11 ships (tracked by NR-587402).
+  DOTNET_VERSION_NET10: '10.0.x'
+  DOTNET_VERSION_NET11: '11.0.100-preview.5.26302.115'
 
 jobs:
   parse-tag:
@@ -83,13 +87,35 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: ${{ env.DOTNET_VERSION }}
+          dotnet-version: |
+            ${{ env.DOTNET_VERSION_NET10 }}
+            ${{ env.DOTNET_VERSION_NET11 }}
+
+      - name: Select Xcode 26.5 (required by the .NET 11 iOS workload; a mismatch is a hard build error)
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '26.5'
+
+      # JDK 17, not 21: JDK 21 clears the cosmetic XA0033 warning but triggers a real runtime
+      # bug under CoreCLR on Android -- Java.Interop fails to resolve bound-enum Java types
+      # (ArgumentException: "Could not determine Java type corresponding to ...") and the
+      # agent never starts. JDK 17 has the cosmetic XA0033 but the app/agent runs correctly.
+      # Verified by isolated A/B (same SDK/TFM/device, only JDK changed). Revisit once the
+      # upstream .NET-for-Android/Java.Interop issue is fixed. Tracked by NR-587401.
+      - name: Setup JDK 17 (net11 Android + CoreCLR; JDK 21 breaks agent startup -- see comment)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
 
       - name: Install workloads
         run: |
           dotnet workload install maui
           dotnet workload install ios
           dotnet workload install android
+
+      - name: Install Android API 37 platform (required by the .NET 11 Android targets)
+        run: ${ANDROID_HOME:-$ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager "platforms;android-37"
 
       - name: Run release script
         env:
