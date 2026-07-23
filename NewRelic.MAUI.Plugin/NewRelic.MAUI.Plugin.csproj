@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net9.0;net9.0-android;net9.0-ios;net10.0;net10.0-android;net10.0-ios</TargetFrameworks>
+		<TargetFrameworks>net10.0;net10.0-android;net10.0-ios;net11.0;net11.0-android;net11.0-ios</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
 		<UseMaui>true</UseMaui>
@@ -31,22 +31,25 @@
 	<ItemGroup>
 		<Folder Include="Shared\" />
 	</ItemGroup>
-	<ItemGroup Condition="$(TargetFramework.StartsWith('net9.0'))">
-		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.120" />
-	</ItemGroup>
 	<ItemGroup Condition="$(TargetFramework.StartsWith('net10.0'))">
 		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.1" />
 	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0-ios'">
-	  <PackageReference Include="NewRelic.MAUI.iOS.Binding" Version="7.7.2" />
+	<ItemGroup Condition="$(TargetFramework.StartsWith('net11.0'))">
+		<PackageReference Include="Microsoft.Maui.Controls" Version="11.0.0-preview.5.26304.4" />
 	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0-ios'">
+	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0-ios'">
 	  <PackageReference Include="NewRelic.MAUI.iOS.Binding" Version="7.7.2" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0-android'">
 	  <PackageReference Include="NewRelic.MAUI.Android.Binding" Version="7.7.6" />
 	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0-android'">
-	  <PackageReference Include="NewRelic.MAUI.Android.Binding" Version="7.7.6" />
+	<!-- net11: published binding NuGet packages don't ship net11 assets yet, so build the
+	     binding projects from source via ProjectReference for local CoreCLR (.NET 11) validation.
+	     Publishing net11 binding packages is the release follow-up (see NR-566721). -->
+	<ItemGroup Condition="'$(TargetFramework)' == 'net11.0-ios'">
+	  <ProjectReference Include="..\NewRelic.MAUI.iOS.Binding\NewRelic.MAUI.iOS.Binding.csproj" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'net11.0-android'">
+	  <ProjectReference Include="..\NewRelic.MAUI.Android.Binding\NewRelic.MAUI.Android.Binding.csproj" />
 	</ItemGroup>
 </Project>
