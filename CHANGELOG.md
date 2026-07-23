@@ -1,5 +1,11 @@
 # Changelog
 
+# Unreleased
+
+## Bug Fixes
+
+- Fixed Android unhandled exceptions being recorded twice as handled exceptions. `Android.Runtime.AndroidEnvironment.UnhandledExceptionRaiser` and `AppDomain.CurrentDomain.UnhandledException` both fire for the same unhandled exception; the plugin now dedupes so it is only reported once.
+
 # 1.2.4
 
 ## Improvements
