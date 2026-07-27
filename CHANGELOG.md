@@ -4,7 +4,7 @@
 
 ## Bug Fixes
 
-- Fixed Android unhandled exceptions being recorded twice as handled exceptions. `Android.Runtime.AndroidEnvironment.UnhandledExceptionRaiser` and `AppDomain.CurrentDomain.UnhandledException` both fire for the same unhandled exception; the plugin now dedupes so it is only reported once.
+- Fixed a latent double-report path for Android unhandled exceptions. `Android.Runtime.AndroidEnvironment.UnhandledExceptionRaiser` and `AppDomain.CurrentDomain.UnhandledException` both fire for the same unhandled exception, so the plugin's shared event invoked `RecordException` twice. In practice this was usually masked by a race at process teardown (the fatal exception typically kills the process before the second call can persist, so only one `MobileHandledException` was usually recorded) — but that's not guaranteed, so the plugin now dedupes explicitly instead of relying on timing.
 
 # 1.2.4
 
