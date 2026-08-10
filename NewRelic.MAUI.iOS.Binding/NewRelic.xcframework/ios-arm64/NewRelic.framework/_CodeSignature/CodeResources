@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/NRConstants.h</key>
 		<data>
-		ecoio3bnFFl3L7NVD91Irke43ok=
+		VSww0KsuxaimgUnLKo51KItSQOY=
 		</data>
 		<key>Headers/NRCustomMetrics.h</key>
 		<data>
@@ -54,11 +54,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		zjqNLLBlMQO2Q3zfssUQGyy0td4=
+		dCyAHUUboyLdC5WpMmteIFOxtiU=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		P4la3Jfns6/9+ZIrh5LwbV1emfg=
+		EWayLQo/KbkH6VMY8WNd4XpGvrU=
 		</data>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		nOShUZZ28frsRTkE2O27XB+1hhc=
+		9SKhRPx51RPMDs2oGBGIMVo6J40=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -98,7 +98,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bmSLKsb1ZBEAcbM2UNQn2mkY4ZPMo+pN4oqAP1zmfzQ=
+			n4Nq1KSpAFVKlNoOeR3pLQJTTjPYnKe3KQpAa8oAoc8=
 			</data>
 		</dict>
 		<key>Headers/NRCustomMetrics.h</key>
@@ -175,7 +175,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UiXmNW+Na7Rps7Amsf6CLqqmWIovDDXQvoDMTnPq07o=
+			NKjzM88iLE7zn64m3tvhsn7qddYankHEGRMcEBc28EM=
 			</data>
 		</dict>
 		<key>Modules/NewRelic.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -203,7 +203,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+6RH6Ck3QhLUqa56lOGwSeAbDdZ/F+3LLqIL8wrMukw=
+			C28uaenqoU2cqLqaJbY6scXHM3JAxkQViWGxOSlmu/k=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -27,7 +27,9 @@ PUBLISH=false
 SKIP_WAIT=false
 COMMIT=false
 PUSH=false
+OPEN_PR=false
 COMMIT_BRANCH=""
+PR_BASE="main"
 ANDROID_VERSION=""
 IOS_VERSION=""
 PLUGIN_VERSION=""
@@ -78,8 +80,10 @@ Options:
     --skip-plugin               Skip main plugin release
     --skip-wait                 Skip waiting for NuGet package indexing
     --commit                    Commit downloaded agents + version bumps back to the repo
-    --push                      Push the release commit (requires --commit)
-    --branch BRANCH             Branch to push to (defaults to current branch)
+    --push                      Push the release commit to a release branch (requires --commit)
+    --branch BRANCH             Override the release branch name (defaults to release/<version>)
+    --pr                        Open a pull request from the release branch (requires --push)
+    --pr-base BRANCH            Base branch for the pull request (defaults to main)
     -h, --help                  Show this help message
 
 Environment Variables:
@@ -568,13 +572,75 @@ commit_release() {
     print_success "Committed release artifacts"
 
     if [ "$PUSH" = true ]; then
+        # Branch protection forbids pushing straight to main, so the release
+        # commit goes to a dedicated release branch named after the version and
+        # is merged via PR. --branch overrides the computed name.
         local branch="$COMMIT_BRANCH"
         if [ -z "$branch" ]; then
-            branch=$(git -C "$PROJECT_ROOT" rev-parse --abbrev-ref HEAD)
+            branch=$(compute_release_branch)
         fi
+
         print_step "Pushing to origin/$branch"
-        git -C "$PROJECT_ROOT" push origin "HEAD:$branch"
+        # A prior failed run may have left the branch behind; force-update it so
+        # re-runs are idempotent (the release branch is disposable, merged via PR).
+        if ! git -C "$PROJECT_ROOT" push origin "HEAD:refs/heads/$branch" 2>/dev/null; then
+            print_warning "Branch origin/$branch already exists; force-updating it"
+            git -C "$PROJECT_ROOT" push --force origin "HEAD:refs/heads/$branch"
+        fi
         print_success "Pushed release commit to origin/$branch"
+
+        open_pull_request "$branch" "$message"
+    fi
+}
+
+# Derive the release branch name from the released component versions.
+# Prefer the plugin version; fall back to the android/ios version when the
+# plugin isn't part of this release.
+compute_release_branch() {
+    local version=""
+    if [ "$SKIP_PLUGIN" != true ] && [ -n "$PLUGIN_VERSION" ]; then
+        version="$PLUGIN_VERSION"
+    elif [ "$SKIP_ANDROID" != true ] && [ -n "$ANDROID_VERSION" ]; then
+        version="android$ANDROID_VERSION"
+    elif [ "$SKIP_IOS" != true ] && [ -n "$IOS_VERSION" ]; then
+        version="ios$IOS_VERSION"
+    fi
+    echo "release/$version"
+}
+
+open_pull_request() {
+    local branch=$1
+    local title=$2
+
+    if [ "$OPEN_PR" != true ]; then
+        return
+    fi
+
+    if ! command -v gh &> /dev/null; then
+        print_warning "gh CLI not available; skipping PR creation. Open a PR from $branch manually."
+        return
+    fi
+
+    # Run gh from the repo so it resolves the correct GitHub remote.
+    cd "$PROJECT_ROOT"
+
+    # Reuse an existing PR for this branch if one is already open.
+    if gh pr view "$branch" &> /dev/null; then
+        print_info "A pull request already exists for $branch"
+        return
+    fi
+
+    print_step "Opening pull request: $branch → $PR_BASE"
+    local body="Automated release commit.
+
+$title
+
+This PR was opened by the release workflow. Merge it to persist the downloaded agents and version bumps into \`$PR_BASE\`."
+
+    if gh pr create --base "$PR_BASE" --head "$branch" --title "$title" --body "$body"; then
+        print_success "Opened pull request for $branch"
+    else
+        print_warning "Failed to open pull request; open one from $branch manually"
     fi
 }
 
@@ -625,6 +691,14 @@ while [[ $# -gt 0 ]]; do
             PUSH=true
             shift
             ;;
+        --pr)
+            OPEN_PR=true
+            shift
+            ;;
+        --pr-base)
+            PR_BASE="$2"
+            shift 2
+            ;;
         --branch)
             COMMIT_BRANCH="$2"
             shift 2
@@ -657,6 +731,8 @@ echo "  Skip iOS: $SKIP_IOS"
 echo "  Skip Plugin: $SKIP_PLUGIN"
 echo "  Commit: $COMMIT"
 echo "  Push: $PUSH"
+echo "  Open PR: $OPEN_PR"
+[ "$OPEN_PR" = true ] && echo "  PR Base: $PR_BASE"
 
 check_prerequisites
 
