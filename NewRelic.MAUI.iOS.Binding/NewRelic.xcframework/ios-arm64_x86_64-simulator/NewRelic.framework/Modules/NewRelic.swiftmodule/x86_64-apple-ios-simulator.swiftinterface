@@ -159,6 +159,7 @@ extension Module___UIKit.UIView {
   #if compiler(>=5.3) && $NonescapableTypes
   @objc public init?(analyticsController: Swift.AnyObject, sessionStartTime: Foundation.Date, agentConfiguration: Swift.AnyObject, platform: Swift.String, sessionId: Swift.String, attributeValidator: Swift.AnyObject)
   #endif
+  @objc deinit
   #if compiler(>=5.3) && $NonescapableTypes
   @objc public func recordJSError(_ name: Swift.String, message: Swift.String, stackTrace: Swift.String, isFatal: Swift.Bool, additionalAttributes: [Swift.String : Any]?)
   #endif
@@ -175,7 +176,6 @@ extension Module___UIKit.UIView {
   @objc public func errorQueueSizeForTesting() -> Swift.Int
   @objc public func clearPersistedErrorsForTesting()
   @objc public func formatErrorAsEventForTesting(_ errorData: [Swift.String : Any]) -> [Swift.String : Any]
-  @objc deinit
 }
 @available(iOS 13.0, *)
 @objc public enum SessionReplayRecordingMode : Swift.Int {
@@ -296,12 +296,12 @@ extension Module___NewRelic.XrayDecoder {
 @objc @available(iOS 13.0, *)
 @objcMembers public class SessionReplayManager : ObjectiveC.NSObject {
   @objc public var harvestPeriod: Swift.Int64
-  @objc public var sessionReplayTimer: Foundation.Timer?
   @objc public var sessionReplayMode: Module___NewRelic.SessionReplayRecordingMode {
     @objc get
     @objc set
   }
   @objc public init(reporter: Module___NewRelic.SessionReplayReporter, url: Foundation.NSString)
+  @objc deinit
   @objc public func setRecordingMode(_ mode: Module___NewRelic.SessionReplayRecordingMode)
   @objc public func getCurrentRecordingMode() -> Module___NewRelic.SessionReplayRecordingMode
   #if compiler(>=5.3) && $NonescapableTypes
@@ -317,7 +317,6 @@ extension Module___NewRelic.XrayDecoder {
   @objc public func clearAllData()
   @objc public func harvest()
   @objc public func checkForPreviousSessionFiles()
-  @objc deinit
 }
 @available(iOS 13.0, *)
 extension Module___NewRelic.SessionReplayManager : Module___NewRelic.NRMASessionReplayDelegate {

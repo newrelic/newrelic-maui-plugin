@@ -398,12 +398,10 @@ SWIFT_CLASS("_TtC8NewRelic17NRMASessionReplay") SWIFT_AVAILABILITY(ios,introduce
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class NSTimer;
 @class SessionReplayReporter;
 SWIFT_CLASS("_TtC8NewRelic20SessionReplayManager") SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface SessionReplayManager : NSObject
 @property (nonatomic) int64_t harvestPeriod;
-@property (nonatomic, strong) NSTimer * _Nullable sessionReplayTimer;
 @property (nonatomic) enum SessionReplayRecordingMode sessionReplayMode;
 - (nonnull instancetype)initWithReporter:(SessionReplayReporter * _Nonnull)reporter url:(NSString * _Nonnull)url OBJC_DESIGNATED_INITIALIZER;
 /// Sets the recording mode for session replay

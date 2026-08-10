@@ -54,4 +54,18 @@ SPDX-License-Identifier: Apache-2.0 -->
   <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.viewMapper']/class[@name='ComposeTextThingy']" />
   <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.viewMapper']/class[@name='ComposeButtonThingy']" />
   <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay.viewMapper']/class[@name='ComposeTextViewThingy']" />
+
+  <!-- Android agent 7.8.0: internal file/persistence stores refactored onto
+  AbstractFileStore / IPayloadStore / ISessionReplayStore. The binding generator
+  cannot wire the generated C# subclasses (CS0534/CS0507/CS0535/CS0738). These
+  are internal persistence types with NO references in the plugin source, so
+  removing them from the binding is safe. -->
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.hybrid']/class[@name='FileJSErrorStore']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.hybrid']/class[@name='JSErrorDataReporter']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessioncontext']/class[@name='FileSessionContextStore']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.stores']/class[@name='FileCrashStore']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.stores']/class[@name='FileEventStore']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.stores']/class[@name='FileOfflineSessionReplayStore']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.stores']/class[@name='FileSessionReplayStore']" />
+  <remove-node path="/api/package[@name='com.newrelic.agent.android.sessionReplay']/interface[@name='OfflineSessionReplayStore']" />
 </metadata>
