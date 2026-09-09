@@ -17,6 +17,13 @@
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageTags>newrelic;new relic;MAUI;mobile;monitoring;instrumentation;android;iOS</PackageTags>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<!-- Ship a symbol package alongside the .nupkg so frames in this
+		     assembly can be symbolicated. The PDBs here must come from the
+		     same build as the DLLs in the .nupkg (they are matched by MVID),
+		     which is why packing happens on build rather than as a separate
+		     step. -->
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<PackageProjectUrl>https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile-maui-dotnet/monitor-your-net-maui-application/</PackageProjectUrl>
 		<SynchReleaseVersion>false</SynchReleaseVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>

@@ -18,6 +18,11 @@
 		<PackageTags>newrelic;MAUI;android;new relic;observability;monitoring;telemetry</PackageTags>
 		<Version>7.7.7</Version>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<!-- Ship a symbol package alongside the .nupkg so frames in this
+		     assembly can be symbolicated. See the note in
+		     NewRelic.MAUI.Plugin.csproj on same-build PDB/DLL matching. -->
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
 	<ItemGroup>
 		<TransformFile Include="Transforms\Metadata.xml" />

@@ -139,21 +139,30 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: android-binding-nupkg
-          path: NewRelic.MAUI.Android.Binding/bin/Release/*.nupkg
+          # Both patterns are listed explicitly: *.nupkg does not match
+          # *.snupkg, and the symbol package is only on disk for the life of
+          # the runner (dotnet nuget push forwards it to nuget.org directly).
+          path: |
+            NewRelic.MAUI.Android.Binding/bin/Release/*.nupkg
+            NewRelic.MAUI.Android.Binding/bin/Release/*.snupkg
 
       - name: Upload iOS artifact
         if: ${{ needs.parse-tag.outputs.ios_version != '' }}
         uses: actions/upload-artifact@v4
         with:
           name: ios-binding-nupkg
-          path: NewRelic.MAUI.iOS.Binding/bin/Release/*.nupkg
+          path: |
+            NewRelic.MAUI.iOS.Binding/bin/Release/*.nupkg
+            NewRelic.MAUI.iOS.Binding/bin/Release/*.snupkg
 
       - name: Upload plugin artifact
         if: ${{ needs.parse-tag.outputs.plugin_version != '' }}
         uses: actions/upload-artifact@v4
         with:
           name: plugin-nupkg
-          path: NewRelic.MAUI.Plugin/bin/Release/*.nupkg
+          path: |
+            NewRelic.MAUI.Plugin/bin/Release/*.nupkg
+            NewRelic.MAUI.Plugin/bin/Release/*.snupkg
 
   create-release:
     needs: [parse-tag, release]
@@ -173,7 +182,9 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          files: artifacts/**/*.nupkg
+          files: |
+            artifacts/**/*.nupkg
+            artifacts/**/*.snupkg
           generate_release_notes: true
           draft: false
           prerelease: false
