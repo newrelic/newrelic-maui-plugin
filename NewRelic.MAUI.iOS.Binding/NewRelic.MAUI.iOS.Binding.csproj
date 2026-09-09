@@ -16,6 +16,11 @@
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 		<PackageTags>newrelic;MAUI;iOS;new relic;observability;monitoring;telemetry</PackageTags>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<!-- Ship a symbol package alongside the .nupkg so frames in this
+		     assembly can be symbolicated. See the note in
+		     NewRelic.MAUI.Plugin.csproj on same-build PDB/DLL matching. -->
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
 	<ItemGroup>
 		<ObjcBindingApiDefinition Include="ApiDefinition.cs" />
