@@ -51,9 +51,9 @@
 	  <PackageReference Include="NewRelic.MAUI.iOS.Binding" Version="7.7.7" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0-android'">
-	  <PackageReference Include="NewRelic.MAUI.Android.Binding" Version="7.8.2" />
+	  <PackageReference Include="NewRelic.MAUI.Android.Binding" Version="7.8.3" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0-android'">
-	  <PackageReference Include="NewRelic.MAUI.Android.Binding" Version="7.8.2" />
+	  <PackageReference Include="NewRelic.MAUI.Android.Binding" Version="7.8.3" />
 	</ItemGroup>
 </Project>
