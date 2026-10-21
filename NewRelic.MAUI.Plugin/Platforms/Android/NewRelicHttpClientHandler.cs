@@ -42,7 +42,9 @@ namespace NewRelic.MAUI.Plugin
             var startTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
             HttpResponseMessage httpResponseMessage;
             TraceContext traceContext = NRAndroidAgent.NoticeDistributedTrace(null);
-            request.Headers.Add(traceContext.TracePayload.HeaderName, traceContext.TracePayload.HeaderValue);
+            // The proprietary "newrelic" header (traceContext.TracePayload.HeaderName/
+            // HeaderValue) is intentionally not sent -- Distributed Tracing now only
+            // sends traceparent/tracestate.
             request.Headers.Add(TRACE_PARENT, "00-" + traceContext.TraceId + "-" + traceContext.ParentId + "-00");
             request.Headers.Add(TRACE_STATE, traceContext.Vendor + "=0-2-" + traceContext.AccountId + "-" + traceContext.ApplicationId + "-" + traceContext.ParentId + "----" + DateTimeOffset.Now.ToUnixTimeMilliseconds());
             httpResponseMessage = await base.SendAsync(request, cancellationToken);

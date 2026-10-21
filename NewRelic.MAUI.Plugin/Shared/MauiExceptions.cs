@@ -13,8 +13,11 @@ namespace NewRelic.MAUI.Plugin
 #endif
 
         // Guards against reporting the same unhandled exception twice when more than one hook
-        // fires for it (on Mono both AppDomain.CurrentDomain.UnhandledException and
-        // ObjCRuntime.Runtime.MarshalManagedException fire for the same iOS exception). (NR-588069)
+        // fires for it. On Android, AppDomain.CurrentDomain.UnhandledException and
+        // AndroidEnvironment.UnhandledExceptionRaiser both fire for the same exception (confirmed
+        // on-device on both MonoVM and CoreCLR) — without this guard, RecordException runs twice.
+        // On iOS under Mono, AppDomain.CurrentDomain.UnhandledException and
+        // ObjCRuntime.Runtime.MarshalManagedException both fire for the same exception. (NR-588069)
         private static Exception _lastReportedException;
 
         // We'll route all unhandled exceptions through this one event.
@@ -66,12 +69,18 @@ namespace NewRelic.MAUI.Plugin
 #elif ANDROID
 
         // For Android:
-        // All exceptions will flow through Android.Runtime.AndroidEnvironment.UnhandledExceptionRaiser,
-        // and NOT through AppDomain.CurrentDomain.UnhandledException
+        // Exceptions flow through Android.Runtime.AndroidEnvironment.UnhandledExceptionRaiser.
+        // AppDomain.CurrentDomain.UnhandledException also fires for the same exception (confirmed
+        // on-device on both MonoVM and CoreCLR), so guard against double-reporting via the shared
+        // _lastReportedException check above.
 
         global::Android.Runtime.AndroidEnvironment.UnhandledExceptionRaiser += (sender, args) =>
         {
-            UnhandledException?.Invoke(sender, new UnhandledExceptionEventArgs(args.Exception, true));
+            if (args.Exception is not null && !ReferenceEquals(args.Exception, _lastReportedException))
+            {
+                _lastReportedException = args.Exception;
+                UnhandledException?.Invoke(sender, new UnhandledExceptionEventArgs(args.Exception, true));
+            }
         };
 
 #elif WINDOWS

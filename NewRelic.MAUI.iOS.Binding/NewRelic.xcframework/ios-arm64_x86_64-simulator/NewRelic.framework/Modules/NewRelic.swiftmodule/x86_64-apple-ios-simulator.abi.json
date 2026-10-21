@@ -5950,127 +5950,6 @@
           },
           {
             "kind": "Var",
-            "name": "sessionReplayTimer",
-            "printedName": "sessionReplayTimer",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Foundation.Timer?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Timer",
-                    "printedName": "Foundation.Timer",
-                    "usr": "c:objc(cs)NSTimer"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@NewRelic@objc(cs)SessionReplayManager(py)sessionReplayTimer",
-            "mangledName": "$s8NewRelic20SessionReplayManagerC07sessionD5TimerSo7NSTimerCSgvp",
-            "moduleName": "NewRelic",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl",
-              "ObjC"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Foundation.Timer?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Timer",
-                        "printedName": "Foundation.Timer",
-                        "usr": "c:objc(cs)NSTimer"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@NewRelic@objc(cs)SessionReplayManager(im)sessionReplayTimer",
-                "mangledName": "$s8NewRelic20SessionReplayManagerC07sessionD5TimerSo7NSTimerCSgvg",
-                "moduleName": "NewRelic",
-                "implicit": true,
-                "declAttributes": [
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Foundation.Timer?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Timer",
-                        "printedName": "Foundation.Timer",
-                        "usr": "c:objc(cs)NSTimer"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@NewRelic@objc(cs)SessionReplayManager(im)setSessionReplayTimer:",
-                "mangledName": "$s8NewRelic20SessionReplayManagerC07sessionD5TimerSo7NSTimerCSgvs",
-                "moduleName": "NewRelic",
-                "implicit": true,
-                "declAttributes": [
-                  "ObjC"
-                ],
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:8NewRelic20SessionReplayManagerC07sessionD5TimerSo7NSTimerCSgvM",
-                "mangledName": "$s8NewRelic20SessionReplayManagerC07sessionD5TimerSo7NSTimerCSgvM",
-                "moduleName": "NewRelic",
-                "implicit": true,
-                "intro_iOS": "13.0",
-                "declAttributes": [
-                  "Available"
-                ],
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "sessionReplayMode",
             "printedName": "sessionReplayMode",
             "children": [
@@ -9035,231 +8914,224 @@
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "StringLiteral",
-      "offset": 1916,
+      "offset": 2255,
       "length": 35,
       "value": "\"com.newrelic.sessionreplay.frames\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
-      "kind": "StringLiteral",
-      "offset": 2004,
-      "length": 35,
-      "value": "\"com.newrelic.sessionreplay.fileio\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "BooleanLiteral",
-      "offset": 2076,
+      "offset": 2327,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 2117,
+      "offset": 2368,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 2160,
+      "offset": 2411,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "StringLiteral",
-      "offset": 6678,
+      "offset": 7519,
       "length": 31,
       "value": "\"com.newrelic.swizzleSendEvent\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "StringLiteral",
-      "offset": 6757,
+      "offset": 7598,
       "length": 15,
       "value": "\"UIApplication\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "StringLiteral",
-      "offset": 6815,
+      "offset": 7656,
       "length": 64,
       "value": "\"ERROR: Unable to swizzle send event. Not able to track touches\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "BooleanLiteral",
-      "offset": 11524,
+      "offset": 12389,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "BooleanLiteral",
-      "offset": 13907,
+      "offset": 14644,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "BooleanLiteral",
-      "offset": 15683,
+      "offset": 16420,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "Array",
-      "offset": 30791,
+      "offset": 32467,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "StringLiteral",
-      "offset": 31045,
+      "offset": 32721,
       "length": 3,
       "value": "\"_\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "StringLiteral",
-      "offset": 31080,
+      "offset": 32756,
       "length": 3,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 31537,
+      "offset": 33213,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 32186,
+      "offset": 33862,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 32221,
+      "offset": 33897,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "Array",
-      "offset": 32279,
+      "offset": 33955,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "Array",
-      "offset": 32326,
+      "offset": 34002,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 32763,
+      "offset": 34439,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 33019,
+      "offset": 34695,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 33053,
+      "offset": 34729,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 33432,
+      "offset": 35108,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 33444,
+      "offset": 35120,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 33451,
+      "offset": 35127,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 33920,
+      "offset": 35596,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 34273,
+      "offset": 35949,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 34431,
+      "offset": 36107,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 34732,
+      "offset": 36408,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 34763,
+      "offset": 36439,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "IntegerLiteral",
-      "offset": 35012,
+      "offset": 36688,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "StringLiteral",
-      "offset": 35239,
+      "offset": 36915,
       "length": 75,
       "value": "\"🗑️ [pruneBufferedFiles] ❌ Failed to prune buffered files: \""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/NRMASessionReplay.swift",
       "kind": "StringLiteral",
-      "offset": 35313,
+      "offset": 36989,
       "length": 2,
       "value": "\"\""
     },
@@ -9853,22 +9725,36 @@
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/ViewDetails.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1123,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/ViewDetails.swift",
       "kind": "StringLiteral",
-      "offset": 15851,
+      "offset": 11915,
+      "length": 11,
+      "value": "\"MKMapView\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/ViewDetails.swift",
+      "kind": "StringLiteral",
+      "offset": 20152,
       "length": 17,
       "value": "\"SessionReplayID\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/ViewDetails.swift",
       "kind": "StringLiteral",
-      "offset": 15931,
+      "offset": 20232,
       "length": 21,
       "value": "\"SessionReplayMasked\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/ViewDetails.swift",
       "kind": "StringLiteral",
-      "offset": 16023,
+      "offset": 20324,
       "length": 25,
       "value": "\"SessionReplayIdentifier\""
     },
@@ -9945,7 +9831,14 @@
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UILabelThingy.swift",
       "kind": "BooleanLiteral",
-      "offset": 6447,
+      "offset": 2617,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UILabelThingy.swift",
+      "kind": "BooleanLiteral",
+      "offset": 8904,
       "length": 5,
       "value": "false"
     },
@@ -10001,7 +9894,7 @@
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/CustomTextThingy.swift",
       "kind": "StringLiteral",
-      "offset": 10457,
+      "offset": 11026,
       "length": 27,
       "value": "\"SessionReplayCustomTextID\""
     },
@@ -10246,28 +10139,28 @@
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayManager.swift",
       "kind": "StringLiteral",
-      "offset": 671,
+      "offset": 686,
       "length": 33,
       "value": "\"com.newrelic.sessionReplayQueue\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 844,
+      "offset": 834,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 3209,
+      "offset": 3293,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5378,
+      "offset": 5451,
       "length": 4,
       "value": "true"
     },
@@ -10312,6 +10205,76 @@
       "offset": 747,
       "length": 1,
       "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayReporter.swift",
+      "kind": "IntegerLiteral",
+      "offset": 789,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayReporter.swift",
+      "kind": "IntegerLiteral",
+      "offset": 838,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 965,
+      "length": 14,
+      "value": "\"Content-Type\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 1028,
+      "length": 18,
+      "value": "\"Content-Encoding\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 1094,
+      "length": 17,
+      "value": "\"Accept-Encoding\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 1158,
+      "length": 16,
+      "value": "\"Content-Length\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 1221,
+      "length": 19,
+      "value": "\"X-App-License-Key\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 1290,
+      "length": 26,
+      "value": "\"application\/octet-stream\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 1356,
+      "length": 6,
+      "value": "\"gzip\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/SessionReplayReporter.swift",
+      "kind": "StringLiteral",
+      "offset": 1400,
+      "length": 6,
+      "value": "\"POST\""
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UIVisualEffectViewThingy.swift",

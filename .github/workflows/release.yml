@@ -75,6 +75,7 @@ jobs:
     permissions:
       contents: write
       packages: read
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -120,12 +121,13 @@ jobs:
       - name: Run release script
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ANDROID_VERSION: ${{ needs.parse-tag.outputs.android_version }}
           IOS_VERSION: ${{ needs.parse-tag.outputs.ios_version }}
           PLUGIN_VERSION: ${{ needs.parse-tag.outputs.plugin_version }}
           DRY_RUN: ${{ inputs.dry_run }}
           EVENT_NAME: ${{ github.event_name }}
-          PUSH_BRANCH: ${{ github.ref_name }}
+          PR_BASE: ${{ github.ref_name }}
         run: |
           ARGS=()
           if [ -n "$ANDROID_VERSION" ]; then
@@ -149,10 +151,11 @@ jobs:
             ARGS+=(--publish)
           fi
           # On a manual dispatch (real run), persist the downloaded agents and
-          # version bumps back to the branch the workflow was started from.
-          # Tag-push releases are skipped (no branch to push to).
+          # version bumps to a release branch (release/<version>) and open a PR
+          # into the branch the workflow was started from — branch protection
+          # forbids pushing straight to main. Tag-push releases are skipped.
           if [ "$EVENT_NAME" = "workflow_dispatch" ] && [ "$DRY_RUN" != "true" ]; then
-            ARGS+=(--commit --push --branch "$PUSH_BRANCH")
+            ARGS+=(--commit --push --pr --pr-base "$PR_BASE")
           fi
           echo "Running: scripts/release.sh ${ARGS[*]}"
           bash scripts/release.sh "${ARGS[@]}"
@@ -162,21 +165,30 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: android-binding-nupkg
-          path: NewRelic.MAUI.Android.Binding/bin/Release/*.nupkg
+          # Both patterns are listed explicitly: *.nupkg does not match
+          # *.snupkg, and the symbol package is only on disk for the life of
+          # the runner (dotnet nuget push forwards it to nuget.org directly).
+          path: |
+            NewRelic.MAUI.Android.Binding/bin/Release/*.nupkg
+            NewRelic.MAUI.Android.Binding/bin/Release/*.snupkg
 
       - name: Upload iOS artifact
         if: ${{ needs.parse-tag.outputs.ios_version != '' }}
         uses: actions/upload-artifact@v4
         with:
           name: ios-binding-nupkg
-          path: NewRelic.MAUI.iOS.Binding/bin/Release/*.nupkg
+          path: |
+            NewRelic.MAUI.iOS.Binding/bin/Release/*.nupkg
+            NewRelic.MAUI.iOS.Binding/bin/Release/*.snupkg
 
       - name: Upload plugin artifact
         if: ${{ needs.parse-tag.outputs.plugin_version != '' }}
         uses: actions/upload-artifact@v4
         with:
           name: plugin-nupkg
-          path: NewRelic.MAUI.Plugin/bin/Release/*.nupkg
+          path: |
+            NewRelic.MAUI.Plugin/bin/Release/*.nupkg
+            NewRelic.MAUI.Plugin/bin/Release/*.snupkg
 
   create-release:
     needs: [parse-tag, release]
@@ -196,7 +208,9 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          files: artifacts/**/*.nupkg
+          files: |
+            artifacts/**/*.nupkg
+            artifacts/**/*.snupkg
           generate_release_notes: true
           draft: false
           prerelease: false
