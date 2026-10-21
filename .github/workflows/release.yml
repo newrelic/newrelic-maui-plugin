@@ -30,10 +30,10 @@ permissions:
 
 env:
   # net11 mobile targets need the .NET 11 SDK; the plugin/bindings also still target
-  # net10, so install both. net11 is pinned to the validated preview for now — bump to
-  # the GA SDK when net11 ships (tracked by NR-587402).
+  # net10, so install both. net11 is pinned to RC2 for now — bump to the GA SDK when
+  # net11 ships (tracked by NR-587401).
   DOTNET_VERSION_NET10: '10.0.x'
-  DOTNET_VERSION_NET11: '11.0.100-preview.5.26302.115'
+  DOTNET_VERSION_NET11: '11.0.100-rc.2.26504.105'
 
 jobs:
   parse-tag:
@@ -71,7 +71,10 @@ jobs:
       needs.parse-tag.outputs.android_version != '' ||
       needs.parse-tag.outputs.ios_version != '' ||
       needs.parse-tag.outputs.plugin_version != ''
-    runs-on: macos-latest
+    # Xcode 27 (required by the .NET 11 iOS workload, see below) is only on the xcode-27
+    # image, which GitHub still labels preview; macos-latest tops out at Xcode 26.x. Move
+    # back to macos-latest once it carries Xcode 27.
+    runs-on: xcode-27
     permissions:
       contents: write
       packages: read
@@ -92,10 +95,14 @@ jobs:
             ${{ env.DOTNET_VERSION_NET10 }}
             ${{ env.DOTNET_VERSION_NET11 }}
 
-      - name: Select Xcode 26.5 (required by the .NET 11 iOS workload; a mismatch is a hard build error)
+      # From RC2 the .NET 11 iOS workload (Microsoft.iOS.Sdk.net11.0_27.0) targets Xcode 27.0.
+      # The exact-Xcode check (E0191) only runs for app projects, so these library projects
+      # also build net10.0-ios (Microsoft.iOS.Sdk.net10.0_26.0) under the same Xcode. Test
+      # apps built against these packages still need the exact matching Xcode.
+      - name: Select Xcode 27.0 (matches the .NET 11 iOS workload)
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '26.5'
+          xcode-version: '27.0'
 
       # JDK 17, not 21: JDK 21 clears the cosmetic XA0033 warning but triggers a real runtime
       # bug under CoreCLR on Android -- Java.Interop fails to resolve bound-enum Java types
