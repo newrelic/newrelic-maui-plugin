@@ -8,5 +8,4 @@ framework module NewRelic {
 
 module NewRelic.Swift {
   header "NewRelic-Swift.h"
-  requires objc
 }
