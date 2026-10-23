@@ -86,6 +86,17 @@ using NewRelic.MAUI.Plugin;
     }
 ```
 
+### Blazor Hybrid exceptions
+
+Blazor error boundaries handle component exceptions before they reach MAUI's native
+unhandled-exception callbacks. Register the New Relic Blazor exception handler after
+`AddMauiBlazorWebView()` to record those exceptions:
+
+```csharp
+builder.Services.AddMauiBlazorWebView();
+builder.Services.AddNewRelicBlazorExceptionHandler();
+```
+
 ## Screen Tracking Events
 
 The .NET MAUI mobile plugin allows you to track navigation events within the [.NET MAUI Shell](https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/shell/navigation). There are two ways to initialize this depending on your app's startup timing.

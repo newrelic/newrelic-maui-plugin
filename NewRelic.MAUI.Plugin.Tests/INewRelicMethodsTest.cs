@@ -1,4 +1,6 @@
 ﻿using NewRelic.MAUI.Plugin;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using NUnit.Framework;
 using Moq;
 
@@ -253,6 +255,38 @@ public class INewRelicMethodsTest
         CrossNewRelic.Current.HandleUncaughtException(false);
         newRelicMethodsMock.Verify(methods => methods.HandleUncaughtException(true), Times.Once);
         newRelicMethodsMock.Verify(methods => methods.HandleUncaughtException(false), Times.Once);
+    }
+
+    [Test]
+    public void TestBlazorExceptionHandler()
+    {
+        using ServiceProvider services = new ServiceCollection()
+            .AddLogging()
+            .AddNewRelicBlazorExceptionHandler()
+            .BuildServiceProvider();
+        Exception testException = new Exception("Blazor component exception");
+        ILogger logger = services.GetRequiredService<ILoggerFactory>()
+            .CreateLogger("Microsoft.AspNetCore.Components.Web.ErrorBoundary");
+
+        logger.LogError(testException, "Unhandled exception rendering component");
+
+        newRelicMethodsMock.Verify(methods => methods.RecordException(testException), Times.Once);
+    }
+
+    [Test]
+    public void TestBlazorExceptionHandlerIgnoresOtherLogs()
+    {
+        using ServiceProvider services = new ServiceCollection()
+            .AddLogging()
+            .AddNewRelicBlazorExceptionHandler()
+            .BuildServiceProvider();
+        Exception testException = new Exception("Unrelated exception");
+        ILogger logger = services.GetRequiredService<ILoggerFactory>()
+            .CreateLogger("Example.Category");
+
+        logger.LogError(testException, "Unrelated error");
+
+        newRelicMethodsMock.Verify(methods => methods.RecordException(It.IsAny<Exception>()), Times.Never);
     }
 
     [Test]
