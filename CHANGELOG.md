@@ -1,5 +1,11 @@
 # Changelog
 
+# Unreleased
+
+## Bug Fixes
+
+- Added an opt-in Blazor Hybrid error-boundary exception handler so component exceptions can be recorded by the mobile agent.
+
 # 1.3.2
 
 ## Improvements
