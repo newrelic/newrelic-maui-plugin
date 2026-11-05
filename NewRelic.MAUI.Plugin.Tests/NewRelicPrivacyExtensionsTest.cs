@@ -5,6 +5,7 @@
 
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Handlers;
 using Moq;
 using NewRelic.MAUI.Plugin;
 using NUnit.Framework;
@@ -277,5 +278,163 @@ public class NewRelicPrivacyExtensionsTest
         entry.Handler = NewHandler();
 
         Assert.That(applied, Is.Empty);
+    }
+
+    // XAML-friendly attached property (fluent methods are thin wrappers over it)
+
+    [Test]
+    public void PrivacyTagProperty_IsPublicAttachedPropertyNamedPrivacyTag()
+    {
+        Assert.That(NewRelicPrivacyExtensions.PrivacyTagProperty.PropertyName, Is.EqualTo("PrivacyTag"));
+        Assert.That(NewRelicPrivacyExtensions.PrivacyTagProperty.ReturnType, Is.EqualTo(typeof(string)));
+    }
+
+    [Test]
+    public void SetPrivacyTag_SetsTagReadableByBothGetters()
+    {
+        var entry = new Entry();
+
+        NewRelicPrivacyExtensions.SetPrivacyTag(entry, "nr-mask");
+
+        Assert.That(NewRelicPrivacyExtensions.GetPrivacyTag(entry), Is.EqualTo("nr-mask"));
+        Assert.That(entry.GetNewRelicPrivacyTag(), Is.EqualTo("nr-mask"));
+    }
+
+    [Test]
+    public void GetPrivacyTag_NullElement_ReturnsNull()
+    {
+        Assert.That(NewRelicPrivacyExtensions.GetPrivacyTag(null), Is.Null);
+    }
+
+    [Test]
+    public void FluentMethods_AreWrappersOverTheAttachedProperty()
+    {
+        var entry = new Entry().NewRelicBlock();
+
+        Assert.That(entry.GetValue(NewRelicPrivacyExtensions.PrivacyTagProperty), Is.EqualTo("nr-block"));
+    }
+
+    [Test]
+    public void SetPrivacyTag_BeforeHandlerAttaches_AppliesWhenHandlerAttaches()
+    {
+        var entry = new Entry();
+        NewRelicPrivacyExtensions.SetPrivacyTag(entry, "nr-unmask");
+
+        entry.Handler = NewHandler();
+
+        Assert.That(applied.Select(a => a.Tag), Is.EqualTo(new[] { "nr-unmask" }));
+    }
+
+    [Test]
+    public void SetPrivacyTag_WithExistingHandler_AppliesImmediately()
+    {
+        var entry = new Entry { Handler = NewHandler() };
+
+        NewRelicPrivacyExtensions.SetPrivacyTag(entry, "nr-mask");
+
+        Assert.That(applied.Select(a => a.Tag), Is.EqualTo(new[] { "nr-mask" }));
+    }
+
+    [Test]
+    public void SetPrivacyTag_SameValueTwice_AppliesOnce()
+    {
+        var entry = new Entry { Handler = NewHandler() };
+
+        NewRelicPrivacyExtensions.SetPrivacyTag(entry, "nr-mask");
+        NewRelicPrivacyExtensions.SetPrivacyTag(entry, "nr-mask");
+
+        Assert.That(applied, Has.Count.EqualTo(1));
+    }
+
+    [Test]
+    public void SetPrivacyTag_NullWithHandler_ClearsTheNativeTag()
+    {
+        var entry = new Entry { Handler = NewHandler() }.NewRelicMask();
+
+        NewRelicPrivacyExtensions.SetPrivacyTag(entry, null);
+
+        Assert.That(entry.GetNewRelicPrivacyTag(), Is.Null);
+        Assert.That(applied.Select(a => a.Tag), Is.EqualTo(new string[] { "nr-mask", null }));
+    }
+
+    [Test]
+    public void SetPrivacyTag_NullWithoutHandler_DoesNotTouchPlatformView()
+    {
+        var entry = new Entry().NewRelicMask();
+
+        NewRelicPrivacyExtensions.SetPrivacyTag(entry, null);
+
+        Assert.That(applied, Is.Empty);
+    }
+
+    [Test]
+    public void ClearedTag_IsNotReappliedWhenHandlerChanges()
+    {
+        var entry = new Entry().NewRelicMask();
+        NewRelicPrivacyExtensions.SetPrivacyTag(entry, null);
+
+        entry.Handler = NewHandler();
+
+        Assert.That(applied, Is.Empty);
+    }
+
+    // AutomationId set after tagging: MAUI's AutomationId mapper rewrites the native identifier
+    // (it runs right after PropertyChanged), so the tag has to be re-applied once it has run.
+
+    [Test]
+    public void AutomationIdMapped_OnTaggedElement_ReappliesTag()
+    {
+        NewRelicPrivacyExtensions.EnsureAutomationIdHook();
+        var handler = NewHandler();
+        var entry = new Entry { Handler = handler }.NewRelicMask();
+        applied.Clear();
+
+        ViewHandler.ViewMapper.UpdateProperty(handler, entry, nameof(IView.AutomationId));
+
+        Assert.That(applied.Select(a => a.Tag), Is.EqualTo(new[] { "nr-mask" }));
+    }
+
+    [Test]
+    public void AutomationIdMapped_OnUntaggedElement_DoesNothing()
+    {
+        NewRelicPrivacyExtensions.EnsureAutomationIdHook();
+        var handler = NewHandler();
+        var entry = new Entry { Handler = handler };
+
+        ViewHandler.ViewMapper.UpdateProperty(handler, entry, nameof(IView.AutomationId));
+
+        Assert.That(applied, Is.Empty);
+    }
+
+    [Test]
+    public void AutomationIdHook_RegisteredTwice_StillAppliesOncePerMapping()
+    {
+        NewRelicPrivacyExtensions.EnsureAutomationIdHook();
+        NewRelicPrivacyExtensions.EnsureAutomationIdHook();
+        var handler = NewHandler();
+        var entry = new Entry { Handler = handler }.NewRelicMask();
+        applied.Clear();
+
+        ViewHandler.ViewMapper.UpdateProperty(handler, entry, nameof(IView.AutomationId));
+
+        Assert.That(applied, Has.Count.EqualTo(1));
+    }
+
+    [Test]
+    public void AutomationIdSetAfterTagging_TagWinsOverTheMappedIdentifier()
+    {
+        // Reproduces MAUI's order: PropertyChanged, then handler.UpdateValue -> property mapper.
+        NewRelicPrivacyExtensions.EnsureAutomationIdHook();
+        var mock = new Mock<IViewHandler>();
+        Entry entry = null!;
+        mock.Setup(h => h.UpdateValue(It.IsAny<string>()))
+            .Callback<string>(property => ViewHandler.ViewMapper.UpdateProperty(mock.Object, entry, property));
+        entry = new Entry { Handler = mock.Object }.NewRelicMask();
+        applied.Clear();
+
+        entry.AutomationId = "login_email";
+
+        Assert.That(entry.AutomationId, Is.EqualTo("login_email"));
+        Assert.That(applied.Select(a => a.Tag), Is.EqualTo(new[] { "nr-mask" }));
     }
 }

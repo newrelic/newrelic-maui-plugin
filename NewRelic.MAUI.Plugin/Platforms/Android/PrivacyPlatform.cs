@@ -14,13 +14,35 @@ internal static class PrivacyPlatform
     // resources, so the id is resolved by name rather than compiled in.
     private const string PrivacyTagResourceName = "newrelic_privacy";
 
+    // The id is fixed for the life of the process, so look it up once. Zero (not found) is never cached.
+    private static int _privacyTagId;
+
+    // Sets the tag, or removes it when tag is null.
     public static void Apply(VisualElement element, string tag)
     {
         if (element.Handler?.PlatformView is not AView view || view.Context == null) return;
 
-        var id = view.Context.Resources?.GetIdentifier(PrivacyTagResourceName, "id", view.Context.PackageName) ?? 0;
+        var id = ResolvePrivacyTagId(view);
         if (id == 0) return;
 
-        view.SetTag(id, new Java.Lang.String(tag));
+        if (tag == null)
+        {
+            view.SetTag(id, null);
+            return;
+        }
+
+        // The view keeps its own reference to the Java string; the managed wrapper can be released now.
+        using var javaTag = new Java.Lang.String(tag);
+        view.SetTag(id, javaTag);
+    }
+
+    private static int ResolvePrivacyTagId(AView view)
+    {
+        if (_privacyTagId != 0) return _privacyTagId;
+
+        var context = view.Context;
+        var id = context?.Resources?.GetIdentifier(PrivacyTagResourceName, "id", context.PackageName) ?? 0;
+        _privacyTagId = id;
+        return id;
     }
 }
