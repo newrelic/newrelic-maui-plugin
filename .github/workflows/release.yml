@@ -122,8 +122,11 @@ jobs:
           dotnet workload install ios
           dotnet workload install android
 
+      # From API 37 Google publishes the base platform as android-37.0 (there is no
+      # "platforms;android-37"), and the .NET 11 Android SDK defaults
+      # AndroidSdkPlatformVersion to android-37.0.
       - name: Install Android API 37 platform (required by the .NET 11 Android targets)
-        run: ${ANDROID_HOME:-$ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager "platforms;android-37"
+        run: ${ANDROID_HOME:-$ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager "platforms;android-37.0"
 
       - name: Run release script
         env:
