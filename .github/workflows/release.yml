@@ -104,17 +104,15 @@ jobs:
         with:
           xcode-version: '27.2'
 
-      # JDK 17, not 21: JDK 21 clears the cosmetic XA0033 warning but triggers a real runtime
-      # bug under CoreCLR on Android -- Java.Interop fails to resolve bound-enum Java types
-      # (ArgumentException: "Could not determine Java type corresponding to ...") and the
-      # agent never starts. JDK 17 has the cosmetic XA0033 but the app/agent runs correctly.
-      # Verified by isolated A/B (same SDK/TFM/device, only JDK changed). Revisit once the
-      # upstream .NET-for-Android/Java.Interop issue is fixed. Tracked by NR-587401.
-      - name: Setup JDK 17 (net11 Android + CoreCLR; JDK 21 breaks agent startup -- see comment)
+      # JDK 21 is the only major both Android targets accept: the net10 Android SDK supports
+      # JDK 17.0-21.0.99 and the net11 GA Android SDK 21.0-25.0.99. The JDK 21 + CoreCLR
+      # agent-startup failure seen on the net11 previews ("Could not determine Java type
+      # corresponding to ...") no longer reproduces on GA, in Debug or Release.
+      - name: Setup JDK 21 (supported by both the net10 and net11 Android SDKs)
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: '21'
 
       - name: Install workloads
         run: |
