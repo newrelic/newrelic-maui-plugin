@@ -42,7 +42,7 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.1" />
 	</ItemGroup>
 	<ItemGroup Condition="$(TargetFramework.StartsWith('net11.0'))">
-		<PackageReference Include="Microsoft.Maui.Controls" Version="11.0.0-rc.2.26505.5" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="11.0.0" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0-ios'">
 	  <PackageReference Include="NewRelic.MAUI.iOS.Binding" Version="7.7.7" />
