@@ -44,19 +44,12 @@
 	<ItemGroup Condition="$(TargetFramework.StartsWith('net11.0'))">
 		<PackageReference Include="Microsoft.Maui.Controls" Version="11.0.0" />
 	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0-ios'">
+	<!-- One binding version per platform for both net10 and net11. scripts/release.sh rewrites
+	     these versions when a release run includes android_version / ios_version. -->
+	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
 	  <PackageReference Include="NewRelic.MAUI.iOS.Binding" Version="7.7.7" />
 	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0-android'">
+	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 	  <PackageReference Include="NewRelic.MAUI.Android.Binding" Version="7.8.3" />
-	</ItemGroup>
-	<!-- net11: published binding NuGet packages don't ship net11 assets yet, so build the
-	     binding projects from source via ProjectReference for local CoreCLR (.NET 11) validation.
-	     Publishing net11 binding packages is the release follow-up (see NR-566721). -->
-	<ItemGroup Condition="'$(TargetFramework)' == 'net11.0-ios'">
-	  <ProjectReference Include="..\NewRelic.MAUI.iOS.Binding\NewRelic.MAUI.iOS.Binding.csproj" />
-	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == 'net11.0-android'">
-	  <ProjectReference Include="..\NewRelic.MAUI.Android.Binding\NewRelic.MAUI.Android.Binding.csproj" />
 	</ItemGroup>
 </Project>
