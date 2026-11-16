@@ -16,6 +16,7 @@ This plugin allows you to instrument .NET MAUI mobile apps with help of native N
 * Capture Offline Events and Exception
 * Capture Background Events when app is in background
 * Log Forwarding 
+* Session Replay privacy controls (mask, unmask and block views)
 
 ## Current Support:
 
@@ -128,6 +129,31 @@ The breadcrumb will contain three attributes:
 * `Current`: The URI of the current page.
 * `Source`: The type of navigation that occurred.
 * `Previous`: The URI of the previous page. Will not exist if previous page was null. 
+
+## Session Replay privacy
+
+Use the extension methods on any `VisualElement` to control how a view appears in Session Replay. Session Replay must be enabled for your app, and `NewRelicMask()` / `NewRelicUnmask()` apply only when the masking strategy is **custom**; the default strategy ignores them. `NewRelicBlock()` applies with either strategy. See [Configure privacy settings](https://docs.newrelic.com/docs/mobile-monitoring/mobile-monitoring-ui/mobile-session-replay/configure-privacy-settings/) for strategies and masking rules.
+
+```csharp
+using NewRelic.MAUI.Plugin;
+
+// Mask sensitive text
+var password = new Entry { IsPassword = true }.NewRelicMask();
+
+// Show a view that would otherwise be masked
+var greeting = new Label { Text = "Welcome to our store" }.NewRelicUnmask();
+
+// Hide a view and everything inside it
+var payment = new VerticalStackLayout().NewRelicBlock();
+```
+
+* A view has at most one privacy tag. Applying a tag replaces the previous one, and applying the same tag twice has no additional effect.
+* The methods are null-safe: calling one on a `null` reference returns `null`.
+* You can tag a view before or after its page is shown. The tag is written to the native view once it exists, and again if MAUI replaces it.
+* Android: the tag is stored in the `newrelic_privacy` view tag that the Android agent reads. iOS: the native `accessibilityIdentifier` is set to exactly `nr-mask`, `nr-unmask` or `nr-block`.
+* `Element.AutomationId` is never modified, because MAUI allows it to be set only once.
+
+> **iOS:** a tagged view's native `accessibilityIdentifier` becomes the privacy tag, replacing the identifier MAUI maps from `AutomationId`. UI tests (Appium / XCUITest) that locate tagged elements by that identifier on iOS will not find them. `AutomationId` on the MAUI side is unchanged, and Android is not affected.
 
 ## Usage
 

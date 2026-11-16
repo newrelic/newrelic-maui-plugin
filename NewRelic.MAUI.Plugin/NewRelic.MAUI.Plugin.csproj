@@ -33,6 +33,9 @@
 		<CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 	<ItemGroup>
+		<InternalsVisibleTo Include="NewRelic.MAUI.Plugin.Tests" />
+	</ItemGroup>
+	<ItemGroup>
 		<None Remove="Shared\" />
 	</ItemGroup>
 	<ItemGroup>
