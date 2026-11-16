@@ -16,6 +16,8 @@ namespace NewRelic.MAUI.Plugin
         // fires for it. On Android, AppDomain.CurrentDomain.UnhandledException and
         // AndroidEnvironment.UnhandledExceptionRaiser both fire for the same exception (confirmed
         // on-device on both MonoVM and CoreCLR) — without this guard, RecordException runs twice.
+        // On iOS under Mono, AppDomain.CurrentDomain.UnhandledException and
+        // ObjCRuntime.Runtime.MarshalManagedException both fire for the same exception. (NR-588069)
         private static Exception _lastReportedException;
 
         // We'll route all unhandled exceptions through this one event.
@@ -42,14 +44,25 @@ namespace NewRelic.MAUI.Plugin
 
 #if IOS || MACCATALYST
 
-        // For iOS and Mac Catalyst
-        // Exceptions will flow through AppDomain.CurrentDomain.UnhandledException,
-        // but we need to set UnwindNativeCode to get it to work correctly. 
-        // 
+        // For iOS and Mac Catalyst:
+        //
+        // On Mono, unhandled exceptions flowed through AppDomain.CurrentDomain.UnhandledException
+        // (we set UnwindNativeCode below to make that work).
         // See: https://github.com/xamarin/xamarin-macios/issues/15252
-        
+        //
+        // Under CoreCLR (.NET 10+), AppDomain.CurrentDomain.UnhandledException no longer fires for
+        // exceptions that unwind through native code, so we also capture the exception here at the
+        // managed->native boundary, where CoreCLR surfaces it (args.Exception is populated). Verified
+        // on-device: for an unhandled managed exception only MarshalManagedException fires, not AppDomain.
+        // See: https://learn.microsoft.com/en-us/dotnet/ios/advanced-concepts/exception-marshaling (NR-588069)
         ObjCRuntime.Runtime.MarshalManagedException += (_, args) =>
         {
+            if (args.Exception is not null && !ReferenceEquals(args.Exception, _lastReportedException))
+            {
+                _lastReportedException = args.Exception;
+                UnhandledException?.Invoke(null, new UnhandledExceptionEventArgs(args.Exception, true));
+            }
+
             args.ExceptionMode = ObjCRuntime.MarshalManagedExceptionMode.UnwindNativeCode;
         };
 

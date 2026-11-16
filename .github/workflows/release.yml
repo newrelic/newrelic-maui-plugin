@@ -29,7 +29,11 @@ permissions:
   packages: read
 
 env:
-  DOTNET_VERSION: '9.0.x'
+  # net11 mobile targets need the .NET 11 SDK; the plugin/bindings also still target
+  # net10, so install both. net11 is pinned to the exact GA SDK so a new feature band
+  # can't silently change the iOS/Android workloads (and their Xcode/JDK requirements).
+  DOTNET_VERSION_NET10: '10.0.x'
+  DOTNET_VERSION_NET11: '11.0.100'
 
 jobs:
   parse-tag:
@@ -67,7 +71,10 @@ jobs:
       needs.parse-tag.outputs.android_version != '' ||
       needs.parse-tag.outputs.ios_version != '' ||
       needs.parse-tag.outputs.plugin_version != ''
-    runs-on: macos-latest
+    # Xcode 27 (required by the .NET 11 iOS workload, see below) is only on the xcode-27
+    # image, which GitHub still labels preview; macos-latest tops out at Xcode 26.x. Move
+    # back to macos-latest once it carries Xcode 27.
+    runs-on: xcode-27
     permissions:
       contents: write
       packages: read
@@ -84,13 +91,40 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: ${{ env.DOTNET_VERSION }}
+          dotnet-version: |
+            ${{ env.DOTNET_VERSION_NET10 }}
+            ${{ env.DOTNET_VERSION_NET11 }}
+
+      # The .NET 11 GA iOS workload (Microsoft.iOS.Sdk.net11.0_27.2) targets Xcode 27.2.
+      # The exact-Xcode check (E0191) only runs for app projects, so these library projects
+      # also build net10.0-ios (Microsoft.iOS.Sdk.net10.0_26.0) under the same Xcode. Test
+      # apps built against these packages still need the exact matching Xcode.
+      - name: Select Xcode 27.2 (matches the .NET 11 iOS workload)
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '27.2'
+
+      # JDK 21 is the only major both Android targets accept: the net10 Android SDK supports
+      # JDK 17.0-21.0.99 and the net11 GA Android SDK 21.0-25.0.99. The JDK 21 + CoreCLR
+      # agent-startup failure seen on the net11 previews ("Could not determine Java type
+      # corresponding to ...") no longer reproduces on GA, in Debug or Release.
+      - name: Setup JDK 21 (supported by both the net10 and net11 Android SDKs)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
 
       - name: Install workloads
         run: |
           dotnet workload install maui
           dotnet workload install ios
           dotnet workload install android
+
+      # From API 37 Google publishes the base platform as android-37.0 (there is no
+      # "platforms;android-37"), and the .NET 11 Android SDK defaults
+      # AndroidSdkPlatformVersion to android-37.0.
+      - name: Install Android API 37 platform (required by the .NET 11 Android targets)
+        run: ${ANDROID_HOME:-$ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager "platforms;android-37.0"
 
       - name: Run release script
         env:

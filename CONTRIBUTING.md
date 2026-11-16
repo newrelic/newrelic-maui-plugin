@@ -25,7 +25,7 @@ Release notes for the .NET MAUI agent are drafted automatically and reviewed by 
 **Every user-facing PR merged to `main` needs exactly one label:** `release-note:feature`, `release-note:enhancement` (including native agent version bumps), `release-note:bug` or `release-note:security`. The `Release notes - check` check comments on each PR with the bullet it will become. Put `[skip-docs]` in the description to leave a PR out.
 
 1. On every merge to `main`, `release-notes-append.yml` adds the PR's bullet to the `net-maui-next` branch of `newrelic/docs-website`.
-2. On every release, publishing the GitHub release runs `release-notes-generate.yml`, which reconciles those bullets, the PRs since the previous tag and the version's `CHANGELOG.md` entries, and opens a **draft** PR on `newrelic/docs-website`. **Edit it before it merges**, and check its "PRs left out" list. To rebuild a note, run `release-notes-generate.yml` by hand with the version.
+2. On every release, publishing the GitHub release runs `release-notes-generate.yml`, which reconciles those bullets, the PRs since the previous tag and the version's `CHANGELOG.md` entries, and opens a PR on `newrelic/docs-website`, ready for review (`readyForReview` in the settings). Its branch is on the bot's fork `newrelic-mobile-agents-bot/docs-website`, where collaborators can still edit the note. **Edit it before it merges**, and check its "PRs left out" list. To rebuild a note, run `release-notes-generate.yml` by hand with the version.
 3. Settings are in `.github/release-notes.json`. The workflows need the `BOT_PAT` and `BOT_EMAIL` repository secrets.
 
 Tag each release `X.Y.Z` (no `v`), after `CHANGELOG.md` has its `# X.Y.Z` entry: native agent updates reach the notes only through the CHANGELOG.
