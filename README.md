@@ -145,9 +145,6 @@ var greeting = new Label { Text = "Welcome to our store" }.NewRelicUnmask();
 
 // Hide a view and everything inside it
 var payment = new VerticalStackLayout().NewRelicBlock();
-
-// Read the current tag: "nr-mask", "nr-unmask", "nr-block" or null
-string tag = password.GetNewRelicPrivacyTag();
 ```
 
 * A view has at most one privacy tag. Applying a tag replaces the previous one, and applying the same tag twice has no additional effect.

@@ -295,8 +295,7 @@ public class NewRelicPrivacyExtensionsTest
 
         Assert.That(publicMembers, Is.EqualTo(new[]
         {
-            "BlockTag", "GetNewRelicPrivacyTag", "MaskTag", "NewRelicBlock", "NewRelicMask",
-            "NewRelicUnmask", "UnmaskTag",
+            "BlockTag", "MaskTag", "NewRelicBlock", "NewRelicMask", "NewRelicUnmask", "UnmaskTag",
         }));
     }
 

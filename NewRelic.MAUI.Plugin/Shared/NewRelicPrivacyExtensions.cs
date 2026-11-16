@@ -62,8 +62,7 @@ namespace NewRelic.MAUI.Plugin
         public static T NewRelicBlock<T>(this T element) where T : VisualElement
             => Apply(element, BlockTag);
 
-        /// <summary>Returns the privacy tag applied to the element, or null if it has none.</summary>
-        public static string GetNewRelicPrivacyTag(this VisualElement element)
+        internal static string GetNewRelicPrivacyTag(this VisualElement element)
             => GetPrivacyTag(element);
 
         private static T Apply<T>(T element, string tag) where T : VisualElement
