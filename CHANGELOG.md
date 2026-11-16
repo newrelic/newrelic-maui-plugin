@@ -4,7 +4,7 @@
 
 ## Features
 
-- Added Session Replay privacy extensions for any `VisualElement`: `NewRelicMask()`, `NewRelicUnmask()`, `NewRelicBlock()` and `GetNewRelicPrivacyTag()`, plus the `NewRelicPrivacyExtensions.PrivacyTag` attached property for XAML. On Android the tag is stored in the agent's `newrelic_privacy` view tag; on iOS the native `accessibilityIdentifier` is set to the tag, which replaces the identifier MAUI maps from `AutomationId`. `Element.AutomationId` itself is unchanged.
+- Added Session Replay privacy extensions for any `VisualElement`: `NewRelicMask()`, `NewRelicUnmask()`, `NewRelicBlock()` and `GetNewRelicPrivacyTag()`. On Android the tag is stored in the agent's `newrelic_privacy` view tag; on iOS the native `accessibilityIdentifier` is set to the tag, which replaces the identifier MAUI maps from `AutomationId`. `Element.AutomationId` itself is unchanged.
 
 # 1.3.2
 

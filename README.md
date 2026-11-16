@@ -149,14 +149,6 @@ var payment = new VerticalStackLayout().NewRelicBlock();
 string tag = password.GetNewRelicPrivacyTag();
 ```
 
-In XAML, set the `PrivacyTag` attached property instead:
-
-```xml
-<ContentPage xmlns:nr="clr-namespace:NewRelic.MAUI.Plugin;assembly=NewRelic.MAUI.Plugin">
-    <Entry IsPassword="True" nr:NewRelicPrivacyExtensions.PrivacyTag="nr-mask" />
-</ContentPage>
-```
-
 * A view has at most one privacy tag. Applying a tag replaces the previous one, and applying the same tag twice has no additional effect.
 * The methods are null-safe: calling one on a `null` reference returns `null`.
 * You can tag a view before or after its page is shown. The tag is written to the native view once it exists, and again if MAUI replaces it.

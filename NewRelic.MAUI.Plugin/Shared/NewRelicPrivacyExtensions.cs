@@ -10,11 +10,8 @@ namespace NewRelic.MAUI.Plugin
 {
     /// <summary>
     /// Marks a <see cref="VisualElement"/> with the privacy tags the New Relic native agents look for
-    /// when recording Session Replay. Use the fluent extension methods in code:
+    /// when recording Session Replay, using the fluent extension methods:
     /// <code>var password = new Entry { IsPassword = true }.NewRelicMask();</code>
-    /// or the <see cref="PrivacyTagProperty"/> attached property in XAML:
-    /// <code>&lt;Entry nr:NewRelicPrivacyExtensions.PrivacyTag="nr-mask" /&gt;</code>
-    /// where <c>nr</c> maps to <c>clr-namespace:NewRelic.MAUI.Plugin;assembly=NewRelic.MAUI.Plugin</c>.
     /// </summary>
     /// <remarks>
     /// <para>
@@ -35,11 +32,9 @@ namespace NewRelic.MAUI.Plugin
         public const string UnmaskTag = "nr-unmask";
         public const string BlockTag = "nr-block";
 
-        /// <summary>
-        /// Attached property holding the privacy tag (<see cref="MaskTag"/>, <see cref="UnmaskTag"/>,
-        /// <see cref="BlockTag"/>, or null for none). The fluent extension methods set this property.
-        /// </summary>
-        public static readonly BindableProperty PrivacyTagProperty = BindableProperty.CreateAttached(
+        // Per-element storage for the tag (MaskTag, UnmaskTag, BlockTag, or null for none). Internal so the
+        // extension methods stay the only way to set it.
+        internal static readonly BindableProperty PrivacyTagProperty = BindableProperty.CreateAttached(
             "PrivacyTag", typeof(string), typeof(NewRelicPrivacyExtensions), null,
             propertyChanged: OnPrivacyTagChanged);
 
@@ -49,12 +44,10 @@ namespace NewRelic.MAUI.Plugin
 
         private static int _automationIdHookRegistered;
 
-        /// <summary>Gets the privacy tag on <paramref name="bindable"/>, or null if it has none.</summary>
-        public static string GetPrivacyTag(BindableObject bindable)
+        internal static string GetPrivacyTag(BindableObject bindable)
             => (string)bindable?.GetValue(PrivacyTagProperty);
 
-        /// <summary>Sets the privacy tag on <paramref name="bindable"/>; null removes it.</summary>
-        public static void SetPrivacyTag(BindableObject bindable, string value)
+        internal static void SetPrivacyTag(BindableObject bindable, string value)
             => bindable?.SetValue(PrivacyTagProperty, value);
 
         /// <summary>Masks the element's content in Session Replay.</summary>

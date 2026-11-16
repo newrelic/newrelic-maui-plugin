@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+using System.Reflection;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Handlers;
@@ -280,13 +281,23 @@ public class NewRelicPrivacyExtensionsTest
         Assert.That(applied, Is.Empty);
     }
 
-    // XAML-friendly attached property (fluent methods are thin wrappers over it)
+    // The tag is stored in an internal attached property; the fluent methods are the only public way to set it
 
     [Test]
-    public void PrivacyTagProperty_IsPublicAttachedPropertyNamedPrivacyTag()
+    public void PublicSurface_IsOnlyTheExtensionMethodsAndTagConstants()
     {
-        Assert.That(NewRelicPrivacyExtensions.PrivacyTagProperty.PropertyName, Is.EqualTo("PrivacyTag"));
-        Assert.That(NewRelicPrivacyExtensions.PrivacyTagProperty.ReturnType, Is.EqualTo(typeof(string)));
+        var publicMembers = typeof(NewRelicPrivacyExtensions)
+            .GetMembers(BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly)
+            .Select(m => m.Name)
+            .Distinct()
+            .OrderBy(n => n)
+            .ToArray();
+
+        Assert.That(publicMembers, Is.EqualTo(new[]
+        {
+            "BlockTag", "GetNewRelicPrivacyTag", "MaskTag", "NewRelicBlock", "NewRelicMask",
+            "NewRelicUnmask", "UnmaskTag",
+        }));
     }
 
     [Test]
