@@ -9823,22 +9823,29 @@
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UILabelThingy.swift",
+      "kind": "StringLiteral",
+      "offset": 301,
+      "length": 13,
+      "value": "\"RCTTextView\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UILabelThingy.swift",
       "kind": "FloatLiteral",
-      "offset": 860,
+      "offset": 898,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UILabelThingy.swift",
       "kind": "BooleanLiteral",
-      "offset": 2617,
+      "offset": 2655,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/newrelic-ios-agent\/newrelic-ios-agent\/Agent\/SessionReplay\/ViewCaptors\/UILabelThingy.swift",
       "kind": "BooleanLiteral",
-      "offset": 8904,
+      "offset": 9540,
       "length": 5,
       "value": "false"
     },
