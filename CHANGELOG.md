@@ -5,6 +5,7 @@
 ## New Features
 
 - Added support for .NET 11 (`net11.0`, `net11.0-android`, `net11.0-ios`), including the CoreCLR runtime that .NET 11 uses by default on Android and iOS.
+- Added Session Replay privacy extensions for any `VisualElement`: `NewRelicMask()`, `NewRelicUnmask()` and `NewRelicBlock()`. On Android the tag is stored in the agent's `newrelic_privacy` view tag; on iOS the native `accessibilityIdentifier` is set to the tag, which replaces the identifier MAUI maps from `AutomationId`. `Element.AutomationId` itself is unchanged.
 
 ## Changes
 
