@@ -1,0 +1,21 @@
+# Changes to CI, build, packaging and publishing files need a review from the
+# Mobile Agents release owners. The last matching pattern wins, so keep this
+# file's own entry at the bottom.
+
+# CI: workflows and dependency update config
+/.github/                                   @newrelic/mobagent
+
+# Solutions, projects and the NuGet package definition
+*.sln                                       @newrelic/mobagent
+*.csproj                                    @newrelic/mobagent
+/Package.nuspec                             @newrelic/mobagent
+
+# Native agents bundled into the NuGet packages
+/NewRelic.MAUI.Android.Binding/Jars/        @newrelic/mobagent
+/NewRelic.MAUI.iOS.Binding/NewRelic.xcframework/ @newrelic/mobagent
+
+# Release and native agent update scripts
+/scripts/                                   @newrelic/mobagent
+
+# This file
+/.github/CODEOWNERS                         @newrelic/mobagent
